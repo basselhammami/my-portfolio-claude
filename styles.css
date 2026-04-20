@@ -234,7 +234,7 @@ button {
 
 /* Main container */
 .page {
-  max-width: 56rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
 }
@@ -267,11 +267,11 @@ button {
 
 .hero-title {
   margin: 0;
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  max-width: 34rem;
+  font-size: clamp(1.75rem, 3.8vw, 3rem);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  max-width: 50rem;
 }
 
 .languages {
@@ -408,10 +408,10 @@ button {
 
 .project-desc {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.3;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -0.015em;
 }
 
 .project-links {
@@ -519,9 +519,9 @@ button {
 
 .section-title {
   margin: 0.25rem 0 2.5rem;
-  font-size: clamp(1.75rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
 }
 
 .expertise-grid {
@@ -664,9 +664,9 @@ button {
 
 .case-title {
   margin: 0 0 1.25rem;
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.025em;
   max-width: 48rem;
 }
@@ -746,9 +746,9 @@ button {
 
 .section-h {
   margin: 0 0 1.25rem;
-  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .section-lead {
@@ -796,9 +796,9 @@ button {
 
 .numbered-row h4 {
   margin: 0 0 0.5rem;
-  font-size: 1.0625rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.018em;
 }
 
 .numbered-row p {
@@ -855,8 +855,8 @@ button {
 .info-card h4 {
   margin: 0;
   font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.018em;
 }
 
 .info-card p {
@@ -914,8 +914,8 @@ button {
 .step-card h4 {
   margin: 0 0 0.5rem;
   font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .step-card p {
