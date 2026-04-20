@@ -512,27 +512,22 @@ button {
     #0e0a14;
   overflow: hidden;
   position: relative;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
 }
 
-/* Image is pinned absolutely so it doesn't grow the card.
-   It extends well past the bottom of the media box; overflow: hidden
-   on the media (and on the card) clips it, showing only the upper
-   half of the phone. */
 .project-media--paywalls img {
-  position: absolute;
-  top: 2.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 78%;
+  max-width: 90%;
+  max-height: 100%;
+  width: auto;
   height: auto;
-  max-width: none;
-  max-height: none;
+  object-fit: contain;
   display: block;
-  border-radius: 28px;
-  box-shadow:
-    0 30px 60px -20px rgba(0, 0, 0, 0.7),
-    0 14px 34px -12px rgba(120, 70, 110, 0.35);
+  border-radius: 18px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 8px 20px rgba(120, 70, 110, 0.25));
 }
 
 /* Case page — interactive prototype embed */
@@ -1203,11 +1198,11 @@ button {
 
   .project-media--paywalls {
     min-height: 280px;
+    padding: 1rem;
   }
 
   .project-media--paywalls img {
-    top: 1.25rem;
-    width: 55%;
+    max-width: 70%;
   }
 
   .expertise-grid {
