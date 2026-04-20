@@ -83,6 +83,29 @@ document.addEventListener("click", (event) => {
   window.addEventListener("scroll", update, { passive: true });
 })();
 
+(function autoplayVideosInView() {
+  const videos = document.querySelectorAll("video[autoplay]");
+  if (!videos.length) return;
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach((v) => v.play().catch(() => {}));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const v = entry.target;
+        if (entry.isIntersecting) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+  videos.forEach((v) => io.observe(v));
+})();
+
 (function revealOnScroll() {
   const prefersReduced = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
