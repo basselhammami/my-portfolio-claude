@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLM Platform — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index.html" class="brand">Basel</a>
+        <a href="#" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <button class="lang-pill is-active">EN</button>
+        <button class="lang-pill">РУ</button>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index.html" class="back-link">← Back</a>
+
+      <h1 class="case-title">CLM Platform — Designing for High Stakes</h1>
+      <p class="case-subtitle">
+        Redesigning the Customer Lifecycle Management platform for RAKBANK's
+        compliance and KYC teams.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>ROLE</dt><dd>Senior Product Designer</dd></div>
+        <div><dt>COMPANY</dt><dd>RAKBANK</dd></div>
+        <div><dt>TIMELINE</dt><dd>Oct 2024 – Present</dd></div>
+        <div><dt>DOMAIN</dt><dd>Digital Banking / Compliance</dd></div>
+        <div><dt>PLATFORM</dt><dd>Web</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--rakbank">
+        <img src="assets/rakbank-logo.png" alt="RAKBANK" />
+      </div>
+
+      <section class="case-section">
+        <span class="eyebrow-red">01 — CONTEXT</span>
+        <h2 class="section-h">The Context</h2>
+        <p class="section-lead section-lead--muted">
+          RAKBANK is one of the UAE's largest retail and business banks, serving
+          over 900,000 customers. The Customer Lifecycle Management (CLM)
+          platform is the internal tool used by compliance and KYC teams to
+          manage customer onboarding, periodic reviews, and regulatory
+          reporting.
+        </p>
+        <p class="section-lead section-lead--muted">
+          When I joined, the platform was a patchwork of legacy screens,
+          inconsistent patterns, and workflows that had grown organically over
+          years. Staff were navigating between multiple tools to complete a
+          single task.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">02 — USERS</span>
+        <h2 class="section-h">What Was Broken</h2>
+        <p class="section-lead section-lead--muted">
+          Three systemic problems were identified through stakeholder interviews
+          and workflow observation.
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row">
+            <span class="num">01</span>
+            <div>
+              <h4>Fragmented information architecture</h4>
+              <p>Customer data was split across 6+ screens with no unified view. Analysts had to open multiple tabs to see a complete customer picture.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">02</span>
+            <div>
+              <h4>Inconsistent interaction patterns</h4>
+              <p>Similar actions had different UI treatments across modules. Staff had to relearn workflows when switching between tasks.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">03</span>
+            <div>
+              <h4>No workflow visibility</h4>
+              <p>There was no way to see where a case was in the review process, who had touched it, or what was blocking it.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">03 — PROBLEM</span>
+        <h2 class="section-h">Who Uses CLM</h2>
+        <p class="section-lead section-lead--muted">
+          The platform serves three primary user groups within RAKBANK's
+          compliance function.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/></svg>
+            </span>
+            <h4>KYC Analysts</h4>
+            <p>Front-line staff who complete customer due diligence, verify documents, and flag risk indicators.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h4>Compliance Officers</h4>
+            <p>Senior reviewers who approve high-risk cases, manage escalations, and ensure regulatory adherence.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </span>
+            <h4>Operations Managers</h4>
+            <p>Team leads who monitor workload distribution, track SLA compliance, and report to senior management.</p>
+          </div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>"I spend 40% of my time navigating between screens just to get the information I need to make a decision."</p>
+          <cite>KYC Analyst, RAKBANK</cite>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">04 — APPROACH</span>
+        <h2 class="section-h">How I Approached It</h2>
+        <p class="section-lead section-lead--muted">
+          A phased approach: understand the existing system deeply before
+          proposing any changes.
+        </p>
+        <div class="steps">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h4>Discovery</h4>
+            <p>12 stakeholder interviews, 3 weeks of workflow observation, and a full audit of existing screens.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h4>Information architecture</h4>
+            <p>Mapped all data objects, relationships, and user tasks to identify consolidation opportunities.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h4>Design system alignment</h4>
+            <p>Established shared patterns before designing individual screens to ensure consistency.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">→</span>
+            <h4>Iterative delivery</h4>
+            <p>Shipped in phases, validating each module with users before moving to the next.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">05 — DASHBOARD</span>
+        <h2 class="section-h">The Dashboard</h2>
+        <p class="section-lead section-lead--muted">
+          The new dashboard gives compliance managers a real-time view of team
+          workload, case status, and SLA health — replacing a weekly Excel
+          report.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">CLM Dashboard — workload and SLA overview</span>
+          </div>
+          <img src="assets/clm-dashboard.png" alt="CLM Dashboard showing compliance overview" />
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>Case queue</h5><p>Prioritised list of pending cases with SLA countdown and risk level indicators.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>Team workload</h5><p>Distribution view showing case load per analyst, enabling managers to rebalance work.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>SLA health</h5><p>Real-time tracking of cases approaching or breaching SLA thresholds.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>Recent activity</h5><p>Chronological feed of case updates, approvals, and escalations across the team.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>Quick filters</h5><p>One-click filters for case type, risk level, assignee, and status.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div><h5>Export</h5><p>Direct export of filtered views to Excel for regulatory reporting.</p></div>
+          </div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="ba-block ba-block--pink">
+            <h5>WHAT WE CONSIDERED</h5>
+            <p>A notification-based system that pushed updates rather than requiring active monitoring.</p>
+          </div>
+          <div class="ba-block ba-block--green">
+            <h5>WHAT WE BUILT</h5>
+            <p>A real-time dashboard with configurable views for different roles, replacing static reports.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">06 — CUSTOMER UNIVERSE</span>
+        <h2 class="section-h">Customer Universe</h2>
+        <p class="section-lead section-lead--muted">
+          A consolidated view of all customers, replacing the previous
+          fragmented search across multiple systems.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Customer Universe — consolidated customer table</span>
+          </div>
+          <img src="assets/clm-customer-universe.png" alt="Customer Universe table view" />
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Unified search</h5><p>Single search across all customer data, replacing 3 separate search interfaces.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Risk indicators</h5><p>Inline risk level, review status, and SLA indicators for each customer row.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Bulk actions</h5><p>Select multiple customers for batch assignment, status updates, or export.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Advanced filters</h5><p>Filter by risk level, review type, assigned analyst, status, and date range.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Saved views</h5><p>Save frequently used filter combinations as named views for quick access.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Column customisation</h5><p>Show/hide and reorder columns to match individual workflow preferences.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">07 — CUSTOMER PROFILE</span>
+        <h2 class="section-h">Customer Profile</h2>
+        <p class="section-lead section-lead--muted">
+          The redesigned customer profile consolidates all KYC data, documents,
+          risk history, and case notes on a single page — replacing the previous
+          6-screen workflow.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Customer profile — single-page anatomy</span>
+          </div>
+          <img src="assets/clm-case-details.webp" alt="Case Details page with customer information and routing history" />
+        </div>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Profile anatomy</h3>
+        <p class="section-lead section-lead--muted">The profile is structured around the analyst's decision-making workflow, not the database schema.</p>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Identity summary</h5><p>Key customer identifiers, risk rating, and review status at the top — the information needed before diving deeper.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>KYC data sections</h5><p>Organised by data category (personal, financial, business) with clear source attribution.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Document viewer</h5><p>Inline document preview with zoom, rotation, and expiry tracking — no external PDF viewer needed.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Risk timeline</h5><p>Chronological history of risk rating changes with reasons and user attribution.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Case notes</h5><p>Structured note-taking with mandatory fields for compliance-relevant observations.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Action panel</h5><p>Context-aware action buttons that surface only the actions available for the current case state.</p></div></div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>"This is the first time I've been able to see everything I need on one screen. I used to have 6 tabs open just for one customer."</p>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">08 — DESIGN DECISIONS</span>
+        <h2 class="section-h">Key Design Decisions</h2>
+        <p class="section-lead section-lead--muted">
+          Four decisions that defined the platform's design direction.
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Single-page profile over tabbed navigation</h4><p>Tabs hide context. Analysts need to cross-reference data constantly — a single scrollable page with sticky section headers was faster in testing.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Role-based dashboard views</h4><p>Analysts and managers have fundamentally different information needs. Separate default views with shared underlying data.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>Inline document preview</h4><p>Opening documents in a separate viewer broke the review flow. An inline panel kept analysts in context.</p></div></div>
+          <div class="numbered-row"><span class="num">4</span><div><h4>Progressive disclosure for complex cases</h4><p>Standard cases show a simplified view. High-risk or complex cases surface additional fields and context automatically.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">09 — IMPACT</span>
+        <h2 class="section-h">Impact</h2>
+        <p class="section-lead section-lead--muted">
+          Measured outcomes from the CLM platform redesign.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric"><span class="metric-value">3 → 1</span><span class="metric-label">Systems consolidated into one platform</span></div>
+          <div class="metric"><span class="metric-value">↓ ~60%</span><span class="metric-label">Reduction in time to complete a full customer review</span></div>
+          <div class="metric"><span class="metric-value">1-page</span><span class="metric-label">Single-page customer profile replacing multi-screen workflow</span></div>
+          <div class="metric"><span class="metric-value">900K+</span><span class="metric-label">Customers managed through the platform</span></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">10 — REFLECTION</span>
+        <h2 class="section-h">What I Learned</h2>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Compliance UX requires a different mental model</h4><p>The goal is not to make things fast — it's to make correctness achievable. Speed is a byproduct of removing friction, not the primary objective.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Information architecture is the hardest problem</h4><p>Getting the data model right before designing screens saved weeks of rework. The profile structure went through 8 iterations before we found the right grouping.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>Trust is a design output</h4><p>Analysts didn't trust the old system's data. Building visible data provenance — showing where each piece of information came from — was more impactful than any UI improvement.</p></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://linkedin.com/in/baselhammami" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Balady+ Maps — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index.html" class="brand">Basel</a>
+        <a href="#" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <button class="lang-pill is-active">EN</button>
+        <button class="lang-pill">РУ</button>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index.html" class="back-link">← Back</a>
+
+      <h1 class="case-title">Balady+ Maps — Navigation Redesign</h1>
+      <p class="case-subtitle">
+        Redesigning the navigation experience for Saudi Arabia's official
+        government maps application.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>ROLE</dt><dd>Middle Product Designer</dd></div>
+        <div><dt>COMPANY</dt><dd>Balady+</dd></div>
+        <div><dt>TIMELINE</dt><dd>Oct 2023 – Sep 2024</dd></div>
+        <div><dt>DOMAIN</dt><dd>Mobile / Government</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--balady">
+        <img src="assets/balady-logo.jpg" alt="Balady+" />
+      </div>
+
+      <section class="case-section">
+        <h2 class="section-h">Introduction</h2>
+        <p class="section-lead section-lead--muted">
+          Balady+ is Saudi Arabia's official government maps and municipal
+          services application, used by millions of citizens to navigate cities,
+          report issues, and access government services.
+        </p>
+        <p class="section-lead section-lead--muted">
+          My role focused on redesigning the core navigation experience —
+          specifically the navigation mode and the introduction of a new free
+          roam feature that allowed users to explore the map without a fixed
+          destination.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">The Challenge</h2>
+        <p class="section-lead section-lead--muted">
+          Three interconnected problems defined the navigation experience:
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">01</span><div><h4>Navigation mode friction</h4><p>The existing turn-by-turn navigation had high cognitive load, with too many elements competing for attention during active driving.</p></div></div>
+          <div class="numbered-row"><span class="num">02</span><div><h4>No exploration mode</h4><p>Users who wanted to explore an area without a specific destination had no way to do so — the app required a destination to start.</p></div></div>
+          <div class="numbered-row"><span class="num">03</span><div><h4>Horizontal navigation gap</h4><p>The app lacked a horizontal navigation pattern for browsing categories and services, forcing users into deep menu hierarchies.</p></div></div>
+        </div>
+        <p class="section-lead section-lead--muted" style="margin-top:1.5rem;">
+          These weren't isolated UI problems — they reflected a fundamental
+          mismatch between how users wanted to interact with the map and how the
+          app was designed.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Service Blueprint</h2>
+        <p class="section-lead section-lead--muted">
+          Before designing solutions, I mapped the complete user journey across
+          all navigation scenarios to identify where the experience broke down.
+        </p>
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Service blueprint — full navigation journey</span>
+          </div>
+          <img src="assets/balady-blueprint.png" alt="Service Blueprint" />
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">The Solution</h2>
+        <p class="section-lead section-lead--muted">
+          Three interconnected features that addressed the core navigation
+          problems identified in discovery.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            </span>
+            <h4>Navigation Mode Redesign</h4>
+            <p>A simplified navigation interface that reduces cognitive load during active driving by surfacing only the information needed at each moment.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 8-6 2-2 6 6-2 2-6z"/></svg>
+            </span>
+            <h4>Free Roam Mode</h4>
+            <p>A new exploration mode that allows users to browse the map without a fixed destination, enabling discovery and spontaneous navigation.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="15 6 21 12 15 18"/><polyline points="9 6 3 12 9 18"/></svg>
+            </span>
+            <h4>Horizontal Navigation</h4>
+            <p>A horizontal scrolling pattern for browsing service categories, reducing menu depth and making discovery significantly faster.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Feature Details</h2>
+        <p class="section-lead section-lead--muted">
+          Each feature was designed to address a specific pain point while
+          integrating seamlessly with the existing map experience.
+        </p>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Parking Enhancements</h3>
+        <p class="section-lead section-lead--muted">
+          Finding and navigating to parking was one of the most common use cases
+          in urban areas. The redesigned parking feature surfaces real-time
+          availability and integrates payment directly in the flow.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The parking overview screen shows nearby options with availability,
+          pricing, and distance — all without leaving the map.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Parking overview & detail view</span>
+          </div>
+          <img src="assets/balady-parking.png" alt="Parking Enhancements" />
+        </div>
+
+        <p class="section-lead section-lead--muted">
+          The detail view provides real-time space availability, operating
+          hours, and direct navigation with one tap.
+        </p>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Free Roam Mode</h3>
+        <p class="section-lead section-lead--muted">
+          A new exploration mode that allows users to browse the map without a
+          fixed destination. Users can explore areas, discover points of
+          interest, and start navigation from any point.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The transition between free roam and navigation mode is seamless — tap
+          any point of interest to get directions, or tap the navigation button
+          to start from your current location.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Free Roam — transition from exploration to navigation</span>
+          </div>
+          <img src="assets/balady-free-roam-1.png" alt="Free Roam Mode - Transition" />
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Free Roam — map controls</span>
+          </div>
+          <img src="assets/balady-free-roam-2.png" alt="Free Roam Mode - Controls" />
+        </div>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Horizontal Navigation</h3>
+        <p class="section-lead section-lead--muted">
+          A horizontal scrolling navigation pattern for browsing categories and
+          services, reducing the depth of menu hierarchies and making discovery
+          faster.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Horizontal navigation — category browsing</span>
+          </div>
+          <img src="assets/balady-horizontal.png" alt="Horizontal Navigation Mode" />
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Impact</h2>
+        <div class="cards-3">
+          <div class="info-card">
+            <h4>Reduced navigation friction</h4>
+            <p>User testing showed a significant reduction in navigation errors and mid-journey cancellations with the redesigned navigation mode.</p>
+          </div>
+          <div class="info-card">
+            <h4>New exploration behaviour</h4>
+            <p>Free roam mode introduced a new usage pattern — users spending more time exploring the map without a specific destination.</p>
+          </div>
+          <div class="info-card">
+            <h4>Faster service discovery</h4>
+            <p>Horizontal navigation reduced the average number of taps to reach a service category from 4 to 2.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://linkedin.com/in/baselhammami" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>
