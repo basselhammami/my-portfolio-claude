@@ -505,6 +505,89 @@ button {
   object-position: top;
 }
 
+.project-media--paywalls {
+  background:
+    radial-gradient(500px 260px at 30% 15%, rgba(120, 70, 110, 0.28), transparent 60%),
+    radial-gradient(420px 240px at 78% 82%, rgba(70, 100, 130, 0.22), transparent 60%),
+    #1a1522;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.75rem;
+}
+
+.paywall-preview {
+  width: 210px;
+  border-radius: 28px;
+  background: #241c30;
+  border: 1px solid rgba(244, 238, 227, 0.08);
+  padding: 20px 16px 16px;
+  color: #f4eee3;
+  text-align: center;
+  font-family: "Manrope", system-ui, sans-serif;
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.6);
+}
+
+.paywall-preview .mark {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #f4eee3;
+  margin-bottom: 10px;
+}
+
+.paywall-preview .headline {
+  font-family: "Lora", Georgia, serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.paywall-preview .cta {
+  display: block;
+  background: #f1c9c9;
+  color: #2a1720;
+  font-family: "Lora", Georgia, serif;
+  font-weight: 500;
+  font-size: 11px;
+  padding: 8px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(241, 201, 201, 0.18);
+}
+
+/* Case page — interactive prototype embed */
+.prototype-frame {
+  margin: 1.5rem 0 2rem;
+  background: #0e0a14;
+  border-radius: 1.5rem;
+  padding: 1.25rem 1rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.prototype-frame-caption {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+  font-weight: 500;
+}
+
+.prototype-frame iframe {
+  width: 100%;
+  max-width: 440px;
+  height: 880px;
+  border: 0;
+  background: #0e0a14;
+  display: block;
+}
+
 /* Divider */
 .divider {
   border: 0;
