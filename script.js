@@ -1,14 +1,31 @@
-const CASE_PASSWORD = "1995";
-const STORAGE_KEY = "cases_unlocked_at";
+// Per-case passwords. Fallback: the "default" key.
+const CASE_PASSWORDS = {
+  paywalls: "2027",
+  default: "1995",
+};
 const UNLOCK_TTL_MS = 1000 * 60 * 60 * 4;
 
-function isUnlocked() {
-  const ts = Number(sessionStorage.getItem(STORAGE_KEY) || 0);
+function storageKey(caseId) {
+  return `case_unlocked_${caseId}`;
+}
+
+function isUnlocked(caseId) {
+  const ts = Number(sessionStorage.getItem(storageKey(caseId)) || 0);
   return ts && Date.now() - ts < UNLOCK_TTL_MS;
 }
 
-function unlock() {
-  sessionStorage.setItem(STORAGE_KEY, String(Date.now()));
+function unlock(caseId) {
+  sessionStorage.setItem(storageKey(caseId), String(Date.now()));
+}
+
+function passwordFor(caseId) {
+  return CASE_PASSWORDS[caseId] || CASE_PASSWORDS.default;
+}
+
+// Map pathname → caseId (used for direct-URL gate on case pages)
+function caseIdForPath(pathname) {
+  const m = pathname.match(/\/case-([a-z0-9-]+?)(?:-ru)?\.html$/);
+  return m ? m[1] : null;
 }
 
 document.addEventListener("click", (event) => {
@@ -17,7 +34,8 @@ document.addEventListener("click", (event) => {
   const href = link.getAttribute("href");
   if (!href || href === "#") return;
 
-  if (isUnlocked()) return;
+  const caseId = link.dataset.case;
+  if (isUnlocked(caseId)) return;
 
   event.preventDefault();
   const isRu = document.documentElement.lang === "ru";
@@ -27,8 +45,8 @@ document.addEventListener("click", (event) => {
   const wrongText = isRu ? "Неверный пароль." : "Incorrect password.";
   const entry = window.prompt(promptText);
   if (entry === null) return;
-  if (entry === CASE_PASSWORD) {
-    unlock();
+  if (entry === passwordFor(caseId)) {
+    unlock(caseId);
     window.location.href = href;
   } else {
     alert(wrongText);
@@ -36,16 +54,16 @@ document.addEventListener("click", (event) => {
 });
 
 (function gateCasePage() {
-  const isCasePage = /\/case-[a-z0-9-]+\.html$/.test(location.pathname);
-  if (!isCasePage) return;
-  if (isUnlocked()) return;
+  const caseId = caseIdForPath(location.pathname);
+  if (!caseId) return;
+  if (isUnlocked(caseId)) return;
   const isRu = document.documentElement.lang === "ru";
   const promptText = isRu
     ? "Введите пароль для просмотра кейса:"
     : "Enter password to view this case study:";
   const entry = window.prompt(promptText);
-  if (entry === CASE_PASSWORD) {
-    unlock();
+  if (entry === passwordFor(caseId)) {
+    unlock(caseId);
   } else {
     window.location.href = isRu ? "index-ru.html" : "index.html";
   }
