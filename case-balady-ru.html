@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Balady Maps — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index-ru.html" class="brand">Basel</a>
+        <a href="assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Язык">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="case-balady.html" class="lang-pill">EN</a>
+        <a href="case-balady-ru.html" class="lang-pill is-active">РУ</a>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index-ru.html" class="back-link">Назад</a>
+
+      <h1 class="case-title">Balady Maps и то, как продукт становится частью города</h1>
+      <p class="case-subtitle">
+        Реализация ключевых функций, таких как режим навигации и свободное
+        перемещение, для улучшения пользовательского опыта в Balady+.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>РОЛЬ</dt><dd>Мид продуктовый дизайнер</dd></div>
+        <div><dt>КОМПАНИЯ</dt><dd>Balady+</dd></div>
+        <div><dt>ПЕРИОД</dt><dd>Окт 2023 – Сен 2024</dd></div>
+        <div><dt>ОБЛАСТЬ</dt><dd>Мобильное приложение / Цифровая трансформация</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--balady">
+        <img src="assets/balady-logo.jpg" alt="Balady+" />
+      </div>
+
+      <section class="case-section">
+        <h2 class="section-h">Введение</h2>
+        <p class="section-lead section-lead--muted">
+          В начале 2024 года Balady Maps превысил 40 000 пользователей и
+          готовился к крупному запуску. На первый взгляд это казалось просто
+          ещё одним навигационным приложением. Однако более глубокий анализ
+          пользовательского опыта выявил возможности для добавления функций,
+          которые сделали бы приложение более полезным и удобным.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Как дизайнер продукта, моей целью было превратить стандартное
+          навигационное приложение в мощный инструмент, помогающий пользователям
+          решать повседневные задачи на дороге.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Вызов</h2>
+        <p class="section-lead section-lead--muted">
+          Жители и гости Эр-Рияда сталкивались со значительными трудностями с
+          существующими навигационными инструментами:
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">01</span><div><h4>Дилеммы с парковкой</h4><p>По прибытии к месту назначения пользователи часто испытывали трудности с поиском парковки, что приводило к разочарованию и задержкам.</p></div></div>
+          <div class="numbered-row"><span class="num">02</span><div><h4>Желание исследовать</h4><p>Многие пользователи предпочитали органично исследовать город, а не следовать строгим пошаговым указаниям.</p></div></div>
+          <div class="numbered-row"><span class="num">03</span><div><h4>Проблемы безопасности</h4><p>Вертикальная ориентация экрана большинства навигационных приложений затрудняла безопасный взгляд водителей на указания во время движения.</p></div></div>
+        </div>
+        <p class="section-lead section-lead--muted" style="margin-top:1.5rem;">
+          Эти наблюдения выявили критическую потребность: навигационный опыт,
+          адаптированный к реальному поведению и предпочтениям жителей Эр-Рияда.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Cервисный блюпринт</h2>
+        <p class="section-lead section-lead--muted">
+          Для лучшего понимания взаимодействий пользователей и оптимизации опыта
+          я создал комплексный сервисный блюпринт. Он выделяет каждое
+          взаимодействие пользователя, фронтенд-опыт (точки касания) и
+          закулисные процессы. Ниже представлена демонстрация сервисного дизайна
+          для функции парковочных мест.
+        </p>
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Сервисный блюпринт — функция парковочных мест</span>
+          </div>
+          <img src="assets/balady-blueprint.png" alt="Service Blueprint" />
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Решение</h2>
+        <p class="section-lead section-lead--muted">
+          Основываясь на отзывах пользователей, проведённых MOMAH и переданных
+          нам, мы определили три ключевых улучшения для Balady Maps:
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.5.4 2.9 1.1 4.2L12 22l6.9-7.8A8 8 0 0 0 12 2z"/></svg>
+            </span>
+            <h4>Проактивная помощь с парковкой</h4>
+            <p>Интеграция функций, помогающих пользователям находить ближайшие парковочные места и получать своевременные подсказки во время поездки.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 8-6 2-2 6 6-2 2-6z"/></svg>
+            </span>
+            <h4>Режим свободного перемещения</h4>
+            <p>Разработка гибкого режима исследования, позволяющего пользователям перемещаться по районам без жёстких указаний, с возможностью плавного переключения обратно на навигацию с гидом.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="15 6 21 12 15 18"/><polyline points="9 6 3 12 9 18"/></svg>
+            </span>
+            <h4>Горизонтальный макет навигации</h4>
+            <p>Разработка пользовательского интерфейса, оптимизированного для экранов в транспортных средствах, повышающего безопасность за счёт облегчения просмотра указаний водителями.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Воплощение видения в жизнь</h2>
+        <p class="section-lead section-lead--muted">
+          Перейдя к идеации и каркасированию, ранние наброски были сосредоточены
+          на интеграции подсказок о парковке непосредственно в временную шкалу
+          навигации. Идея состояла в том, чтобы предлагать подсказки
+          заблаговременно, когда пользователи приближались к своим пунктам
+          назначения.
+        </p>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Подробнее об улучшениях парковки</h3>
+        <p class="section-lead section-lead--muted">
+          Сценарий использования 1: уведомление о парковке за 500 метров до
+          прибытия. Когда автомобиль приближается к месту назначения, приложение
+          отображает простое сообщение с доступными парковочными местами
+          поблизости. Водитель может легко увидеть, где есть парковка, и выбрать
+          наиболее удобный вариант.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Водители могут активировать специальный режим парковки во время
+          навигации. Карта затем показывает значки, указывающие доступные
+          парковочные места по маршруту. Это помогает водителю легко найти
+          парковку, не отвлекаясь от основной дороги.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Режим парковки во время навигации</span>
+          </div>
+          <img src="assets/balady-parking.png" alt="Parking feature" />
+        </div>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Режим свободного перемещения</h3>
+        <p class="section-lead section-lead--muted">
+          Режим свободного перемещения позволяет вам свободно исследовать город
+          без следования установленным указаниям. Если вы начнёте ехать быстрее
+          30 км/ч, приложение покажет кнопку «Перейти к навигатору» на случай,
+          если вы захотите переключиться в обычный режим навигации.
+        </p>
+        <p class="section-lead section-lead--muted">
+          В режиме свободного перемещения приложение сохраняет простоту,
+          показывая в основном только карту. Если вы не касаетесь экрана в
+          течение 15 секунд, дополнительные кнопки и элементы управления
+          исчезают, чтобы дать лучший обзор карты. Нужны элементы управления
+          обратно? Просто нажмите в любом месте экрана, и они появятся снова,
+          включая кнопки «Завершить поездку» и параметры навигации.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Свободное перемещение — переход к навигации</span>
+          </div>
+          <img src="assets/balady-free-roam-1.png" alt="Free Roam Mode - Transition" />
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Свободное перемещение — элементы управления</span>
+          </div>
+          <img src="assets/balady-free-roam-2.png" alt="Free Roam Mode - Controls" />
+        </div>
+
+        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Горизонтальный режим навигации</h3>
+        <p class="section-lead section-lead--muted">
+          Мы сделали Balady Maps работающим в горизонтальном (альбомном) режиме,
+          изучив, как это делают другие популярные навигационные приложения.
+          Большинство приложений размещают важные кнопки и информацию на левой
+          стороне экрана. Мы следовали этому подходу, потому что к нему привыкли
+          люди. Это делает приложение более удобным в использовании и безопасным
+          при вождении.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Горизонтальный режим — оптимизирован для экранов автомобилей</span>
+          </div>
+          <img src="assets/balady-horizontal.png" alt="Horizontal Navigation Mode" />
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <h2 class="section-h">Влияние</h2>
+        <div class="cards-3">
+          <div class="info-card">
+            <h4>Принятие пользователями</h4>
+            <p>Приложение стало незаменимым инструментом для ежедневных пассажиров в Эр-Рияде, с заметным увеличением активных пользователей на 14%.</p>
+          </div>
+          <div class="info-card">
+            <h4>Положительные отзывы</h4>
+            <p>Пользователи высоко оценили интуитивный дизайн и практические функции приложения, особенно помощь с парковкой и возможности исследования.</p>
+          </div>
+          <div class="info-card">
+            <h4>Повышенная безопасность</h4>
+            <p>Горизонтальный режим навигации способствовал более безопасному вождению, минимизируя необходимость водителей отвлекать внимание от дороги.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>

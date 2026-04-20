@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRAM Калькулятор — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index-ru.html" class="brand">Basel</a>
+        <a href="assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Язык">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="case-cram.html" class="lang-pill">EN</a>
+        <a href="case-cram-ru.html" class="lang-pill is-active">РУ</a>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index-ru.html" class="back-link">Назад</a>
+
+      <h1 class="case-title">Переосмысление калькулятора оценки риска CRAM</h1>
+      <p class="case-subtitle">
+        Превращение разрозненного инструмента соответствия в цифровой интерфейс
+        с полным аудиторским следом для рабочего процесса оценки рисков RAKBANK.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>РОЛЬ</dt><dd>Ведущий продуктовый дизайнер</dd></div>
+        <div><dt>КОМПАНИЯ</dt><dd>RAKBANK</dd></div>
+        <div><dt>ПЕРИОД</dt><dd>2025 – 2026</dd></div>
+        <div><dt>ОБЛАСТЬ</dt><dd>Соответствие / AML / KYC</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--rakbank">
+        <img src="assets/rakbank-logo.png" alt="RAKBANK" />
+      </div>
+
+      <section class="case-section">
+        <span class="eyebrow-red">01 — КОНТЕКСТ</span>
+        <h2 class="section-h">Проблема</h2>
+        <p class="section-lead section-lead--muted">
+          Сотрудники отдела соответствия RAKBANK используют инструмент под
+          названием CRAM (Методология оценки риска клиента) для расчёта
+          рейтингов риска новых и существующих клиентов. Исходный интерфейс
+          представлял собой разрозненный набор рабочих процессов на основе
+          Excel, PDF-форм и несвязанных источников данных — ни один экран не
+          показывал полной картины.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Результат? Медленные оценки, непоследовательный ввод данных и слабые
+          аудиторские следы. Когда регуляторы спрашивали «как вы пришли к этому
+          рейтингу?», ответ был похоронен в цепочках электронных писем,
+          рукописных заметках и файлах Excel с контролем версий. Каждая оценка
+          была потенциальным нарушением соответствия.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Успех сотрудников измеряется правильностью решений, соблюдением правил
+          и защищённостью аудита — а не скоростью. Каждый неправильный ответ —
+          это потенциальное регуляторное нарушение. Каждое необъяснимое решение —
+          будущая боль при аудите.
+        </p>
+
+        <div class="ba-grid">
+          <div class="ba-block ba-block--pink">
+            <h5>ДО</h5>
+            <ul>
+              <li>Данные разбросаны по нескольким системам без единого источника истины</li>
+              <li>Нет структурированной формы — поля организованы произвольно</li>
+              <li>Нет чёткого разграничения между системными данными и ручным вводом</li>
+              <li>PDF-отчёты показывали сырые данные</li>
+              <li>Нет аудиторского следа для переопределений или ручных изменений</li>
+            </ul>
+          </div>
+          <div class="ba-block ba-block--green">
+            <h5>ПОСЛЕ</h5>
+            <ul>
+              <li>Одностраничная форма, организованная по источнику данных</li>
+              <li>Нейтральная обработка полей, предотвращающая предвзятость оценщика</li>
+              <li>Чёткое разграничение системного и человеческого ввода</li>
+              <li>Трёхуровневая отчётность: вердикт → разбивка факторов → доказательства</li>
+              <li>Полные метаданные аудита на каждом экране</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">02 — ПОЛЬЗОВАТЕЛИ</span>
+        <h2 class="section-h">Понимание сотрудников отдела соответствия</h2>
+        <p class="section-lead section-lead--muted">
+          Это не опытные пользователи, оптимизирующие скорость. Это специалисты
+          по соответствию, которые испытывают подлинное беспокойство при
+          пограничных решениях и сценариях переопределения. Их ментальная модель
+          механизма принятия решений — это криминалистическая запись, а не
+          просто инструмент.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h4>Тщательные инспекторы</h4>
+            <p>Сотрудники перепроверяют каждый ввод по исходным системам, прежде чем полагаться на результаты. Они замедляются, когда логика правил скрыта или абстрагирована.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h4>Осторожные лица, принимающие решения</h4>
+            <p>Избегание ложных срабатываний и необоснованных результатов важнее эффективности. В случае неопределённости сотрудники предпочитают приостановить работу или эскалировать.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+            </span>
+            <h4>Мышление «аудит прежде всего»</h4>
+            <p>Каждое решение должно быть полностью прослеживаемо до данных, правил и политики. Слабое решение воспринимается как будущая боль при аудите, а не незначительная проблема UX.</p>
+          </div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>«Слабое или непрозрачное решение воспринимается как будущая боль при аудите, а не незначительная проблема UX. Сотрудники относятся к механизму принятия решений как к криминалистической записи, а не просто к системе времени выполнения.»</p>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">03 — ПРОЦЕСС</span>
+        <h2 class="section-h">Подход к дизайну</h2>
+        <p class="section-lead section-lead--muted">
+          Редизайн следовал структурированной последовательности: понять
+          нормативные ограничения, составить карту существующих рабочих
+          процессов, определить принципы дизайна, основанные на поведении
+          пользователей, а затем проектировать снизу вверх от информационной
+          архитектуры.
+        </p>
+        <div class="steps">
+          <div class="step-card"><span class="step-num">01</span><h4>Анализ BRD</h4><p>Изучение бизнес-требований и нормативного контекста.</p></div>
+          <div class="step-card"><span class="step-num">02</span><h4>Создание FRD</h4><p>Функциональные требования, отражающие потребности сотрудников.</p></div>
+          <div class="step-card"><span class="step-num">03</span><h4>Картирование IA</h4><p>Информационная архитектура на основе источников данных.</p></div>
+          <div class="step-card"><span class="step-num">04</span><h4>Потоки задач</h4><p>Разложение рабочего процесса оценки на атомарные шаги.</p></div>
+          <div class="step-card"><span class="step-num">05</span><h4>Lo-Fi каркас</h4><p>Ранние каркасы для валидации структуры формы.</p></div>
+          <div class="step-card"><span class="step-num">06</span><h4>Hi-Fi дизайн</h4><p>Проработка визуального стиля и шаблонов взаимодействия.</p></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">04 — ПРИНЦИПЫ ДИЗАЙНА</span>
+        <h2 class="section-h">Четыре принципа, определившие каждое решение</h2>
+        <p class="section-lead section-lead--muted">
+          Они возникли из понимания того, как сотрудники отдела соответствия
+          действительно работают — а не из общих лучших практик UX. Каждый
+          принцип имеет прямое нормативное или операционное обоснование.
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Нейтральная обработка полей</h4><p>Каждое поле формы имеет одинаковый визуальный вес независимо от его влияния на балл риска. Ни одно поле не выделяется как более важное. Это предотвращает обучение сотрудников тому, какие вводы имеют больший вес в оценке.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Непрозрачность механизма принятия решений</h4><p>Внутренняя логика алгоритма оценки намеренно скрыта от формы оценки. Сотрудники предоставляют честные вводы; система вычисляет результат.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>Организация по источнику</h4><p>Разделы формы организованы по тому, откуда поступают данные — запись клиента, документы, удостоверяющие личность, системы проверки, финансовые записи — а не по абстрактным категориям риска.</p></div></div>
+          <div class="numbered-row"><span class="num">4</span><div><h4>Защищённость аудита по умолчанию</h4><p>Каждый экран одновременно является аудиторской записью. Системно генерируемые значения визуально отличаются от человеческих вводов. Переопределения требуют обязательного обоснования.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">05 — РЕШЕНИЕ</span>
+        <h2 class="section-h">Трёхэкранный поток</h2>
+        <p class="section-lead section-lead--muted">
+          Редизайн объединяет разрозненный рабочий процесс в чёткий трёхэтапный
+          путь: классифицировать клиента, завершить оценку и просмотреть
+          результат. Каждый экран имеет единственную цель без двусмысленности.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Экран 1: Классификация</h5><p>Статус клиента (новый/существующий) и тип счёта (физическое/юридическое лицо) определяют, какая форма оценки загружается. Карточные селекторы делают выбор намеренным.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Экран 2: Форма оценки</h5><p>Единая прокручиваемая форма с разворачиваемыми разделами аккордеона, организованными по источнику данных. Все поля имеют нейтральную обработку.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Экран 3: Результаты</h5><p>Балл риска с вердиктом, метаданными аудита и действиями экспорта. Явно помечен как системно генерируемый для отличия от человеческого суждения.</p></div></div>
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Экран классификации — выбор статуса клиента и типа счёта</span>
+          </div>
+          <img src="assets/cram-classification.png" alt="Экран классификации" />
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Экран сводки рисков — рассчитанный рейтинг риска с метаданными аудита</span>
+          </div>
+          <img src="assets/cram-summary.png" alt="Экран сводки рисков" />
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">06 — КЛЮЧЕВЫЕ РЕШЕНИЯ ДИЗАЙНА</span>
+        <h2 class="section-h">Результаты</h2>
+        <p class="section-lead section-lead--muted">
+          Редизайн создал систему дизайна и шаблоны взаимодействия, которые
+          распространяются за пределы CRAM на два дополнительных рабочих процесса
+          соответствия — Ручной чеклист и Калькулятор DBR — создавая
+          согласованность во всех трёх инструментах.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <h4>Влияние системы дизайна</h4>
+            <p>Шаблоны взаимодействия CRAM стали основой для двух дополнительных рабочих процессов соответствия — Ручного чеклиста и Калькулятора DBR. Единая система дизайна охватывает все три инструмента.</p>
+          </div>
+          <div class="info-card">
+            <h4>Согласование со стейкхолдерами</h4>
+            <p>Подготовлены исчерпывающие документы с обоснованием дизайна и материалы Q&A для каждого обзора стейкхолдеров. Каждое дизайнерское решение было защищаемым с помощью бизнес-ориентированного языка.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">07 — ВЛИЯНИЕ</span>
+        <h2 class="section-h">Что я узнал</h2>
+        <p class="section-lead section-lead--muted">
+          Инструменты соответствия имеют другие метрики успеха. В большинстве
+          продуктового дизайна важны скорость и конверсия. В соответствии важны
+          правильность и объяснимость. Это фундаментально изменило мой подход к
+          каждому решению — от макета полей до сообщений об ошибках и экрана
+          результатов.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Предотвращение предвзятости — это ограничение дизайна, а не функция.
+          Открытие того, что поля не могут быть визуально дифференцированы по
+          важности, было не ограничением — это был принцип дизайна, улучшивший
+          всю информационную архитектуру.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Каждое дизайнерское решение требует защиты. Работа в регулируемой
+          среде научила меня, что «так выглядит лучше» никогда не является
+          достаточным обоснованием. Каждый выбор требует бизнес- или
+          нормативного обоснования, которое может выдержать проверку со стороны
+          стейкхолдеров, аудиторов и регуляторов.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>

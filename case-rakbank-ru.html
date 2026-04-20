@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLM Платформа — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index-ru.html" class="brand">Basel</a>
+        <a href="assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Язык">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="case-rakbank.html" class="lang-pill">EN</a>
+        <a href="case-rakbank-ru.html" class="lang-pill is-active">РУ</a>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index-ru.html" class="back-link">Назад</a>
+
+      <h1 class="case-title">CLM — Проектирование там, где цена ошибки высока</h1>
+      <p class="case-subtitle">
+        Переосмысление платформы управления жизненным циклом клиентов RAKBANK,
+        чтобы дать командам по соответствию консолидированную видимость,
+        защищённые аудиторские следы и уверенность в каждом решении.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>РОЛЬ</dt><dd>Старший продуктовый дизайнер</dd></div>
+        <div><dt>КОМПАНИЯ</dt><dd>RAKBANK</dd></div>
+        <div><dt>ПЕРИОД</dt><dd>2024 – Настоящее время</dd></div>
+        <div><dt>ОБЛАСТЬ</dt><dd>Цифровой банкинг / Соответствие</dd></div>
+        <div><dt>ПЛАТФОРМА</dt><dd>Корпоративное веб-приложение</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--rakbank">
+        <img src="assets/rakbank-logo.png" alt="RAKBANK" />
+      </div>
+
+      <section class="case-section">
+        <span class="eyebrow-red">01 — КОНТЕКСТ</span>
+        <h2 class="section-h">KYC — это не функция. Это юридическое обязательство.</h2>
+        <p class="section-lead section-lead--muted">
+          RAKBANK обслуживает миллионы клиентов в сфере личного и корпоративного
+          банкинга. Каждые отношения с клиентом несут регуляторные обязательства —
+          проверки «Знай своего клиента» (KYC), Текущая надлежащая проверка
+          (ODD), профилирование рисков, верификация документов и проверка PEP —
+          всё регулируется нормативами Центрального банка ОАЭ.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Платформа CLM (Управление жизненным циклом клиента) — это внутренняя
+          система, где сотрудники по соответствию, бизнес-лидеры и менеджеры по
+          работе с клиентами отслеживают, расследуют и действуют в отношении
+          статуса KYC каждого клиента банка. Когда эта система даёт сбой,
+          последствия — не UX-трение, а регуляторные штрафы, выводы аудита и
+          личная ответственность сотрудников по соответствию.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">02 — ПРОБЛЕМА</span>
+        <h2 class="section-h">Разрозненные данные, слепые зоны и нет чёткого пути от сигнала к действию</h2>
+        <p class="section-lead section-lead--muted">
+          До этого проекта команды по соответствию полагались на фрагментированный
+          ландшафт несвязанных инструментов и ручных процессов для управления
+          обязательствами жизненного цикла клиентов. Постоянно возникали три
+          основные проблемы:
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row">
+            <span class="num">01</span>
+            <div>
+              <h4>Нет консолидированной видимости</h4>
+              <p>У сотрудников по соответствию не было единого представления о состоянии KYC банка. Распределение рисков, истекающие документы и просроченные проверки были разбросаны по нескольким системам — что делало невозможным расстановку приоритетов в масштабе.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">02</span>
+            <div>
+              <h4>Нет пути детализации</h4>
+              <p>Не было связанного опыта от общего обзора соответствия банка до профиля конкретного клиента. Сотрудникам приходилось переключаться между дашбордами, таблицами и репозиториями документов для расследования одного дела.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">03</span>
+            <div>
+              <h4>Пробелы в готовности к аудиту</h4>
+              <p>Профили клиентов не имели структурированных одностраничных представлений для утверждения проверяющим. Отсутствующие и просроченные поля документов не были выделены. Не было простого способа экспортировать защищённую, полную запись клиента.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">03 — АУДИТОРИЯ</span>
+        <h2 class="section-h">Дизайн для людей, которые оптимизируют правильность, а не скорость</h2>
+        <p class="section-lead section-lead--muted">
+          Платформа CLM обслуживает три отдельные пользовательские роли, каждая с
+          разными обязанностями по принятию решений. Ключевое понимание на
+          раннем этапе состояло в том, что эти пользователи не воспринимают
+          платформу как инструмент повышения производительности — они видят её
+          как систему контроля, общий источник истины и свидетеля, который
+          фиксирует, кто что сделал, когда и почему.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="13" width="3" height="5"/><rect x="12" y="9" width="3" height="9"/><rect x="17" y="5" width="3" height="13"/></svg>
+            </span>
+            <h4>Бизнес-лидеры</h4>
+            <p>Нуждаются в высокоуровневых метриках состояния соответствия по сегментам и бизнес-единицам. Они спрашивают: «Где мы наиболее уязвимы?» и используют платформу для распределения ресурсов и эскалации рисков.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </span>
+            <h4>Сотрудники по соответствию</h4>
+            <p>Основные операторы. Они проверяют списки клиентов, расследуют отдельные профили, верифицируют документы и принимают решения, которые должны выдержать аудит. Им нужен полный контекст и чёткие следующие шаги.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </span>
+            <h4>Менеджеры по работе с клиентами</h4>
+            <p>Взаимодействуют с клиентами для сбора документов и решения ожидающих вопросов. Им нужно понимать, что отсутствует, что просрочено и что клиент должен предоставить — без глубокой экспертизы в области соответствия.</p>
+          </div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>«Сотрудники по соответствию не хотят, чтобы система была быстрой. Они хотят, чтобы она была правильной. Они хотят доказать, что приняли правильное решение.»</p>
+          <cite>— Из ранних разговоров со стейкхолдерами</cite>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">04 — ПОДХОД</span>
+        <h2 class="section-h">Трёхуровневая информационная архитектура</h2>
+        <p class="section-lead section-lead--muted">
+          Вместо того чтобы проектировать один сложный экран, я структурировал
+          платформу как три прогрессивных уровня — каждый выполняет отдельную
+          когнитивную функцию. Пользователи переходят от макро к микро, от
+          ориентации к действию, причём каждый уровень предоставляет контекст,
+          необходимый для следующего.
+        </p>
+        <div class="steps">
+          <div class="step-card"><span class="step-num">01</span><h4>Уровень обзора</h4><p>Дашборд — «Где мы уязвимы?»</p></div>
+          <div class="step-card"><span class="step-num">02</span><h4>Уровень управления</h4><p>Список клиентов — «Кому нужно внимание?»</p></div>
+          <div class="step-card"><span class="step-num">03</span><h4>Уровень детализации</h4><p>Профиль клиента — «Какова полная картина?»</p></div>
+          <div class="step-card"><span class="step-num">→</span><h4>Уровень действий</h4><p>Просмотр, экспорт, утверждение — «Действуй уверенно»</p></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">05 — ДАШБОРД</span>
+        <h2 class="section-h">Уровень обзора</h2>
+        <p class="section-lead section-lead--muted">
+          Дашборд даёт бизнес-лидерам и сотрудникам по соответствию снимок
+          состояния соответствия — показывая общие объёмы клиентов, распределение
+          рисков, задолженности по проверкам KYC и эффективность охвата. Он
+          отвечает на вопрос: «Где банк наиболее уязвим прямо сейчас?»
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Дашборд — Обзор соответствия</span>
+          </div>
+          <img src="assets/clm-dashboard.png" alt="CLM Dashboard" />
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Карточка вселенной клиентов</h5><p>Общее количество клиентов с изменением за период и накопленная гистограмма рисков, показывающая распределение Высокий/Средний/Низкий с первого взгляда.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Конвейер проверок KYC</h5><p>Общее количество клиентов, требующих действий, разбитых на Истечение срока документов, Помечены для обновления KYC и Текущую надлежащую проверку.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Прямая детализация</h5><p>Ссылка «Просмотр» каждой карточки передаёт предварительно применённые фильтры в уровень Списка клиентов, поэтому переход контекстуален.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Панель эффективности охвата</h5><p>Отслеживает автоматически запущенные охваты, показатели ответов, неудачные охваты и действия по последствиям.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Фильтры сегментов и времени</h5><p>Селекторы бизнес-единиц и временного диапазона (Неделя/Месяц/Год) позволяют лидерам сравнивать позицию соответствия по сегментам.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Боковая панель полезных ресурсов</h5><p>Быстрые ссылки на Стандарты документации KYC, Матрицу ролей и утверждений и Руководство по оценке рисков.</p></div></div>
+        </div>
+
+        <div class="ba-grid">
+          <div class="ba-block ba-block--pink">
+            <h5>РАССМАТРИВАЛОСЬ</h5>
+            <p>Дашборд на основе вкладок с отдельными представлениями для каждой метрики. Разделение обзора рисков, проверок KYC и охвата на отдельные вкладки снизило бы плотность, но заставило бы сотрудников мысленно собирать картину соответствия.</p>
+          </div>
+          <div class="ba-block ba-block--green">
+            <h5>ВЫБРАННЫЙ ПОДХОД</h5>
+            <p>Единый прокручиваемый дашборд с информационной иерархией. Унифицированное представление с визуальной иерархией — большие числа для ориентации, накопленные гистограммы для распределения, карточки разбивки для расследования.</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">06 — ВСЕЛЕННАЯ КЛИЕНТОВ</span>
+        <h2 class="section-h">Уровень управления</h2>
+        <p class="section-lead section-lead--muted">
+          Список клиентов — это операционная рабочая лошадка, где сотрудники по
+          соответствию ищут, фильтруют и действуют в отношении групп клиентов по
+          всему банку. Он отвечает: «Какие клиенты требуют внимания и каково их
+          текущее состояние?»
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Вселенная клиентов — табличное представление</span>
+          </div>
+          <img src="assets/clm-customer-universe.png" alt="Customer Universe" />
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Сегментация на основе вкладок</h5><p>Все клиенты, Истечение срока документов, Требуется обновление KYC, Требуется ODD и KYC NA предварительно фильтруют таблицу по потребности в соответствии.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Многоосевая фильтрация</h5><p>Бизнес-сегмент, Персона, Статус PEP, Следующая проверка KYC, Флаг правящей семьи, Флаг сотрудника и фильтры по отраслевому сегменту.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Цветовая кодировка профилей рисков</h5><p>Красный (Высокий), Жёлтый (Средний), Зелёный (Низкий) значки рисков для мгновенного визуального сканирования сотен записей.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Сортируемые столбцы с закреплёнными заголовками</h5><p>Балл риска, Имя клиента, Дата последней проверки KYC и Дата следующего истечения KYC — все сортируемые.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Массовые действия</h5><p>Выберите несколько CIF для Назначения ODD, Переназначения, Закрытия рабочего процесса, Изменения пула или Экспорта.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Прямая детализация строки</h5><p>Нажатие на любую строку открывает уровень детализации Профиля клиента, перенося весь контекст.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">07 — ПРОФИЛЬ КЛИЕНТА</span>
+        <h2 class="section-h">Уровень детализации</h2>
+        <p class="section-lead section-lead--muted">
+          Профиль клиента — единый источник истины для записи KYC отдельного
+          клиента. Он разработан как одностраничное, экспортируемое, готовое к
+          аудиту резюме — каждое поле, документ и действие видны в одной
+          прокрутке, ничего не скрыто за вкладками или модалами.
+        </p>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Анатомия профиля клиента</span>
+          </div>
+          <img src="assets/clm-case-details.webp" alt="Customer Profile" />
+        </div>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Постоянная панель идентификации</h5><p>Номер дела, ID CIF, Статус CIF, Персона, Статус PEP и Профиль риска всегда видны вверху, обеспечивая немедленный контекст.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Связанные документы со встроенным предварительным просмотром</h5><p>Карточки паспорта, Emirates ID и Подтверждения проживания с кнопками «Предварительный просмотр» — без выхода из профиля.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Выделение просроченных/отсутствующих полей</h5><p>Поля, которые просрочены, отсутствуют или требуют повторной верификации, визуально помечены для выявления пробелов.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Панель действий по соответствию</h5><p>Кнопки Редактировать, Запросить поддержку RM, Отправить для повторного охвата клиента и Утвердить и отправить с чёткими метками.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Экспорт PDF для утверждения проверяющим</h5><p>Полный экспорт профиля в виде структурированного PDF для офлайн-проверки, подписи проверяющего и архивирования.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Навигация по хлебным крошкам</h5><p>«Моя очередь → Маркус Смит (ID CIF: 12345678)» сохраняет след сотрудника обратно к его рабочему контексту.</p></div></div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>«Профиль — это не просто отображение информации — это лист доказательств. Каждое поле, документ и действие на этом экране должны быть защищаемы на аудите.»</p>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">08 — РЕШЕНИЯ ДИЗАЙНА</span>
+        <h2 class="section-h">Ключевые компромиссы и обоснование</h2>
+        <p class="section-lead section-lead--muted">
+          Несколько дизайнерских решений были сформированы специфическими
+          ограничениями программного обеспечения для соответствия — где цена
+          ошибок — регуляторная уязвимость, а не просто UX-трение.
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Плоский профиль вместо разделов на вкладках</h4><p>Данные клиента, документы, адрес и контактная информация — всё на одной прокручиваемой странице. В контексте соответствия скрытая информация — это забытая информация.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Предварительный просмотр документа в боковой панели</h4><p>Документы открываются в боковой панели, а не на новой странице или в модале. Это сохраняет данные профиля видимыми рядом с просматриваемым документом.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>Цвет как система сканирования</h4><p>Профили рисков используют строгую систему Красный/Жёлтый/Зелёный без декоративного цвета в других местах. Цвет должен нести смысл — это механизм сканирования.</p></div></div>
+          <div class="numbered-row"><span class="num">4</span><div><h4>Контекстная детализация вместо глобального поиска</h4><p>Дашборд → отфильтрованный список → профиль. Каждый переход несёт контекст вперёд, снижая ошибки и экономя когнитивную нагрузку.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">09 — ВЛИЯНИЕ</span>
+        <h2 class="section-h">Результаты</h2>
+        <p class="section-lead section-lead--muted">
+          Переработанная платформа CLM устранила основные структурные проблемы,
+          которые мешали командам по соответствию работать с уверенностью и
+          эффективностью.
+        </p>
+        <div class="metrics-grid">
+          <div class="metric"><span class="metric-value">3 → 1</span><span class="metric-label">Системы консолидированы в одну платформу</span></div>
+          <div class="metric"><span class="metric-value">↓ ~60%</span><span class="metric-label">Сокращение времени навигации на дело</span></div>
+          <div class="metric"><span class="metric-value">1-page</span><span class="metric-label">Одностраничный профиль для готовности к аудиту</span></div>
+          <div class="metric"><span class="metric-value">900K+</span><span class="metric-label">Записей клиентов управляется через платформу</span></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">10 — РЕФЛЕКСИЯ</span>
+        <h2 class="section-h">Что я узнал</h2>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Программное обеспечение для соответствия — это проблема доверия, а не эффективности</h4><p>Пользователи этой платформы не хотят, чтобы она была быстрой — они хотят, чтобы она была правильной. Каждое дизайнерское решение должно было завоёвывать доверие, делая поведение системы предсказуемым, прослеживаемым и объяснимым.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Информационная архитектура — это и есть дизайн</h4><p>Трёхуровневая структура (Дашборд → Список → Профиль) была не просто навигацией — это было основное дизайнерское решение. Визуальный дизайн был вторичен по отношению к этой структурной работе.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>В регулируемых средах показывать важнее, чем говорить</h4><p>Встроенный предварительный просмотр документов, видимые значки рисков, постоянные заголовки идентификации — эти паттерны существуют потому, что сотрудники по соответствию не могут доверять тому, чего не видят.</p></div></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>

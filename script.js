@@ -20,13 +20,18 @@ document.addEventListener("click", (event) => {
   if (isUnlocked()) return;
 
   event.preventDefault();
-  const entry = window.prompt("Enter password to view this case study:");
+  const isRu = document.documentElement.lang === "ru";
+  const promptText = isRu
+    ? "Введите пароль для просмотра кейса:"
+    : "Enter password to view this case study:";
+  const wrongText = isRu ? "Неверный пароль." : "Incorrect password.";
+  const entry = window.prompt(promptText);
   if (entry === null) return;
   if (entry === CASE_PASSWORD) {
     unlock();
     window.location.href = href;
   } else {
-    alert("Incorrect password.");
+    alert(wrongText);
   }
 });
 
@@ -34,11 +39,15 @@ document.addEventListener("click", (event) => {
   const isCasePage = /\/case-[a-z0-9-]+\.html$/.test(location.pathname);
   if (!isCasePage) return;
   if (isUnlocked()) return;
-  const entry = window.prompt("Enter password to view this case study:");
+  const isRu = document.documentElement.lang === "ru";
+  const promptText = isRu
+    ? "Введите пароль для просмотра кейса:"
+    : "Enter password to view this case study:";
+  const entry = window.prompt(promptText);
   if (entry === CASE_PASSWORD) {
     unlock();
   } else {
-    window.location.href = "index.html";
+    window.location.href = isRu ? "index-ru.html" : "index.html";
   }
 })();
 
