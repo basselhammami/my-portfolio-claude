@@ -525,9 +525,9 @@ button {
   height: auto;
   object-fit: contain;
   display: block;
-  border-radius: 18px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5))
-    drop-shadow(0 8px 20px rgba(120, 70, 110, 0.25));
+  /* No border-radius / drop-shadow — the image already carries its own
+     phone silhouette on a dark background; adding either draws a visible
+     rectangular frame around the image padding. */
 }
 
 /* Case page — interactive prototype embed */
