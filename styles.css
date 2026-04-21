@@ -1210,11 +1210,11 @@ button {
 
   .project-media--paywalls {
     min-height: 280px;
-    padding: 1rem;
+    padding: 1rem 1rem 0;
   }
 
   .project-media--paywalls img {
-    max-width: 70%;
+    max-width: 95%;
   }
 
   .expertise-grid {
