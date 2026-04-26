@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
-    <title>Paywall Explorations — Basel Hammami</title>
+    <title>Honoring the Moment — Basel Hammami</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,33 +35,629 @@
     <main class="case-page">
       <a href="index.html" class="back-link">Back</a>
 
-      <h1 class="case-title">Paywall Explorations</h1>
+      <h1 class="case-title">Honoring the Moment</h1>
       <p class="case-subtitle">
-        A collection of paywall designs across categories — each one a study
-        in matching tone, pricing, and persuasion to the product it belongs to.
+        A contextual paywall study — Headspace, iOS. What if the paywall stopped
+        being a transaction surface and started being a response to the moment a
+        user is in?
       </p>
 
+      <dl class="case-meta">
+        <div><dt>ROLE</dt><dd>Product Designer (speculative concept)</dd></div>
+        <div><dt>SCOPE</dt><dd>Contextual in-experience paywall, iOS</dd></div>
+        <div><dt>TIMELINE</dt><dd>Two weeks</dd></div>
+        <div><dt>METHODS</dt><dd>Competitive teardown, pattern analysis, hypothesis design, microcopy iteration, validation planning</dd></div>
+      </dl>
+
+      <div class="figure-placeholder figure-placeholder--tall">
+        <span class="fp-tag">Hero composition</span>
+        <p class="fp-desc">A real iPhone frame showing the final picked design — the 1am Sleepcast variant. Dim navy palette, dignified type, the price toggle visible but quiet. Placed against a soft gradient backdrop, no decoration.</p>
+      </div>
+
       <section class="case-section">
-        <h2 class="section-h">Stillwater — mental-health app</h2>
+        <span class="eyebrow-red">01 — THE MOMENT</span>
+        <h2 class="section-h">It's 1:14am</h2>
         <p class="section-lead section-lead--muted">
-          A calm, dusk-toned paywall for a fictional breathing and grounding
-          app. Serif headline, squircle practice tiles, three plans with the
-          annual one highlighted.
+          Someone we'll call Sarah taps a Sleepcast called <em>Indigo Drift</em>
+          because she can't fall asleep. The tile expands, the screen dims, and
+          a paywall slides up. The hero image shows a smiling woman doing yoga
+          in daylight. The headline reads "Get the most out of Headspace." The
+          CTA says "Start your free trial."
+        </p>
+        <p class="section-lead section-lead--muted">
+          Sarah closes the app and lies in the dark.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Headspace knew exactly what Sarah wanted. She just told them — by
+          tapping. The paywall didn't.
+        </p>
+        <p class="section-lead section-lead--muted">
+          This case study is about that mismatch.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">02 — WHY THIS MATTERS</span>
+        <h2 class="section-h">A moment problem, not a pricing problem</h2>
+        <p class="section-lead section-lead--muted">
+          Headspace is a mature subscription product. Monthly is around $12.99,
+          annual around $69.99 (often promoted closer to $35), with student,
+          family, and therapy tiers stacked on top. The model works — but the
+          most consistent user complaint, surfacing across App Store reviews,
+          Reddit threads, and forum posts, is that the product moved from a
+          freemium experience to a near-hard paywall, and that everything
+          interesting now lives behind a subscription wall.
+        </p>
+        <p class="section-lead section-lead--muted">
+          That complaint is usually framed as a pricing problem. I think it's a
+          <em>moment</em> problem.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The first-time onboarding paywall has been A/B tested into local
+          optima by every meditation app on the market. The surface that hasn't
+          been deeply rethought is the <strong>contextual upsell</strong> — the
+          paywall that fires when a user reaches for a specific piece of
+          content. That's the moment with the most expressed intent, the most
+          acute emotional context, and the most generic design treatment across
+          the category.
+        </p>
+        <p class="section-lead section-lead--muted">
+          This study explores what happens when that paywall stops being a
+          transaction surface and starts being a <em>response</em> to the moment
+          a user is in.
+        </p>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Disconnect diagram</span>
+          <p class="fp-desc">A simple two-panel diagram. Left panel: "What the user is doing" — tapping a Sleepcast at 1am. Right panel: "What the paywall is doing" — showing a generic daytime hero image with subscription tiers. Annotate the disconnect.</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">03 — CONSTRAINTS</span>
+        <h2 class="section-h">The box I had to design inside</h2>
+        <p class="section-lead section-lead--muted">
+          Before exploring, I named the constraints. Not as decoration — these
+          actively shaped decisions later.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>App Store subscription rules</h5>
+              <p>Apple requires clear pricing disclosure, an obvious link to terms, and a "Restore Purchases" affordance. Subscription apps that obscure cancellation terms get rejected.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Existing brand system</h5>
+              <p>Headspace has a recognizable warmth — saturated color, friendly geometric illustration, a soft display typeface. A redesign that abandons that voice would be unrecognizable as Headspace and would never ship in real life.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Regional pricing</h5>
+              <p>Headspace shows different prices in different markets. Whatever I designed had to handle short and long currency strings without breaking layout.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Accessibility</h5>
+              <p>Dynamic Type up to AX5, VoiceOver labeling on the price toggle, sufficient contrast against the dim "sleep" variants, and 44pt minimum tap targets.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Business reality</h5>
+              <p>Headspace's leadership has clearly committed to a near-hard paywall as a pricing strategy. A redesign that quietly gives away free content undermines that strategy and would be killed in review. Any design that proposes a "taste" mechanic has to earn its keep against revenue dilution risk.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">04 — TEARDOWN</span>
+        <h2 class="section-h">The convergence problem</h2>
+        <p class="section-lead section-lead--muted">
+          I downloaded Headspace, Calm, Balance, Insight Timer, and Aura, and
+          screen-recorded the contextual paywall flow on each. I tapped a locked
+          piece of content and captured what happened.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The most useful finding came from looking at all five together. They
+          are nearly indistinguishable.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Each one leads with a hero image of a calm-looking person in nature.
+          Each shows a monthly/annual toggle with annual selected by default.
+          Each anchors on a percentage discount. Each ends with a "Start free
+          trial" CTA and a small "Cancel anytime" reassurance underneath. The
+          differences are visual register, not structure.
+        </p>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Competitive teardown</span>
+          <p class="fp-desc">Five-up grid of competitor paywalls (Headspace, Calm, Balance, Insight Timer, Aura), each annotated with three callouts: lead value prop, trust signal, CTA copy. Highlight the structural sameness across all five.</p>
+        </div>
+
+        <p class="section-lead section-lead--muted">
+          The category has converged on a single pattern. Convergence is usually
+          evidence that a pattern works — but it's also evidence that nobody is
+          testing the boundary. Every paywall in this category is solving the
+          same problem the same way at the same moment, regardless of
+          <em>which</em> moment the user is in.
+        </p>
+        <p class="section-lead section-lead--muted">
+          That's the gap. That's also the thesis.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">05 — REFRAME</span>
+        <h2 class="section-h">Recognition, not conversion</h2>
+        <p class="section-lead section-lead--muted">
+          I started this project thinking the contextual paywall was a
+          conversion problem. After the teardown, I changed my mind.
+        </p>
+        <p class="section-lead section-lead--muted">
+          It isn't broken because it's poorly designed. The category-standard
+          paywall is, on its own merits, a competent piece of design. It's
+          <em>limited</em> because it treats the moment a user reaches for a
+          specific piece of content as the same moment, every time. A paywall
+          that fires at 1am when someone reaches for sleep content is
+          structurally identical to one that fires at 9am when someone reaches
+          for a focus session. They show the same hero image. They lead with
+          the same value prop. They offer the same CTA.
+        </p>
+
+        <blockquote class="case-quote">
+          <p>The contextual paywall is not a conversion surface. It's a recognition surface. Its job is to show the user that the product understood what they came for. Conversion is the consequence of recognition, not the goal of the surface.</p>
+        </blockquote>
+
+        <p class="section-lead section-lead--muted">
+          That single sentence changed every design decision downstream.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">06 — HYPOTHESES</span>
+        <h2 class="section-h">Three candidates, two killed</h2>
+        <p class="section-lead section-lead--muted">
+          I generated three candidate directions for what "recognition at the
+          moment" could look like. I picked one and killed two — with reasoning
+          for both decisions.
+        </p>
+
+        <div class="cards-3">
+          <div class="decision-card">
+            <span class="status-pill status-pill--killed">H1 · Killed</span>
+            <h4>Reciprocity</h4>
+            <p>Give the user a real 60-second preview of the locked content before showing the paywall.</p>
+            <p><span class="dc-label">Mechanic.</span> Reduce the perceived asymmetry between asking and giving.</p>
+            <p><span class="dc-label">Why killed.</span> Headspace's leadership has visibly chosen a near-hard paywall — proposing a "taste" mechanic crosses a strategic boundary I shouldn't cross unilaterally in a redesign.</p>
+          </div>
+          <div class="decision-card">
+            <span class="status-pill status-pill--killed">H2 · Killed</span>
+            <h4>Micro-commitment</h4>
+            <p>Before the paywall, ask the user for a small reversible action ("save for later," "remind me tonight").</p>
+            <p><span class="dc-label">Mechanic.</span> A soft commitment makes the subscription ask easier to say yes to.</p>
+            <p><span class="dc-label">Why killed.</span> It adds friction at a moment of <em>high</em> intent. The user already committed by tapping. It's an answer in search of a problem.</p>
+          </div>
+          <div class="decision-card">
+            <span class="status-pill status-pill--picked">H3 · Picked</span>
+            <h4>Contextual recognition</h4>
+            <p>The paywall adapts its hero state, headline, value prop hierarchy, and price anchoring to the content category and time-of-day the user reached for.</p>
+            <p><span class="dc-label">Mechanic.</span> Meet the moment the user is already in.</p>
+            <p><span class="dc-label">Why picked.</span> It does something none of the five competitors does, and it does it without violating the existing pricing strategy.</p>
+          </div>
+        </div>
+
+        <p class="section-lead section-lead--muted" style="margin-top:2rem;">
+          The killed options are not strawmen. H1 in particular is the option I
+          most wanted to pick — and naming why I couldn't is the most honest
+          part of the study.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">07 — EXPLORATION</span>
+        <h2 class="section-h">Three directions inside the picked hypothesis</h2>
+        <p class="section-lead section-lead--muted">
+          Within H3, I developed three visual directions. They differ in
+          <em>information hierarchy and emotional register</em>, not in palette
+          or typeface.
+        </p>
+
+        <div class="cards-3">
+          <div class="decision-card">
+            <span class="status-pill status-pill--picked">A · Picked</span>
+            <h4>The Mirror</h4>
+            <p>The paywall opens with a quiet visual that mirrors what the user tapped. If they reached for a Sleepcast, the surface is dim, navy, the price hierarchy demoted below the value statement.</p>
+            <p><span class="dc-label">Prioritises.</span> Mood over information.</p>
+          </div>
+          <div class="decision-card">
+            <span class="status-pill status-pill--killed">B · Killed</span>
+            <h4>The Bridge</h4>
+            <p>A brief, plain-text acknowledgment of what the user reached for ("This Sleepcast is part of our Sleep collection — 200+ sessions for falling asleep and staying asleep"), then a familiar pricing structure.</p>
+            <p><span class="dc-label">Prioritises.</span> Orientation over mood. Felt like a half-step.</p>
+          </div>
+          <div class="decision-card">
+            <span class="status-pill status-pill--killed">C · Killed</span>
+            <h4>The Reduction</h4>
+            <p>Price up front, but every secondary element is stripped to match the moment. At 1am, no testimonials, no plan toggle, no comparison table.</p>
+            <p><span class="dc-label">Prioritises.</span> Respect for state. Intellectually clean but visually thin — would read as "the designer didn't make screens."</p>
+          </div>
+        </div>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Direction comparison</span>
+          <p class="fp-desc">Three-column layout showing one screen from each direction (A, B, C) for the same context (1am Sleepcast tap). Annotate each with "what this prioritizes" and "what this trades off."</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">08 — FLOW</span>
+        <h2 class="section-h">The picked design — flow</h2>
+        <p class="section-lead section-lead--muted">
+          The contextual paywall is one moment in a longer flow. Showing the
+          screen alone wouldn't communicate the thinking.
+        </p>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">End-to-end flow</span>
+          <p class="fp-desc">Horizontal flow diagram, six frames. (1) Library state with locked Sleepcast tile. (2) Tap state — tile expands, dim begins. (3) Contextual paywall (1am variant). (4) Trial-start confirmation. (5) First-session entry — content begins immediately, no celebratory friction. (6) Quiet morning-after confirmation in the inbox.</p>
+        </div>
+
+        <p class="section-lead section-lead--muted">
+          The path is short, deliberate, and respects the user's stated intent.
+          The most important moment is between frames 3 and 5: when the user
+          converts, the next thing they see is the content they originally
+          tapped, playing. No "Welcome to Headspace Premium" celebration. No
+          tour. The recognition continues past the conversion.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">09 — SYSTEM</span>
+        <h2 class="section-h">The picked design — system</h2>
+        <p class="section-lead section-lead--muted">
+          A single screen doesn't prove a thesis. The pattern has to hold across
+          contexts. I designed four variants of the same paywall — same
+          component, same architecture, same conversion mechanics. Only the
+          <em>response to the moment</em> changes.
+        </p>
+
+        <div class="numbered-list">
+          <div class="numbered-row">
+            <span class="num">1</span>
+            <div>
+              <h4>Sleep — 1am, Sleepcast tap</h4>
+              <p>Dim navy. Type quiet, slightly larger leading. Hero image replaced with a low-luminance abstract — no human figures, nothing visually loud. Value prop: "200+ ways to fall asleep tonight." Price toggle present but visually demoted. Restore Purchases visible without scrolling — a returning user shouldn't fight the surface at 1am.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">2</span>
+            <div>
+              <h4>Focus — 10am, focus session tap</h4>
+              <p>Cleaner light palette but not aggressively bright. Type tightened. Value prop: "Built for focus blocks, in 10 to 25 minutes." Annual highlighted with a subtle savings indicator, no countdown timer, no urgency engineering. The user doesn't need to be tricked into focus.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">3</span>
+            <div>
+              <h4>Anxiety — mid-day, "calm in panic" tap</h4>
+              <p>Reduced cognitive load. The plan toggle collapses to a single recommended option — annual, with a clear monthly alternative one tap away. Value prop is one short sentence: "Three minutes to feel calmer." Trust signal is replaced by a simple statement that the user can cancel anytime, written in plain language without the pseudo-legal feel of "Cancel anytime, no questions asked."</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">4</span>
+            <div>
+              <h4>Movement — morning, yoga tap</h4>
+              <p>Warmer palette, more bodily — illustrative, not photographic. Value prop emphasizes the breadth of formats (5 to 30 minutes, with and without instruction). Of the four variants, this is the one closest to the existing Headspace voice; the brand system already speaks fluently to mornings.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Variant grid</span>
+          <p class="fp-desc">Four-up grid showing all four variants (Sleep, Focus, Anxiety, Movement) at iPhone 14 frame size. Below the grid, a callout strip showing the shared underlying component structure — same regions, different content treatments.</p>
+        </div>
+
+        <p class="section-lead section-lead--muted">
+          What the system shows: the contextual paywall is one design pattern,
+          not four bespoke screens. The component model is shared. Only the
+          response to the moment changes.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">10 — INTERACTIVE</span>
+        <h2 class="section-h">Try the Sleep variant</h2>
+        <p class="section-lead section-lead--muted">
+          A working prototype of the Sleep direction — code, not a static
+          mockup. Tap through it the way a user would at 1am.
         </p>
 
         <div class="prototype-frame">
           <iframe
             src="paywall-prototype/index.html"
-            title="Stillwater paywall prototype"
+            title="Sleep variant interactive prototype"
             loading="lazy"
           ></iframe>
         </div>
       </section>
 
+      <hr class="rule" />
+
       <section class="case-section">
-        <p class="section-lead section-lead--muted" style="text-align:center;">
-          More explorations coming soon.
+        <span class="eyebrow-red">11 — MICROCOPY</span>
+        <h2 class="section-h">The CTA does most of the persuasion work</h2>
+        <p class="section-lead section-lead--muted">
+          I drafted five CTA variants and ran them against the thesis.
         </p>
+
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>"Start free trial"</h5>
+              <p>The category default. Generic. Says nothing about the moment.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>"Start my 7 days"</h5>
+              <p>Possessive, slightly warmer. Doesn't honor the moment.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>"Begin tonight" — Sleep variant <span style="color:#1f6b34; font-weight:600;">· picked</span></h5>
+              <p>Context-aware, low-arousal verb, time-anchored.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>"Start a focus block" — Focus variant <span style="color:#1f6b34; font-weight:600;">· picked</span></h5>
+              <p>Names the user's intent back to them.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>"Try it for 7 days"</h5>
+              <p>Neutral, defensible fallback when no contextual variant fits.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-lead section-lead--muted" style="margin-top:1.75rem;">
+          The pattern: when context is high-confidence, the CTA names the
+          moment. When context is ambiguous (deep-link from a marketing email,
+          for instance), the system falls back to the neutral variant. I did the
+          same exercise for the value prop, the price toggle label, the legal
+          disclosure, and the "Restore Purchases" affordance — full microcopy
+          spec lives in the appendix.
+        </p>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Microcopy specification</span>
+          <p class="fp-desc">CTA variants in context (rendered on actual screen frames), with reasoning beside each. Treat this section like a table — it should read as a deliverable, not a sketch.</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">12 — EDGE CASES</span>
+        <h2 class="section-h">A paywall is mostly edge cases</h2>
+        <p class="section-lead section-lead--muted">
+          Five I designed for explicitly.
+        </p>
+
+        <div class="numbered-list">
+          <div class="numbered-row">
+            <span class="num">1</span>
+            <div>
+              <h4>Declined card</h4>
+              <p>The error state remains in the contextual variant — a declined card at 1am stays in the dim Sleep palette. Switching back to a default error state on failure breaks the thread of recognition the design is built on.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">2</span>
+            <div>
+              <h4>Restore Purchases</h4>
+              <p>Always visible above the fold. A user returning to a device they already paid on shouldn't have to scroll past a sales pitch to reclaim their subscription.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">3</span>
+            <div>
+              <h4>Lapsed user returning</h4>
+              <p>A user who previously had a subscription, lapsed, and now taps a locked Sleepcast sees a different headline ("Welcome back to Headspace — pick up where you left off") but the same contextual response. The thesis still applies; the recognition is just deeper.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">4</span>
+            <div>
+              <h4>Accessibility</h4>
+              <p>Dynamic Type tested at AX5 — the system reflows by demoting secondary content (testimonials, comparison tables) before resizing primary content. VoiceOver labels on the price toggle name both the plan and the per-month equivalent. Contrast was the hardest constraint on the Sleep variant — the dim palette is the <em>point</em>, but I had to lift critical text to meet AA against the dim background. The compromise: the background dims, the text doesn't.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">5</span>
+            <div>
+              <h4>Dark mode</h4>
+              <p>The Sleep variant <em>is</em> a dark variant by default. The other three respect system dark mode, but use a calibrated palette that doesn't read as a flipped light theme.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Edge-case strip</span>
+          <p class="fp-desc">Six small frames. Declined card (Sleep palette), Restore Purchases moment, lapsed user state, AX5 Dynamic Type reflow, VoiceOver focus order callout, dark mode for Focus variant. Each annotated with one line of reasoning.</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">13 — VALIDATION</span>
+        <h2 class="section-h">What I'd test, what I'd measure</h2>
+        <p class="section-lead section-lead--muted">
+          This is a speculative study. I can't claim a lift number. What I can
+          do is name what I'd test and how I'd measure it.
+        </p>
+
+        <h3 class="section-h" style="font-size:1.25rem; margin-top:2rem;">A/B test setup</h3>
+        <p class="section-lead section-lead--muted">
+          Hold out a control group on the existing generic paywall. Three test
+          groups: Sleep variant (triggered on Sleepcast taps), Focus variant
+          (focus content taps), Anxiety variant (panic-relief content taps).
+          Movement variant left for a second wave to keep the first test
+          interpretable.
+        </p>
+
+        <h3 class="section-h" style="font-size:1.25rem; margin-top:2rem;">Predicted directional outcomes</h3>
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Trial-start rate</h5>
+              <p>Modest lift, possibly flat. Conversion at the contextual paywall is already reasonably high because intent is high.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Trial-to-paid conversion</h5>
+              <p>Lift. The user entered the trial because the product met them at the moment, which means the trial begins from a base of recognition rather than skepticism.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Day-1 session completion rate</h5>
+              <p>Lift. The thesis predicts that users who feel met at the paywall finish the first session at higher rates.</p>
+            </div>
+          </div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>The metric I'd hold the team accountable to is month-1 retention by entry context — not trial-start rate. A paywall that converts more users who churn in week two is a paywall that lost.</p>
+        </blockquote>
+
+        <p class="section-lead section-lead--muted">
+          That distinction is the difference between a design that helps the
+          business and a design that flatters the funnel.
+        </p>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">14 — REFLECTION</span>
+        <h2 class="section-h">What I'd do next</h2>
+
+        <div class="numbered-list">
+          <div class="numbered-row">
+            <span class="num">1</span>
+            <div>
+              <h4>What surprised me</h4>
+              <p>The sameness of the five competitor paywalls was more striking than I expected. Five products with very different brand identities are running structurally identical paywalls at the same moment in the user journey. Convergence is supposed to be evidence of a solved problem. Here, it felt more like evidence of a copied one.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">2</span>
+            <div>
+              <h4>What I'd cut if I had less time</h4>
+              <p>The Movement variant. Three contexts (Sleep, Focus, Anxiety) carry the thesis. The fourth made the system feel complete in a portfolio but didn't change the argument.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">3</span>
+            <div>
+              <h4>What I'd build next</h4>
+              <p>The trial-ending experience. The contextual logic that holds at the upsell moment also applies at the conversion moment — a user who started a trial at 1am for sleep content is in a different relationship with the product than one who started a trial at 9am for focus, and the trial-ending message should reflect that. That's the natural second chapter to this study.</p>
+            </div>
+          </div>
+          <div class="numbered-row">
+            <span class="num">4</span>
+            <div>
+              <h4>What I'd want a real product team to push back on</h4>
+              <p>The H1 (reciprocity) decision was the hardest. I killed it because it crosses a pricing strategy boundary, but I'd want the actual team to test a bounded version — a 30-second taste on Sleepcasts only, gated to first-time users, with revenue impact monitored. The thesis of this study is that the paywall should honor the moment. A product that genuinely believes that has to be willing to ask whether the moment is sometimes better honored by giving than by selling.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="figure-placeholder">
+          <span class="fp-tag">Closing visual</span>
+          <p class="fp-desc">A return to the 1am scene from the opening, but now showing the redesigned paywall on the device. Same posture, different outcome. No celebratory copy — just the moment, met.</p>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">APPENDIX</span>
+        <h2 class="section-h">Supporting material</h2>
+
+        <div class="feature-list">
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Full microcopy specification</h5>
+              <p>CTA, value prop, price toggle, legal, restore — every string with reasoning.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Component anatomy and shared token system</h5>
+              <p>How the four variants are one component, with which tokens vary.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Accessibility audit notes</h5>
+              <p>Dynamic Type behavior, VoiceOver order, contrast tests.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="arrow-cell">→</div>
+            <div>
+              <h5>Competitive teardown</h5>
+              <p>Full annotated screenshots of all five competitors.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

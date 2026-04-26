@@ -1148,6 +1148,98 @@ button {
   line-height: 1.45;
 }
 
+/* Figure placeholder — used on case pages when the spec describes an image
+   that hasn't been produced yet. Reads as a deliberate wireframe slot,
+   not a broken image. */
+.figure-placeholder {
+  margin: 2rem 0;
+  border: 1px dashed var(--border);
+  border-radius: 0.875rem;
+  background: var(--card);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.figure-placeholder .fp-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.figure-placeholder .fp-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+  max-width: 44rem;
+}
+
+.figure-placeholder--tall {
+  padding: 3.25rem 1.5rem;
+}
+
+/* Status pill — used to label decisions (PICKED / KILLED) on hypothesis or
+   exploration cards. */
+.status-pill {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.status-pill--picked {
+  background: #e4f4e9;
+  color: #1f6b34;
+}
+
+.status-pill--killed {
+  background: #fce8e8;
+  color: #8a2a2a;
+}
+
+/* Decision card — used for hypotheses and exploration directions. */
+.decision-card {
+  background: var(--card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-card h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.decision-card p {
+  margin: 0 0 0.65rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+}
+
+.decision-card p:last-child {
+  margin-bottom: 0;
+}
+
+.decision-card .dc-label {
+  font-weight: 600;
+  color: #111;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .case-page {
