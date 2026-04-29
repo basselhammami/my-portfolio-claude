@@ -497,7 +497,7 @@ button {
   padding: 1.5rem 1.5rem 0;
 }
 .project-media--balady img {
-  max-width: 62%;
+  max-width: 50%;
   width: auto;
   height: auto;
   display: block;
