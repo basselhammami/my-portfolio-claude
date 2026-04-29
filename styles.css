@@ -386,13 +386,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 3rem;
   overflow: hidden;
 }
 
 .project-card-art {
   display: block;
-  flex-shrink: 0;
+  /* Cap height so portrait device shots never reach the caption row.
+     Width auto keeps the aspect ratio. */
+  max-height: 82%;
+  max-width: 80%;
+  width: auto;
+  height: auto;
   transition: transform 0.8s var(--ease-out);
   will-change: transform;
 }
@@ -428,8 +433,10 @@ button {
   background: #e4002b;
 }
 .project-card-body--rakbank .project-card-art--logo {
-  width: 50%;
+  /* Override the height-based cap — the logo is landscape and small. */
+  width: 46%;
   max-width: 220px;
+  max-height: none;
   height: auto;
 }
 
@@ -439,20 +446,12 @@ button {
     radial-gradient(440px 260px at 82% 82%, rgba(0, 124, 145, 0.32), transparent 60%),
     #002e38;
 }
-.project-card-body--balady .project-card-art {
-  max-width: 48%;
-  height: auto;
-}
 
 .project-card-body--paywalls {
   background:
     radial-gradient(500px 260px at 30% 15%, rgba(120, 70, 110, 0.28), transparent 60%),
     radial-gradient(420px 240px at 78% 82%, rgba(70, 100, 130, 0.22), transparent 60%),
     #0e0a14;
-}
-.project-card-body--paywalls .project-card-art {
-  max-width: 48%;
-  height: auto;
 }
 
 /* "Under NDA" badge — small pill with a lock icon, used on the RAKBANK
@@ -1242,17 +1241,12 @@ button {
   }
 
   .project-card-body {
-    padding: 1.25rem;
+    padding: 1.25rem 1.25rem 2.5rem;
   }
 
   .project-card-body--rakbank .project-card-art--logo {
     width: 55%;
     max-width: 200px;
-  }
-
-  .project-card-body--balady .project-card-art,
-  .project-card-body--paywalls .project-card-art {
-    max-width: 55%;
   }
 
   .project-card-caption {
