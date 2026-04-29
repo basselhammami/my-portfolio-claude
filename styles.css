@@ -484,6 +484,33 @@ button {
   height: auto;
 }
 
+/* "Under NDA" badge — small pill with a lock icon, used on the RAKBANK
+   card to flag that public visuals are intentionally generic. */
+.nda-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.65rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  z-index: 2;
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+}
+
+.nda-badge svg {
+  flex-shrink: 0;
+}
+
 .project-media--balady {
   background:
     radial-gradient(520px 280px at 22% 12%, rgba(0, 184, 169, 0.30), transparent 60%),
