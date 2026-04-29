@@ -454,6 +454,17 @@ button {
     0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
+/* Device mockup variant — image already includes a device bezel (iPad,
+   browser chrome, etc.). No extra radius needed; drop-shadow follows
+   the actual silhouette so transparent corners aren't squared off. */
+.project-card-art--device {
+  max-width: 92%;
+  max-height: 88%;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.35));
+}
+
 .project-card-body--balady {
   background:
     radial-gradient(520px 280px at 22% 12%, rgba(0, 184, 169, 0.30), transparent 60%),
