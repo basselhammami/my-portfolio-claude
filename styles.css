@@ -485,13 +485,22 @@ button {
 }
 
 .project-media--balady {
-  background: #003946;
+  background:
+    radial-gradient(520px 280px at 22% 12%, rgba(0, 184, 169, 0.30), transparent 60%),
+    radial-gradient(440px 260px at 82% 82%, rgba(0, 124, 145, 0.32), transparent 60%),
+    #002e38;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5rem 1.5rem 0;
 }
 .project-media--balady img {
-  width: 168px;
-  height: 168px;
-  border-radius: 32px;
-  object-fit: cover;
+  max-width: 62%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .project-media--dunes {
@@ -1294,10 +1303,13 @@ button {
     min-height: 240px;
   }
 
+  .project-media--balady {
+    min-height: 320px;
+    padding: 1rem 1rem 0;
+  }
+
   .project-media--balady img {
-    width: 120px;
-    height: 120px;
-    border-radius: 24px;
+    max-width: 60%;
   }
 
   .project-media--paywalls {
