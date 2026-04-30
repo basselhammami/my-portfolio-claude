@@ -447,8 +447,6 @@ button {
   justify-content: center;
   padding: 1rem 1.25rem 2.25rem;
   overflow: hidden;
-  /* Unified neutral surface for all case study cards. */
-  background: linear-gradient(135deg, #f0f0ee 0%, #e2e2df 100%);
 }
 
 .project-card-art {
@@ -490,12 +488,28 @@ button {
 
 /* Brand variants ---------------------------------------------------------- */
 
-/* RAKBANK logo art override — landscape, small. */
-.project-card-body--rakbank .project-card-art--logo {
-  width: 46%;
-  max-width: 220px;
-  max-height: none;
-  height: auto;
+/* Per-card pastel surfaces. Each card gets its own soft tint so the four
+   read as a coordinated set rather than a single block. */
+
+/* CLM Platform — peach (RAKBANK red, dialled all the way down). */
+.project-card-body--clm {
+  background: linear-gradient(135deg, #fbe5d8 0%, #f5cfbb 100%);
+}
+
+/* Customer Risk Assessment — warm sand (sibling tone to CLM, softer
+   yellow lean so the two RAKBANK cards aren't identical). */
+.project-card-body--cram {
+  background: linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%);
+}
+
+/* Balady+ — soft sage (echoes the green/teal of the map UI). */
+.project-card-body--balady {
+  background: linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
+}
+
+/* Paywalls — soft lavender (echoes the lilac orb in the Stillwater UI). */
+.project-card-body--paywalls {
+  background: linear-gradient(135deg, #e6dfee 0%, #d1c6e3 100%);
 }
 
 /* Screenshot variant — UI screenshot (e.g. CLM dashboard) with rounded
