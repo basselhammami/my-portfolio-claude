@@ -399,6 +399,15 @@ button {
    overlay at bottom-left and a tag line below. Inspired by innarenard.com.
    ========================================================================== */
 
+.projects-intro {
+  text-align: center;
+  margin: 4.5rem 0 0;
+}
+
+.projects-intro .section-title {
+  margin: 0.25rem 0 2rem;
+}
+
 .projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
