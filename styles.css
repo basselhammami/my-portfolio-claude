@@ -434,6 +434,20 @@ button {
     radial-gradient(520px 280px at 22% 15%, rgba(228, 0, 43, 0.22), transparent 62%),
     radial-gradient(440px 260px at 82% 85%, rgba(228, 0, 43, 0.10), transparent 62%),
     linear-gradient(135deg, #2a2a2a 0%, #161616 100%);
+  isolation: isolate;
+}
+
+/* Blurred RAKBANK mark behind the foreground art — lifts the dark
+   surface visually and keeps a hint of brand presence. */
+.project-card-body--rakbank::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: url("assets/rakbank-logo.png") center / 70% no-repeat;
+  filter: blur(48px) saturate(140%);
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
 }
 .project-card-body--rakbank .project-card-art--logo {
   /* Override the height-based cap — the logo is landscape and small. */
