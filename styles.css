@@ -442,10 +442,10 @@ button {
 .project-card-body--rakbank::before {
   content: "";
   position: absolute;
-  inset: -20%;
-  background: url("assets/rakbank-logo.png") center / 70% no-repeat;
-  filter: blur(48px) saturate(140%);
-  opacity: 0.55;
+  inset: -15%;
+  background: url("assets/rakbank-logo.png") center / 80% no-repeat;
+  filter: blur(28px) saturate(150%);
+  opacity: 0.9;
   z-index: -1;
   pointer-events: none;
 }
