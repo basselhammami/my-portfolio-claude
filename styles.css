@@ -442,8 +442,8 @@ button {
 .project-card-body--rakbank::before {
   content: "";
   position: absolute;
-  inset: -15%;
-  background: url("assets/rakbank-logo.png") center / 80% no-repeat;
+  inset: -25%;
+  background: url("assets/rakbank-logo.png") center / 120% no-repeat;
   filter: blur(28px) saturate(150%);
   opacity: 0.9;
   z-index: -1;
