@@ -433,7 +433,7 @@ button {
   background:
     radial-gradient(520px 280px at 22% 15%, rgba(228, 0, 43, 0.22), transparent 62%),
     radial-gradient(440px 260px at 82% 85%, rgba(228, 0, 43, 0.10), transparent 62%),
-    linear-gradient(135deg, #141414 0%, #050505 100%);
+    linear-gradient(135deg, #2a2a2a 0%, #161616 100%);
 }
 .project-card-body--rakbank .project-card-art--logo {
   /* Override the height-based cap — the logo is landscape and small. */
