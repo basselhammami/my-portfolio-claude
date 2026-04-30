@@ -419,34 +419,30 @@ button {
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
 }
 
 .project-card-link {
   display: block;
-  position: relative;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  aspect-ratio: 5 / 4;
   text-decoration: none;
   color: inherit;
+}
+
+.project-card-body {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
   transition: transform 0.45s var(--ease-out),
     box-shadow 0.45s var(--ease-out);
 }
 
-.project-card-link:hover {
+.project-card-link:hover .project-card-body {
   transform: translateY(-4px);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.22);
-}
-
-.project-card-body {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1.25rem 2.25rem;
-  overflow: hidden;
 }
 
 .project-card-art {
@@ -465,19 +461,16 @@ button {
   transform: scale(1.03);
 }
 
-/* Caption overlay — bottom-left */
-.project-card-caption {
-  position: absolute;
-  left: 1.25rem;
-  bottom: 0.85rem;
-  font-size: 0.8125rem;
+/* Title under the card image */
+.project-card-title {
+  margin: 0.95rem 0.25rem 0.2rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: -0.005em;
-  color: rgba(0, 0, 0, 0.78);
-  z-index: 1;
+  color: var(--fg);
 }
 
-/* Tag line below the card */
+/* Tag line below the title */
 .project-card-tags {
   margin: 0;
   padding: 0 0.25rem;
@@ -1316,23 +1309,14 @@ button {
     gap: 1.5rem;
   }
 
-  .project-card-link {
-    aspect-ratio: 4 / 3;
-  }
-
   .project-card-body {
-    padding: 1rem 1rem 2rem;
+    aspect-ratio: 4 / 3;
+    padding: 1rem;
   }
 
-  .project-card-body--rakbank .project-card-art--logo {
-    width: 55%;
-    max-width: 200px;
-  }
-
-  .project-card-caption {
-    left: 1rem;
-    bottom: 0.9rem;
-    font-size: 0.8125rem;
+  .project-card-title {
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
   }
 
   .expertise-grid {
