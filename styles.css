@@ -1309,9 +1309,29 @@ button {
     gap: 1.5rem;
   }
 
+  /* Deterministic mobile layout — fixed height instead of aspect-ratio.
+     iOS Safari has subtle bugs combining aspect-ratio with flex children
+     that use percentage-based max-height, which can cause images to
+     appear off-centered. */
   .project-card-body {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
+    height: 280px;
     padding: 1rem;
+  }
+
+  .project-card-art {
+    max-width: 88%;
+    max-height: 88%;
+  }
+
+  .project-card-art--screenshot {
+    max-width: 92%;
+    max-height: 86%;
+  }
+
+  .project-card-art--device {
+    max-width: 94%;
+    max-height: 90%;
   }
 
   .project-card-title {
