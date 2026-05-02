@@ -217,7 +217,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 3rem 0 6rem;
+  padding: 3rem 0 1rem;
 }
 
 .avatar-frame {
