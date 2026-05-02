@@ -185,7 +185,7 @@ a { color: inherit; text-decoration: none; }
 .page, .case-page {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 3rem 2rem 5rem;
+  padding: 3rem clamp(2rem, 6vw, 6rem) 5rem;
   position: relative;
 }
 
@@ -244,7 +244,6 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--fg);
-  max-width: 36rem;
 }
 
 .languages {
