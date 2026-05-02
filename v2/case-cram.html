@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png?v=2" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png?v=2" />
+    <title>CRAM Risk Calculator — Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index.html" class="brand">Basel</a>
+        <a href="../assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <button class="lang-globe" aria-label="Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="case-cram.html" class="lang-pill is-active">EN</a>
+        <a href="case-cram-ru.html" class="lang-pill">РУ</a>
+      </div>
+    </header>
+
+    <main class="case-page">
+      <a href="index.html" class="back-link">Back</a>
+
+      <h1 class="case-title">Rethinking the CRAM Risk Calculator</h1>
+      <p class="case-subtitle">
+        Turning a fragmented compliance tool into a digital interface with a
+        full audit trail for RAKBANK's customer risk assessment workflow.
+      </p>
+
+      <dl class="case-meta">
+        <div><dt>ROLE</dt><dd>Lead Product Designer</dd></div>
+        <div><dt>COMPANY</dt><dd>RAKBANK</dd></div>
+        <div><dt>TIMELINE</dt><dd>2025 – 2026</dd></div>
+        <div><dt>DOMAIN</dt><dd>Compliance / AML / KYC</dd></div>
+      </dl>
+
+      <div class="case-hero case-hero--rakbank">
+        <img src="../assets/rakbank-logo.png" alt="RAKBANK" />
+      </div>
+
+      <section class="case-section">
+        <span class="eyebrow-red">01 — CONTEXT</span>
+        <h2 class="section-h">The Problem</h2>
+        <p class="section-lead section-lead--muted">
+          RAKBANK's compliance team uses a tool called CRAM (Customer Risk
+          Assessment Methodology) to calculate risk ratings for new and existing
+          customers. The original interface was a fragmented set of Excel-based
+          workflows, PDF forms, and disconnected data sources — no single screen
+          showed the full picture. Staff had to manually cross-reference
+          multiple systems, copy data between spreadsheets, and piece together a
+          final risk score from scattered inputs.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The result? Slow assessments, inconsistent data entry, and weak audit
+          trails. When regulators asked "how did you arrive at this rating?",
+          the answer was buried in email chains, handwritten notes, and
+          version-controlled Excel files. Every assessment was a potential
+          compliance violation.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Staff success is measured by decision correctness, rule adherence, and
+          audit defensibility — not speed. Every wrong answer is a potential
+          regulatory violation. Every unexplained decision is future audit pain.
+        </p>
+
+        <div class="ba-grid">
+          <div class="ba-block ba-block--pink">
+            <h5>BEFORE</h5>
+            <ul>
+              <li>Data scattered across multiple systems with no single source of truth</li>
+              <li>No structured form — fields organised arbitrarily</li>
+              <li>No clear separation between system data and manual input</li>
+              <li>PDF reports showed raw data but no decision rationale</li>
+              <li>No audit trail for overrides or manual changes</li>
+            </ul>
+          </div>
+          <div class="ba-block ba-block--green">
+            <h5>AFTER</h5>
+            <ul>
+              <li>Single-page form organised by data source, matching staff workflows</li>
+              <li>Neutral field handling preventing assessor bias</li>
+              <li>Clear separation of system vs. human input for audit traceability</li>
+              <li>Three-tier reporting: verdict → factor breakdown → evidence</li>
+              <li>Full audit trail with timestamps and user attribution</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">02 — USERS</span>
+        <h2 class="section-h">Who Uses This</h2>
+        <p class="section-lead section-lead--muted">
+          Three distinct user groups interact with CRAM, each with different
+          mental models, responsibilities, and risk tolerances.
+        </p>
+        <div class="cards-3">
+          <div class="info-card">
+            <span class="icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 12 3 4 7l8 4 8-4z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
+            </span>
+            <h4>Compliance Officers</h4>
+            <p>Primary assessors who complete risk evaluations. They need clarity, speed within accuracy constraints, and defensible outputs.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h4>Risk Managers</h4>
+            <p>Reviewers who approve or challenge assessments. They need transparency into how scores were derived and override history.</p>
+          </div>
+          <div class="info-card">
+            <span class="icon-chip icon-chip--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+            </span>
+            <h4>Auditors</h4>
+            <p>Internal and external reviewers who examine past decisions. They need complete, timestamped records of every input and change.</p>
+          </div>
+        </div>
+
+        <blockquote class="case-quote">
+          <p>"I need to know exactly why this customer got this score — not just the number, but every factor that contributed to it."</p>
+        </blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">03 — PROCESS</span>
+        <h2 class="section-h">How I Approached It</h2>
+        <p class="section-lead section-lead--muted">
+          A structured discovery-to-delivery process focused on understanding
+          the compliance workflow before touching any UI.
+        </p>
+        <div class="steps">
+          <div class="step-card"><span class="step-num">01</span><h4>Stakeholder interviews</h4><p>Deep conversations with compliance officers, risk managers, and auditors.</p></div>
+          <div class="step-card"><span class="step-num">02</span><h4>Workflow mapping</h4><p>Mapped the full assessment workflow across tools, systems, and handoffs.</p></div>
+          <div class="step-card"><span class="step-num">03</span><h4>Compliance audit</h4><p>Reviewed regulatory requirements and internal policies driving the assessment.</p></div>
+          <div class="step-card"><span class="step-num">04</span><h4>Concept design</h4><p>Early sketches translating the workflow into a unified digital form.</p></div>
+          <div class="step-card"><span class="step-num">05</span><h4>Prototype testing</h4><p>Iterative testing with compliance officers to validate the form structure.</p></div>
+          <div class="step-card"><span class="step-num">06</span><h4>Delivery</h4><p>Phased rollout with parallel running against the legacy process.</p></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">04 — SOLUTION</span>
+        <h2 class="section-h">Design Principles</h2>
+        <p class="section-lead section-lead--muted">
+          Four principles guided every design decision, derived from compliance
+          requirements and user research.
+        </p>
+        <div class="numbered-list">
+          <div class="numbered-row"><span class="num">1</span><div><h4>Audit-first design</h4><p>Every interaction is designed to produce a defensible record. No action without attribution.</p></div></div>
+          <div class="numbered-row"><span class="num">2</span><div><h4>Neutral presentation</h4><p>Fields are presented without visual bias toward any particular answer. The system informs; the assessor decides.</p></div></div>
+          <div class="numbered-row"><span class="num">3</span><div><h4>Progressive disclosure</h4><p>Complexity is revealed only when needed. Simple cases stay simple; complex cases surface additional context.</p></div></div>
+          <div class="numbered-row"><span class="num">4</span><div><h4>Error prevention over correction</h4><p>Validation happens inline, before submission. The cost of a wrong submission in compliance is too high to rely on post-submission correction.</p></div></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">05 — DESIGN PRINCIPLES</span>
+        <h2 class="section-h">The Solution</h2>
+        <p class="section-lead section-lead--muted">
+          A single-page digital form that mirrors the compliance workflow, with
+          clear data provenance, structured override handling, and a three-tier
+          audit report.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Risk Assessment Form</h5><p>All assessment fields on a single page, organised by data source. System-populated fields are visually distinguished from manual inputs.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Score Breakdown</h5><p>The risk score is accompanied by a factor breakdown showing each contributing element, its weight, and the data source.</p></div></div>
+          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Audit Report</h5><p>A three-tier report: final verdict, factor-by-factor breakdown, and full evidence trail with timestamps and user attribution.</p></div></div>
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Risk assessment form — single-page layout</span>
+          </div>
+          <img src="../assets/cram-classification.png" alt="CRAM Risk Rating Calculator Classification Screen" />
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dots"><span></span><span></span><span></span></span>
+            <span class="mockup-caption">Score breakdown with factor weights</span>
+          </div>
+          <video
+            src="../assets/cram-form.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="CRAM score breakdown walkthrough"
+          ></video>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">06 — IMPACT</span>
+        <h2 class="section-h">Impact</h2>
+        <p class="section-lead section-lead--muted">
+          Measured outcomes from the redesigned CRAM tool.
+        </p>
+        <div class="metrics-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="metric"><span class="metric-value">Assessment time</span><span class="metric-label">Reduced average assessment completion time through consolidated workflow</span></div>
+          <div class="metric"><span class="metric-value">Audit readiness</span><span class="metric-label">Full audit trail available for every assessment, eliminating manual record reconstruction</span></div>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="case-section">
+        <span class="eyebrow-red">07 — REFLECTION</span>
+        <h2 class="section-h">What I Learned</h2>
+        <p class="section-lead section-lead--muted">
+          Compliance UX is not about making things beautiful — it's about making
+          correctness achievable and defensibility automatic.
+        </p>
+        <p class="section-lead section-lead--muted">
+          The hardest design problem was not the form itself, but the override
+          workflow. Getting the balance between flexibility and accountability
+          right took three rounds of testing.
+        </p>
+        <p class="section-lead section-lead--muted">
+          Working directly with compliance officers revealed that their biggest
+          frustration was not the tool's complexity, but the lack of trust in
+          its outputs. Building visible data provenance was the most impactful
+          design decision.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+  </body>
+</html>
