@@ -617,9 +617,9 @@ a { color: inherit; text-decoration: none; }
 
 .typewriter-line {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: clamp(1.25rem, 3vw, 1.875rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--fg);
