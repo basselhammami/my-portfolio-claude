@@ -686,12 +686,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--header-fg);
+  color: var(--fg);
   /* Left edge aligns with the 900px content column on wide screens. */
   margin: 0 auto 2.5rem max(0px, calc((100% - 900px) / 2));
-  padding: 0.4rem 0.7rem;
-  background: var(--bg-header);
-  border-radius: 2px;
+  padding: 0.4rem 0;
   transition: opacity 0.2s var(--ease-out);
 }
 .back-link::before {
