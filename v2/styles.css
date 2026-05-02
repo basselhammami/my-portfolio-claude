@@ -222,7 +222,8 @@ a { color: inherit; text-decoration: none; }
 
 .avatar-frame {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   padding: 6px;
   background: var(--bg-card);
   border: 1px dashed var(--border);
@@ -282,7 +283,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 1.5rem;
   font-family: var(--font-sans);
   font-size: clamp(1.875rem, 3.5vw, 2.625rem);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--fg);
@@ -458,11 +459,6 @@ a { color: inherit; text-decoration: none; }
   padding: 1.5rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  transition: border-color 0.3s var(--ease-out);
-}
-
-.project-card-link:hover .project-card-body {
-  border-color: var(--border-strong);
 }
 
 .project-card-art {
