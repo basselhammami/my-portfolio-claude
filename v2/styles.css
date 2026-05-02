@@ -929,6 +929,9 @@ hr.rule {
   padding: 1.5rem 0;
   border-bottom: 1px dashed var(--border-dashed);
 }
+.numbered-row:last-child {
+  border-bottom: none;
+}
 .numbered-row .num {
   font-family: var(--font-mono);
   font-size: 0.875rem;
