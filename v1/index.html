@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2" />
     <script defer src="../script.js"></script>
   </head>
   <body>
@@ -24,16 +24,18 @@
         <a href="../assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
       </nav>
       <div class="nav-right">
-                <a href="index.html" class="lang-pill is-active">EN</a>
+        <button class="lang-globe" aria-label="Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <a href="index.html" class="lang-pill is-active">EN</a>
         <a href="index-ru.html" class="lang-pill">РУ</a>
+        <a href="../index.html" class="lang-pill" title="View v2 design">v2</a>
       </div>
     </header>
 
     <main class="page">
       <section class="hero">
-        <div class="avatar-frame">
-          <img class="avatar" src="../assets/basel.png" alt="Basel Hammami" />
-        </div>
+        <img class="avatar" src="../assets/basel.png" alt="Basel Hammami" />
         <p class="eyebrow">BASEL HAMMAMI</p>
         <h1 class="hero-title">
           Product designer with 5+ years of experience working across cultures,
@@ -48,10 +50,7 @@
           <span>Russian</span>
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="mailto:basselhammami@gmail.com">
-            <span>Leave a message</span>
-            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <a class="btn btn-primary" href="mailto:basselhammami@gmail.com">Leave a message</a>
         </div>
       </section>
 
