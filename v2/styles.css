@@ -223,7 +223,6 @@ a { color: inherit; text-decoration: none; }
 .avatar-frame {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.75rem;
   padding: 6px;
   background: var(--bg-card);
   border: 1px dashed var(--border);
@@ -283,14 +282,10 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 1.5rem;
   font-family: var(--font-sans);
   font-size: clamp(1.875rem, 3.5vw, 2.625rem);
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: var(--fg);
-}
-
-.hero-signature {
-  margin: 0 0 1.5rem;
 }
 
 .languages {
@@ -327,7 +322,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  border-radius: 999px;
+  border-radius: var(--radius-card);
   border: 1px solid transparent;
   transition: all 0.2s var(--ease-out);
   cursor: pointer;
