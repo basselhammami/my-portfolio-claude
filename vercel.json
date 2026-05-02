@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/v2/", "permanent": false },
+    { "source": "/index.html", "destination": "/v2/", "permanent": false },
+    { "source": "/index-ru.html", "destination": "/v2/index-ru.html", "permanent": false },
+    { "source": "/case-rakbank.html", "destination": "/v2/case-rakbank.html", "permanent": false },
+    { "source": "/case-rakbank-ru.html", "destination": "/v2/case-rakbank-ru.html", "permanent": false },
+    { "source": "/case-cram.html", "destination": "/v2/case-cram.html", "permanent": false },
+    { "source": "/case-cram-ru.html", "destination": "/v2/case-cram-ru.html", "permanent": false },
+    { "source": "/case-balady.html", "destination": "/v2/case-balady.html", "permanent": false },
+    { "source": "/case-balady-ru.html", "destination": "/v2/case-balady-ru.html", "permanent": false },
+    { "source": "/case-paywalls.html", "destination": "/v2/case-paywalls.html", "permanent": false },
+    { "source": "/case-paywalls-ru.html", "destination": "/v2/case-paywalls-ru.html", "permanent": false }
+  ]
+}
