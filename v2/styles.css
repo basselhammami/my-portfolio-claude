@@ -7,8 +7,8 @@
 
 :root {
   /* Surfaces */
-  --bg: #f7f5ee;
-  --bg-elevated: #fdfcf7;
+  --bg: #fbfaf5;
+  --bg-elevated: #ffffff;
   --bg-card: #ffffff;
   --bg-header: #000000;
 
@@ -757,7 +757,7 @@ a { color: inherit; text-decoration: none; }
 .case-hero {
   width: 100%;
   max-width: 880px;
-  margin: 0 auto 4rem;
+  margin: 0 0 4rem;
   aspect-ratio: 16 / 10;
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -1015,7 +1015,7 @@ hr.rule {
 
 /* Mockups */
 .mockup {
-  margin: 2rem auto;
+  margin: 2rem 0;
   max-width: 760px;
   background: var(--bg-card);
   border: 1px solid var(--border-strong);
@@ -1183,7 +1183,7 @@ hr.rule {
 
 /* Figure placeholder */
 .figure-placeholder {
-  margin: 2rem auto;
+  margin: 2rem 0;
   max-width: 760px;
   border: 1px dashed var(--border-dashed);
   background: var(--bg-elevated);
@@ -1311,7 +1311,7 @@ hr.rule {
 
 /* Prototype frame */
 .prototype-frame {
-  margin: 1.5rem auto 2rem;
+  margin: 1.5rem 0 2rem;
   max-width: 560px;
   background: var(--bg-card);
   border: 1px solid var(--border-strong);
