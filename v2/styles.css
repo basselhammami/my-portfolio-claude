@@ -213,12 +213,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 .avatar {
+  display: block;
   width: 64px;
   height: 64px;
   border-radius: var(--radius-pill);
   object-fit: cover;
   background: var(--bg-card);
-  border: 1px solid var(--border-strong);
 }
 
 .eyebrow {
