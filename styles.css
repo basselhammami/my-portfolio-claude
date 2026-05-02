@@ -75,8 +75,8 @@
 }
 
 .hero .avatar { animation-delay: 0s; }
-.hero .eyebrow { animation-delay: 0.08s; }
-.hero .hero-title { animation-delay: 0.16s; }
+.hero .hero-title { animation-delay: 0.08s; }
+.hero .hero-signature { animation-delay: 0.18s; }
 .hero .languages { animation-delay: 0.26s; }
 .hero .hero-cta { animation-delay: 0.34s; }
 
@@ -255,6 +255,7 @@ button {
   border-radius: 999px;
   object-fit: cover;
   background: #eee;
+  margin-bottom: 1.5rem;
 }
 
 .eyebrow {
@@ -272,6 +273,11 @@ button {
   font-weight: 500;
   letter-spacing: -0.025em;
   max-width: 50rem;
+}
+
+.hero-signature {
+  margin: 1.25rem 0 0;
+  color: var(--muted);
 }
 
 .languages {
@@ -301,9 +307,10 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius-pill);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   border: 1px solid transparent;
   cursor: pointer;
@@ -331,6 +338,14 @@ button {
 
 .btn-primary:hover {
   background: #1a1a1a;
+}
+
+.btn-arrow {
+  transition: transform 0.25s var(--ease-out);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(3px);
 }
 
 .btn-outline {
