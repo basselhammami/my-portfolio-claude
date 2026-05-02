@@ -665,18 +665,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .back-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.4rem;
+  width: fit-content;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--fg);
-  margin: 0 1rem 2.5rem;
+  color: var(--header-fg);
+  /* Left edge aligns with the 760px content column on wide screens. */
+  margin: 0 auto 2.5rem max(0px, calc((100% - 760px) / 2));
   padding: 0.4rem 0.7rem;
   background: var(--bg-header);
-  color: var(--header-fg);
   border-radius: 2px;
   transition: opacity 0.2s var(--ease-out);
 }
@@ -687,7 +688,8 @@ a { color: inherit; text-decoration: none; }
 .back-link:hover { opacity: 0.85; }
 
 .case-title {
-  margin: 0 1rem 1rem;
+  max-width: 760px;
+  margin: 0 auto 1rem;
   font-family: var(--font-sans);
   font-size: clamp(2rem, 4.5vw, 3rem);
   font-weight: 700;
@@ -697,7 +699,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .case-subtitle {
-  margin: 0 1rem 2.5rem;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
   font-family: var(--font-mono);
   font-size: 0.9375rem;
   line-height: 1.65;
@@ -708,7 +711,8 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem 2rem;
-  margin: 0 1rem 3rem;
+  max-width: 760px;
+  margin: 0 auto 3rem;
   padding: 1.25rem 1.25rem;
   border: 1px solid var(--border-dashed);
   position: relative;
@@ -756,7 +760,7 @@ a { color: inherit; text-decoration: none; }
 /* Hero box */
 .case-hero {
   width: 100%;
-  max-width: 880px;
+  max-width: 760px;
   margin: 0 auto 4rem;
   aspect-ratio: 16 / 10;
   border-radius: var(--radius-card);
@@ -816,7 +820,8 @@ a { color: inherit; text-decoration: none; }
 
 /* Section anatomy */
 .case-section {
-  margin: 0 1rem 4rem;
+  max-width: 760px;
+  margin: 0 auto 4rem;
 }
 
 .eyebrow-red {
@@ -856,7 +861,8 @@ a { color: inherit; text-decoration: none; }
 hr.rule {
   border: 0;
   border-top: 1px dashed var(--border-dashed);
-  margin: 4rem 1rem;
+  max-width: 760px;
+  margin: 4rem auto;
 }
 
 /* Numbered list */
