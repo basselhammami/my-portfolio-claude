@@ -239,8 +239,8 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--fg);
   padding: 0.3rem 0.6rem;
-  background: var(--bg-header);
-  color: var(--header-fg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 2px;
 }
 
