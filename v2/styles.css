@@ -48,8 +48,8 @@ body {
   font-family: var(--font-mono);
   background: var(--bg);
   color: var(--fg);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
@@ -200,13 +200,13 @@ a { color: inherit; text-decoration: none; }
   border-left: 1px dashed var(--border-dashed);
   pointer-events: none;
 }
-/* Lines hug the 760px content column with ~2rem of breathing on wide
+/* Lines hug the 900px content column with ~2rem of breathing on wide
    screens, falling back to 1rem from the page edge on narrow ones. */
 .page::before, .case-page::before {
-  left: max(1rem, calc((100% - 760px) / 2 - 2rem));
+  left: max(1rem, calc((100% - 900px) / 2 - 2rem));
 }
 .page::after, .case-page::after {
-  right: max(1rem, calc((100% - 760px) / 2 - 2rem));
+  right: max(1rem, calc((100% - 900px) / 2 - 2rem));
 }
 
 /* ==========================================================================
@@ -215,15 +215,15 @@ a { color: inherit; text-decoration: none; }
 
 .hero {
   position: relative;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 3rem 0 6rem;
 }
 
 .avatar {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 76px;
+  height: 76px;
   border-radius: var(--radius-pill);
   object-fit: cover;
   background: var(--bg-card);
@@ -247,7 +247,7 @@ a { color: inherit; text-decoration: none; }
 .hero-title {
   margin: 0 0 1.5rem;
   font-family: var(--font-sans);
-  font-size: clamp(1.625rem, 3vw, 2.25rem);
+  font-size: clamp(1.875rem, 3.5vw, 2.625rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -320,7 +320,7 @@ a { color: inherit; text-decoration: none; }
 
 .projects-intro,
 .expertise {
-  max-width: 760px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
@@ -338,7 +338,7 @@ a { color: inherit; text-decoration: none; }
 .section-title {
   margin: 0.5rem 0 2.25rem;
   font-family: var(--font-mono);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.375rem);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.25;
@@ -358,7 +358,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   border-top: 1px solid var(--border-dashed);
   border-left: 1px solid var(--border-dashed);
@@ -438,7 +438,7 @@ a { color: inherit; text-decoration: none; }
 .project-card-title {
   margin: 1.25rem 0 0.5rem;
   font-family: var(--font-sans);
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -448,7 +448,7 @@ a { color: inherit; text-decoration: none; }
 .project-card-tags {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.02em;
   line-height: 1.55;
   color: var(--muted);
@@ -552,7 +552,7 @@ a { color: inherit; text-decoration: none; }
 .exp-title {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.015em;
   color: var(--fg);
@@ -561,7 +561,7 @@ a { color: inherit; text-decoration: none; }
 .exp-desc {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -571,7 +571,7 @@ a { color: inherit; text-decoration: none; }
    ========================================================================== */
 
 .typewriter-section {
-  max-width: 760px;
+  max-width: 900px;
   margin: 5rem auto 1rem;
   padding: 2rem 0;
   text-align: center;
@@ -605,7 +605,7 @@ a { color: inherit; text-decoration: none; }
 .typewriter-line {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: clamp(1.125rem, 2.5vw, 1.625rem);
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -687,8 +687,8 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--header-fg);
-  /* Left edge aligns with the 760px content column on wide screens. */
-  margin: 0 auto 2.5rem max(0px, calc((100% - 760px) / 2));
+  /* Left edge aligns with the 900px content column on wide screens. */
+  margin: 0 auto 2.5rem max(0px, calc((100% - 900px) / 2));
   padding: 0.4rem 0.7rem;
   background: var(--bg-header);
   border-radius: 2px;
@@ -701,10 +701,10 @@ a { color: inherit; text-decoration: none; }
 .back-link:hover { opacity: 0.85; }
 
 .case-title {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 1rem;
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.05;
@@ -712,10 +712,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .case-subtitle {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 2.5rem;
   font-family: var(--font-mono);
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--muted);
 }
@@ -724,7 +724,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem 2rem;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 3rem;
   padding: 1.25rem 1.25rem;
   border: 1px solid var(--border-dashed);
@@ -773,7 +773,7 @@ a { color: inherit; text-decoration: none; }
 /* Hero box */
 .case-hero {
   width: 100%;
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 4rem;
   aspect-ratio: 16 / 10;
   border-radius: var(--radius-card);
@@ -833,7 +833,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Section anatomy */
 .case-section {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto 4rem;
 }
 
@@ -854,7 +854,7 @@ a { color: inherit; text-decoration: none; }
 .section-h {
   margin: 0 0 1.25rem;
   font-family: var(--font-sans);
-  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -864,7 +864,7 @@ a { color: inherit; text-decoration: none; }
 .section-lead {
   margin: 0 0 1rem;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 .section-lead--muted { color: var(--muted); }
@@ -874,7 +874,7 @@ a { color: inherit; text-decoration: none; }
 hr.rule {
   border: 0;
   border-top: 1px dashed var(--border-dashed);
-  max-width: 760px;
+  max-width: 900px;
   margin: 4rem auto;
 }
 
@@ -904,7 +904,7 @@ hr.rule {
 .numbered-row h4 {
   margin: 0 0 0.4rem;
   font-family: var(--font-sans);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--fg);
   letter-spacing: -0.015em;
@@ -912,7 +912,7 @@ hr.rule {
 .numbered-row p {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--muted);
 }
@@ -952,7 +952,7 @@ hr.rule {
 .info-card h4 {
   margin: 0 0 0.4rem;
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--fg);
 }
@@ -960,7 +960,7 @@ hr.rule {
 .info-card p {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.65;
   color: var(--muted);
 }
@@ -974,7 +974,7 @@ hr.rule {
 .case-quote p {
   margin: 0 0 0.75rem;
   font-family: var(--font-sans);
-  font-size: 1.25rem;
+  font-size: 1.4375rem;
   line-height: 1.4;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -1020,14 +1020,14 @@ hr.rule {
 .step-card h4 {
   margin: 0 0 0.4rem;
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--fg);
 }
 .step-card p {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -1035,7 +1035,7 @@ hr.rule {
 /* Mockups */
 .mockup {
   margin: 2rem auto;
-  max-width: 760px;
+  max-width: 900px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
@@ -1119,14 +1119,14 @@ hr.rule {
 .feature-row h5 {
   margin: 0 0 0.3rem;
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--fg);
 }
 .feature-row p {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--muted);
 }
@@ -1203,7 +1203,7 @@ hr.rule {
 /* Figure placeholder */
 .figure-placeholder {
   margin: 2rem auto;
-  max-width: 760px;
+  max-width: 900px;
   background: var(--bg-elevated);
   border: 1px dashed var(--border);
   padding: 2rem 1.5rem;
@@ -1307,7 +1307,7 @@ hr.rule {
 .decision-card h4 {
   margin: 0 0 0.75rem;
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--fg);
   letter-spacing: -0.01em;
@@ -1315,7 +1315,7 @@ hr.rule {
 .decision-card p {
   margin: 0 0 0.65rem;
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.65;
   color: var(--muted);
 }
