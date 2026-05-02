@@ -200,8 +200,14 @@ a { color: inherit; text-decoration: none; }
   border-left: 1px dashed var(--border-dashed);
   pointer-events: none;
 }
-.page::before, .case-page::before { left: 1rem; }
-.page::after, .case-page::after { right: 1rem; }
+/* Lines hug the 760px content column with ~2rem of breathing on wide
+   screens, falling back to 1rem from the page edge on narrow ones. */
+.page::before, .case-page::before {
+  left: max(1rem, calc((100% - 760px) / 2 - 2rem));
+}
+.page::after, .case-page::after {
+  right: max(1rem, calc((100% - 760px) / 2 - 2rem));
+}
 
 /* ==========================================================================
    Hero
