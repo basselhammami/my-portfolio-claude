@@ -491,9 +491,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 90%;
   max-height: 82%;
   border-radius: 4px;
-  box-shadow:
-    0 12px 28px -12px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* Device variant */
