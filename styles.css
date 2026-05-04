@@ -119,8 +119,11 @@ a { color: inherit; text-decoration: none; }
 
 .nav-left, .nav-right {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1.25rem;
+}
+.nav-right {
+  align-items: center;
 }
 
 .brand {
@@ -133,17 +136,17 @@ a { color: inherit; text-decoration: none; }
 
 .nav-link {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.3rem;
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.2s var(--ease-out);
 }
 .nav-link:hover { color: var(--header-fg); }
-.nav-link .arrow { font-size: 0.8125rem; }
+.nav-link .arrow { font-size: 0.95rem; }
 
 .lang-globe {
   background: transparent;
@@ -684,72 +687,6 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
-}
-
-/* ==========================================================================
-   Typewriter manifesto
-   ========================================================================== */
-
-.typewriter-section {
-  max-width: 900px;
-  margin: 5rem auto 1rem;
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px dashed var(--border-dashed);
-  border-bottom: 1px dashed var(--border-dashed);
-  position: relative;
-}
-.typewriter-section::before,
-.typewriter-section::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-color: var(--accent);
-  border-style: solid;
-  border-width: 0;
-}
-.typewriter-section::before {
-  top: 0;
-  left: 0;
-  border-top-width: 1.5px;
-  border-left-width: 1.5px;
-}
-.typewriter-section::after {
-  bottom: 0;
-  right: 0;
-  border-bottom-width: 1.5px;
-  border-right-width: 1.5px;
-}
-
-.typewriter-line {
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(1.25rem, 3vw, 1.875rem);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-}
-
-.typewriter {
-  color: var(--accent);
-  white-space: pre-wrap;
-}
-
-.typewriter-cursor {
-  display: inline-block;
-  margin-left: 0.15em;
-  color: var(--accent);
-  font-weight: 400;
-  animation: typewriter-blink 1s steps(2) infinite;
-}
-@keyframes typewriter-blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .typewriter-cursor { animation: none; opacity: 1; }
 }
 
 /* ==========================================================================
