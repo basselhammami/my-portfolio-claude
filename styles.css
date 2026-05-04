@@ -504,22 +504,79 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
-/* Per-card backdrops — quiet tinted gradients */
-.project-card-body--clm {
-  background:
-    linear-gradient(135deg, #fbe5d8 0%, #f5d0bf 100%);
+/* Per-card backdrops — animated multi-stop gradients themed per case */
+@keyframes card-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.project-card-body--cram {
-  background:
-    linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%);
-}
-.project-card-body--balady {
-  background:
-    linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
-}
+
+.project-card-body--clm,
+.project-card-body--cram,
+.project-card-body--balady,
 .project-card-body--paywalls {
-  background:
-    linear-gradient(135deg, #e6dfee 0%, #d1c6e3 100%);
+  background-size: 220% 220%;
+  animation: card-drift 18s ease-in-out infinite;
+}
+
+/* CLM — RAKBANK red/peach, banking warmth */
+.project-card-body--clm {
+  background-image: linear-gradient(
+    135deg,
+    #fbe5d8 0%,
+    #f7c9b2 28%,
+    #ef9a86 55%,
+    #f3b4a0 78%,
+    #fbe5d8 100%
+  );
+}
+
+/* CRAM — risk/alert amber-to-rust */
+.project-card-body--cram {
+  background-image: linear-gradient(
+    135deg,
+    #f9ead0 0%,
+    #f0c98c 30%,
+    #d99668 58%,
+    #ecb893 80%,
+    #f9ead0 100%
+  );
+  animation-duration: 22s;
+}
+
+/* Balady — Saudi green meeting sand */
+.project-card-body--balady {
+  background-image: linear-gradient(
+    135deg,
+    #e2ecdb 0%,
+    #b9d3b3 28%,
+    #80b29a 55%,
+    #c8d6a8 80%,
+    #e2ecdb 100%
+  );
+  animation-duration: 20s;
+}
+
+/* Paywalls — Headspace warm peach/yellow */
+.project-card-body--paywalls {
+  background-image: linear-gradient(
+    135deg,
+    #fbe9c4 0%,
+    #f8c98f 28%,
+    #f3a76a 55%,
+    #f6c9a3 80%,
+    #fbe9c4 100%
+  );
+  animation-duration: 24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card-body--clm,
+  .project-card-body--cram,
+  .project-card-body--balady,
+  .project-card-body--paywalls {
+    animation: none;
+  }
 }
 
 /* Screenshot variant */
