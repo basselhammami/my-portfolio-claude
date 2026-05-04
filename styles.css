@@ -119,11 +119,8 @@ a { color: inherit; text-decoration: none; }
 
 .nav-left, .nav-right {
   display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-}
-.nav-right {
   align-items: center;
+  gap: 1.25rem;
 }
 
 .brand {
@@ -136,17 +133,17 @@ a { color: inherit; text-decoration: none; }
 
 .nav-link {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.3rem;
-  font-family: "Caveat", "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   transition: color 0.2s var(--ease-out);
 }
 .nav-link:hover { color: var(--header-fg); }
-.nav-link .arrow { font-size: 0.95rem; }
+.nav-link .arrow { font-size: 0.8125rem; }
 
 .lang-globe {
   background: transparent;
