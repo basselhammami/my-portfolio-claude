@@ -316,13 +316,91 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-.hero-name {
-  margin: 1.25rem 0 0.75rem;
-  font-family: "Caveat", "Inter", sans-serif;
-  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1;
+/* Portrait block — avatar, country stamps, signature */
+.hero-portrait {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.country-stamps {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.country-stamp {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--fg);
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 2px;
+}
+.country-stamp:nth-child(1) { transform: rotate(-2.5deg); }
+.country-stamp:nth-child(2) { transform: rotate(1.5deg); }
+.country-stamp:nth-child(3) { transform: rotate(-1deg); }
+
+/* Orange corner ticks — same vocabulary as .avatar-frame */
+.country-stamp::before,
+.country-stamp::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: var(--accent);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+.country-stamp::before {
+  top: -1px;
+  left: -1px;
+  border-top-width: 1.25px;
+  border-left-width: 1.25px;
+}
+.country-stamp::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom-width: 1.25px;
+  border-right-width: 1.25px;
+}
+
+/* Handwritten signature stamped at the bottom-right of the avatar */
+.hero-name {
+  position: absolute;
+  top: 60px;
+  left: 35px;
+  margin: 0;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 600;
+  line-height: 0.95;
+  color: var(--fg);
+  transform: rotate(-7deg);
+  transform-origin: left center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .hero-portrait { gap: 0.75rem; }
+  .hero-name {
+    top: 56px;
+    left: 28px;
+    font-size: 2rem;
+  }
 }
 
 .hero-title {
