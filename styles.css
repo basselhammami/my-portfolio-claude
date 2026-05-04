@@ -956,16 +956,6 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto 4rem;
 }
 
-.eyebrow-red {
-  display: inline-block;
-  font-family: "Caveat", "Inter", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--accent);
-  margin-bottom: 0.75rem;
-}
-
 .section-h {
   margin: 0 0 1.25rem;
   font-family: var(--font-sans);
