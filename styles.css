@@ -620,6 +620,13 @@ a { color: inherit; text-decoration: none; }
   transform-origin: center;
 }
 
+/* CRAM video is a tall phone recording — show the whole scroll instead
+   of cropping it. The animated gradient backdrop fills the side gaps. */
+.project-card-body--cram .project-card-art--video {
+  object-fit: contain;
+  transform: none;
+}
+
 /* Placeholder card — quiet "more to come" slot */
 .project-card-body--placeholder {
   background: transparent;
