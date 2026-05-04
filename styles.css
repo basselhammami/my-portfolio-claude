@@ -281,7 +281,7 @@ a { color: inherit; text-decoration: none; }
 
 .experience-list {
   list-style: none;
-  margin: 0 0 2.5rem;
+  margin: 0;
   padding: 0;
   border-top: 1px dashed var(--border-dashed);
 }
@@ -399,7 +399,8 @@ a { color: inherit; text-decoration: none; }
    ========================================================================== */
 
 .projects-intro,
-.expertise {
+.expertise,
+.experience {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -415,6 +416,10 @@ a { color: inherit; text-decoration: none; }
   margin-top: 5rem;
 }
 
+.experience {
+  margin-top: 5rem;
+}
+
 .section-title {
   margin: 0.5rem 0 2.25rem;
   font-family: var(--font-sans);
@@ -426,7 +431,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .projects-intro .eyebrow,
-.expertise .eyebrow {
+.expertise .eyebrow,
+.experience .eyebrow {
   margin-top: 0;
 }
 
@@ -605,6 +611,19 @@ a { color: inherit; text-decoration: none; }
   max-height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Placeholder card — quiet "more to come" slot */
+.project-card-body--placeholder {
+  background: transparent;
+  border: 1px dashed var(--border-dashed);
+}
+.placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 /* NDA badge — black pill on light card */
