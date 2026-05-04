@@ -279,6 +279,43 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2px;
 }
 
+.experience-list {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  border-top: 1px dashed var(--border-dashed);
+}
+.experience-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  column-gap: 1.5rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--border-dashed);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.experience-years {
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.experience-role {
+  color: var(--muted);
+}
+.experience-org {
+  color: var(--fg);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+@media (max-width: 640px) {
+  .experience-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.15rem;
+  }
+}
+
 .hero-title {
   margin: 0 0 1.5rem;
   font-family: var(--font-sans);
