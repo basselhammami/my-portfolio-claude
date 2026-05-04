@@ -625,10 +625,10 @@ a { color: inherit; text-decoration: none; }
   border: 1px dashed var(--border-dashed);
 }
 .placeholder-label {
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1;
   color: var(--muted);
 }
 
@@ -805,9 +805,10 @@ a { color: inherit; text-decoration: none; }
 
 .copy {
   margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
   color: var(--muted);
 }
 
