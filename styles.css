@@ -37,7 +37,6 @@
 
   /* Typography */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -45,7 +44,7 @@
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--fg);
   font-size: 16px;
@@ -136,7 +135,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -157,7 +156,7 @@ a { color: inherit; text-decoration: none; }
 .lang-globe:hover { color: var(--header-fg); }
 
 .lang-pill {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -242,12 +241,11 @@ a { color: inherit; text-decoration: none; }
 .eyebrow {
   display: inline-block;
   margin: 1rem 0;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--fg);
+  line-height: 1;
+  color: var(--accent);
 }
 
 .experience-list {
@@ -263,7 +261,7 @@ a { color: inherit; text-decoration: none; }
   align-items: baseline;
   padding: 0.75rem 0;
   border-bottom: 1px dashed var(--border-dashed);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
 }
 .experience-years {
@@ -337,7 +335,7 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0 0 2.25rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   color: var(--muted);
   align-items: center;
@@ -361,7 +359,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.25rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -508,7 +506,7 @@ a { color: inherit; text-decoration: none; }
 
 .project-card-tags {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   letter-spacing: 0.02em;
   line-height: 1.55;
@@ -643,7 +641,7 @@ a { color: inherit; text-decoration: none; }
   padding: 0.3rem 0.55rem;
   background: var(--bg-header);
   color: var(--header-fg);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -702,7 +700,7 @@ a { color: inherit; text-decoration: none; }
 
 .exp-desc {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
@@ -789,7 +787,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -825,7 +823,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 0.4rem;
   width: fit-content;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -855,7 +853,7 @@ a { color: inherit; text-decoration: none; }
 .case-subtitle {
   max-width: 900px;
   margin: 0 auto 2.5rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--muted);
@@ -896,7 +894,7 @@ a { color: inherit; text-decoration: none; }
 .case-meta div { margin: 0; }
 .case-meta dt {
   margin: 0 0 0.4rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -980,11 +978,10 @@ a { color: inherit; text-decoration: none; }
 
 .eyebrow-red {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
+  font-family: "Caveat", "Inter", sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  line-height: 1;
   color: var(--accent);
   margin-bottom: 0.75rem;
 }
@@ -1001,7 +998,7 @@ a { color: inherit; text-decoration: none; }
 
 .section-lead {
   margin: 0 0 1rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -1035,7 +1032,7 @@ hr.rule {
   border-bottom: none;
 }
 .numbered-row .num {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -1052,7 +1049,7 @@ hr.rule {
 }
 .numbered-row p {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.7;
   color: var(--muted);
@@ -1100,7 +1097,7 @@ hr.rule {
 
 .info-card p {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.65;
   color: var(--muted);
@@ -1122,7 +1119,7 @@ hr.rule {
   color: var(--fg);
 }
 .case-quote cite {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-style: normal;
   font-size: 0.6875rem;
   letter-spacing: 0.06em;
@@ -1146,7 +1143,7 @@ hr.rule {
   padding: 1.5rem;
 }
 .step-card .step-num {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -1167,7 +1164,7 @@ hr.rule {
 }
 .step-card p {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
@@ -1226,7 +1223,7 @@ hr.rule {
   background: var(--border-strong);
 }
 .mockup-caption {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.6875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1266,7 +1263,7 @@ hr.rule {
 }
 .feature-row p {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--muted);
@@ -1291,7 +1288,7 @@ hr.rule {
 .ba-block--green { background: #dde8de; }
 .ba-block h5 {
   margin: 0 0 0.85rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -1301,7 +1298,7 @@ hr.rule {
 .ba-block ul {
   margin: 0;
   padding-left: 1.1rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   line-height: 1.65;
   color: var(--fg-soft);
@@ -1335,7 +1332,7 @@ hr.rule {
   color: var(--fg);
 }
 .metric .metric-label {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   color: var(--muted);
   line-height: 1.55;
@@ -1377,7 +1374,7 @@ hr.rule {
   border-right-width: 1.5px;
 }
 .figure-placeholder .fp-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -1390,7 +1387,7 @@ hr.rule {
 }
 .figure-placeholder .fp-desc {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   line-height: 1.65;
   color: var(--muted);
@@ -1401,7 +1398,7 @@ hr.rule {
 /* Status pill */
 .status-pill {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -1455,7 +1452,7 @@ hr.rule {
 }
 .decision-card p {
   margin: 0 0 0.65rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.65;
   color: var(--muted);
