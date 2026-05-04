@@ -530,7 +530,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* CLM — RAKBANK red/peach, banking warmth */
-.project-card-body--clm {
+.project-card-body--clm,
+.project-card-body--cram {
   background-image: linear-gradient(
     135deg,
     #fbe5d8 0%,
@@ -541,16 +542,8 @@ a { color: inherit; text-decoration: none; }
   );
 }
 
-/* CRAM — risk/alert amber-to-rust */
+/* Stagger CRAM's drift so it doesn't sync with CLM beside it */
 .project-card-body--cram {
-  background-image: linear-gradient(
-    135deg,
-    #f9ead0 0%,
-    #f0c98c 30%,
-    #d99668 58%,
-    #ecb893 80%,
-    #f9ead0 100%
-  );
   animation-duration: 22s;
 }
 
