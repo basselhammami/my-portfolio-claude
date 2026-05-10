@@ -450,20 +450,9 @@ button {
   background: linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
 }
 
-/* Rizn — soft mint/teal echoing a fintech wallet feel */
-.project-card-body--rizn {
-  background: linear-gradient(135deg, #d8ece9 0%, #b5d6cf 100%);
-}
-.card-cover-art {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.55);
-  transition: transform 0.8s var(--ease-out);
-  will-change: transform;
-}
-.project-card-link:hover .card-cover-art {
-  transform: scale(1.05);
+/* Kafu — vibrant lime-green / yellow-green echoing the brand */
+.project-card-body--kafu {
+  background: linear-gradient(135deg, #92e35e 0%, #d8e84b 100%);
 }
 
 /* Placeholder block used inside .mockup when no image is ready yet */
