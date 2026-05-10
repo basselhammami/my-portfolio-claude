@@ -450,6 +450,17 @@ button {
   background: linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
 }
 
+/* Placeholder — quiet "more to come" slot where a future case study lands */
+.project-card--placeholder { pointer-events: none; }
+.project-card-body--placeholder {
+  background: transparent;
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+}
+.placeholder-label {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
 /* Screenshot variant — UI screenshot (e.g. CLM dashboard) with rounded
    corners + shadow so it reads as a tile floating on the card. */
 .project-card-art--screenshot {
