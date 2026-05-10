@@ -806,7 +806,6 @@ button {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--fg);
-  max-width: 44rem;
 }
 
 .section-lead--muted {
