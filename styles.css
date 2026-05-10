@@ -482,10 +482,10 @@ a { color: inherit; text-decoration: none; }
 .project-card-title {
   margin: 1.25rem 0 0.5rem;
   font-family: var(--font-sans);
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
   color: var(--fg);
 }
 
