@@ -450,11 +450,6 @@ button {
   background: linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
 }
 
-/* Paywalls — soft lavender (echoes the lilac orb in the Stillwater UI). */
-.project-card-body--paywalls {
-  background: linear-gradient(135deg, #e6dfee 0%, #d1c6e3 100%);
-}
-
 /* Screenshot variant — UI screenshot (e.g. CLM dashboard) with rounded
    corners + shadow so it reads as a tile floating on the card. */
 .project-card-art--screenshot {
