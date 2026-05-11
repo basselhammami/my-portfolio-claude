@@ -108,14 +108,70 @@
       <section class="case-section">
         <h2 class="section-h">Customer Journey Map</h2>
         <p class="section-lead section-lead--muted">
-          A simplified CJM mapping a typical monthly cycle, the friction points, and where the budget feature could intervene.
+          A simplified CJM mapping a typical monthly cycle: sentiment trends down from Payday into Late month, with friction points and intervention opportunities at each stage.
         </p>
 
-        <div class="numbered-list">
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Payday — salary lands</h4><p><strong>Touchpoint:</strong> push notification. <strong>Insight:</strong> the new balance is mentally discounted within hours. <strong>Opportunity:</strong> a "set this month's budget" prompt while attention is high.</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Early month — small daily spends</h4><p><strong>Touchpoint:</strong> dozens of small contactless payments. <strong>Insight:</strong> small spends don't feel real. <strong>Opportunity:</strong> auto-categorisation plus a top-spending highlight.</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Mid month — dashboard check</h4><p><strong>Touchpoint:</strong> opens the app to send money. <strong>Insight:</strong> "Am I over budget yet?" goes unanswered. <strong>Opportunity:</strong> a persistent budget widget or dedicated tab.</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Late month — overdraft warning</h4><p><strong>Touchpoint:</strong> low-balance push. <strong>Insight:</strong> too late. <strong>Opportunity:</strong> proactive 80% / 100% alerts when a category nears its cap.</p></div></div>
+        <div class="cjm-diagram">
+          <div class="cjm-chart-wrap">
+            <div class="cjm-row-label">Sentiment</div>
+            <div class="cjm-chart">
+              <svg viewBox="0 0 800 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="0" y1="20" x2="800" y2="20" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <line x1="0" y1="90" x2="800" y2="90" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <line x1="0" y1="160" x2="800" y2="160" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <path d="M 100 35 L 333 70 L 567 125 L 750 155" fill="none" stroke="var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                <g fill="var(--fg)">
+                  <circle cx="100" cy="35" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="333" cy="70" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="567" cy="125" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="750" cy="155" r="4" vector-effect="non-scaling-stroke"/>
+                </g>
+                <g fill="none" stroke="var(--fg)" stroke-width="1" opacity="0.25">
+                  <circle cx="100" cy="35" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="333" cy="70" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="567" cy="125" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="750" cy="155" r="8" vector-effect="non-scaling-stroke"/>
+                </g>
+              </svg>
+              <ol class="cjm-y-axis" aria-hidden="true">
+                <li>Positive</li>
+                <li>Neutral</li>
+                <li>Negative</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="cjm-row cjm-row--stage">
+            <div class="cjm-row-label">Stage</div>
+            <div><p class="cjm-stage-title">Payday</p><p class="cjm-stage-meta">Day 1</p></div>
+            <div><p class="cjm-stage-title">Early month</p><p class="cjm-stage-meta">Days 2–10</p></div>
+            <div><p class="cjm-stage-title">Mid month</p><p class="cjm-stage-meta">Days 11–20</p></div>
+            <div><p class="cjm-stage-title">Late month</p><p class="cjm-stage-meta">Days 21–end</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Touchpoint</div>
+            <div><p class="cjm-cell-title">Push notification</p><p class="cjm-cell-body">Salary credit alert.</p></div>
+            <div><p class="cjm-cell-title">Contactless taps</p><p class="cjm-cell-body">Daily card spend across dozens of small payments.</p></div>
+            <div><p class="cjm-cell-title">App session</p><p class="cjm-cell-body">Opens the app to send money.</p></div>
+            <div><p class="cjm-cell-title">Low-balance push</p><p class="cjm-cell-body">Reactive overdraft alert.</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Insight</div>
+            <div><p class="cjm-cell-title">Balance is mentally discounted</p><p class="cjm-cell-body">The new balance is allocated within hours but spent over weeks.</p></div>
+            <div><p class="cjm-cell-title">Small spends don't feel real</p><p class="cjm-cell-body">No running total surfaces during taps, so the impact is invisible.</p></div>
+            <div><p class="cjm-cell-title">"Am I over budget?" goes unanswered</p><p class="cjm-cell-body">Status requires manual investigation across screens.</p></div>
+            <div><p class="cjm-cell-title">The alert arrives too late</p><p class="cjm-cell-body">The damage is already done by the time the warning fires.</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Opportunity</div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 01</p><p class="cjm-cell-title">"Set this month's budget" prompt</p><p class="cjm-cell-body">Capture intent while attention is highest.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 02</p><p class="cjm-cell-title">Auto-categorisation + weekly digest</p><p class="cjm-cell-body">Make invisible spending visible.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 03</p><p class="cjm-cell-title">Persistent budget widget</p><p class="cjm-cell-body">Always-on visibility without extra friction.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 04</p><p class="cjm-cell-title">Proactive 80% / 100% alerts</p><p class="cjm-cell-body">Warn before the category cap is breached.</p></div>
+          </div>
         </div>
       </section>
 
