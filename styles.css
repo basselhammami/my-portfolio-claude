@@ -1307,3 +1307,110 @@ button {
     margin: 3rem 0 2.5rem;
   }
 }
+
+/* ==========================================================================
+   Customer Journey Map diagram — used in the Kafu case study
+   ========================================================================== */
+
+.cjm-diagram {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-sans), "Inter", sans-serif;
+  color: var(--fg);
+}
+
+.cjm-chart-wrap {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin: 1rem 0 0.5rem;
+}
+
+.cjm-row-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  padding-top: 2px;
+}
+
+.cjm-chart {
+  position: relative;
+  height: 180px;
+}
+.cjm-chart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cjm-y-axis {
+  position: absolute;
+  inset: 0 auto 0 -110px;
+  width: 90px;
+  margin: 0;
+  padding: 12px 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+  color: var(--muted);
+}
+.cjm-y-axis li { margin: 0; }
+
+.cjm-row {
+  display: grid;
+  grid-template-columns: 140px repeat(4, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+}
+
+.cjm-stage-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--fg);
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.cjm-stage-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.cjm-cell-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.cjm-cell-body {
+  font-size: 13px;
+  color: #5f5e5a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cjm-opp {
+  padding-left: 14px;
+  border-left: 2px solid var(--fg);
+}
+.cjm-opp-tag {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg);
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 768px) {
+  .cjm-chart-wrap { grid-template-columns: 1fr; }
+  .cjm-chart { height: 140px; }
+  .cjm-y-axis { position: static; flex-direction: row; gap: 12px; padding: 0 0 8px; width: auto; align-items: flex-start; }
+  .cjm-row { grid-template-columns: 1fr; gap: 16px; padding: 16px 0; }
+  .cjm-row-label { padding-top: 0; margin-bottom: -8px; }
+}

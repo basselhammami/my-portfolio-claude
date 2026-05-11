@@ -108,14 +108,70 @@
       <section class="case-section">
         <h2 class="section-h">Карта пути клиента</h2>
         <p class="section-lead section-lead--muted">
-          Упрощённая CJM на типичный месячный цикл — где трение, где функция бюджета может вмешаться.
+          Упрощённая CJM на типичный месячный цикл: настроение падает от «зарплаты» к концу месяца, на каждой стадии — своё трение и своя возможность вмешаться.
         </p>
 
-        <div class="numbered-list">
-          <div class="numbered-row"><span class="num">↓</span><div><h4>День зарплаты</h4><p><strong>Касание:</strong> push о поступлении. <strong>Инсайт:</strong> новый баланс «обесценивается» в голове за пару часов. <strong>Возможность:</strong> промпт «установите бюджет на месяц», пока внимание ещё высокое.</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Начало месяца — мелкие ежедневные траты</h4><p><strong>Касание:</strong> десятки мелких бесконтактных платежей. <strong>Инсайт:</strong> мелкие траты не ощущаются «настоящими». <strong>Возможность:</strong> автокатегоризация плюс блок «топ трат».</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Середина месяца — проверка дашборда</h4><p><strong>Касание:</strong> заходит, чтобы перевести деньги. <strong>Инсайт:</strong> вопрос «я уже превысил бюджет?» остаётся без ответа. <strong>Возможность:</strong> постоянный виджет бюджета или отдельная вкладка.</p></div></div>
-          <div class="numbered-row"><span class="num">↓</span><div><h4>Конец месяца — низкий баланс</h4><p><strong>Касание:</strong> push о низком балансе. <strong>Инсайт:</strong> уже поздно. <strong>Возможность:</strong> проактивные уведомления на 80% / 100%, как только категория подходит к лимиту.</p></div></div>
+        <div class="cjm-diagram">
+          <div class="cjm-chart-wrap">
+            <div class="cjm-row-label">Настроение</div>
+            <div class="cjm-chart">
+              <svg viewBox="0 0 800 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="0" y1="20" x2="800" y2="20" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <line x1="0" y1="90" x2="800" y2="90" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <line x1="0" y1="160" x2="800" y2="160" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
+                <path d="M 100 35 L 333 70 L 567 125 L 750 155" fill="none" stroke="var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                <g fill="var(--fg)">
+                  <circle cx="100" cy="35" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="333" cy="70" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="567" cy="125" r="4" vector-effect="non-scaling-stroke"/>
+                  <circle cx="750" cy="155" r="4" vector-effect="non-scaling-stroke"/>
+                </g>
+                <g fill="none" stroke="var(--fg)" stroke-width="1" opacity="0.25">
+                  <circle cx="100" cy="35" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="333" cy="70" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="567" cy="125" r="8" vector-effect="non-scaling-stroke"/>
+                  <circle cx="750" cy="155" r="8" vector-effect="non-scaling-stroke"/>
+                </g>
+              </svg>
+              <ol class="cjm-y-axis" aria-hidden="true">
+                <li>Позитив</li>
+                <li>Нейтрально</li>
+                <li>Негатив</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="cjm-row cjm-row--stage">
+            <div class="cjm-row-label">Этап</div>
+            <div><p class="cjm-stage-title">День зарплаты</p><p class="cjm-stage-meta">День 1</p></div>
+            <div><p class="cjm-stage-title">Начало месяца</p><p class="cjm-stage-meta">Дни 2–10</p></div>
+            <div><p class="cjm-stage-title">Середина месяца</p><p class="cjm-stage-meta">Дни 11–20</p></div>
+            <div><p class="cjm-stage-title">Конец месяца</p><p class="cjm-stage-meta">Дни 21–конец</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Касание</div>
+            <div><p class="cjm-cell-title">Push-уведомление</p><p class="cjm-cell-body">Уведомление о зачислении зарплаты.</p></div>
+            <div><p class="cjm-cell-title">Бесконтактные платежи</p><p class="cjm-cell-body">Десятки мелких ежедневных трат по карте.</p></div>
+            <div><p class="cjm-cell-title">Сессия в приложении</p><p class="cjm-cell-body">Заходит, чтобы перевести деньги.</p></div>
+            <div><p class="cjm-cell-title">Push о низком балансе</p><p class="cjm-cell-body">Реактивное уведомление о перерасходе.</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Инсайт</div>
+            <div><p class="cjm-cell-title">Баланс мысленно «обесценивается»</p><p class="cjm-cell-body">Новый баланс распределён за часы, потрачен за недели.</p></div>
+            <div><p class="cjm-cell-title">Мелкие траты не ощущаются «настоящими»</p><p class="cjm-cell-body">Во время оплат не виден текущий итог — эффект незаметен.</p></div>
+            <div><p class="cjm-cell-title">«Я уже превысил бюджет?» — без ответа</p><p class="cjm-cell-body">Статус приходится искать вручную по экранам.</p></div>
+            <div><p class="cjm-cell-title">Уведомление приходит слишком поздно</p><p class="cjm-cell-body">К моменту срабатывания ущерб уже нанесён.</p></div>
+          </div>
+
+          <div class="cjm-row">
+            <div class="cjm-row-label">Возможность</div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Интервенция 01</p><p class="cjm-cell-title">Промпт «бюджет на месяц»</p><p class="cjm-cell-body">Зафиксировать намерение, пока внимание высоко.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Интервенция 02</p><p class="cjm-cell-title">Автокатегоризация + еженедельная сводка</p><p class="cjm-cell-body">Сделать невидимые траты видимыми.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Интервенция 03</p><p class="cjm-cell-title">Постоянный виджет бюджета</p><p class="cjm-cell-body">Всегда на виду, без лишних усилий.</p></div>
+            <div class="cjm-opp"><p class="cjm-opp-tag">Интервенция 04</p><p class="cjm-cell-title">Проактивные уведомления 80% / 100%</p><p class="cjm-cell-body">Предупредить до пробития лимита по категории.</p></div>
+          </div>
         </div>
       </section>
 
