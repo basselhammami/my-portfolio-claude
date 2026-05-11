@@ -1396,13 +1396,13 @@ button {
 
 .cjm-opp {
   padding-left: 14px;
-  border-left: 2px solid var(--fg);
+  border-left: 2px solid #2FFA80;
 }
 .cjm-opp-tag {
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--fg);
+  color: #1aa856;
   font-weight: 600;
   margin: 0 0 10px;
 }
