@@ -255,10 +255,6 @@
           <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Промпт «бюджет на месяц»</h5><p>1-го числа (или когда приходит зарплата) — экран с одним вопросом «установить бюджет на месяц» с умными значениями по умолчанию.</p></div></div>
         </div>
 
-        <p class="section-lead section-lead--muted">
-          Я попробовал две вёрстки самого экрана бюджета.
-        </p>
-
         <div class="mockup mockup--phone">
           <div class="mockup-bar">
             <span class="mockup-dots"><span></span><span></span><span></span></span>
@@ -267,25 +263,54 @@
           <img src="assets/kafu-hero.png" alt="Главная Kafu с виджетом бюджета, картой и последними транзакциями" />
         </div>
 
-        <div class="mockup mockup--phone">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Экран бюджета — версия 1 (от категорий)</span>
-          </div>
-          <div class="mockup-placeholder">Место для изображения</div>
-        </div>
-
-        <div class="mockup mockup--phone">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Экран бюджета — версия 2 (от остатка)</span>
-          </div>
-          <div class="mockup-placeholder">Место для изображения</div>
-        </div>
-
         <p class="section-lead section-lead--muted">
-          Версия 1 вела от разреза по категориям; версия 2 — от заголовочной цифры «осталось», а уже потом — детали. Дальше пошла версия 2: на тестах пользователи сначала хотели «успокоения», и только потом — деталей.
+          Полный флоу бюджетирования: задать сумму на месяц, выбрать порог напоминаний, распределить бюджет по категориям и перейти к живому обзору цикла.
         </p>
+
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-01.png" alt="Plan your spending — ввод суммы" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">01</span>Запланируйте траты</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-02.png" alt="Plan your spending — введено 3 800" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">02</span>Введите сумму</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-03.png" alt="Reminder settings — порог 80%" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">03</span>Выберите напоминание</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-04.png" alt="Allocate category budgets — пустое состояние" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">04</span>Распределите по категориям</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-05.png" alt="Set your groceries budget — 320" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">05</span>Бюджет на категорию</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-06.png" alt="Allocate category budgets — groceries 320 сохранено" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">06</span>Подтверждённое распределение</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-07.png" alt="Обзор бюджета — прогресс месяца, топ-бюджеты, график капитала" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">07</span>Следите за циклом</p>
+          </li>
+        </ol>
       </section>
 
       <hr class="rule" />
