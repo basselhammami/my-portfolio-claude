@@ -255,10 +255,6 @@
           <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Monthly budget prompt</h5><p>On the 1st of every month (or whenever the salary lands), a single-screen prompt asks "set this month's budget" with smart defaults.</p></div></div>
         </div>
 
-        <p class="section-lead section-lead--muted">
-          I explored two layouts for the budget surface itself.
-        </p>
-
         <div class="mockup mockup--phone">
           <div class="mockup-bar">
             <span class="mockup-dots"><span></span><span></span><span></span></span>
@@ -267,25 +263,54 @@
           <img src="assets/kafu-hero.png" alt="Kafu app homepage with budget widget, card preview, and recent transactions" />
         </div>
 
-        <div class="mockup mockup--phone">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Budget page — Version 1 (category-led)</span>
-          </div>
-          <div class="mockup-placeholder">Image placeholder</div>
-        </div>
-
-        <div class="mockup mockup--phone">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Budget page — Version 2 (remaining-led)</span>
-          </div>
-          <div class="mockup-placeholder">Image placeholder</div>
-        </div>
-
         <p class="section-lead section-lead--muted">
-          Version 1 led with the category breakdown; Version 2 led with the headline "remaining" number, then drilled down. I took Version 2 forward — informal testing showed people wanted reassurance first, detail second.
+          The full budgeting flow walks the user from setting a monthly amount, through reminder preferences and category allocation, into the live overview that tracks the month.
         </p>
+
+        <ol class="flow-grid">
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-01.png" alt="Plan your spending — amount entry" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">01</span>Plan your spending</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-02.png" alt="Plan your spending — 3,800 entered" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">02</span>Enter the amount</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-03.png" alt="Reminder settings — 80% threshold selected" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">03</span>Pick a reminder</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-04.png" alt="Allocate category budgets — empty state" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">04</span>Allocate categories</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-05.png" alt="Set your groceries budget — 320 entered" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">05</span>Set a category budget</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-06.png" alt="Allocate category budgets — groceries 320 saved" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">06</span>Confirmed allocation</p>
+          </li>
+          <li class="flow-step">
+            <div class="flow-step-frame">
+              <img src="assets/kafu-flow-07.png" alt="Budget overview — monthly progress, top budgets, net-worth chart" />
+            </div>
+            <p class="flow-step-meta"><span class="flow-step-num">07</span>Track the cycle</p>
+          </li>
+        </ol>
       </section>
 
       <hr class="rule" />
