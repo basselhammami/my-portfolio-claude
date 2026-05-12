@@ -1499,16 +1499,6 @@ button {
   gap: 1.25rem;
 }
 
-/* Single-item hero card — keep one column's width even though the grid
-   is 4-up, so the hero shot reads the same size as a flow step. */
-.flow-grid--hero {
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 1.5rem;
-}
-.flow-grid--hero > .flow-step {
-  grid-column: 1 / span 1;
-}
-
 .flow-step {
   margin: 0;
   display: flex;
