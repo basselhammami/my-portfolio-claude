@@ -971,9 +971,12 @@ button {
   margin: 1.5rem 0 2rem;
 }
 
-/* Phone-sized variant — narrows the whole frame so portrait screenshots
-   don't blow up to the full case-page width. */
-.mockup--phone {
+/* Phone-sized variant — the frame spans the full case-page width,
+   but the screenshot/placeholder inside is capped to a phone size and
+   centred so portrait shots don't blow up. */
+.mockup--phone img,
+.mockup--phone video,
+.mockup--phone .mockup-placeholder {
   max-width: 22rem;
   margin-left: auto;
   margin-right: auto;
