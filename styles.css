@@ -836,6 +836,10 @@ button {
   grid-template-columns: 1fr;
 }
 
+.numbered-list--plain .numbered-row p {
+  max-width: none;
+}
+
 .numbered-row h4 {
   margin: 0 0 0.5rem;
   font-size: 1rem;
