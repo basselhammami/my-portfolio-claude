@@ -1553,3 +1553,16 @@ button {
 @media (max-width: 640px) {
   .flow-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Kafu hero figure — the bezeled iPhone screenshot displayed on its own,
+   no frame chrome, no striped placeholder behind it. Sized to roughly
+   match a flow-step card so it sits in the same visual rhythm. */
+.kafu-hero-figure {
+  margin: 1.5rem auto 2rem;
+  max-width: 16rem;
+}
+.kafu-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
