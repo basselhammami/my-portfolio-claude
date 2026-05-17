@@ -727,6 +727,10 @@ button {
   max-width: 44rem;
 }
 
+.case-subtitle--full {
+  max-width: none;
+}
+
 .case-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
