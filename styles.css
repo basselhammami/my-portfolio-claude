@@ -1095,14 +1095,6 @@ button {
   padding: 1.5rem;
 }
 
-.ba-block--pink {
-  background: #fce8e8;
-}
-
-.ba-block--green {
-  background: #e4f4e9;
-}
-
 .ba-block--plain {
   background: var(--card, #f5f5f5);
   border: 1px solid var(--border);
