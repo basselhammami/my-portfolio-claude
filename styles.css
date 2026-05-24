@@ -1127,6 +1127,17 @@ button {
   margin-top: 0.35rem;
 }
 
+.ba-block .ba-figure {
+  margin: 0 0 1rem;
+}
+
+.ba-block .ba-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 /* Impact metrics */
 .metrics-grid {
   display: grid;
