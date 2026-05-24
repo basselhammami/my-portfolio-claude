@@ -716,7 +716,6 @@ button {
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  max-width: 48rem;
 }
 
 .case-subtitle {
@@ -724,11 +723,6 @@ button {
   font-size: 1.0625rem;
   line-height: 1.55;
   color: var(--muted);
-  max-width: 44rem;
-}
-
-.case-subtitle--full {
-  max-width: none;
 }
 
 .case-meta {
@@ -895,6 +889,11 @@ button {
 .info-card .icon-chip--green {
   background: #e4f6e8;
   color: #16a34a;
+}
+
+.info-card .icon-chip--red {
+  background: transparent;
+  color: #dc2626;
 }
 
 .info-card .icon-chip svg {
