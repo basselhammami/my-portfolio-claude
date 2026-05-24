@@ -1138,6 +1138,18 @@ button {
   border-radius: 0.5rem;
 }
 
+.cram-board-figure {
+  margin: 0;
+}
+
+.cram-board-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
 /* Impact metrics */
 .metrics-grid {
   display: grid;
