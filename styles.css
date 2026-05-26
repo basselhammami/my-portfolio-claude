@@ -508,6 +508,7 @@ button {
   max-width: none;
   max-height: none;
   object-fit: cover;
+  object-position: 25% center;
 }
 
 /* "Under NDA" badge — dark pill on the light card surface. */
