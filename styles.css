@@ -499,6 +499,17 @@ button {
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.18));
 }
 
+/* Edge-to-edge variant — image fills the card body, cropping as needed. */
+.project-card-body .project-card-art--fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+
 /* "Under NDA" badge — dark pill on the light card surface. */
 .nda-badge {
   position: absolute;
