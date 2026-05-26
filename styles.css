@@ -420,6 +420,14 @@ button {
   color: var(--fg);
 }
 
+/* Outcome line under the title — leads with what the project achieved. */
+.project-card-outcome {
+  margin: 0 0.25rem 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--fg);
+}
+
 /* Tag line below the title */
 .project-card-tags {
   margin: 0;
