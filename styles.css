@@ -2039,6 +2039,12 @@ body.n-bg .site-header.is-scrolled {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
+
+/* Balady+ brand accent — teal replaces the default red on this case */
+.n-balady .n-draw path { stroke: #1DBDB4; }
+.n-balady .n-callout { border-left-color: #1DBDB4; }
+.n-balady .n-tl-dot { background: #1DBDB4; }
+
 [data-reveal].in .n-draw path {
   animation: nDraw 0.7s var(--ease-out) forwards 0.5s;
 }
