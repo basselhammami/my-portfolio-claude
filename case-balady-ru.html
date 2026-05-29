@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=21" />
+    <link rel="stylesheet" href="styles.css?v=22" />
     <script defer src="script.js"></script>
   </head>
   <body class="n-bg n-balady">
@@ -53,18 +53,19 @@
           </div>
         </div>
 
-        <!-- ── Hero video ── -->
+        <!-- ── Hero filmstrip ── -->
         <div class="n-card n-rise" data-reveal>
-          <div class="n-screen n-up">
-            <video
-              src="assets/balady-hero.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              aria-label="Монтаж навигации Balady+"
-            ></video>
+          <div class="n-film n-up" role="region" aria-label="Пошаговый сценарий Balady+ — наведите, чтобы приостановить">
+            <div class="n-film-track">
+              <img src="assets/balady-park-1.png" alt="Режим исследования — карта с быстрыми действиями" />
+              <img src="assets/balady-park-2.png" alt="Появляется кнопка перехода в навигатор" />
+              <img src="assets/balady-park-3.png" alt="Активная навигация с иконкой парковки" />
+              <img src="assets/balady-park-4.png" alt="Подтверждение автозапуска навигатора" />
+              <img src="assets/balady-park-1.png" alt="" aria-hidden="true" />
+              <img src="assets/balady-park-2.png" alt="" aria-hidden="true" />
+              <img src="assets/balady-park-3.png" alt="" aria-hidden="true" />
+              <img src="assets/balady-park-4.png" alt="" aria-hidden="true" />
+            </div>
           </div>
         </div>
 
@@ -182,16 +183,8 @@
         <div class="n-card n-rise" data-reveal>
           <h3 class="n-row-h n-up">Улучшения парковки</h3>
           <p class="n-up">Поиск парковки был одним из самых частых городских сценариев. Переработанный поток показывает подсказки о парковке прямо на маршруте — нажмите, чтобы увидеть ближайшие места с доступностью, расстоянием и ценой, затем перестройте маршрут к выбранному месту в одно касание, не покидая карту.</p>
-          <div class="n-screen n-up">
-            <video
-              src="assets/balady-hero.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              aria-label="Сценарий парковки Balady+"
-            ></video>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-parking.png" alt="Поток парковки — от подсказки на маршруте до выбора места и перестройки маршрута" />
           </div>
         </div>
 
