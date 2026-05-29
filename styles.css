@@ -1764,14 +1764,15 @@ body.n-bg .site-header.is-scrolled {
 
 /* ── Callout bubble ── */
 .n-callout {
-  background: #cbffc4;
-  border-radius: 1rem;
+  background: #f2f2f4;
+  border-left: 3px solid #ed1c24;
+  border-radius: 0.5rem;
   padding: 1rem 1.25rem;
   margin: 1.125rem 0;
 }
 
 .n-callout p {
-  color: #14400a !important;
+  color: #171717 !important;
   margin: 0 !important;
   font-size: 1.0625rem;
   line-height: 1.55;
@@ -1803,6 +1804,37 @@ body.n-bg .site-header.is-scrolled {
   grid-template-columns: 2fr 3fr;
   gap: 3rem;
   align-items: start;
+}
+
+/* ── Alternating text / image rows ── */
+.n-lead {
+  max-width: 42rem;
+}
+.n-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.n-row + .n-row {
+  margin-top: 2.5rem;
+}
+/* Reversed row: image on the left, text on the right */
+.n-row--rev .n-row-text {
+  order: 2;
+}
+.n-row-h {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #171717;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.875rem;
+}
+.n-row-text .n-dot-list {
+  margin-top: 0;
+}
+.n-row-vis .n-screen-label {
+  margin-top: 0.625rem;
 }
 
 /* ── Two screenshots side by side ── */
@@ -1881,10 +1913,10 @@ body.n-bg .site-header.is-scrolled {
   display: block;
 }
 
-/* ── Green underline emphasis ── */
+/* ── Underline emphasis (RAKBANK red) ── */
 .n-highlight {
   text-decoration: underline;
-  text-decoration-color: #47e139;
+  text-decoration-color: #ed1c24;
   text-underline-offset: 3px;
   text-decoration-thickness: 2px;
 }
@@ -2029,9 +2061,9 @@ body.n-bg .site-header.is-scrolled {
   line-height: 1.4;
 }
 
-/* ── Green moment block (full-width pull quote) ── */
+/* ── Moment block (full-width pull quote) ── */
 .n-moment {
-  background: #cbffc4;
+  background: #ececef;
   text-align: center;
   padding: 3.5rem 3rem;
 }
@@ -2040,14 +2072,14 @@ body.n-bg .site-header.is-scrolled {
   font-weight: 600 !important;
   line-height: 1.3 !important;
   letter-spacing: -0.02em;
-  color: #14400a !important;
+  color: #171717 !important;
   max-width: 44rem;
   margin: 0 auto 1rem !important;
 }
 .n-moment-cite {
   font-size: 0.9375rem !important;
   font-weight: 500 !important;
-  color: #2f6b1e !important;
+  color: #6b6b6b !important;
   margin: 0 !important;
 }
 
@@ -2083,7 +2115,7 @@ body.n-bg .site-header.is-scrolled {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #47e139;
+  background: #ed1c24;
   border: 3px solid #fff;
   box-shadow: 0 0 0 1px #e6e6e6;
   margin-top: 3px;
@@ -2144,6 +2176,20 @@ body.n-bg .site-header.is-scrolled {
   .n-split {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .n-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .n-row + .n-row {
+    margin-top: 2rem;
+  }
+
+  /* Always show text before its image when stacked */
+  .n-row--rev .n-row-text {
+    order: 0;
   }
 
   .n-grid-2 {
