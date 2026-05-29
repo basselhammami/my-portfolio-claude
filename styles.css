@@ -1804,41 +1804,16 @@ body.n-bg .site-header.is-scrolled {
   gap: 0.75rem;
 }
 
-/* ── Screenshots stacked vertically with stagger animation ── */
+/* ── Screenshots stacked vertically ── */
 .n-screen-stack {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-/* Each screen+label pair lives in a .n-screen-item so nth-child
-   isn't confused by the <p> label elements between screens */
 .n-screen-item {
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
-}
-
-.n-screen-stack.is-visible .n-screen-item:nth-child(1) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0s;
-}
-
-.n-screen-stack.is-visible .n-screen-item:nth-child(2) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.16s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .n-screen-item {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
 }
 
 /* ── Screenshot / screen frame — flat with subtle grey ring ── */
@@ -1930,18 +1905,220 @@ body.n-bg .site-header.is-scrolled {
   line-height: 1.4;
 }
 
-/* Card scroll-reveal: fade + subtle scale (and-tanya signature) */
-.n-card.reveal {
-  transform: translateY(22px) scale(0.985);
+/* ==========================================================================
+   Narrative motion system — choreographed scroll reveals
+   ========================================================================== */
+
+/* Section container rises as a unit when it enters the viewport */
+.n-rise {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+  will-change: opacity, transform;
 }
-.n-card.reveal.is-visible {
-  transform: translateY(0) scale(1);
+.n-rise.in {
+  opacity: 1;
+  transform: none;
 }
 
-/* Entrance animation for narrative page */
-.n-page > .back-link { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0s; }
+/* Individual elements stagger in (transition-delay assigned inline by JS) */
+.n-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  will-change: opacity, transform;
+}
+.n-up.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Screens get a touch more travel + scale for depth */
+.n-screen-item.n-up {
+  transform: translateY(26px) scale(0.97);
+}
+.n-screen-item.n-up.in {
+  transform: none;
+}
+
+/* Top-of-page fixed elements animate on load */
+.n-page > .back-link { animation: fadeUp 0.65s var(--ease-out) both; }
 .n-page > .n-tagline { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0.08s; }
-.n-page > .n-stack   { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0.16s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .n-rise,
+  .n-up,
+  .n-screen-item.n-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Hero kicker line ── */
+.n-hero-kicker {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #171717;
+  margin: 0 0 1.25rem;
+}
+
+/* ── Hand-drawn green underline (draws itself on reveal) ── */
+.n-draw {
+  position: relative;
+  white-space: nowrap;
+}
+.n-draw > svg {
+  position: absolute;
+  left: 0;
+  bottom: -0.3em;
+  width: 100%;
+  height: 0.45em;
+  overflow: visible;
+  pointer-events: none;
+}
+.n-draw path {
+  fill: none;
+  stroke: #47e139;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+[data-reveal].in .n-draw path {
+  animation: nDraw 0.7s var(--ease-out) forwards 0.5s;
+}
+@keyframes nDraw {
+  to { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .n-draw path { stroke-dashoffset: 0; animation: none; }
+}
+
+/* ── Big stat band ── */
+.n-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.n-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.n-stat-num {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #171717;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.n-stat-label {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── Green moment block (full-width pull quote) ── */
+.n-moment {
+  background: #cbffc4;
+  text-align: center;
+  padding: 3.5rem 3rem;
+}
+.n-moment-quote {
+  font-size: clamp(1.375rem, 3vw, 2rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em;
+  color: #14400a !important;
+  max-width: 44rem;
+  margin: 0 auto 1rem !important;
+}
+.n-moment-cite {
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  color: #2f6b1e !important;
+  margin: 0 !important;
+}
+
+/* ── Timeline ── */
+.n-timeline {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  position: relative;
+}
+.n-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 12px;
+  width: 2px;
+  background: #e6e6e6;
+}
+.n-tl-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  padding-bottom: 1.75rem;
+}
+.n-tl-item:last-child {
+  padding-bottom: 0;
+}
+.n-tl-dot {
+  position: relative;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #47e139;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #e6e6e6;
+  margin-top: 3px;
+}
+.n-tl-item h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #171717;
+}
+.n-tl-item p {
+  margin: 0 !important;
+  font-size: 0.9375rem !important;
+  color: #555 !important;
+}
+
+/* ── Closing CTA ── */
+.n-cta {
+  text-align: center;
+  padding: 3.5rem 3rem;
+}
+.n-cta .n-title {
+  margin-bottom: 0.75rem;
+}
+.n-cta p {
+  margin-bottom: 1.75rem;
+}
+.n-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #171717;
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.85em 1.6em;
+  border-radius: var(--radius-pill);
+  transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out);
+}
+.n-pill:hover {
+  transform: translateY(-2px);
+  background: #000;
+}
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
@@ -1958,6 +2135,11 @@ body.n-bg .site-header.is-scrolled {
 
   .n-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .n-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
   }
 }
 
@@ -1981,5 +2163,13 @@ body.n-bg .site-header.is-scrolled {
 
   .n-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .n-moment {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .n-cta {
+    padding: 2.5rem 1.5rem;
   }
 }

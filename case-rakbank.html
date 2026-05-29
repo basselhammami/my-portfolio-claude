@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
     <script defer src="script.js"></script>
   </head>
   <body class="n-bg">
@@ -40,80 +40,107 @@
       <div class="n-stack">
 
         <!-- ── Hero ── -->
-        <div class="n-card n-hero">
+        <div class="n-card n-hero n-rise" data-reveal>
           <div class="n-hero-left">
-            <img src="assets/rakbank-logo.png" class="n-hero-logo" alt="RAKBANK" />
-            <h1 class="n-hero-title">CLM Platform</h1>
-            <p class="n-hero-desc">
+            <img src="assets/rakbank-logo-dark.png" class="n-hero-logo n-up" alt="RAKBANK" />
+            <h1 class="n-hero-title n-up">CLM Platform</h1>
+            <p class="n-hero-desc n-up">
               Redesigned RAKBANK's Customer Lifecycle Management platform from a patchwork of disconnected legacy tools into a single unified compliance system — now used by every KYC analyst at the bank.
             </p>
-            <div class="n-hero-tags">
+            <p class="n-hero-kicker n-up">Built for clarity, <span class="n-draw">trusted at scale<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
+            <div class="n-hero-tags n-up">
               <span class="n-hero-tag">Senior Product Designer</span>
               <span class="n-hero-tag">Oct 2024 – Present</span>
               <span class="n-hero-tag">Digital Banking · Compliance</span>
               <span class="n-hero-tag">Web · Internal Tools</span>
             </div>
           </div>
-          <div>
+          <div class="n-up">
             <div class="n-screen">
               <img src="assets/clm-dashboard.png" alt="CLM Dashboard — compliance overview" />
             </div>
           </div>
         </div>
 
+        <!-- ── Big stat band ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="900" data-suffix="K+">0</span>
+            <span class="n-stat-label">Customers managed</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="100" data-suffix="+">0</span>
+            <span class="n-stat-label">Compliance analysts</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">3&nbsp;→&nbsp;1</span>
+            <span class="n-stat-label">Systems unified</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="60" data-prefix="~" data-suffix="%">0</span>
+            <span class="n-stat-label">Faster reviews</span>
+          </div>
+        </div>
+
         <!-- ── Where it started · What I was solving for ── -->
         <div class="n-grid-2">
 
-          <div class="n-card">
-            <h2 class="n-title">Where it all started</h2>
-            <p>When I joined RAKBANK, there was no unified tool for managing customer due diligence. The compliance team was navigating 6+ disconnected screens — each built by a different team, at a different time.</p>
-            <p>Analysts had come to accept the friction. Opening multiple tabs for a single customer review was just part of the job. Nobody had a full picture of any customer.</p>
-            <p>So I set out to change that.</p>
-            <p>At the start, it was just me — one designer, a fragmented system, and 900K+ customers whose data was spread across it.</p>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Where it all started</h2>
+            <p class="n-up">When I joined RAKBANK, there was no unified tool for managing customer due diligence. The compliance team was navigating 6+ disconnected screens — each built by a different team, at a different time.</p>
+            <p class="n-up">Analysts had come to accept the friction. Opening multiple tabs for a single customer review was just part of the job. Nobody had a full picture of any customer.</p>
+            <p class="n-up">So I set out to change that.</p>
+            <p class="n-up">At the start, it was just me — one designer, a fragmented system, and 900K+ customers whose data was spread across it.</p>
           </div>
 
-          <div class="n-card">
-            <h2 class="n-title">What I was solving for</h2>
-            <p>We wanted to build something that felt like a precision tool built for experts — not a legacy database interface that analysts had to fight to use.</p>
-            <div class="n-callout">
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I was solving for</h2>
+            <p class="n-up">We wanted to build something that felt like a precision tool built for experts — not a legacy database interface that analysts had to fight to use.</p>
+            <div class="n-callout n-up">
               <p>Why do I need 6 tabs just to review one customer?<br>
               Where did this customer's risk rating change?</p>
             </div>
-            <p><strong>The core design challenges</strong></p>
+            <p class="n-up"><strong>The core design challenges</strong></p>
             <ul class="n-dot-list">
-              <li>Build clarity from complexity — no hidden data, no guesswork</li>
-              <li>Create a single unified view across fragmented data sources</li>
-              <li>Make compliance feel like expert control, not bureaucratic overhead</li>
-              <li>Scale for 100+ analysts without losing structure or speed</li>
+              <li class="n-up">Build clarity from complexity — no hidden data, no guesswork</li>
+              <li class="n-up">Create a single unified view across fragmented data sources</li>
+              <li class="n-up">Make compliance feel like expert control, not bureaucratic overhead</li>
+              <li class="n-up">Scale for 100+ analysts without losing structure or speed</li>
             </ul>
           </div>
 
         </div>
 
+        <!-- ── Green moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"This is the first time I can see everything I need on one screen. I used to keep six tabs open just for a single customer."</p>
+          <p class="n-moment-cite n-up">— KYC Analyst, RAKBANK</p>
+        </div>
+
         <!-- ── How I approached it ── -->
-        <div class="n-card">
+        <div class="n-card n-rise" data-reveal>
           <div class="n-split">
             <div class="n-split-text">
-              <h2 class="n-title">How I approached it</h2>
-              <p>I mapped the platform from the ground up — every screen, every state, every edge case. There was no existing pattern inside RAKBANK for this kind of tool, so I started with deep discovery before touching Figma.</p>
+              <h2 class="n-title n-up">How I approached it</h2>
+              <p class="n-up">I mapped the platform from the ground up — every screen, every state, every edge case. There was no existing pattern inside RAKBANK for this kind of tool, so I started with deep discovery before touching Figma.</p>
               <ul class="n-dot-list">
-                <li>12 stakeholder interviews + 3 weeks of live workflow observation</li>
-                <li>Full IA audit of 3 legacy systems to surface consolidation opportunities</li>
-                <li>Mapped every data entity and relationship before designing screens</li>
-                <li>Defined shared patterns and components before building individual views</li>
-                <li>Delivered in phases — validated each module with analysts before moving on</li>
-                <li>Daily collaboration with PMs, engineers, and compliance officers throughout</li>
+                <li class="n-up">12 stakeholder interviews + 3 weeks of live workflow observation</li>
+                <li class="n-up">Full IA audit of 3 legacy systems to surface consolidation opportunities</li>
+                <li class="n-up">Mapped every data entity and relationship before designing screens</li>
+                <li class="n-up">Defined shared patterns and components before building individual views</li>
+                <li class="n-up">Delivered in phases — validated each module with analysts before moving on</li>
+                <li class="n-up">Daily collaboration with PMs, engineers, and compliance officers throughout</li>
               </ul>
             </div>
             <div class="n-split-vis">
               <div class="n-screen-stack">
-                <div class="n-screen-item">
+                <div class="n-screen-item n-up">
                   <div class="n-screen">
                     <img src="assets/clm-customer-universe.png" alt="Customer Universe — unified customer table" />
                   </div>
                   <p class="n-screen-label">Customer Universe</p>
                 </div>
-                <div class="n-screen-item">
+                <div class="n-screen-item n-up">
                   <div class="n-screen">
                     <img src="assets/clm-case-overview.png?v=2" alt="Customer Profile — single-page case view" />
                   </div>
@@ -124,24 +151,66 @@
           </div>
         </div>
 
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">The journey</h2>
+          <ol class="n-timeline">
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Discovery &amp; research</h4>
+                <p>12 interviews and three weeks observing real reviews to understand where analysts actually lost time.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Information architecture</h4>
+                <p>Audited three legacy systems and mapped every entity to design the consolidated data model.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Design system foundations</h4>
+                <p>Built shared patterns and components first, so every new screen stayed consistent and fast to ship.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Phased delivery</h4>
+                <p>Shipped module by module — dashboard, customer universe, profile — validating each with analysts.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Adoption at scale</h4>
+                <p>The platform became the single daily tool for the entire compliance function across the bank.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
         <!-- ── Design that changed behavior ── -->
-        <div class="n-card">
+        <div class="n-card n-rise" data-reveal>
           <div class="n-split">
             <div class="n-split-text">
-              <h2 class="n-title">Design that changed behavior</h2>
-              <p>The key was making compliance feel like expert control — not bureaucratic overhead.</p>
-              <p>Analysts don't read data dictionaries. They scan for signals of clarity and trust. So instead of surfacing every raw field, we gave them context, structure, and decisions that made sense for the task at hand.</p>
+              <h2 class="n-title n-up">Design that changed behavior</h2>
+              <p class="n-up">The key was making compliance feel like expert control — not bureaucratic overhead.</p>
+              <p class="n-up">Analysts don't read data dictionaries. They scan for signals of clarity and trust. So instead of surfacing every raw field, we gave them context, structure, and decisions that made sense for the task at hand.</p>
               <ul class="n-dot-list">
-                <li>Single-page customer profile replaced a 6-screen workflow</li>
-                <li>Context-aware action panel — only the actions valid for the current case state</li>
-                <li>Inline document preview kept analysts in flow, no external PDF viewer</li>
-                <li>Risk change timeline made provenance visible — analysts finally trusted the data</li>
-                <li>Role-based dashboard views for analysts, officers, and operations managers</li>
+                <li class="n-up">Single-page customer profile replaced a 6-screen workflow</li>
+                <li class="n-up">Context-aware action panel — only the actions valid for the current case state</li>
+                <li class="n-up">Inline document preview kept analysts in flow, no external PDF viewer</li>
+                <li class="n-up">Risk change timeline made provenance visible — analysts finally trusted the data</li>
+                <li class="n-up">Role-based dashboard views for analysts, officers, and operations managers</li>
               </ul>
             </div>
             <div class="n-split-vis">
               <div class="n-screen-stack">
-                <div class="n-screen-item">
+                <div class="n-screen-item n-up">
                   <div class="n-screen">
                     <img src="assets/clm-case-details.webp" alt="Case details — compliance review panel" />
                   </div>
@@ -155,36 +224,31 @@
         <!-- ── What happened next · Looking back ── -->
         <div class="n-grid-2">
 
-          <div class="n-card">
-            <h2 class="n-title">What happened next</h2>
-            <p>The platform became the single tool for all compliance reviews across RAKBANK.</p>
-            <div class="n-metrics">
-              <div>
-                <span class="n-metric-value">↓ 60%</span>
-                <span class="n-metric-label">Reduction in time to complete a full customer review</span>
-              </div>
-              <div>
-                <span class="n-metric-value">3 → 1</span>
-                <span class="n-metric-label">Legacy systems consolidated into one platform</span>
-              </div>
-              <div>
-                <span class="n-metric-value">1-page</span>
-                <span class="n-metric-label">Customer profile replacing a 6-screen workflow</span>
-              </div>
-              <div>
-                <span class="n-metric-value">900K+</span>
-                <span class="n-metric-label">Customers managed through the platform</span>
-              </div>
-            </div>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What happened next</h2>
+            <p class="n-up">The platform became the single tool for every compliance review across RAKBANK.</p>
+            <ul class="n-dot-list">
+              <li class="n-up">Every KYC analyst onboarded onto one consistent workflow</li>
+              <li class="n-up">Full customer reviews completed in a fraction of the previous time</li>
+              <li class="n-up">Three legacy systems decommissioned in favour of one platform</li>
+              <li class="n-up">The customer profile became the team's daily home base</li>
+            </ul>
           </div>
 
-          <div class="n-card">
-            <h2 class="n-title">Looking back</h2>
-            <p>What started as a UX cleanup <span class="n-highlight">turned into a platform that changed how the entire compliance function worked.</span></p>
-            <p>The CLM didn't just improve the interface — it changed how analysts felt about their work. From scattered and frustrated, to structured and in control.</p>
-            <p>It reinforced that great enterprise design isn't about feature completeness — it's about trust, clarity, and giving experts the right signal at the right moment.</p>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Looking back</h2>
+            <p class="n-up">What started as a UX cleanup turned into a <span class="n-draw">market-defining platform<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span> for compliance at the bank.</p>
+            <p class="n-up">The CLM didn't just improve the interface — it changed how analysts felt about their work. From scattered and frustrated, to structured and in control.</p>
+            <p class="n-up">It reinforced that great enterprise design isn't about feature completeness — it's about trust, clarity, and giving experts the right signal at the right moment.</p>
           </div>
 
+        </div>
+
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">Want to talk through the details?</h2>
+          <p class="n-up">Happy to walk through the design decisions, the research, and what didn't make the cut.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
 
       </div>
