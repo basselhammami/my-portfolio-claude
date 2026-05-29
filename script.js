@@ -111,7 +111,7 @@ document.addEventListener("click", (event) => {
   ).matches;
 
   const targets = document.querySelectorAll(
-    ".projects > .project-card, .expertise, .expertise-grid, .case-section, .mockup, .n-card, .n-screen-stack"
+    ".projects > .project-card, .expertise, .expertise-grid, .case-section, .mockup"
   );
 
   targets.forEach((el) => {
@@ -141,4 +141,79 @@ document.addEventListener("click", (event) => {
   );
 
   targets.forEach((el) => io.observe(el));
+})();
+
+/* ==========================================================================
+   Narrative case: choreographed scroll reveals + count-up stats
+   ========================================================================== */
+
+(function narrativeMotion() {
+  const page = document.querySelector(".n-page");
+  if (!page) return;
+
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const groups = page.querySelectorAll("[data-reveal]");
+
+  const setCount = (el) => {
+    const prefix = el.dataset.prefix || "";
+    const suffix = el.dataset.suffix || "";
+    el.textContent = prefix + el.dataset.count + suffix;
+  };
+
+  // Reduced motion / no IO support: show everything, set final numbers.
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    page.querySelectorAll(".n-rise, .n-up").forEach((el) =>
+      el.classList.add("in")
+    );
+    page.querySelectorAll("[data-count]").forEach(setCount);
+    return;
+  }
+
+  const runCount = (el) => {
+    const target = parseFloat(el.dataset.count);
+    if (isNaN(target)) return setCount(el);
+    const prefix = el.dataset.prefix || "";
+    const suffix = el.dataset.suffix || "";
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = prefix + target + suffix;
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const group = entry.target;
+        group.classList.add("in");
+
+        // Stagger each tagged child as the group enters.
+        const ups = group.querySelectorAll(".n-up");
+        ups.forEach((el, i) => {
+          el.style.transitionDelay = Math.min(120 + i * 70, 900) + "ms";
+          el.classList.add("in");
+        });
+
+        // Kick off any count-up numbers in this group.
+        group.querySelectorAll("[data-count]").forEach(runCount);
+
+        io.unobserve(group);
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  groups.forEach((g) => io.observe(g));
 })();
