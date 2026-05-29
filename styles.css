@@ -453,9 +453,9 @@ button {
   background: linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%);
 }
 
-/* Balady+ — soft sage (echoes the green/teal of the map UI). */
+/* Balady+ — vibrant brand teal echoing the map UI's accents. */
 .project-card-body--balady {
-  background: linear-gradient(135deg, #dde8de 0%, #c5dccd 100%);
+  background: linear-gradient(135deg, #3fd0c6 0%, #17b6ad 100%);
 }
 
 /* Kafu — vibrant lime-green / yellow-green echoing the brand */
