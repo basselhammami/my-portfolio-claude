@@ -414,7 +414,7 @@ button {
 /* Title under the card image */
 .project-card-title {
   margin: 0.95rem 0.25rem 0.2rem;
-  font-size: 0.9375rem;
+  font-size: 1.1875rem;
   font-weight: 500;
   letter-spacing: -0.005em;
   color: var(--fg);
@@ -1365,7 +1365,7 @@ button {
   }
 
   .project-card-title {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     margin-top: 0.75rem;
   }
 
