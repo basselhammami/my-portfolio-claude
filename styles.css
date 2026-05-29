@@ -1685,7 +1685,7 @@ body.n-bg .site-header.is-scrolled {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 3rem 2.75rem 2.75rem;
+  padding: 3rem 2.75rem 4rem;
   gap: 0;
 }
 
