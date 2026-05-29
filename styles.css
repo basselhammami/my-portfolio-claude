@@ -2130,15 +2130,17 @@ body.n-bg .site-header.is-scrolled {
 
 /* ── Big stat band ── */
 .n-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 3rem;
   text-align: center;
 }
 .n-stat {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  flex: 0 1 160px;
 }
 .n-stat-num {
   font-size: clamp(2.25rem, 5vw, 3.25rem);
@@ -2287,8 +2289,7 @@ body.n-bg .site-header.is-scrolled {
   }
 
   .n-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 1.5rem;
+    gap: 2rem 2.5rem;
   }
 }
 
