@@ -1620,3 +1620,313 @@ button {
   width: 100%;
   height: auto;
 }
+
+
+/* ==========================================================================
+   Narrative case layout — storytelling card style
+   ========================================================================== */
+
+body.n-bg {
+  background: #ebebeb;
+}
+
+body.n-bg .site-header {
+  background: rgba(235, 235, 235, 0.82);
+}
+
+body.n-bg .site-header.is-scrolled {
+  background: rgba(235, 235, 235, 0.95);
+}
+
+.n-page {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.n-page > .back-link {
+  margin-bottom: 1.25rem;
+}
+
+.n-tagline {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+}
+
+/* Vertical stack with consistent gap */
+.n-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Base white card */
+.n-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+}
+
+/* Two-column equal grid */
+.n-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* ── Hero card ── */
+.n-hero {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2.75rem 3rem;
+}
+
+.n-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.n-project-label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.015em;
+}
+
+.n-product-tag {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2em 0.65em;
+  border-radius: var(--radius-pill);
+}
+
+.n-project-sub {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.n-hero-desc {
+  font-size: 1rem;
+  color: var(--fg);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Section title ── */
+.n-title {
+  font-size: clamp(1.875rem, 3.5vw, 2.625rem);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin: 0 0 1.375rem;
+}
+
+/* ── Body text inside cards ── */
+.n-card p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #333;
+  margin: 0 0 0.75rem;
+}
+
+.n-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Callout bubble ── */
+.n-callout {
+  background: #c5f5a0;
+  border-radius: 0.875rem;
+  padding: 0.875rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.n-callout p {
+  color: #1c4d0a !important;
+  margin: 0 !important;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+/* ── Middle-dot bullet list ── */
+.n-dot-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.n-dot-list li {
+  font-size: 0.9375rem;
+  color: #333;
+  line-height: 1.6;
+  padding: 0.1rem 0;
+}
+
+.n-dot-list li::before {
+  content: "·\00a0";
+  font-weight: 700;
+  color: var(--fg);
+}
+
+/* ── Split layout: text left, visual right ── */
+.n-split {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Two screenshots side by side ── */
+.n-screen-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* ── Screenshot / screen frame ── */
+.n-screen {
+  background: #2c2c2c;
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+
+.n-screen img,
+.n-screen video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.n-screen-label {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+/* ── Browser chrome frame (desktop mockup) ── */
+.n-browser {
+  background: #2c2c2c;
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+
+.n-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  background: #3a3a3a;
+}
+
+.n-browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.n-browser-dot:nth-child(1) { background: #ff5f57; }
+.n-browser-dot:nth-child(2) { background: #febc2e; }
+.n-browser-dot:nth-child(3) { background: #28c840; }
+
+.n-browser img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Green underline emphasis ── */
+.n-highlight {
+  text-decoration: underline;
+  text-decoration-color: #5de63a;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* ── Metrics grid ── */
+.n-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.n-metric-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.n-metric-label {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Entrance animation for narrative page */
+.n-page > .back-link { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0s; }
+.n-page > .n-tagline { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0.08s; }
+.n-page > .n-stack   { animation: fadeUp 0.65s var(--ease-out) both; animation-delay: 0.16s; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .n-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.25rem;
+  }
+
+  .n-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .n-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .n-page {
+    padding: 1.25rem 1rem 4rem;
+  }
+
+  .n-card {
+    padding: 1.75rem 1.5rem;
+    border-radius: 1.125rem;
+  }
+
+  .n-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .n-screen-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .n-metrics {
+    grid-template-columns: 1fr;
+  }
+}
