@@ -1739,21 +1739,15 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0.75rem;
 }
 
-/* Card with text on top and a full-bleed image at the bottom */
-.n-card--bleed {
-  padding-bottom: 0;
+/* Contained screenshot block inside a card — sits below text */
+.n-img-block {
+  margin-top: 2rem;
+  border-radius: 0.875rem;
   overflow: hidden;
+  border: 1px solid #e6e6e6;
 }
 
-.n-bleed-img {
-  margin: 2rem -2.75rem 0;
-}
-
-.n-bleed-img--top {
-  margin: -2.75rem -2.75rem 0;
-}
-
-.n-bleed-img img {
+.n-img-block img {
   width: 100%;
   height: auto;
   display: block;
