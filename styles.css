@@ -1698,7 +1698,7 @@ body.n-bg .site-header.is-scrolled {
 
 .n-hero-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.04em;
   color: #171717;
   margin: 0 0 0.875rem;
@@ -1741,7 +1741,7 @@ body.n-bg .site-header.is-scrolled {
 /* ── Section title ── */
 .n-title {
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
-  font-weight: 600;
+  font-weight: 500;
   color: #171717;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -1823,7 +1823,7 @@ body.n-bg .site-header.is-scrolled {
 }
 .n-row-h {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #171717;
   letter-spacing: -0.01em;
   margin: 0 0 0.875rem;
@@ -1996,7 +1996,7 @@ body.n-bg .site-header.is-scrolled {
 /* ── Hero kicker line ── */
 .n-hero-kicker {
   font-size: 1.0625rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #171717;
   margin: 0 0 1.25rem;
 }
@@ -2067,7 +2067,7 @@ body.n-bg .site-header.is-scrolled {
 }
 .n-moment-quote {
   font-size: clamp(1.375rem, 3vw, 2rem) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   line-height: 1.3 !important;
   letter-spacing: -0.02em;
   color: #171717 !important;
@@ -2121,7 +2121,7 @@ body.n-bg .site-header.is-scrolled {
 .n-tl-item h4 {
   margin: 0 0 0.25rem;
   font-size: 1.0625rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #171717;
 }
 .n-tl-item p {
