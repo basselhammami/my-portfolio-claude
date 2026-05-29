@@ -1739,6 +1739,26 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0.75rem;
 }
 
+/* Card with text on top and a full-bleed image at the bottom */
+.n-card--bleed {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.n-bleed-img {
+  margin: 2rem -2.75rem 0;
+}
+
+.n-bleed-img--top {
+  margin: -2.75rem -2.75rem 0;
+}
+
+.n-bleed-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── Section title ── */
 .n-title {
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
