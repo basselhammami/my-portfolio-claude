@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=18" />
     <script defer src="script.js"></script>
   </head>
-  <body>
+  <body class="n-bg n-kafu">
     <header class="site-header">
       <nav class="nav-left">
         <a href="index.html" class="brand">Basel</a>
@@ -32,310 +32,210 @@
       </div>
     </header>
 
-    <main class="case-page">
+    <main class="n-page">
       <a href="index.html" class="back-link">Back</a>
 
-      <h1 class="case-title">Budgeting in Kafu</h1>
-      <p class="case-subtitle">
-        A self-initiated exploration of how a fintech mobile app might surface monthly budgeting in a way that helps users <em>before</em> they overshoot — not after.
-      </p>
+      <div class="n-stack">
 
-      <dl class="case-meta">
-        <div><dt>ROLE</dt><dd>Product Designer</dd></div>
-        <div><dt>TYPE</dt><dd>Self-initiated exploration</dd></div>
-        <div><dt>TIMELINE</dt><dd>2025</dd></div>
-        <div><dt>DOMAIN</dt><dd>Fintech / Mobile</dd></div>
-      </dl>
-
-      <section class="case-section">
-        <h2 class="section-h">Overview</h2>
-        <p class="section-lead section-lead--muted">
-          Mobile banking apps are good at showing what was already spent. They are noticeably less good at showing how much is still left, while there's still time to act on it. This exploration set out to flip that — to put a clear, persistent answer to "how much can I still spend?" at the front of the experience, where it can actually change behaviour.
-        </p>
-        <p class="section-lead section-lead--muted">
-          The output is a budgeting feature for a hypothetical UAE fintech, "Kafu", that tracks monthly spend, flags categories that are bleeding the wallet, and sends a gentle heads-up before a limit is breached.
-        </p>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">The Premise</h2>
-        <p class="section-lead section-lead--muted">
-          Young salaried users in the UAE quietly run out of money before payday. Coffee runs, taxis, food delivery, and forgotten subscriptions add up faster than they realise. The bank app shows totals — but only after the damage is done. The frame for this exploration was simple: design a feature that gives people awareness in real time, without nagging them.
-        </p>
-        <p class="section-lead section-lead--muted">
-          Two signals would tell us this is working:
-        </p>
-        <div class="feature-list feature-list--plain">
-          <div class="feature-row"><div><h5>Stay-under-budget rate</h5><p>The percentage of monthly users who finish the cycle within the limit they set themselves.</p></div></div>
-          <div class="feature-row"><div><h5>Budget check frequency</h5><p>How often users open the budget surface — a proxy for whether the feature is trusted enough to be referenced.</p></div></div>
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero n-rise" data-reveal>
+          <h1 class="n-hero-title n-up">Budgeting in Kafu</h1>
+          <p class="n-hero-desc n-up">
+            A self-initiated concept exploring how a fintech app could surface monthly budgeting in a way that helps people act before they overshoot — not after the money's already gone.
+          </p>
+          <p class="n-hero-kicker n-up">Designed to help people <span class="n-draw">before they overshoot<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
+          <div class="n-hero-tags n-up">
+            <span class="n-hero-tag">Product Designer</span>
+            <span class="n-hero-tag">2025</span>
+            <span class="n-hero-tag">Self-initiated concept</span>
+            <span class="n-hero-tag">Fintech · iOS</span>
+          </div>
         </div>
-      </section>
 
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Research &amp; Discovery</h2>
-        <p class="section-lead section-lead--muted">
-          I gathered representative quotes from young salaried professionals and clustered them into an affinity map. A few of the recurring lines:
-        </p>
-
-        <blockquote class="case-quote">
-          <p>"I grab coffee on the way to work almost every day without thinking."</p>
-        </blockquote>
-        <blockquote class="case-quote">
-          <p>"I wish I had a quick glance at remaining budget."</p>
-        </blockquote>
-        <blockquote class="case-quote">
-          <p>"A heads-up at 80% is useful; anything earlier and I ignore it."</p>
-        </blockquote>
-
-        <p class="section-lead section-lead--muted">
-          Four themes emerged. Each one mapped cleanly to a design implication.
-        </p>
-
-        <div class="cluster-grid">
-          <article class="cluster-card">
-            <span class="cluster-num">01</span>
-            <h4 class="cluster-title">Blind spending triggers</h4>
-            <p class="cluster-body">Coffee, taxis, and small contactless payments happen on autopilot. A "log now" shortcut in notifications would defeat the auto-categorisation that makes the app worth using — solve the visibility problem with categorisation, not data entry.</p>
-          </article>
-          <article class="cluster-card">
-            <span class="cluster-num">02</span>
-            <h4 class="cluster-title">No real-time awareness</h4>
-            <p class="cluster-body">People only check balances when something prompts them. Surface budget state passively — a persistent widget on the homepage, or a dedicated tab — so it's seen without being sought.</p>
-          </article>
-          <article class="cluster-card">
-            <span class="cluster-num">03</span>
-            <h4 class="cluster-title">Category confusion</h4>
-            <p class="cluster-body">"Did I log Uber as Taxi or Travel?" Smart auto-categorisation reduces decision fatigue; the ability to adjust after-the-fact preserves user agency.</p>
-          </article>
-          <article class="cluster-card">
-            <span class="cluster-num">04</span>
-            <h4 class="cluster-title">Alert preferences and timing</h4>
-            <p class="cluster-body">Notifications need to be useful, not noisy. Customisable thresholds (80%, 90%, 100%) plus snooze respect how each person wants to be warned.</p>
-          </article>
+        <!-- ── Hero screenshot ── -->
+        <div class="n-card n-rise" data-reveal>
+          <div class="n-img-block n-img-block--phone n-up">
+            <img src="assets/kafu-hero-2.png" alt="Kafu homepage — budget widget, card, and recent transactions" />
+          </div>
         </div>
-      </section>
 
-      <hr class="rule" />
+        <!-- ── Stats ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="4">0</span>
+            <span class="n-stat-label">Research themes</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="5">0</span>
+            <span class="n-stat-label">User stories</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="7">0</span>
+            <span class="n-stat-label">Screens in the flow</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">RTL</span>
+            <span class="n-stat-label">Arabic-ready from day one</span>
+          </div>
+        </div>
 
-      <section class="case-section">
-        <h2 class="section-h">Customer Journey Map</h2>
-        <p class="section-lead section-lead--muted">
-          A simplified CJM mapping a typical monthly cycle: sentiment trends down from Payday into Late month, with friction points and intervention opportunities at each stage.
-        </p>
+        <!-- ── The premise · What I was solving for ── -->
+        <div class="n-grid-2">
 
-        <div class="cjm-diagram">
-          <div class="cjm-chart-wrap">
-            <div class="cjm-row-label">Sentiment</div>
-            <div class="cjm-chart">
-              <svg viewBox="0 0 800 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <line x1="0" y1="20" x2="800" y2="20" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
-                <line x1="0" y1="90" x2="800" y2="90" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
-                <line x1="0" y1="160" x2="800" y2="160" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4" vector-effect="non-scaling-stroke"/>
-                <path d="M 91 35 L 297 70 L 503 125 L 709 155" fill="none" stroke="#2FFA80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-                <g fill="#2FFA80">
-                  <circle cx="91" cy="35" r="4" vector-effect="non-scaling-stroke"/>
-                  <circle cx="297" cy="70" r="4" vector-effect="non-scaling-stroke"/>
-                  <circle cx="503" cy="125" r="4" vector-effect="non-scaling-stroke"/>
-                  <circle cx="709" cy="155" r="4" vector-effect="non-scaling-stroke"/>
-                </g>
-                <g fill="none" stroke="#2FFA80" stroke-width="1" opacity="0.6">
-                  <circle cx="91" cy="35" r="8" vector-effect="non-scaling-stroke"/>
-                  <circle cx="297" cy="70" r="8" vector-effect="non-scaling-stroke"/>
-                  <circle cx="503" cy="125" r="8" vector-effect="non-scaling-stroke"/>
-                  <circle cx="709" cy="155" r="8" vector-effect="non-scaling-stroke"/>
-                </g>
-              </svg>
-              <ol class="cjm-y-axis" aria-hidden="true">
-                <li>Positive</li>
-                <li>Neutral</li>
-                <li>Negative</li>
-              </ol>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Where it all started</h2>
+            <p class="n-up">Young salaried users in the UAE quietly run out of money before payday. Coffee runs, taxis, food delivery, and forgotten subscriptions add up faster than they realise.</p>
+            <p class="n-up">Mobile banking apps are good at showing what was already spent. They're far less good at showing how much is still left — while there's still time to act on it.</p>
+            <p class="n-up">The bank app shows totals, but only after the damage is done.</p>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I was solving for</h2>
+            <p class="n-up">The goal was to put a clear, persistent answer to "how much can I still spend?" at the front of the experience — where it can actually change behaviour, without nagging.</p>
+            <div class="n-callout n-up">
+              <p>Why does the app only tell me after I've overspent?<br>
+              Where do I look to know I'm still okay?</p>
             </div>
-          </div>
-
-          <div class="cjm-row cjm-row--stage">
-            <div class="cjm-row-label">Stage</div>
-            <div><p class="cjm-stage-title">Payday</p><p class="cjm-stage-meta">Day 1</p></div>
-            <div><p class="cjm-stage-title">Early month</p><p class="cjm-stage-meta">Days 2–10</p></div>
-            <div><p class="cjm-stage-title">Mid month</p><p class="cjm-stage-meta">Days 11–20</p></div>
-            <div><p class="cjm-stage-title">Late month</p><p class="cjm-stage-meta">Days 21–end</p></div>
-          </div>
-
-          <div class="cjm-row">
-            <div class="cjm-row-label">Touchpoint</div>
-            <div><p class="cjm-cell-title">Push notification</p><p class="cjm-cell-body">Salary credit alert.</p></div>
-            <div><p class="cjm-cell-title">Contactless taps</p><p class="cjm-cell-body">Daily card spend across dozens of small payments.</p></div>
-            <div><p class="cjm-cell-title">App session</p><p class="cjm-cell-body">Opens the app to send money.</p></div>
-            <div><p class="cjm-cell-title">Low-balance push</p><p class="cjm-cell-body">Reactive overdraft alert.</p></div>
-          </div>
-
-          <div class="cjm-row">
-            <div class="cjm-row-label">Insight</div>
-            <div><p class="cjm-cell-title">Balance is mentally discounted</p><p class="cjm-cell-body">The new balance is allocated within hours but spent over weeks.</p></div>
-            <div><p class="cjm-cell-title">Small spends don't feel real</p><p class="cjm-cell-body">No running total surfaces during taps, so the impact is invisible.</p></div>
-            <div><p class="cjm-cell-title">"Am I over budget?" goes unanswered</p><p class="cjm-cell-body">Status requires manual investigation across screens.</p></div>
-            <div><p class="cjm-cell-title">The alert arrives too late</p><p class="cjm-cell-body">The damage is already done by the time the warning fires.</p></div>
-          </div>
-
-          <div class="cjm-row">
-            <div class="cjm-row-label">Opportunity</div>
-            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 01</p><p class="cjm-cell-title">"Set this month's budget" prompt</p><p class="cjm-cell-body">Capture intent while attention is highest.</p></div>
-            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 02</p><p class="cjm-cell-title">Auto-categorisation + weekly digest</p><p class="cjm-cell-body">Make invisible spending visible.</p></div>
-            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 03</p><p class="cjm-cell-title">Persistent budget widget</p><p class="cjm-cell-body">Always-on visibility without extra friction.</p></div>
-            <div class="cjm-opp"><p class="cjm-opp-tag">Intervention 04</p><p class="cjm-cell-title">Proactive 80% / 100% alerts</p><p class="cjm-cell-body">Warn before the category cap is breached.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">User Stories</h2>
-        <p class="section-lead section-lead--muted">
-          The clusters and the journey map gave me five user stories that defined the MVP scope.
-        </p>
-
-        <div class="numbered-list numbered-list--plain">
-          <div class="numbered-row"><div><h4>Persistent budget widget</h4><p>"As a user, I want to see remaining funds at a glance — without opening a separate screen — so I never lose track of where I am in the month."</p></div></div>
-          <div class="numbered-row"><div><h4>Auto-categorisation</h4><p>"As a user, I want category suggestions when I log an expense, so I spend less time sorting and more time deciding."</p></div></div>
-          <div class="numbered-row"><div><h4>Custom alert thresholds</h4><p>"As a user, I want to choose when I get notified — 80%, 90%, 100% — so the alerts feel useful instead of nagging."</p></div></div>
-          <div class="numbered-row"><div><h4>Monthly budget prompt</h4><p>"As a user, I want a quick way to set my budget at the start of each month, so I don't have to remember to do it."</p></div></div>
-          <div class="numbered-row"><div><h4>Top-spending highlights</h4><p>"As a user, I want to see my biggest outflows at a glance, so I know where to cut without combing through every transaction."</p></div></div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Competitive Analysis</h2>
-        <p class="section-lead section-lead--muted">
-          I looked closely at how N26 and Revolut handle budgeting on iOS. Both are well-regarded competitors with overlapping audiences.
-        </p>
-
-        <div class="ba-grid">
-          <div class="ba-block ba-block--plain">
-            <h5>N26</h5>
-            <ul>
-              <li>Surfaces average spend over the last 3 months, a smart anchor when setting a budget</li>
-              <li>One overall monthly limit; minimal setup friction</li>
-              <li>Budgeting lives inside the analytics section</li>
+            <p class="n-up"><strong>Two signals would tell us it's working</strong></p>
+            <ul class="n-dot-list">
+              <li class="n-up">Stay-under-budget rate — users who finish the month within their own limit</li>
+              <li class="n-up">Budget check frequency — how often the surface is trusted enough to be referenced</li>
             </ul>
           </div>
-          <div class="ba-block ba-block--plain">
-            <h5>Revolut</h5>
-            <ul>
-              <li>Category-level budgeting; useful granularity for power users</li>
-              <li>More configuration up front; rewards careful setup</li>
-              <li>Budgeting also nested under analytics</li>
-            </ul>
+
+        </div>
+
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"A heads-up at 80% is useful; anything earlier and I ignore it."</p>
+          <p class="n-moment-cite n-up">— Recurring theme from user conversations</p>
+        </div>
+
+        <!-- ── How I approached it ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">How I approached it</h2>
+          <p class="n-lead n-up">I started with the people. I gathered quotes from young salaried professionals, clustered them into an affinity map, and traced a full monthly money cycle to find exactly where awareness broke down — before designing a single screen.</p>
+        </div>
+
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">The journey</h2>
+          <ol class="n-timeline">
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Discovery &amp; affinity mapping</h4>
+                <p>Gathered representative quotes from young salaried professionals and clustered them into themes.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Customer journey map</h4>
+                <p>Mapped a typical monthly cycle — payday to late month — to find friction points and intervention moments.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>User stories</h4>
+                <p>Turned the themes and journey into five user stories that defined the MVP scope.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Competitive analysis</h4>
+                <p>Studied how N26 and Revolut handle budgeting on iOS to find the gap worth owning.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Design &amp; flow</h4>
+                <p>Designed the budgeting flow end to end — from setting a monthly amount to tracking the live cycle.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Arabic / RTL</h4>
+                <p>Prototyped the budget screens mirrored to validate the layout for half the UAE audience.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ── What research surfaced ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">What research surfaced</h3>
+          <p class="n-up">Four themes emerged from the affinity map — and each one mapped cleanly to a design implication.</p>
+          <ul class="n-dot-list">
+            <li class="n-up"><strong>Blind spending triggers</strong> — small contactless payments happen on autopilot; solve visibility with categorisation, not data entry</li>
+            <li class="n-up"><strong>No real-time awareness</strong> — surface budget state passively, so it's seen without being sought</li>
+            <li class="n-up"><strong>Category confusion</strong> — smart auto-categorisation reduces decision fatigue; after-the-fact edits preserve agency</li>
+            <li class="n-up"><strong>Alert preferences</strong> — customisable thresholds plus snooze respect how each person wants to be warned</li>
+          </ul>
+        </div>
+
+        <!-- ── Placement insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"Analytics is retrospective — what did I spend? Budgeting is proactive — what can I still spend? A daily-use feature earns its own seat at the tab bar, not a sub-page two taps away."</p>
+          <p class="n-moment-cite n-up">— The key insight from competitive analysis</p>
+        </div>
+
+        <!-- ── Designing the solution ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Designing the solution</h3>
+          <p class="n-up">The MVP came down to four product decisions, each tied directly to a research theme — and a flow that walks the user from setting a monthly amount, through reminder preferences and category allocation, into the live overview that tracks the month.</p>
+          <ul class="n-dot-list">
+            <li class="n-up"><strong>Persistent budget widget</strong> — "Used / Total" with a progress bar, visible the moment the app opens</li>
+            <li class="n-up"><strong>Smart auto-categorisation</strong> — suggests a category from the merchant and amount; the user confirms or overrides</li>
+            <li class="n-up"><strong>Customisable alert thresholds</strong> — 80 / 90 / 100%, any combination, with snooze</li>
+            <li class="n-up"><strong>Monthly budget prompt</strong> — a single-screen nudge to set the budget when salary lands</li>
+          </ul>
+          <div class="n-img-block n-up">
+            <img src="assets/kafu-flow.png" alt="The budgeting flow — plan, set the amount, pick a reminder, allocate categories, and track the cycle" />
           </div>
         </div>
 
-        <p class="section-lead section-lead--muted">
-          The most interesting finding wasn't a feature. It was a placement question. Both apps tuck budgeting inside Analytics, but those are different mental modes. <strong>Analytics is retrospective:</strong> what did I spend? <strong>Budgeting is proactive:</strong> what can I still spend? If budgeting is a daily-use feature, it earns its own seat at the tab bar, not a sub-page two taps away.
-        </p>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Design Process &amp; Solution</h2>
-        <p class="section-lead section-lead--muted">
-          The MVP came down to four product decisions, each tied directly to a research cluster.
-        </p>
-
-        <div class="feature-list feature-list--plain">
-          <div class="feature-row"><div><h5>Persistent budget widget on the homepage</h5><p>"Used / Total" with a progress bar, visible the moment the app opens. No tap required.</p></div></div>
-          <div class="feature-row"><div><h5>Smart auto-categorisation</h5><p>The app suggests a category from the merchant and amount; the user confirms or overrides.</p></div></div>
-          <div class="feature-row"><div><h5>Customisable alert thresholds</h5><p>80% / 90% / 100% — pick any combination. Snooze for an hour, a day, or until the next paycheck.</p></div></div>
-          <div class="feature-row"><div><h5>Monthly budget prompt</h5><p>On the 1st of every month (or whenever the salary lands), a single-screen prompt asks "set this month's budget."</p></div></div>
+        <!-- ── Built for Arabic ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Built for Arabic, too</h3>
+          <p class="n-up">Half the UAE reads Arabic, so RTL wasn't an afterthought — it was a test. I rebuilt the budget screens mirrored to confirm the widget, progress bar, and category list survived the flip without losing readability.</p>
+          <div class="n-img-block n-img-block--phone n-up">
+            <img src="assets/kafu-hero-ar.png" alt="Kafu homepage in Arabic / RTL — budget widget, accounts, card, and recent transactions" />
+          </div>
         </div>
 
-        <figure class="kafu-hero-figure">
-          <img src="assets/kafu-hero-2.png" alt="Kafu app homepage with budget widget, card preview, and recent transactions" />
-        </figure>
+        <!-- ── What I'd carry forward · Looking back ── -->
+        <div class="n-grid-2">
 
-        <p class="section-lead section-lead--muted">
-          The full budgeting flow walks the user from setting a monthly amount, through reminder preferences and category allocation, into the live overview that tracks the month.
-        </p>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I'd carry forward</h2>
+            <ul class="n-dot-list">
+              <li class="n-up"><strong>Placement is a feature</strong> — daily-use tools earn first-class real estate, not a sub-page two taps away</li>
+              <li class="n-up"><strong>Alert design is taste, not science</strong> — letting users choose turns a friction into a perceived feature</li>
+              <li class="n-up"><strong>Localisation surfaces design debt early</strong> — RTL is a litmus test, not an afterthought</li>
+            </ul>
+          </div>
 
-        <ol class="flow-grid">
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-01.png" alt="Plan your spending — amount entry" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">01</span>Plan your spending</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-02.png" alt="Plan your spending — 3,800 entered" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">02</span>Enter the amount</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-03.png" alt="Reminder settings — 80% threshold selected" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">03</span>Pick a reminder</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-04.png" alt="Allocate category budgets — empty state" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">04</span>Allocate categories</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-05.png" alt="Set your groceries budget — 320 entered" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">05</span>Set a category budget</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-06.png" alt="Allocate category budgets — groceries 320 saved" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">06</span>Confirmed allocation</p>
-          </li>
-          <li class="flow-step">
-            <div class="flow-step-frame">
-              <img src="assets/kafu-flow-07.png" alt="Budget overview — monthly progress, top budgets, net-worth chart" onerror="this.remove()" />
-            </div>
-            <p class="flow-step-meta"><span class="flow-step-num">07</span>Track the cycle</p>
-          </li>
-        </ol>
-      </section>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Looking back</h2>
+            <p class="n-up">What started as a "show me my budget" idea became a study in proactive design — surfacing the right number at the right moment so people can act while it still matters.</p>
+            <p class="n-up">The hardest part wasn't the widget. It was deciding what deserves to be <span class="n-draw">seen without being sought<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>.</p>
+          </div>
 
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Iteration &amp; Feedback</h2>
-        <p class="section-lead section-lead--muted">
-          Internal feedback and informal testing surfaced one opportunity for the second pass.
-        </p>
-
-        <div class="feature-list feature-list--plain">
-          <div class="feature-row"><div><h5>Arabic / RTL adaptation</h5><p>Half of the UAE audience reads Arabic. I prototyped the budget screens in RTL to validate that the widget, progress bar, and category list survived the mirror without losing readability. (The Arabic mockups will read better once a typeface is locked in.)</p></div></div>
         </div>
 
-        <figure class="kafu-hero-figure">
-          <img src="assets/kafu-hero-ar.png" alt="Kafu app homepage in Arabic / RTL with budget widget, accounts, card preview, and recent transactions" />
-        </figure>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Key Takeaways</h2>
-        <div class="numbered-list numbered-list--plain">
-          <div class="numbered-row"><div><h4>Placement is a feature</h4><p>Whether budgeting lives inside Analytics or in its own tab is itself a design decision — and the right answer depends on how often the user touches it. Daily-use features earn first-class real estate.</p></div></div>
-          <div class="numbered-row"><div><h4>Alert design is taste, not science</h4><p>There's no universally correct threshold — only "right for me." Letting users pick converts a friction into a perceived feature.</p></div></div>
-          <div class="numbered-row"><div><h4>Localisation surfaces design debt early</h4><p>Designing the Arabic / RTL version forced spacing, alignment, and iconography decisions I'd have hand-waved in English. RTL is not an afterthought; it's a litmus test.</p></div></div>
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">Want to talk through the details?</h2>
+          <p class="n-up">Happy to walk through the research, the design decisions, and what didn't make the cut.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
-      </section>
+
+      </div>
     </main>
 
     <footer class="site-footer">

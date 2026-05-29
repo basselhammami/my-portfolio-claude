@@ -1759,6 +1759,19 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0.5rem;
 }
 
+/* Single phone mockup — centered and height-constrained so a tall, narrow
+   screenshot sits on the mat instead of stretching the full card width. */
+.n-img-block--phone {
+  display: flex;
+  justify-content: center;
+}
+.n-img-block--phone img {
+  width: auto;
+  max-width: 100%;
+  max-height: 620px;
+  border-radius: 0;
+}
+
 /* ── Section title ── */
 .n-title {
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
@@ -2049,6 +2062,11 @@ body.n-bg .site-header.is-scrolled {
 .n-balady .n-draw path { stroke: #1DBDB4; }
 .n-balady .n-callout { border-left-color: #1DBDB4; }
 .n-balady .n-tl-dot { background: #1DBDB4; }
+
+/* Kafu brand accent — vivid fintech green */
+.n-kafu .n-draw path { stroke: #15C26B; }
+.n-kafu .n-callout { border-left-color: #15C26B; }
+.n-kafu .n-tl-dot { background: #15C26B; }
 
 [data-reveal].in .n-draw path {
   animation: nDraw 0.7s var(--ease-out) forwards 0.5s;
