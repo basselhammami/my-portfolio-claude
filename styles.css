@@ -1739,13 +1739,16 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0.75rem;
 }
 
-/* Contained screenshot block inside a card — sits below text */
+/* Contained screenshot block inside a card — sits below text.
+   Padding here is the single source of breathing room around every
+   screenshot, so the images themselves stay trimmed tight to content. */
 .n-img-block {
   margin-top: 2rem;
   border-radius: 0.875rem;
   overflow: hidden;
   border: 1px solid #e6e6e6;
   background-color: rgb(222, 222, 226);
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
 }
 
 .n-img-block img,
@@ -1753,6 +1756,7 @@ body.n-bg .site-header.is-scrolled {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 0.5rem;
 }
 
 /* ── Section title ── */
