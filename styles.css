@@ -1823,7 +1823,7 @@ body.n-bg .site-header.is-scrolled {
 
 /* ── Alternating text / image rows ── */
 .n-lead {
-  max-width: 42rem;
+  max-width: none;
 }
 .n-row {
   display: grid;
