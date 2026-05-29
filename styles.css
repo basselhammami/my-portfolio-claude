@@ -1679,13 +1679,15 @@ body.n-bg .site-header.is-scrolled {
   gap: 0.75rem;
 }
 
-/* ── Hero card ── */
+/* ── Hero card — text left, large screenshot bleeding off the right edge ── */
 .n-hero {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 2.5rem;
+  grid-template-columns: 0.85fr 1.5fr;
+  gap: 2.75rem;
   align-items: center;
-  padding: 2.5rem;
+  padding: 2.75rem;
+  padding-right: 0;
+  overflow: hidden;
 }
 
 .n-hero-left {
@@ -1693,11 +1695,17 @@ body.n-bg .site-header.is-scrolled {
   flex-direction: column;
 }
 
+.n-hero-vis .n-screen {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
 .n-hero-logo {
-  height: 32px;
+  height: 26px;
   width: auto;
   display: block;
-  margin-bottom: 1.125rem;
+  margin-bottom: 1.25rem;
 }
 
 .n-hero-title {
@@ -1979,7 +1987,7 @@ body.n-bg .site-header.is-scrolled {
 }
 .n-draw path {
   fill: none;
-  stroke: #47e139;
+  stroke: #ed1c24;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 1;
@@ -2126,6 +2134,11 @@ body.n-bg .site-header.is-scrolled {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2.25rem;
+  }
+
+  .n-hero-vis .n-screen {
+    border-radius: 1rem;
+    border-right: 1px solid #e6e6e6;
   }
 
   .n-split {
