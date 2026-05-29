@@ -1745,6 +1745,7 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0.875rem;
   overflow: hidden;
   border: 1px solid #e6e6e6;
+  background-color: rgb(222, 222, 226);
 }
 
 .n-img-block img,
