@@ -7,17 +7,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=3" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=3" />
-    <title>CRAM Risk Calculator — Basel Hammami</title>
+    <title>Customer Risk Assessment — Basel Hammami</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=23" />
     <script defer src="script.js"></script>
   </head>
-  <body>
+  <body class="n-bg">
     <header class="site-header">
       <nav class="nav-left">
         <a href="index.html" class="brand">Basel</a>
@@ -32,218 +32,249 @@
       </div>
     </header>
 
-    <main class="case-page">
+    <main class="n-page">
       <a href="index.html" class="back-link">Back</a>
 
-      <h1 class="case-title">Rethinking the CRAM Risk Calculator</h1>
-      <p class="case-subtitle">
-        Turning a fragmented compliance tool into a digital interface with a
-        full audit trail for RAKBANK's customer risk assessment workflow.
-      </p>
+      <div class="n-stack">
 
-      <dl class="case-meta">
-        <div><dt>ROLE</dt><dd>Lead Product Designer</dd></div>
-        <div><dt>COMPANY</dt><dd>RAKBANK</dd></div>
-        <div><dt>TIMELINE</dt><dd>2025 – 2026</dd></div>
-        <div><dt>DOMAIN</dt><dd>Compliance / AML / KYC</dd></div>
-      </dl>
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero n-rise" data-reveal>
+          <img src="assets/rakbank-logo-full-red.png" class="n-hero-logo n-up" alt="RAKBANK" />
+          <h1 class="n-hero-title n-up">Customer Risk Assessment</h1>
+          <p class="n-hero-desc n-up">
+            Rebuilt RAKBANK's CRAM risk calculator — turning a patchwork of Excel files, PDFs, and disconnected systems into a single digital assessment with a full, defensible audit trail.
+          </p>
+          <p class="n-hero-kicker n-up">Every rating, <span class="n-draw">fully defensible<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
+          <div class="n-hero-tags n-up">
+            <span class="n-hero-tag">Lead Product Designer</span>
+            <span class="n-hero-tag">2025 – 2026</span>
+            <span class="n-hero-tag">Compliance · AML · KYC</span>
+            <span class="n-hero-tag">Web · Internal Tools</span>
+          </div>
+        </div>
 
-      <section class="case-section">
-        <h2 class="section-h">The Problem</h2>
-        <p class="section-lead section-lead--muted">
-          RAKBANK's compliance team rates every customer's risk through a tool called CRAM. The old version lived across Excel files, PDFs, and unconnected systems — staff had to chase down data and stitch a score together by hand.
-        </p>
-        <p class="section-lead section-lead--muted">
-          That made assessments slow, easy to misread, and hard to defend. When a regulator asked how a rating was reached, the answer lived in old email threads and handwritten notes.
-        </p>
+        <!-- ── Hero screenshot ── -->
+        <div class="n-card n-rise" data-reveal>
+          <div class="n-img-block n-up">
+            <img src="assets/cram-classification.png?v=2" alt="Customer risk assessment — classification screen" />
+          </div>
+        </div>
 
-        <div class="ba-grid">
-          <div class="ba-block ba-block--plain">
-            <h5>BEFORE</h5>
-            <figure class="ba-figure">
-              <img src="assets/cram-before.png" alt="A screenshot of the original CRAM tool — a fragmented patchwork of Excel sheets, PDF forms, and disconnected data sources" />
-            </figure>
-            <ul>
-              <li>Data spread across multiple systems</li>
-              <li>Fields arranged arbitrarily, with no structured form</li>
-              <li>System and manual input mixed together</li>
-              <li>PDF reports showed data but no reasoning</li>
-              <li>No audit trail for changes</li>
+        <!-- ── Stats ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">3&nbsp;→&nbsp;1</span>
+            <span class="n-stat-label">Sources unified</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">1-page</span>
+            <span class="n-stat-label">Risk assessment form</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="3">0</span>
+            <span class="n-stat-label">User roles served</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="100" data-suffix="%">0</span>
+            <span class="n-stat-label">Assessments audit-ready</span>
+          </div>
+        </div>
+
+        <!-- ── Where it started · What I was solving for ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Where it all started</h2>
+            <p class="n-up">RAKBANK's compliance team rates every customer's risk through a tool called CRAM. The old version lived across Excel files, PDFs, and unconnected systems — staff had to chase down data and stitch a score together by hand.</p>
+            <p class="n-up">That made assessments slow, easy to misread, and hard to defend. When a regulator asked how a rating was reached, the answer lived in old email threads and handwritten notes.</p>
+            <p class="n-up">So I set out to turn that scattered process into one tool that could stand up to scrutiny.</p>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I was solving for</h2>
+            <p class="n-up">The goal was a tool that produced not just a score, but a defensible decision — one any auditor could trace end to end.</p>
+            <div class="n-callout n-up">
+              <p>Why did this customer get this score?<br>
+              Where's the evidence behind every factor?</p>
+            </div>
+            <p class="n-up"><strong>The core design challenges</strong></p>
+            <ul class="n-dot-list">
+              <li class="n-up">Consolidate scattered data into one structured form</li>
+              <li class="n-up">Keep the presentation neutral — inform, never nudge a verdict</li>
+              <li class="n-up">Make every decision traceable, with a full audit trail</li>
             </ul>
           </div>
-          <div class="ba-block ba-block--plain">
-            <h5>AFTER</h5>
-            <figure class="ba-figure">
-              <img src="assets/cram-after.png" alt="A screenshot of the redesigned CRAM tool — a single-page Customer risk assessment form with a sticky in-page nav, status pills, and structured field groups" />
-            </figure>
-            <ul>
-              <li>Single-page form that follows how staff actually work</li>
-              <li>Neutral wording so fields don't push a verdict</li>
-              <li>Clear split between system and human input</li>
-              <li>Three-tier reports: verdict → factors → evidence</li>
-              <li>Full audit trail with timestamps</li>
+
+        </div>
+
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"I need to know exactly why this customer got this score — not just the number, but every factor that contributed to it."</p>
+          <p class="n-moment-cite n-up">— Risk Manager, RAKBANK</p>
+        </div>
+
+        <!-- ── Who it's for ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Who it's for</h2>
+          <p class="n-up">Three groups interact with CRAM, each with a different mental model, responsibility, and risk tolerance.</p>
+          <ul class="n-dot-list">
+            <li class="n-up"><strong>Compliance officers</strong> — primary assessors who complete risk evaluations. They need clarity, speed within accuracy constraints, and defensible outputs.</li>
+            <li class="n-up"><strong>Risk managers</strong> — reviewers who approve or challenge assessments. They need transparency into how a score was derived, and the full override history.</li>
+            <li class="n-up"><strong>Auditors</strong> — internal and external reviewers examining past decisions. They need complete, timestamped records of every input and change.</li>
+          </ul>
+        </div>
+
+        <!-- ── How I approached it ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">How I approached it</h2>
+          <p class="n-lead n-up">I treated this as a workflow problem before a UI problem — understanding how an assessment actually moves through the compliance team before drawing a single field. The regulatory logic had to be right before the interface could be.</p>
+        </div>
+
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">The journey</h2>
+          <ol class="n-timeline">
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Stakeholder interviews</h4>
+                <p>Deep conversations with compliance officers, risk managers, and auditors to understand each group's needs.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Workflow &amp; compliance mapping</h4>
+                <p>Mapped the full assessment journey across tools and handoffs, against the regulatory requirements driving it.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Concept design</h4>
+                <p>Translated the workflow into a single unified form, with clear data provenance built in from the start.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Prototype testing</h4>
+                <p>Iterated with compliance officers to validate the form structure and the override workflow.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Phased delivery</h4>
+                <p>Rolled out in phases, running in parallel against the legacy process until the new tool earned trust.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ── The old way ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Where it broke down</h3>
+          <p class="n-up">The original CRAM wasn't a single tool at all — it was a fragmented patchwork of spreadsheets, PDF forms, and disconnected data sources that staff had to reconcile by hand.</p>
+          <ul class="n-dot-list">
+            <li class="n-up">Data spread across multiple disconnected systems</li>
+            <li class="n-up">Fields arranged arbitrarily, with no structured form</li>
+            <li class="n-up">System data and manual input mixed together</li>
+            <li class="n-up">PDF reports showed numbers, but no reasoning</li>
+            <li class="n-up">No audit trail when a rating changed</li>
+          </ul>
+          <div class="n-img-block n-up">
+            <img src="assets/cram-before.png?v=2" alt="The original CRAM tool — a fragmented patchwork of Excel sheets, PDF forms, and disconnected data" />
+          </div>
+        </div>
+
+        <!-- ── Design principles ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Principles that guided it</h2>
+          <p class="n-up">Four principles, drawn from compliance requirements and user research, shaped every decision.</p>
+          <ul class="n-dot-list">
+            <li class="n-up"><strong>Audit-first</strong> — every interaction produces a defensible record. No action without attribution.</li>
+            <li class="n-up"><strong>Neutral presentation</strong> — fields are shown without bias toward any answer. The system informs; the assessor decides.</li>
+            <li class="n-up"><strong>Progressive disclosure</strong> — complexity surfaces only when needed. Simple cases stay simple.</li>
+            <li class="n-up"><strong>Prevention over correction</strong> — validation happens inline, before submission. In compliance, a wrong submission costs too much to fix after the fact.</li>
+          </ul>
+        </div>
+
+        <!-- ── The redesign — assessment form ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">One form, the way staff actually work</h3>
+          <p class="n-up">The redesign puts the whole assessment on a single page, organised by data source. System-populated fields are visually distinguished from manual inputs, and a sticky in-page nav keeps long assessments oriented — no more stitching a score together across tools.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/cram-after.png?v=2" alt="The redesigned customer risk assessment — a single-page form with sticky in-page nav and structured field groups" />
+          </div>
+        </div>
+
+        <!-- ── Score breakdown video ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">A score you can take apart</h3>
+          <p class="n-up">The risk score is never a black box. Each rating comes with a factor-by-factor breakdown showing every contributing element, its weight, and where the data came from — so the reasoning is always one tap away.</p>
+          <div class="n-img-block n-up">
+            <video
+              src="assets/cram-form.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="CRAM score breakdown walkthrough"
+            ></video>
+          </div>
+        </div>
+
+        <!-- ── Risk summary & audit trail ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">A verdict, with its receipts</h3>
+          <p class="n-up">The final summary pairs the calculated rating with everything behind it — the score band, the customer context, and the maker, checker, and timestamp. Print or export it, and the full audit trail travels with the decision.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/cram-summary.png?v=2" alt="Risk summary — calculated rating with score band, customer context, maker/checker attribution, and timestamp" />
+          </div>
+        </div>
+
+        <!-- ── Discovery board ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Behind the design</h3>
+          <p class="n-up">The board where the work actually lived — competitive analysis, personas, empathy maps, user stories, and a problem statement on the discovery side; information architecture, low-fidelity wireframes, and a component inventory on the solution side.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/cram-discovery.png?v=2" alt="Design process board — discovery research on one side, information architecture and wireframes on the other" />
+          </div>
+        </div>
+
+        <!-- ── What happened next · Looking back ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What happened next</h2>
+            <p class="n-up">A scattered, manual process became one tool the compliance team could trust.</p>
+            <ul class="n-dot-list">
+              <li class="n-up">Assessment time cut through a single consolidated workflow</li>
+              <li class="n-up">A full audit trail on every assessment — no more reconstructing records by hand</li>
+              <li class="n-up">System and human input clearly separated, every time</li>
+              <li class="n-up">Three-tier reporting: verdict, factors, and evidence</li>
             </ul>
           </div>
-        </div>
-      </section>
 
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Who Uses This</h2>
-        <p class="section-lead section-lead--muted">
-          Three distinct user groups interact with CRAM, each with different
-          mental models, responsibilities, and risk tolerances.
-        </p>
-        <div class="cards-3">
-          <div class="info-card">
-            <span class="icon-chip icon-chip--red">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 12 3 4 7l8 4 8-4z"/><path d="m4 12 8 4 8-4"/><path d="m4 17 8 4 8-4"/></svg>
-            </span>
-            <h4>Compliance Officers</h4>
-            <p>Primary assessors who complete risk evaluations. They need clarity, speed within accuracy constraints, and defensible outputs.</p>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Looking back</h2>
+            <p class="n-up">Compliance UX isn't about making things beautiful — it's about making correctness achievable and defensibility <span class="n-draw">automatic<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>.</p>
+            <p class="n-up">The hardest problem wasn't the form — it was the override workflow. Getting the balance between flexibility and accountability right took three rounds of testing.</p>
+            <p class="n-up">And the officers' biggest frustration was never complexity — it was lack of trust in the outputs. Making data provenance visible turned out to be the most impactful decision I made.</p>
           </div>
-          <div class="info-card">
-            <span class="icon-chip icon-chip--red">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </span>
-            <h4>Risk Managers</h4>
-            <p>Reviewers who approve or challenge assessments. They need transparency into how scores were derived and override history.</p>
-          </div>
-          <div class="info-card">
-            <span class="icon-chip icon-chip--red">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
-            </span>
-            <h4>Auditors</h4>
-            <p>Internal and external reviewers who examine past decisions. They need complete, timestamped records of every input and change.</p>
-          </div>
+
         </div>
 
-        <blockquote class="case-quote">
-          <p>"I need to know exactly why this customer got this score — not just the number, but every factor that contributed to it."</p>
-        </blockquote>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">How I Approached It</h2>
-        <p class="section-lead section-lead--muted">
-          A structured discovery-to-delivery process focused on understanding
-          the compliance workflow before touching any UI.
-        </p>
-        <div class="steps">
-          <div class="step-card"><span class="step-num">01</span><h4>Stakeholder interviews</h4><p>Deep conversations with compliance officers, risk managers, and auditors.</p></div>
-          <div class="step-card"><span class="step-num">02</span><h4>Workflow mapping</h4><p>Mapped the full assessment workflow across tools, systems, and handoffs.</p></div>
-          <div class="step-card"><span class="step-num">03</span><h4>Compliance audit</h4><p>Reviewed regulatory requirements and internal policies driving the assessment.</p></div>
-          <div class="step-card"><span class="step-num">04</span><h4>Concept design</h4><p>Early sketches translating the workflow into a unified digital form.</p></div>
-          <div class="step-card"><span class="step-num">05</span><h4>Prototype testing</h4><p>Iterative testing with compliance officers to validate the form structure.</p></div>
-          <div class="step-card"><span class="step-num">06</span><h4>Delivery</h4><p>Phased rollout with parallel running against the legacy process.</p></div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Discovery &amp; Solution Space</h2>
-        <p class="section-lead section-lead--muted">
-          The board where the work actually lived — competitive analysis, personas, empathy maps, user stories, and a problem statement on the discovery side; information architecture, low-fidelity wireframes, and a component inventory on the solution side.
-        </p>
-        <figure class="cram-board-figure">
-          <img src="assets/cram-discovery.png" alt="A board overview of the design process: competitive analysis, persona, empathy mapping, user stories, problem statement and functional requirements, information architecture, low-fidelity wireframes, and design elements" />
-        </figure>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Design Principles</h2>
-        <p class="section-lead section-lead--muted">
-          Four principles guided every design decision, derived from compliance
-          requirements and user research.
-        </p>
-        <div class="numbered-list">
-          <div class="numbered-row"><span class="num">1</span><div><h4>Audit-first design</h4><p>Every interaction is designed to produce a defensible record. No action without attribution.</p></div></div>
-          <div class="numbered-row"><span class="num">2</span><div><h4>Neutral presentation</h4><p>Fields are presented without visual bias toward any particular answer. The system informs; the assessor decides.</p></div></div>
-          <div class="numbered-row"><span class="num">3</span><div><h4>Progressive disclosure</h4><p>Complexity is revealed only when needed. Simple cases stay simple; complex cases surface additional context.</p></div></div>
-          <div class="numbered-row"><span class="num">4</span><div><h4>Error prevention over correction</h4><p>Validation happens inline, before submission. The cost of a wrong submission in compliance is too high to rely on post-submission correction.</p></div></div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">The Solution</h2>
-        <p class="section-lead section-lead--muted">
-          A single-page digital form that mirrors the compliance workflow, with
-          clear data provenance, structured override handling, and a three-tier
-          audit report.
-        </p>
-
-        <div class="feature-list">
-          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Risk Assessment Form</h5><p>All assessment fields on a single page, organised by data source. System-populated fields are visually distinguished from manual inputs.</p></div></div>
-          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Score Breakdown</h5><p>The risk score is accompanied by a factor breakdown showing each contributing element, its weight, and the data source.</p></div></div>
-          <div class="feature-row"><div class="arrow-cell">→</div><div><h5>Audit Report</h5><p>A three-tier report: final verdict, factor-by-factor breakdown, and full evidence trail with timestamps and user attribution.</p></div></div>
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">Want to talk through the details?</h2>
+          <p class="n-up">Happy to walk through the research, the design decisions, and what didn't make the cut.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
 
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Risk assessment form — single-page layout</span>
-          </div>
-          <img src="assets/cram-classification.png" alt="CRAM Risk Rating Calculator Classification Screen" />
-        </div>
-
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Score breakdown with factor weights</span>
-          </div>
-          <video
-            src="assets/cram-form.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="CRAM score breakdown walkthrough"
-          ></video>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Impact</h2>
-        <p class="section-lead section-lead--muted">
-          Measured outcomes from the redesigned CRAM tool.
-        </p>
-        <div class="metrics-grid" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="metric"><span class="metric-value">Assessment time</span><span class="metric-label">Reduced average assessment completion time through consolidated workflow</span></div>
-          <div class="metric"><span class="metric-value">Audit readiness</span><span class="metric-label">Full audit trail available for every assessment, eliminating manual record reconstruction</span></div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">What I Learned</h2>
-        <p class="section-lead section-lead--muted">
-          Compliance UX is not about making things beautiful — it's about making
-          correctness achievable and defensibility automatic.
-        </p>
-        <p class="section-lead section-lead--muted">
-          The hardest design problem was not the form itself, but the override
-          workflow. Getting the balance between flexibility and accountability
-          right took three rounds of testing.
-        </p>
-        <p class="section-lead section-lead--muted">
-          Working directly with compliance officers revealed that their biggest
-          frustration was not the tool's complexity, but the lack of trust in
-          its outputs. Building visible data provenance was the most impactful
-          design decision.
-        </p>
-      </section>
+      </div>
     </main>
 
     <footer class="site-footer">
