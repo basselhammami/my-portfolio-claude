@@ -217,3 +217,98 @@ document.addEventListener("click", (event) => {
 
   groups.forEach((g) => io.observe(g));
 })();
+
+/* ==========================================================================
+   Image lightbox — click any case-study image to view it full-size
+   ========================================================================== */
+
+(function imageLightbox() {
+  const imgs = Array.from(document.querySelectorAll(".n-img-block img"));
+  if (!imgs.length) return;
+
+  const isRu = document.documentElement.lang === "ru";
+  const viewLabel = isRu ? "Открыть изображение крупнее" : "View larger image";
+  const closeLabel = isRu ? "Закрыть" : "Close";
+
+  // Build the overlay once and reuse it for every image.
+  const overlay = document.createElement("div");
+  overlay.className = "n-lightbox";
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.setAttribute("aria-hidden", "true");
+
+  const closeBtn = document.createElement("button");
+  closeBtn.type = "button";
+  closeBtn.className = "n-lightbox-close";
+  closeBtn.setAttribute("aria-label", closeLabel);
+  closeBtn.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+
+  const bigImg = document.createElement("img");
+  bigImg.className = "n-lightbox-img";
+  bigImg.alt = "";
+
+  const caption = document.createElement("p");
+  caption.className = "n-lightbox-caption";
+
+  overlay.append(closeBtn, bigImg, caption);
+  document.body.appendChild(overlay);
+
+  let lastFocused = null;
+
+  const open = (img) => {
+    bigImg.src = img.currentSrc || img.src;
+    bigImg.alt = img.alt || "";
+    caption.textContent = img.alt || "";
+    caption.style.display = img.alt ? "" : "none";
+
+    lastFocused = document.activeElement;
+    // Prevent layout shift from the disappearing scrollbar.
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    if (sbw > 0) document.body.style.paddingRight = sbw + "px";
+    document.body.classList.add("n-lightbox-open");
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("n-lightbox-open");
+    document.body.style.paddingRight = "";
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      lastFocused.focus();
+    }
+  };
+
+  // Clicking the backdrop, the image, or the close button dismisses.
+  overlay.addEventListener("click", close);
+
+  // Keep focus inside the dialog while it's open, and close on Escape.
+  overlay.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      closeBtn.focus();
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) close();
+  });
+
+  imgs.forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.setAttribute(
+      "aria-label",
+      img.alt ? img.alt + " — " + viewLabel : viewLabel
+    );
+    img.addEventListener("click", () => open(img));
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open(img);
+      }
+    });
+  });
+})();

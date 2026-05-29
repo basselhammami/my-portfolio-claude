@@ -2323,3 +2323,105 @@ body.n-bg .site-header.is-scrolled {
     padding: 2.5rem 1.5rem;
   }
 }
+
+/* ==========================================================================
+   Image lightbox — click any case-study image to view it full-size
+   ========================================================================== */
+
+/* Affordance: these images are clickable. */
+.n-img-block img {
+  cursor: zoom-in;
+}
+
+.n-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(15, 15, 18, 0.85);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+.n-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.n-lightbox-img {
+  max-width: 92vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+  cursor: zoom-out;
+  transform: scale(0.97);
+  transition: transform 0.28s var(--ease-out);
+}
+.n-lightbox.is-open .n-lightbox-img {
+  transform: scale(1);
+}
+
+.n-lightbox-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  margin: 0 auto;
+  max-width: 70ch;
+  padding: 0 1.25rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.n-lightbox-close {
+  position: absolute;
+  top: clamp(0.75rem, 2.5vw, 1.5rem);
+  right: clamp(0.75rem, 2.5vw, 1.5rem);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.n-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+.n-lightbox-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.n-lightbox-close svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Lock background scroll while the lightbox is open. */
+body.n-lightbox-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .n-lightbox,
+  .n-lightbox-img {
+    transition: none;
+  }
+  .n-lightbox .n-lightbox-img {
+    transform: none;
+  }
+}
