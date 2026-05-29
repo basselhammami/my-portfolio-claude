@@ -1772,56 +1772,6 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0;
 }
 
-/* ── Filmstrip auto-scroll ── */
-.n-film {
-  margin-top: 2rem;
-  border-radius: 0.875rem;
-  overflow: hidden;
-  background: #1DBDB4;
-  padding: clamp(1.25rem, 3.5vw, 2rem) 0;
-  cursor: default;
-}
-
-.n-film-track {
-  display: flex;
-  gap: 1rem;
-  padding: 0 clamp(1.25rem, 3.5vw, 2rem);
-  width: max-content;
-  animation: n-film-scroll 22s linear infinite;
-  will-change: transform;
-}
-
-.n-film:hover .n-film-track,
-.n-film:focus-within .n-film-track {
-  animation-play-state: paused;
-}
-
-.n-film-track img {
-  height: clamp(300px, 36vw, 480px);
-  width: auto;
-  flex-shrink: 0;
-  display: block;
-  border-radius: 0.75rem;
-}
-
-@keyframes n-film-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 0.5rem)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .n-film-track {
-    animation: none;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.5rem;
-  }
-  .n-film-track img {
-    scroll-snap-align: start;
-  }
-}
-
 /* ── Section title ── */
 .n-title {
   font-size: clamp(1.375rem, 2.5vw, 1.875rem);
