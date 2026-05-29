@@ -1801,11 +1801,45 @@ body.n-bg .site-header.is-scrolled {
   gap: 0.75rem;
 }
 
+/* ── Screenshots stacked vertically with stagger animation ── */
+.n-screen-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.n-screen-stack .n-screen {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+}
+
+.n-screen-stack.is-visible .n-screen:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.n-screen-stack.is-visible .n-screen:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.14s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .n-screen-stack .n-screen {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ── Screenshot / screen frame ── */
 .n-screen {
-  background: #2c2c2c;
+  background: #f5f5f5;
   border-radius: 0.875rem;
   overflow: hidden;
+  box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .n-screen img,
@@ -1824,9 +1858,10 @@ body.n-bg .site-header.is-scrolled {
 
 /* ── Browser chrome frame (desktop mockup) ── */
 .n-browser {
-  background: #2c2c2c;
+  background: #f0f0f0;
   border-radius: 0.875rem;
   overflow: hidden;
+  box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .n-browser-bar {
@@ -1834,7 +1869,7 @@ body.n-bg .site-header.is-scrolled {
   align-items: center;
   gap: 0.375rem;
   padding: 0.625rem 0.875rem;
-  background: #3a3a3a;
+  background: #e2e2e2;
 }
 
 .n-browser-dot {

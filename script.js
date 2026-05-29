@@ -111,7 +111,7 @@ document.addEventListener("click", (event) => {
   ).matches;
 
   const targets = document.querySelectorAll(
-    ".projects > .project-card, .expertise, .expertise-grid, .case-section, .mockup"
+    ".projects > .project-card, .expertise, .expertise-grid, .case-section, .mockup, .n-card, .n-screen-stack"
   );
 
   targets.forEach((el) => {
