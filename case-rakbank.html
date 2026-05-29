@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=4" />
     <script defer src="script.js"></script>
   </head>
   <body class="n-bg">
@@ -39,52 +39,52 @@
 
       <div class="n-stack">
 
-        <!-- ── Hero card ── -->
-        <div class="n-card n-hero-centered">
-          <div class="n-hero-intro">
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero">
+          <div class="n-hero-left">
             <img src="assets/rakbank-logo.png" class="n-hero-logo" alt="RAKBANK" />
-            <p class="n-hero-company-desc">
-              Led the end-to-end redesign of RAKBANK's Customer Lifecycle
-              Management platform — from a fragmented legacy system to a unified
-              analyst-first tool used by the entire compliance function
+            <h1 class="n-hero-title">CLM Platform</h1>
+            <p class="n-hero-desc">
+              Redesigned RAKBANK's Customer Lifecycle Management platform from a patchwork of disconnected legacy tools into a single unified compliance system — now used by every KYC analyst at the bank.
             </p>
-            <p class="n-hero-meta">Senior Product Designer · Oct 2024 – Present · Web</p>
-          </div>
-          <div class="n-browser n-hero-screenshot">
-            <div class="n-browser-bar">
-              <span class="n-browser-dot"></span>
-              <span class="n-browser-dot"></span>
-              <span class="n-browser-dot"></span>
+            <div class="n-hero-tags">
+              <span class="n-hero-tag">Senior Product Designer</span>
+              <span class="n-hero-tag">Oct 2024 – Present</span>
+              <span class="n-hero-tag">Digital Banking · Compliance</span>
+              <span class="n-hero-tag">Web · Internal Tools</span>
             </div>
-            <img src="assets/clm-dashboard.png" alt="CLM Dashboard showing compliance overview" />
+          </div>
+          <div>
+            <div class="n-screen">
+              <img src="assets/clm-dashboard.png" alt="CLM Dashboard — compliance overview" />
+            </div>
           </div>
         </div>
 
-        <!-- ── Two columns: Where it started + What I was solving for ── -->
+        <!-- ── Where it started · What I was solving for ── -->
         <div class="n-grid-2">
 
           <div class="n-card">
             <h2 class="n-title">Where it all started</h2>
-            <p>When I joined RAKBANK, there was no unified tool for managing customer due diligence. The compliance team was navigating between 6+ disconnected screens, each built at a different time, by a different team.</p>
-            <p>People had come to accept the friction. Opening multiple tabs for a single customer review was just part of the job.</p>
+            <p>When I joined RAKBANK, there was no unified tool for managing customer due diligence. The compliance team was navigating 6+ disconnected screens — each built by a different team, at a different time.</p>
+            <p>Analysts had come to accept the friction. Opening multiple tabs for a single customer review was just part of the job. Nobody had a full picture of any customer.</p>
             <p>So I set out to change that.</p>
-            <p>The goal was simple: make compliance review feel clear, structured, and in control.</p>
-            <p>At the beginning, it was just me — one designer, a fragmented system, and 900K+ customers whose data was spread across it.</p>
+            <p>At the start, it was just me — one designer, a fragmented system, and 900K+ customers whose data was spread across it.</p>
           </div>
 
           <div class="n-card">
             <h2 class="n-title">What I was solving for</h2>
-            <p>We wanted to build a platform that felt like a precision tool built for experts — not a legacy database interface.</p>
+            <p>We wanted to build something that felt like a precision tool built for experts — not a legacy database interface that analysts had to fight to use.</p>
             <div class="n-callout">
               <p>Why do I need 6 tabs just to review one customer?<br>
               Where did this customer's risk rating change?</p>
             </div>
-            <p><strong>The main design challenges were</strong></p>
+            <p><strong>The core design challenges</strong></p>
             <ul class="n-dot-list">
               <li>Build clarity from complexity — no hidden data, no guesswork</li>
               <li>Create a single unified view across fragmented data sources</li>
               <li>Make compliance feel like expert control, not bureaucratic overhead</li>
-              <li>Scale for a team of 100+ analysts without losing the human touch</li>
+              <li>Scale for 100+ analysts without losing structure or speed</li>
             </ul>
           </div>
 
@@ -95,27 +95,30 @@
           <div class="n-split">
             <div class="n-split-text">
               <h2 class="n-title">How I approached it</h2>
-              <p>I mapped the CLM platform from the ground up — every screen, every state, every edge case.</p>
-              <p>There was no existing design pattern for this kind of compliance tool inside RAKBANK, so I started by spending weeks understanding the real workflows before touching any design tool.</p>
+              <p>I mapped the platform from the ground up — every screen, every state, every edge case. There was no existing pattern inside RAKBANK for this kind of tool, so I started with deep discovery before touching Figma.</p>
               <ul class="n-dot-list">
-                <li>12 stakeholder interviews + 3 weeks of workflow observation</li>
-                <li>Full IA audit of 3 legacy systems to find consolidation opportunities</li>
-                <li>Mapped every data object and relationship before designing screens</li>
-                <li>Established a shared design system pattern library first</li>
-                <li>Shipped in phases — validated each module with analysts before moving to the next</li>
-                <li>Collaborated daily with PMs, engineers, and compliance officers</li>
+                <li>12 stakeholder interviews + 3 weeks of live workflow observation</li>
+                <li>Full IA audit of 3 legacy systems to surface consolidation opportunities</li>
+                <li>Mapped every data entity and relationship before designing screens</li>
+                <li>Defined shared patterns and components before building individual views</li>
+                <li>Delivered in phases — validated each module with analysts before moving on</li>
+                <li>Daily collaboration with PMs, engineers, and compliance officers throughout</li>
               </ul>
             </div>
             <div class="n-split-vis">
               <div class="n-screen-stack">
-                <div class="n-screen">
-                  <img src="assets/clm-customer-universe.png" alt="Customer Universe — unified customer table view" />
+                <div class="n-screen-item">
+                  <div class="n-screen">
+                    <img src="assets/clm-customer-universe.png" alt="Customer Universe — unified customer table" />
+                  </div>
+                  <p class="n-screen-label">Customer Universe</p>
                 </div>
-                <p class="n-screen-label">Customer Universe</p>
-                <div class="n-screen">
-                  <img src="assets/clm-case-overview.png?v=2" alt="Customer Profile — single-page case view" />
+                <div class="n-screen-item">
+                  <div class="n-screen">
+                    <img src="assets/clm-case-overview.png?v=2" alt="Customer Profile — single-page case view" />
+                  </div>
+                  <p class="n-screen-label">Customer Profile</p>
                 </div>
-                <p class="n-screen-label">Customer Profile</p>
               </div>
             </div>
           </div>
@@ -126,33 +129,38 @@
           <div class="n-split">
             <div class="n-split-text">
               <h2 class="n-title">Design that changed behavior</h2>
-              <p>The key was to make compliance feel like expert control — not bureaucratic overhead.</p>
-              <p>Analysts don't read data dictionaries. They look for signals of clarity, structure, and trust. So instead of exposing every raw data field, we gave them context and decisions that made sense.</p>
+              <p>The key was making compliance feel like expert control — not bureaucratic overhead.</p>
+              <p>Analysts don't read data dictionaries. They scan for signals of clarity and trust. So instead of surfacing every raw field, we gave them context, structure, and decisions that made sense for the task at hand.</p>
               <ul class="n-dot-list">
                 <li>Single-page customer profile replaced a 6-screen workflow</li>
-                <li>Context-aware action panel — showed only what was relevant for each case state</li>
-                <li>Inline document preview kept analysts in flow, no external PDF viewer needed</li>
-                <li>Risk timeline made data provenance visible — analysts finally trusted the data</li>
-                <li>Role-based views for analysts, compliance officers, and operations managers</li>
+                <li>Context-aware action panel — only the actions valid for the current case state</li>
+                <li>Inline document preview kept analysts in flow, no external PDF viewer</li>
+                <li>Risk change timeline made provenance visible — analysts finally trusted the data</li>
+                <li>Role-based dashboard views for analysts, officers, and operations managers</li>
               </ul>
             </div>
             <div class="n-split-vis">
-              <div class="n-screen">
-                <img src="assets/clm-case-details.webp" alt="Case details — compliance review view" />
+              <div class="n-screen-stack">
+                <div class="n-screen-item">
+                  <div class="n-screen">
+                    <img src="assets/clm-case-details.webp" alt="Case details — compliance review panel" />
+                  </div>
+                  <p class="n-screen-label">Case Review</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ── What happened next + Looking back ── -->
+        <!-- ── What happened next · Looking back ── -->
         <div class="n-grid-2">
 
           <div class="n-card">
             <h2 class="n-title">What happened next</h2>
-            <p>The new CLM platform became the primary compliance tool across RAKBANK.</p>
+            <p>The platform became the single tool for all compliance reviews across RAKBANK.</p>
             <div class="n-metrics">
               <div>
-                <span class="n-metric-value">↓ ~60%</span>
+                <span class="n-metric-value">↓ 60%</span>
                 <span class="n-metric-label">Reduction in time to complete a full customer review</span>
               </div>
               <div>
@@ -172,9 +180,9 @@
 
           <div class="n-card">
             <h2 class="n-title">Looking back</h2>
-            <p>What started as a UX cleanup <span class="n-highlight">turned into a platform that changed how the entire compliance team worked.</span></p>
-            <p>The CLM platform didn't just improve the interface — it changed how analysts felt about their work. From frustrated and scattered, to in control.</p>
-            <p>It taught me that great enterprise design isn't about building feature-complete tools — it's about trust, clarity, and giving experts the right context at the right moment.</p>
+            <p>What started as a UX cleanup <span class="n-highlight">turned into a platform that changed how the entire compliance function worked.</span></p>
+            <p>The CLM didn't just improve the interface — it changed how analysts felt about their work. From scattered and frustrated, to structured and in control.</p>
+            <p>It reinforced that great enterprise design isn't about feature completeness — it's about trust, clarity, and giving experts the right signal at the right moment.</p>
           </div>
 
         </div>
