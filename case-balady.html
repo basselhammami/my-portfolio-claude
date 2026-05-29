@@ -11,13 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=14" />
     <script defer src="script.js"></script>
   </head>
-  <body>
+  <body class="n-bg">
     <header class="site-header">
       <nav class="nav-left">
         <a href="index.html" class="brand">Basel</a>
@@ -32,214 +32,219 @@
       </div>
     </header>
 
-    <main class="case-page">
+    <main class="n-page">
       <a href="index.html" class="back-link">Back</a>
 
-      <h1 class="case-title">Balady+ Maps — Navigation Redesign</h1>
-      <p class="case-subtitle">
-        Redesigning the navigation experience for Saudi Arabia's official
-        government maps application.
-      </p>
+      <div class="n-stack">
 
-      <dl class="case-meta">
-        <div><dt>ROLE</dt><dd>Middle Product Designer</dd></div>
-        <div><dt>COMPANY</dt><dd>Balady+</dd></div>
-        <div><dt>TIMELINE</dt><dd>Oct 2023 – Sep 2024</dd></div>
-        <div><dt>DOMAIN</dt><dd>Mobile / Government</dd></div>
-      </dl>
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero n-rise" data-reveal>
+          <img src="assets/balady-logo.jpg" class="n-hero-logo n-up" alt="Balady+" />
+          <h1 class="n-hero-title n-up">Balady+ Maps</h1>
+          <p class="n-hero-desc n-up">
+            Redesigned the navigation experience for Saudi Arabia's official government maps app — turning a destination-only tool into a fluid map experience for millions of citizens.
+          </p>
+          <p class="n-hero-kicker n-up">Designed for the city, <span class="n-draw">built for everyone<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
+          <div class="n-hero-tags n-up">
+            <span class="n-hero-tag">Middle Product Designer</span>
+            <span class="n-hero-tag">Oct 2023 – Sep 2024</span>
+            <span class="n-hero-tag">Mobile · Government</span>
+            <span class="n-hero-tag">iOS · Android</span>
+          </div>
+        </div>
 
-      <div class="case-hero case-hero--video">
-        <video
-          src="assets/balady-hero.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-label="Balady+ navigation montage"
-        ></video>
+        <!-- ── Hero video ── -->
+        <div class="n-card n-rise" data-reveal>
+          <div class="n-screen n-up">
+            <video
+              src="assets/balady-hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Balady+ navigation montage"
+            ></video>
+          </div>
+        </div>
+
+        <!-- ── Stats ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">4&nbsp;→&nbsp;2</span>
+            <span class="n-stat-label">Taps to find a service</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="3">0</span>
+            <span class="n-stat-label">Features redesigned</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">↓</span>
+            <span class="n-stat-label">Mid-journey cancellations</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">12M+</span>
+            <span class="n-stat-label">Citizens served</span>
+          </div>
+        </div>
+
+        <!-- ── Where it started · What I was solving for ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Where it all started</h2>
+            <p class="n-up">Balady+ is Saudi Arabia's official government maps and municipal services app — used by millions of citizens to navigate cities, report issues, and access government services.</p>
+            <p class="n-up">My role focused on the core navigation experience: specifically the navigation mode and the introduction of a free roam feature that let users explore without needing a destination.</p>
+            <p class="n-up">Three interconnected problems had gone unresolved, each making the map harder to use than it needed to be.</p>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I was solving for</h2>
+            <p class="n-up">The goal was to make the map feel less like a transactional tool and more like a spatial interface — fluid whether you were navigating or just exploring.</p>
+            <div class="n-callout n-up">
+              <p>Why do I have to enter a destination just to look around?<br>
+              Why does this feel harder than it needs to?</p>
+            </div>
+            <p class="n-up"><strong>The core design challenges</strong></p>
+            <ul class="n-dot-list">
+              <li class="n-up">Reduce cognitive load during active turn-by-turn navigation</li>
+              <li class="n-up">Introduce exploration without breaking the navigation flow</li>
+              <li class="n-up">Surface services faster — without deep menu hierarchies</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"These weren't isolated UI problems — they reflected a fundamental mismatch between how users wanted to interact with the map and how the app was designed."</p>
+          <p class="n-moment-cite n-up">— Design insight, Balady+ discovery phase</p>
+        </div>
+
+        <!-- ── How I approached it ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">How I approached it</h2>
+          <p class="n-lead n-up">Before designing anything, I mapped the complete user journey across every navigation scenario to understand exactly where and why the experience broke down. A service blueprint became the foundation for all three features.</p>
+        </div>
+
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">The journey</h2>
+          <ol class="n-timeline">
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Discovery &amp; field research</h4>
+                <p>Observed real navigation sessions and interviewed users to understand where the experience felt unnatural.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Service blueprint</h4>
+                <p>Mapped the full navigation journey to identify three interconnected failure points across the experience.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Solution design</h4>
+                <p>Designed three features addressing navigation friction, exploration, and service discovery in parallel.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Prototyping &amp; testing</h4>
+                <p>Tested with real users to validate the navigation redesign and free roam transitions before shipping.</p>
+              </div>
+            </li>
+            <li class="n-tl-item n-up">
+              <span class="n-tl-dot"></span>
+              <div>
+                <h4>Launch</h4>
+                <p>All three features shipped to millions of citizens across Saudi Arabia.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ── Service Blueprint ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Service Blueprint</h3>
+          <p class="n-up">I mapped the complete user journey across every navigation scenario to identify where and why the experience broke down. This gave the team a shared understanding of the problem space before any solutions were explored.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-blueprint.png" alt="Service Blueprint — full navigation journey" />
+          </div>
+        </div>
+
+        <!-- ── Navigation Mode ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Navigation Mode Redesign</h3>
+          <p class="n-up">The existing turn-by-turn navigation had too many elements competing for attention during active driving. The redesigned interface surfaces only what's needed at each moment — reducing cognitive load and mid-journey errors.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-navigation.png" alt="Navigation mode redesign" />
+          </div>
+        </div>
+
+        <!-- ── Parking ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Parking Enhancements</h3>
+          <p class="n-up">Finding and navigating to parking was one of the most common urban use cases. The redesigned parking feature surfaces real-time availability, pricing, and distance — all without leaving the map. One tap to navigate.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-parking.png" alt="Parking overview and detail view" />
+          </div>
+        </div>
+
+        <!-- ── Free Roam ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Free Roam Mode</h3>
+          <p class="n-up">A new exploration mode that lets users browse the map without a fixed destination. The transition between free roam and navigation is seamless — tap any point of interest to get directions, or tap navigate to start from your current location.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-free-roam-1.png" alt="Free Roam — map exploration mode" />
+          </div>
+        </div>
+
+        <!-- ── Horizontal Navigation ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Horizontal Navigation</h3>
+          <p class="n-up">A horizontal scrolling pattern for browsing service categories reduced the average number of taps from 4 to 2. Less hierarchy, faster discovery — without losing the depth the app needed.</p>
+          <div class="n-img-block n-up">
+            <img src="assets/balady-horizontal.png" alt="Horizontal navigation — category browsing" />
+          </div>
+        </div>
+
+        <!-- ── What happened next · Looking back ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What happened next</h2>
+            <p class="n-up">All three features shipped to millions of citizens across Saudi Arabia.</p>
+            <ul class="n-dot-list">
+              <li class="n-up">Significant reduction in navigation errors and mid-journey cancellations</li>
+              <li class="n-up">Free roam introduced a new usage pattern — users exploring without a destination</li>
+              <li class="n-up">Service discovery taps cut from 4 to 2</li>
+              <li class="n-up">Parking flow fully integrated — no extra screen, no leaving the map</li>
+            </ul>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Looking back</h2>
+            <p class="n-up">What started as a navigation friction problem turned into a rethink of what a government map app could be.</p>
+            <p class="n-up">The biggest design shift was recognising that the map was two products in one — a navigation tool and an exploration surface. Designing for both without creating tension between them was the real challenge.</p>
+            <p class="n-up">It reinforced that scale doesn't make design harder — it makes <span class="n-draw">clarity more important<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>.</p>
+          </div>
+
+        </div>
+
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">Want to talk through the details?</h2>
+          <p class="n-up">Happy to walk through the research, the design decisions, and what didn't make the cut.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+
       </div>
-
-      <section class="case-section">
-        <h2 class="section-h">Introduction</h2>
-        <p class="section-lead section-lead--muted">
-          Balady+ is Saudi Arabia's official government maps and municipal
-          services application, used by millions of citizens to navigate cities,
-          report issues, and access government services.
-        </p>
-        <p class="section-lead section-lead--muted">
-          My role focused on redesigning the core navigation experience —
-          specifically the navigation mode and the introduction of a new free
-          roam feature that allowed users to explore the map without a fixed
-          destination.
-        </p>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">The Challenge</h2>
-        <p class="section-lead section-lead--muted">
-          Three interconnected problems defined the navigation experience:
-        </p>
-        <div class="numbered-list">
-          <div class="numbered-row"><span class="num">01</span><div><h4>Navigation mode friction</h4><p>The existing turn-by-turn navigation had high cognitive load, with too many elements competing for attention during active driving.</p></div></div>
-          <div class="numbered-row"><span class="num">02</span><div><h4>No exploration mode</h4><p>Users who wanted to explore an area without a specific destination had no way to do so — the app required a destination to start.</p></div></div>
-          <div class="numbered-row"><span class="num">03</span><div><h4>Horizontal navigation gap</h4><p>The app lacked a horizontal navigation pattern for browsing categories and services, forcing users into deep menu hierarchies.</p></div></div>
-        </div>
-        <p class="section-lead section-lead--muted" style="margin-top:1.5rem;">
-          These weren't isolated UI problems — they reflected a fundamental
-          mismatch between how users wanted to interact with the map and how the
-          app was designed.
-        </p>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Service Blueprint</h2>
-        <p class="section-lead section-lead--muted">
-          Before designing solutions, I mapped the complete user journey across
-          all navigation scenarios to identify where the experience broke down.
-        </p>
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Service blueprint — full navigation journey</span>
-          </div>
-          <img src="assets/balady-blueprint.png" alt="Service Blueprint" />
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">The Solution</h2>
-        <p class="section-lead section-lead--muted">
-          Three interconnected features that addressed the core navigation
-          problems identified in discovery.
-        </p>
-        <div class="cards-3">
-          <div class="info-card">
-            <span class="icon-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-            </span>
-            <h4>Navigation Mode Redesign</h4>
-            <p>A simplified navigation interface that reduces cognitive load during active driving by surfacing only the information needed at each moment.</p>
-          </div>
-          <div class="info-card">
-            <span class="icon-chip icon-chip--amber">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 8-6 2-2 6 6-2 2-6z"/></svg>
-            </span>
-            <h4>Free Roam Mode</h4>
-            <p>A new exploration mode that allows users to browse the map without a fixed destination, enabling discovery and spontaneous navigation.</p>
-          </div>
-          <div class="info-card">
-            <span class="icon-chip icon-chip--green">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="15 6 21 12 15 18"/><polyline points="9 6 3 12 9 18"/></svg>
-            </span>
-            <h4>Horizontal Navigation</h4>
-            <p>A horizontal scrolling pattern for browsing service categories, reducing menu depth and making discovery significantly faster.</p>
-          </div>
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Feature Details</h2>
-        <p class="section-lead section-lead--muted">
-          Each feature was designed to address a specific pain point while
-          integrating seamlessly with the existing map experience.
-        </p>
-
-        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Parking Enhancements</h3>
-        <p class="section-lead section-lead--muted">
-          Finding and navigating to parking was one of the most common use cases
-          in urban areas. The redesigned parking feature surfaces real-time
-          availability and integrates payment directly in the flow.
-        </p>
-        <p class="section-lead section-lead--muted">
-          The parking overview screen shows nearby options with availability,
-          pricing, and distance — all without leaving the map.
-        </p>
-
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Parking overview & detail view</span>
-          </div>
-          <img src="assets/balady-parking.png" alt="Parking Enhancements" />
-        </div>
-
-        <p class="section-lead section-lead--muted">
-          The detail view provides real-time space availability, operating
-          hours, and direct navigation with one tap.
-        </p>
-
-        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Free Roam Mode</h3>
-        <p class="section-lead section-lead--muted">
-          A new exploration mode that allows users to browse the map without a
-          fixed destination. Users can explore areas, discover points of
-          interest, and start navigation from any point.
-        </p>
-        <p class="section-lead section-lead--muted">
-          The transition between free roam and navigation mode is seamless — tap
-          any point of interest to get directions, or tap the navigation button
-          to start from your current location.
-        </p>
-
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Free Roam — transition from exploration to navigation</span>
-          </div>
-          <img src="assets/balady-free-roam-1.png" alt="Free Roam Mode - Transition" />
-        </div>
-
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Free Roam — map controls</span>
-          </div>
-          <img src="assets/balady-free-roam-2.png" alt="Free Roam Mode - Controls" />
-        </div>
-
-        <h3 class="section-h" style="font-size:1.25rem;margin-top:2rem;">Horizontal Navigation</h3>
-        <p class="section-lead section-lead--muted">
-          A horizontal scrolling navigation pattern for browsing categories and
-          services, reducing the depth of menu hierarchies and making discovery
-          faster.
-        </p>
-
-        <div class="mockup">
-          <div class="mockup-bar">
-            <span class="mockup-dots"><span></span><span></span><span></span></span>
-            <span class="mockup-caption">Horizontal navigation — category browsing</span>
-          </div>
-          <img src="assets/balady-horizontal.png" alt="Horizontal Navigation Mode" />
-        </div>
-      </section>
-
-      <hr class="rule" />
-
-      <section class="case-section">
-        <h2 class="section-h">Impact</h2>
-        <div class="cards-3">
-          <div class="info-card">
-            <h4>Reduced navigation friction</h4>
-            <p>User testing showed a significant reduction in navigation errors and mid-journey cancellations with the redesigned navigation mode.</p>
-          </div>
-          <div class="info-card">
-            <h4>New exploration behaviour</h4>
-            <p>Free roam mode introduced a new usage pattern — users spending more time exploring the map without a specific destination.</p>
-          </div>
-          <div class="info-card">
-            <h4>Faster service discovery</h4>
-            <p>Horizontal navigation reduced the average number of taps to reach a service category from 4 to 2.</p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">

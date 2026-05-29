@@ -1747,7 +1747,8 @@ body.n-bg .site-header.is-scrolled {
   border: 1px solid #e6e6e6;
 }
 
-.n-img-block img {
+.n-img-block img,
+.n-img-block video {
   width: 100%;
   height: auto;
   display: block;
