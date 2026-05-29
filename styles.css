@@ -1678,7 +1678,7 @@ body.n-bg .site-header.is-scrolled {
   gap: 0.75rem;
 }
 
-/* ── Hero card ── */
+/* ── Hero card (two-column, kept for future use) ── */
 .n-hero {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -1691,6 +1691,51 @@ body.n-bg .site-header.is-scrolled {
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
+}
+
+/* ── Hero card: centered logo + text + full-bleed screenshot ── */
+.n-hero-centered {
+  padding: 0;
+  overflow: hidden;
+}
+
+.n-hero-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.625rem;
+  padding: 2.75rem 3rem 2rem;
+}
+
+.n-hero-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+.n-hero-company-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+  max-width: 34rem;
+  margin: 0;
+}
+
+.n-hero-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.n-hero-screenshot {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.n-hero-screenshot .n-browser-bar {
+  background: #e4e4e4;
 }
 
 .n-project-label {
@@ -1731,12 +1776,12 @@ body.n-bg .site-header.is-scrolled {
 
 /* ── Section title ── */
 .n-title {
-  font-size: clamp(1.875rem, 3.5vw, 2.625rem);
-  font-weight: 700;
+  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  font-weight: 600;
   color: var(--fg);
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin: 0 0 1.375rem;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
 }
 
 /* ── Body text inside cards ── */
@@ -1954,7 +1999,7 @@ body.n-bg .site-header.is-scrolled {
   }
 
   .n-title {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    font-size: clamp(1.25rem, 6vw, 1.625rem);
   }
 
   .n-screen-pair {
