@@ -312,3 +312,60 @@ document.addEventListener("click", (event) => {
     });
   });
 })();
+
+/* ==========================================================================
+   Mobile hint toast — on case pages, let small-screen visitors know the
+   case studies are best viewed on a larger screen. Dismissible, and once
+   closed it stays hidden for the rest of the browsing session.
+   ========================================================================== */
+
+(function mobileHintToast() {
+  // Only on case-study pages.
+  if (!document.querySelector(".n-page")) return;
+
+  // Only on narrow (mobile) viewports.
+  if (!window.matchMedia("(max-width: 640px)").matches) return;
+
+  // Respect an earlier dismissal during this session.
+  if (sessionStorage.getItem("case_mobile_hint_dismissed")) return;
+
+  const isRu = document.documentElement.lang === "ru";
+  const message = isRu
+    ? "Кейсы удобнее смотреть на ноутбуке или большом экране."
+    : "These case studies are best viewed on a laptop or larger screen.";
+  const closeLabel = isRu ? "Закрыть" : "Close";
+
+  const toast = document.createElement("div");
+  toast.className = "n-toast";
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+
+  const text = document.createElement("p");
+  text.className = "n-toast-text";
+  text.textContent = message;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.type = "button";
+  closeBtn.className = "n-toast-close";
+  closeBtn.setAttribute("aria-label", closeLabel);
+  closeBtn.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+
+  toast.append(text, closeBtn);
+  document.body.appendChild(toast);
+
+  const dismiss = () => {
+    sessionStorage.setItem("case_mobile_hint_dismissed", "1");
+    toast.classList.remove("is-visible");
+    toast.addEventListener("transitionend", () => toast.remove(), {
+      once: true,
+    });
+  };
+
+  closeBtn.addEventListener("click", dismiss);
+
+  // Reveal on the next frame so the entrance transition runs.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => toast.classList.add("is-visible"));
+  });
+})();

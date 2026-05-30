@@ -2432,3 +2432,72 @@ body.n-lightbox-open {
     transform: none;
   }
 }
+
+/* ==========================================================================
+   Mobile hint toast (case pages, narrow viewports only)
+   ========================================================================== */
+
+.n-toast {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.875rem;
+  background: rgba(20, 20, 20, 0.96);
+  color: #fff;
+  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.5);
+  /* Start hidden below the viewport edge until revealed. */
+  opacity: 0;
+  transform: translateY(140%);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+.n-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.n-toast-text {
+  margin: 0;
+  flex: 1;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.n-toast-close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.n-toast-close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.n-toast-close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+.n-toast-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .n-toast {
+    transition: none;
+  }
+}
