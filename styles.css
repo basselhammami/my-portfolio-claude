@@ -1772,6 +1772,13 @@ body.n-bg .site-header.is-scrolled {
   border-radius: 0;
 }
 
+/* Kafu — images sit flush with no grey mat behind them. */
+.n-kafu .n-img-block {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 /* ── Filmstrip auto-scroll ── */
 .n-film {
   margin-top: 2rem;
