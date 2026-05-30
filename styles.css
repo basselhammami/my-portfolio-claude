@@ -1764,6 +1764,10 @@ body.n-bg .site-header.is-scrolled {
 .n-img-block--phone {
   display: flex;
   justify-content: center;
+  /* Center (don't stretch) on the cross axis — iOS Safari otherwise
+     stretches the auto-height image past its max-height and the parent's
+     overflow:hidden clips the bottom of the mockup. */
+  align-items: center;
 }
 .n-img-block--phone img {
   width: auto;
