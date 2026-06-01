@@ -453,14 +453,14 @@ button {
   background: linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%);
 }
 
-/* Balady+ — vibrant brand teal echoing the map UI's accents. */
+/* Balady+ — soft pastel mint, a muted echo of the map UI's teal accents. */
 .project-card-body--balady {
-  background: linear-gradient(135deg, #3fd0c6 0%, #17b6ad 100%);
+  background: linear-gradient(135deg, #c8efe9 0%, #a6e3db 100%);
 }
 
-/* Kafu — vibrant lime-green / yellow-green echoing the brand */
+/* Kafu — soft pastel lime / yellow-green echoing the brand */
 .project-card-body--kafu {
-  background: linear-gradient(135deg, #92e35e 0%, #d8e84b 100%);
+  background: linear-gradient(135deg, #d8f1c0 0%, #ebf2b4 100%);
 }
 
 /* Placeholder block used inside .mockup when no image is ready yet */
