@@ -1838,6 +1838,7 @@ body.n-bg .site-header.is-scrolled {
   height: auto;
   display: block;
   border-radius: 0.875rem;
+  border: 1px solid #e6e6e6;
 }
 @media (max-width: 760px) {
   .n-flow-grid {
