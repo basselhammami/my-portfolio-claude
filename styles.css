@@ -1817,10 +1817,15 @@ body.n-bg .site-header.is-scrolled {
 .n-img-pair .n-img-block {
   margin-top: 0;
   border-radius: 1rem;
-  /* Grey fill matches the screenshots' own background, so the shorter
-     image extends cleanly to equal height and the rounded corners read
-     against grey instead of the white card behind. */
+  /* Grey mat matches the screenshots' own background. A small inset lets
+     the images float on it, so the rounded outer corners are pure grey
+     (never cutting into the image content) and the shorter image extends
+     with grey to equal height. */
   background: #f2f2f2;
+  padding: clamp(0.875rem, 2vw, 1.25rem);
+}
+.n-img-pair .n-img-block img {
+  border-radius: 0.5rem;
 }
 @media (max-width: 700px) {
   .n-img-pair {
