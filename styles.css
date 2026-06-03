@@ -1824,6 +1824,27 @@ body.n-bg .site-header.is-scrolled {
   }
 }
 
+/* Phone-screen flow grid (e.g. Kafu budgeting steps) — left-aligned,
+   4 per row then 3, so each screen reads larger than a single strip. */
+.n-flow-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.n-flow-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.875rem;
+}
+@media (max-width: 760px) {
+  .n-flow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ── Filmstrip auto-scroll ── */
 .n-film {
   margin-top: 2rem;
