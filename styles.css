@@ -1783,8 +1783,7 @@ body.n-bg .site-header.is-scrolled {
   padding: 0;
 }
 
-/* Flush modifier — drop the grey mat for an image that already reads clean.
-   Keep a light hairline on the image itself so it stays contained. */
+/* Flush modifier — drop the grey mat for an image that already reads clean. */
 .n-img-block--flush {
   background-color: transparent;
   border: none;
@@ -1792,8 +1791,13 @@ body.n-bg .site-header.is-scrolled {
 }
 .n-img-block--flush img,
 .n-img-block--flush video {
-  border: 1px solid #e6e6e6;
   border-radius: 1rem;
+}
+/* Opt-in hairline — only for a single flush screenshot that would
+   otherwise blend into the white card (e.g. the hero dashboard). */
+.n-img-block--ring img,
+.n-img-block--ring video {
+  border: 1px solid #e6e6e6;
 }
 
 /* ── Filmstrip auto-scroll ── */
