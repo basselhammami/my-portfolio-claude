@@ -1783,6 +1783,13 @@ body.n-bg .site-header.is-scrolled {
   padding: 0;
 }
 
+/* Flush modifier — drop the grey mat for an image that already reads clean. */
+.n-img-block--flush {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
 /* ── Filmstrip auto-scroll ── */
 .n-film {
   margin-top: 2rem;
