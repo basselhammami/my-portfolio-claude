@@ -1815,6 +1815,7 @@ body.n-bg .site-header.is-scrolled {
 }
 .n-img-pair .n-img-block {
   margin-top: 0;
+  border-radius: 1rem;
 }
 @media (max-width: 700px) {
   .n-img-pair {
@@ -2488,12 +2489,6 @@ body.n-bg .site-header.is-scrolled {
 .n-options strong {
   color: #171717;
   font-weight: 600;
-}
-
-/* Verdict — the path we landed on (green = chosen) */
-.n-callout--land {
-  border-left-color: #15b36b;
-  background: #f1faf4;
 }
 
 /* Journey — role label + horizontal step flow */
