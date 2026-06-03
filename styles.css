@@ -1783,20 +1783,24 @@ body.n-bg .site-header.is-scrolled {
   padding: 0;
 }
 
-/* Flush modifier — drop the grey mat for an image that already reads clean. */
+/* Flush modifier — drop the grey mat for an image that already reads clean.
+   Round and clip in ONE place (the container) so we never double-round the
+   image inside it, which left a washed-out sliver at each corner. */
 .n-img-block--flush {
   background-color: transparent;
   border: none;
   padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .n-img-block--flush img,
 .n-img-block--flush video {
-  border-radius: 1rem;
+  border-radius: 0;
 }
 /* Opt-in hairline — only for a single flush screenshot that would
-   otherwise blend into the white card (e.g. the hero dashboard). */
-.n-img-block--ring img,
-.n-img-block--ring video {
+   otherwise blend into the white card (e.g. the hero dashboard). The
+   border lives on the container so it follows the rounded corners. */
+.n-img-block--ring {
   border: 1px solid #e6e6e6;
 }
 
@@ -2304,9 +2308,10 @@ body.n-bg .site-header.is-scrolled {
   font-weight: 400;
 }
 
-/* Section divider — slim RAKBANK-red band, quieter than a full slab. */
+/* Section divider — slim band in a softer, muted red (quieter than the
+   poppy brand red, still clearly RAKBANK). */
 .n-divider {
-  background: #ed1c24;
+  background: #c33840;
   padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.75rem, 4vw, 2.5rem);
 }
 .n-divider .n-eyebrow {
