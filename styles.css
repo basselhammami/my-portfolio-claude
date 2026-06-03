@@ -1783,11 +1783,16 @@ body.n-bg .site-header.is-scrolled {
   padding: 0;
 }
 
-/* Flush modifier — drop the grey mat for an image that already reads clean. */
+/* Flush modifier — drop the grey mat for an image that already reads clean.
+   Keep a light hairline on the image itself so it stays contained. */
 .n-img-block--flush {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+.n-img-block--flush img,
+.n-img-block--flush video {
+  border: 1px solid #e6e6e6;
 }
 
 /* ── Filmstrip auto-scroll ── */
