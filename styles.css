@@ -1793,6 +1793,7 @@ body.n-bg .site-header.is-scrolled {
 .n-img-block--flush img,
 .n-img-block--flush video {
   border: 1px solid #e6e6e6;
+  border-radius: 1rem;
 }
 
 /* ── Filmstrip auto-scroll ── */
