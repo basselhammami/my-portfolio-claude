@@ -2187,6 +2187,12 @@ body.n-bg .site-header.is-scrolled {
 .n-kafu .n-draw path { stroke: #15C26B; }
 .n-kafu .n-tl-dot { background: #15C26B; }
 
+/* Quote / insight card tinted with each case's homepage pastel */
+.n-rakbank .n-moment { background: linear-gradient(135deg, #fbe5d8 0%, #f5cfbb 100%); }
+.n-cram .n-moment    { background: linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%); }
+.n-balady .n-moment  { background: linear-gradient(135deg, #c8efe9 0%, #a6e3db 100%); }
+.n-kafu .n-moment    { background: linear-gradient(135deg, #d8f1c0 0%, #ebf2b4 100%); }
+
 [data-reveal].in .n-draw path {
   animation: nDraw 0.7s var(--ease-out) forwards 0.5s;
 }
