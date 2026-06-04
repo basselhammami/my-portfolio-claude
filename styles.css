@@ -1919,7 +1919,6 @@ body.n-bg .site-header.is-scrolled {
 /* ── Callout bubble ── */
 .n-callout {
   background: #f2f2f4;
-  border-left: 3px solid #ed1c24;
   border-radius: 0.5rem;
   padding: 1rem 1.25rem;
   margin: 1.125rem 0;
@@ -2182,12 +2181,10 @@ body.n-bg .site-header.is-scrolled {
 
 /* Balady+ brand accent — teal replaces the default red on this case */
 .n-balady .n-draw path { stroke: #1DBDB4; }
-.n-balady .n-callout { border-left-color: #1DBDB4; }
 .n-balady .n-tl-dot { background: #1DBDB4; }
 
 /* Kafu brand accent — vivid fintech green */
 .n-kafu .n-draw path { stroke: #15C26B; }
-.n-kafu .n-callout { border-left-color: #15C26B; }
 .n-kafu .n-tl-dot { background: #15C26B; }
 
 [data-reveal].in .n-draw path {
