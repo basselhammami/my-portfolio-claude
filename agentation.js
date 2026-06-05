@@ -3,13 +3,25 @@
 //
 // This static site has no build step, so Agentation (which ships as a React
 // component) is loaded straight from the esm.sh CDN, which resolves its React
-// peer dependencies for us. The toolbar only loads when the URL carries the
-// ?agentation=1 query param, so it stays invisible to normal visitors even on
-// the deployed site — add the param to any page when you want to annotate it.
+// peer dependencies for us.
+//
+// The toolbar is gated by a remembered toggle so it stays invisible to normal
+// visitors even on the deployed site:
+//   - visit any page with ?agentation=on  -> enables it for THIS browser
+//   - visit any page with ?agentation=off -> disables it
+// The choice is saved in localStorage and persists across pages and visits, so
+// you only need the param once to turn it on or off.
+const STORAGE_KEY = "agentation:enabled";
+
 (async () => {
   const flag = new URLSearchParams(location.search).get("agentation");
-  const enabled = flag === "1" || flag === "on" || flag === "true";
-  if (!enabled) return;
+  if (flag === "on" || flag === "1" || flag === "true") {
+    localStorage.setItem(STORAGE_KEY, "1");
+  } else if (flag === "off" || flag === "0" || flag === "false") {
+    localStorage.removeItem(STORAGE_KEY);
+  }
+
+  if (localStorage.getItem(STORAGE_KEY) !== "1") return;
 
   const [agentation, reactMod, reactDomClient] = await Promise.all([
     import("https://esm.sh/agentation@3?deps=react@18,react-dom@18"),
