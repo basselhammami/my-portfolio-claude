@@ -28,5 +28,9 @@
   mount.id = "agentation-root";
   document.body.appendChild(mount);
 
-  createRoot(mount).render(React.createElement(Agentation));
+  // `endpoint` points at the local Agentation MCP server (default port 4747),
+  // so annotations sync straight to the coding agent instead of copy/paste.
+  createRoot(mount).render(
+    React.createElement(Agentation, { endpoint: "http://localhost:4747" })
+  );
 })();
