@@ -3,16 +3,13 @@
 //
 // This static site has no build step, so Agentation (which ships as a React
 // component) is loaded straight from the esm.sh CDN, which resolves its React
-// peer dependencies for us. The toolbar only loads on localhost so it never
-// appears on the deployed site.
+// peer dependencies for us. The toolbar only loads when the URL carries the
+// ?agentation=1 query param, so it stays invisible to normal visitors even on
+// the deployed site — add the param to any page when you want to annotate it.
 (async () => {
-  const host = location.hostname;
-  const isLocal =
-    host === "localhost" ||
-    host === "127.0.0.1" ||
-    host === "[::1]" ||
-    host === ""; // opened via file://
-  if (!isLocal) return;
+  const flag = new URLSearchParams(location.search).get("agentation");
+  const enabled = flag === "1" || flag === "on" || flag === "true";
+  if (!enabled) return;
 
   const [agentation, reactMod, reactDomClient] = await Promise.all([
     import("https://esm.sh/agentation@3?deps=react@18,react-dom@18"),
