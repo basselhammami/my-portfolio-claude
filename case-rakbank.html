@@ -97,9 +97,7 @@
         <!-- ── The problem ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">The systems were never built to talk to each other</h2>
-          <div class="n-callout n-up">
-            <p>People weren't slow because they lacked effort. They were slow because the systems they relied on were never designed to work together.</p>
-          </div>
+          <p class="n-up">People weren't slow because they lacked effort. They were slow because the systems they relied on were never designed to work together.</p>
           <p class="n-up">The teams who check customers against regulation worked across Finacle, IBPS, separate inboxes, and spreadsheets: systems with no common layer between them. Every review ran against a clock. Every handover blurred who was responsible. And when an audit came, reconstructing what had happened was the hardest part of the job.</p>
           <div class="n-meta n-up">
             <div class="n-meta-item">
@@ -138,10 +136,10 @@
           <p class="n-eyebrow n-up"><b>Decision 01</b></p>
           <h2 class="n-title n-up">Who decides how work gets distributed?</h2>
           <p class="n-up">The options we weighed:</p>
-          <ul class="n-options">
-            <li class="n-up"><span><strong>Auto-assignment.</strong> The system balances workload algorithmically.</span></li>
-            <li class="n-up"><span><strong>Self-assignment.</strong> Reviewers pull cases from the queue themselves.</span></li>
-            <li class="n-up"><span><strong>Team-lead-controlled.</strong> Leads distribute work with bulk-assignment tools.</span></li>
+          <ul class="n-dot-list n-up">
+            <li><strong>Auto-assignment.</strong> The system balances workload algorithmically.</li>
+            <li><strong>Self-assignment.</strong> Reviewers pull cases from the queue themselves.</li>
+            <li><strong>Team-lead-controlled.</strong> Leads distribute work with bulk-assignment tools.</li>
           </ul>
           <p class="n-up">As the platform accumulates case history, there's a real question of whether intelligent assignment, one that factors in reviewer track record, case complexity, and current load, becomes possible. We kept the architecture open for it.</p>
           <div class="n-img-block n-img-block--flush n-up">
@@ -154,15 +152,13 @@
           <p class="n-eyebrow n-up"><b>Decision 02</b></p>
           <h2 class="n-title n-up">How much should staff be asked to justify?</h2>
           <p class="n-up">The options we weighed:</p>
-          <ul class="n-options">
-            <li class="n-up"><span><strong>Silent logging.</strong> Every action recorded automatically, no user input needed.</span></li>
-            <li class="n-up"><span><strong>Full justification.</strong> Every action requires a typed reason before proceeding.</span></li>
-            <li class="n-up"><span><strong>Structured remarks.</strong> Required reasoning only at routing changes, risk overrides, and consequence triggers.</span></li>
+          <ul class="n-dot-list n-up">
+            <li><strong>Silent logging.</strong> Every action recorded automatically, no user input needed.</li>
+            <li><strong>Full justification.</strong> Every action requires a typed reason before proceeding.</li>
+            <li><strong>Structured remarks.</strong> Required reasoning only at routing changes, risk overrides, and consequence triggers.</li>
           </ul>
           <p class="n-up">We ruled out <strong>silent logging</strong> because it produces a record but not a narrative: you can see what happened, but not why. We ruled out <strong>full justification</strong> because it creates friction at high volume and produces low-quality free text nobody reads.</p>
-          <div class="n-callout n-up">
-            <p>We landed on structured remarks at the moments that matter. It's the difference between a system that logs decisions and one that defends them.</p>
-          </div>
+          <p class="n-up">We landed on structured remarks at the moments that matter. It's the difference between a system that logs decisions and one that defends them.</p>
           <div class="n-img-pair n-up">
             <div class="n-img-block n-img-block--flush">
               <img src="assets/clm-audit-trail.png?v=1" alt="Audit trail: every system event and user action, with actor, timestamp, and the remark behind each decision" />
