@@ -1,7 +1,6 @@
 // Per-case passwords. Fallback: the "default" key.
 const CASE_PASSWORDS = {
   cram: "1995",
-  mtmx: "1995",
   default: "1995",
 };
 const UNLOCK_TTL_MS = 1000 * 60 * 60 * 4;
