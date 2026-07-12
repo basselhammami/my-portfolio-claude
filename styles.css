@@ -1857,6 +1857,29 @@ body.n-bg .site-header.is-scrolled {
   }
 }
 
+/* Two screenshots side by side, centred at natural size on ONE shared grey
+   mat (wrap the pair in a single .n-img-block). Images keep their size
+   rather than stretching to fill. */
+.n-shots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.25rem);
+  flex-wrap: wrap;
+}
+.n-shots img {
+  width: auto !important;
+  max-width: 46%;
+  max-height: 520px;
+  border-radius: 0.625rem;
+}
+@media (max-width: 560px) {
+  .n-shots img {
+    max-width: 80%;
+    max-height: 440px;
+  }
+}
+
 /* Phone-screen flow grid (e.g. Kafu budgeting steps) — left-aligned,
    4 per row then 3, so each screen reads larger than a single strip. */
 .n-flow-grid {
