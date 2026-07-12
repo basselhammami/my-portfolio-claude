@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=3" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=3" />
+    <title>Отслеживание переводов · Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=35" />
+    <script defer src="script.js?v=4"></script>
+  </head>
+  <body class="n-bg n-rakbank">
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index-ru.html" class="brand">Basel</a>
+        <a href="assets/basel-hammami-cv.pdf" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
+      </nav>
+      <div class="nav-right">
+        <a href="case-mtmx.html" class="lang-pill">EN</a>
+        <a href="case-mtmx-ru.html" class="lang-pill is-active">РУ</a>
+      </div>
+    </header>
+
+    <main class="n-page">
+      <a href="index-ru.html" class="back-link">Назад</a>
+
+      <div class="n-stack">
+
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero n-rise" data-reveal>
+          <img src="assets/rakbank-logo-full-red.png" class="n-hero-logo n-up" alt="RAKBANK" />
+          <h1 class="n-hero-title n-up">Где мои деньги?</h1>
+          <p class="n-hero-desc n-up">
+            Проектирование отслеживания переводов для миграции SWIFT MT→MX. Как только клиент нажимал «отправить», его деньги исчезали в сети SWIFT на часы или дни, а приложение отвечало одним словом: <em>в обработке</em>. Вот как обязательная бэкенд-инфраструктура стала клиентской функцией доверия.
+          </p>
+          <p class="n-hero-kicker n-up">Превратить требование комплаенса в <span class="n-draw">реальный опыт отслеживания<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
+          <div class="n-hero-tags n-up">
+            <span class="n-hero-tag">Продуктовый дизайнер</span>
+            <span class="n-hero-tag">Мобильные · iOS / Android</span>
+            <span class="n-hero-tag">Флоу · IA · Система статусов · UX-тексты</span>
+            <span class="n-hero-tag">В продакшене</span>
+          </div>
+        </div>
+
+        <!-- ── Hero screenshot ── -->
+        <div class="n-card n-rise" data-reveal>
+          <div class="n-ph n-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span class="n-ph-name">assets/mtmx-hero.png</span>
+            <p class="n-ph-note">Главный кадр — вкладка «Трекер» с живым SWIFT-переводом в пути: статус по шагам, отметки времени и бейджи.</p>
+          </div>
+        </div>
+
+        <!-- ── Scale band ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="10">0</span>
+            <span class="n-stat-label">Состояний перевода, включая сбои и возвраты</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">MT&nbsp;→&nbsp;MX</span>
+            <span class="n-stat-label">Миграция на ISO 20022, превращённая в функцию</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">Live</span>
+            <span class="n-stat-label">В международных платежах RAKBANK</span>
+          </div>
+        </div>
+
+        <!-- ── 01 · The problem ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>01</b> · Проблема</p>
+          <h2 class="n-title n-up">Международные переводы были чёрным ящиком</h2>
+          <div class="n-callout n-up">
+            <p>Клиенты звонили не потому, что что-то пошло не так. Они звонили потому, что <em>не могли понять</em>, пошло ли что-то не так.</p>
+          </div>
+          <p class="n-up">Как только клиент нажимал «отправить», его деньги исчезали в сети SWIFT на часы или дни, и единственным ответом приложения было одно слово: <em>в обработке</em>. «Где мой перевод?» — это была регулярная и измеримая доля обращений в поддержку.</p>
+          <p class="n-up">Две вещи сошлись, чтобы дать нам это исправить:</p>
+          <ul class="n-options">
+            <li class="n-up"><span><strong>Миграция SWIFT MT→MX.</strong> Отраслевой переход на ISO 20022 означал, что платёжные сообщения теперь несут насыщенные структурированные данные о статусе от начала до конца. То, что было требованием комплаенса для банка, тихо стало сырьём для реального опыта отслеживания.</span></li>
+            <li class="n-up"><span><strong>Обновление дизайн-системы.</strong> Старые экраны транзакций стояли на устаревшей DLS, которая не поддерживала нужные нам паттерны. Пересборка дала право переосмыслить опыт, а не латать его.</span></li>
+          </ul>
+          <div class="n-callout n-up">
+            <p>Возможность: превратить обязательную бэкенд-инфраструктуру в клиентскую функцию доверия.</p>
+          </div>
+        </div>
+
+        <!-- ══ Section 1 ══ -->
+        <div class="n-card n-divider n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Раздел 1</b></p>
+          <h2 class="n-divider-title n-up">Ключевое дизайн-решение</h2>
+          <p class="n-divider-sub n-up">Один экран пытался ответить на два разных вопроса. Мы их разделили.</p>
+        </div>
+
+        <!-- ── Details / Tracker ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Детали и Трекер, на двух вкладках</h2>
+          <p class="n-up">Старый экран транзакции пытался ответить на два вопроса на одной поверхности: <em>что это за транзакция?</em> и <em>где она прямо сейчас?</em> Теперь у каждого экрана деталей транзакции две вкладки:</p>
+          <div class="n-meta n-up">
+            <div class="n-meta-item">
+              <h4>Детали</h4>
+              <p>Статичные факты: номер референса, счета, получатель, суммы, даты. То, что нужно для записей и споров.</p>
+            </div>
+            <div class="n-meta-item">
+              <h4>Трекер</h4>
+              <p>Живая хронология: каждый шаг, который перевод прошёл, проходит сейчас или на котором сбоил, — с отметкой времени, понятным описанием и бейджем статуса.</p>
+            </div>
+          </div>
+          <p class="n-up">Это повторяет ментальную модель, которой люди уже доверяют по доставке посылок. Никого не нужно учить читать трекер отправления — поэтому мы не заставляли их учить что-то новое ради собственных денег.</p>
+          <div class="n-ph n-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span class="n-ph-name">assets/mtmx-details-tracker.png</span>
+            <p class="n-ph-note">Вкладки «Детали» и «Трекер» рядом на одной и той же транзакции.</p>
+          </div>
+        </div>
+
+        <!-- ══ Section 2 ══ -->
+        <div class="n-card n-divider n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Раздел 2</b></p>
+          <h2 class="n-divider-title n-up">Картирование всего пространства состояний</h2>
+          <p class="n-divider-sub n-up">Сложная часть трекера — не счастливый путь. Это всё остальное.</p>
+        </div>
+
+        <!-- ── The state space ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Каждое состояние, в котором может быть перевод</h2>
+          <p class="n-up">Прежде чем проектировать экраны, я каталогизировал каждое состояние, в котором может быть SWIFT-перевод, включая ветки, которые банки обычно прячут. Этот каталог стал единым референсным фреймом в Figma — источником истины для дизайна, разработки и QA. У каждого статуса есть имя, описание, бейдж и определённый следующий шаг.</p>
+          <ul class="n-timeline n-up">
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Перевод начат</h4><p>Запрос принят, путь начинается.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Проверяем ваш перевод</h4><p>Идут скрининг и валидация.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Перевод одобрен / Перевод отклонён</h4><p>Первая ветка: разрешён к продолжению или остановлен здесь.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Отправляем ваши деньги / Деньги не отправлены</h4><p>Средства покидают счёт — или сбой до того, как это произойдёт.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Деньги отправлены в банк получателя</h4><p>Переданы через сеть SWIFT.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Наличные готовы к получению → Наличные получены</h4><p>У клиента есть действие, а затем — подтверждение, что оно выполнено.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Перевод завершён</h4><p>Конечное состояние счастливого пути.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Перевод не завершён → Возвращаем ваши деньги → Деньги возвращены</h4><p>Путь возврата, остающийся активным и подотчётным до конца.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Отменяем ваш перевод → Перевод отменён</h4><p>Осознанная остановка, подтверждённая чисто.</p></div></li>
+            <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Мы не смогли начать ваш перевод</h4><p>Самый ранний сбой: он так и не вышел за ворота.</p></div></li>
+          </ul>
+          <div class="n-callout n-up">
+            <p>Когда перевод сбоит уже после того, как деньги ушли со счёта, самый страшный момент — это разрыв между «Перевод не завершён» и возвращением денег. Поэтому трекер не останавливается на сбое: он показывает <strong>Возвращаем ваши деньги</strong> как активный шаг в процессе, а затем <strong>Деньги возвращены</strong> с подтверждением. Система остаётся подотчётной, даже когда она сбоит.</p>
+          </div>
+          <div class="n-ph n-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span class="n-ph-name">assets/mtmx-all-statuses.png</span>
+            <p class="n-ph-note">Полный референсный фрейм «Все статусы отслеживания» — высокий кроп.</p>
+          </div>
+        </div>
+
+        <!-- ══ Section 3 ══ -->
+        <div class="n-card n-divider n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Раздел 3</b></p>
+          <h2 class="n-divider-title n-up">Текст как материал дизайна</h2>
+          <p class="n-divider-sub n-up">Названия статусов были спроектированы, а не оставлены по умолчанию.</p>
+        </div>
+
+        <!-- ── Copy decisions ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Что мы написали и почему</h2>
+          <ul class="n-options n-up">
+            <li class="n-up"><span><strong>«Обработка» → «Проверяем ваш перевод».</strong> Говорит, что на самом деле происходит, голосом банка.</span></li>
+            <li class="n-up"><span><strong>«В процессе» → «Наличные готовы к получению».</strong> У пользователя есть действие. Общие ярлыки это скрывают.</span></li>
+            <li class="n-up"><span><strong>«Ошибка» → «Деньги не отправлены».</strong> Отвечает на настоящий вопрос клиента: ушли ли деньги?</span></li>
+            <li class="n-up"><span><strong>«Возврат инициирован» → «Возвращаем ваши деньги».</strong> Активный залог, ответственность. Банк делает что-то для вас.</span></li>
+          </ul>
+          <div class="n-meta n-up">
+            <div class="n-meta-item">
+              <h4>Функциональная ясность вместо общих ярлыков</h4>
+              <p>Если у состояния есть значимое для пользователя отличие — например, наличные ждут в точке выдачи, — ярлык его несёт.</p>
+            </div>
+            <div class="n-meta-item">
+              <h4>Цвет семантичен, а не декоративен</h4>
+              <p>Зелёный = завершено, жёлтый = в процессе, красный = сбой, серый = отменено. Отменено намеренно не зелёное: успешная отмена — это <em>нейтральный</em> исход, и заимствование цвета успеха размыло бы то, что зелёный значит везде остальное.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ Section 4 ══ -->
+        <div class="n-card n-divider n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Раздел 4</b></p>
+          <h2 class="n-divider-title n-up">Допрос бизнес-логики</h2>
+          <p class="n-divider-sub n-up">Одно уточнение с разработкой перекроило целую ветку дизайна.</p>
+        </div>
+
+        <!-- ── Cancellation ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Отмена возможна только до списания</h2>
+          <p class="n-up">На полпути один факт от разработки переписал ветку дизайна: <strong>отмена возможна только до того, как произошло списание.</strong> Это единственное ограничение:</p>
+          <ul class="n-dot-list n-up">
+            <li>Устранило целый класс состояний, которые мы проектировали: отмена-после-списания, частичные возвраты.</li>
+            <li>Переписало текст отмены: язык возврата не нужен — только чёткое подтверждение, что <em>со счёта так и не списали.</em></li>
+            <li>Упростило флоу до одного чистого пути.</li>
+          </ul>
+          <div class="n-flow n-up">
+            <div class="n-flow-step"><b>01</b><p>Подтвердить отмену</p></div>
+            <div class="n-flow-step"><b>02</b><p>Выбрать причину</p></div>
+            <div class="n-flow-step"><b>03</b><p>Аутентификация по PIN</p></div>
+            <div class="n-flow-step"><b>04</b><p>«Платёж отменён»</p></div>
+          </div>
+          <div class="n-callout n-up">
+            <p>Решения по тексту и флоу — производные от бизнес-логики, и самое дешёвое время зафиксировать эту логику — до того, как экраны размножатся. Я взял в привычку собирать открытые вопросы как сгруппированные и помеченные комментарии в Figma, направленные к их владельцам решений, чтобы ничто не оставалось неоднозначным по случайности.</p>
+          </div>
+          <div class="n-ph n-up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+            <span class="n-ph-name">assets/mtmx-cancellation-flow.png</span>
+            <p class="n-ph-note">Флоу отмены — транзакция в обработке → лист подтверждения → PIN → экран отмены.</p>
+          </div>
+        </div>
+
+        <!-- ══ Section 5 ══ -->
+        <div class="n-card n-divider n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Раздел 5</b></p>
+          <h2 class="n-divider-title n-up">Итог и что дальше</h2>
+        </div>
+
+        <!-- ── Outcome ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">В продакшене и подотчётно даже при сбое</h2>
+          <ul class="n-dot-list n-up">
+            <li>Выпущено в продакшен как часть опыта международных платежей RAKBANK.</li>
+            <li>Клиенты теперь видят живой статус по шагам для SWIFT-переводов, включая сбои и возвраты, вместо единственного ярлыка «в обработке».</li>
+            <li><em>Плейсхолдер — добавить при наличии: направленное изменение объёма обращений «где мой перевод» в поддержку после запуска.</em></li>
+          </ul>
+        </div>
+
+        <!-- ── What I'd do next ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">Что бы я сделал дальше</h2>
+          <ul class="n-dot-list n-up">
+            <li>Проверить понимание более редких состояний. «Возврат в процессе» точен, но не протестирован на реальных пользователях.</li>
+            <li>Активно доставлять обновления статуса через уведомления, чтобы трекер отвечал на вопрос до того, как его зададут.</li>
+            <li>Измерять вовлечённость во вкладку «Трекер» относительно частоты обращений в поддержку, чтобы количественно оценить эффект доверия.</li>
+          </ul>
+        </div>
+
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">Хотите обсудить детали?</h2>
+          <p class="n-up">С радостью пройдусь по решениям, пространству состояний и тому, что не вошло в финал.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">Связаться <span aria-hidden="true">↗</span></a>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <p class="copy">© 2026 Basel Hammami</p>
+    </footer>
+    <script type="module" src="agentation.js"></script>
+  </body>
+</html>
