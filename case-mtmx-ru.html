@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=38" />
+    <link rel="stylesheet" href="styles.css?v=39" />
     <script defer src="script.js?v=4"></script>
   </head>
   <body class="n-bg n-rakbank">
@@ -126,11 +126,6 @@
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Мы не смогли начать ваш перевод</h4><p>Самый ранний сбой: он так и не вышел за ворота.</p></div></li>
           </ul>
           <p class="n-up">Когда перевод сбоит уже после того, как деньги ушли со счёта, самый страшный момент — разрыв между «Перевод не завершён» и возвращением денег. Поэтому трекер не останавливается на сбое: он показывает <strong>Возвращаем ваши деньги</strong> как активный шаг, а затем <strong>Деньги возвращены</strong> с подтверждением.</p>
-          <div class="n-ph n-up">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span class="n-ph-name">assets/mtmx-all-statuses.png</span>
-            <p class="n-ph-note">Полный референсный фрейм «Все статусы отслеживания» — высокий кроп.</p>
-          </div>
         </div>
 
         <!-- ── Insight moment ── -->
@@ -186,12 +181,6 @@
             <li>Переписало текст отмены: язык возврата не нужен — только чёткое подтверждение, что <em>со счёта так и не списали.</em></li>
             <li>Упростило флоу до одного чистого пути.</li>
           </ul>
-          <div class="n-flow n-up">
-            <div class="n-flow-step"><b>01</b><p>Подтвердить отмену</p></div>
-            <div class="n-flow-step"><b>02</b><p>Выбрать причину</p></div>
-            <div class="n-flow-step"><b>03</b><p>Аутентификация по PIN</p></div>
-            <div class="n-flow-step"><b>04</b><p>«Платёж отменён»</p></div>
-          </div>
           <p class="n-up">Решения по тексту и флоу — производные от бизнес-логики, и самое дешёвое время зафиксировать эту логику — до того, как экраны размножатся. Я взял в привычку собирать открытые вопросы как сгруппированные и помеченные комментарии в Figma, направленные к их владельцам решений, чтобы ничто не оставалось неоднозначным по случайности.</p>
           <div class="n-img-block n-up">
             <img src="assets/mtmx-cancellation-flow.png" alt="Флоу отмены — транзакция в обработке, лист подтверждения, PIN, экран отмены" />
