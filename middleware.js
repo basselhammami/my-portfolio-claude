@@ -25,6 +25,10 @@ const PUBLIC_PATHS = new Set([
 // Paths behind the second, case-level password (pages and their images).
 const CASE_PREFIXES = ["/case-mtmx", "/assets/mtmx-"];
 
+// Case studies hidden from the site entirely (pages and their images) —
+// remove a prefix here to bring the case back.
+const HIDDEN_PREFIXES = ["/case-cram", "/assets/cram-"];
+
 const SITE_COOKIE = "site_auth";
 const CASE_COOKIE = "case_auth";
 
@@ -85,6 +89,11 @@ export default async function middleware(request) {
 
   // Assets the login page itself needs.
   if (PUBLIC_PATHS.has(path)) return;
+
+  // Hidden case studies — send any request for them back to the homepage.
+  if (HIDDEN_PREFIXES.some((p) => path.startsWith(p))) {
+    return Response.redirect(new URL("/", request.url), 302);
+  }
 
   const cookies = request.headers.get("cookie") || "";
 
