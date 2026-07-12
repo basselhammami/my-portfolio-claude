@@ -1,38 +1,4 @@
 /* ==========================================================================
-   Site-wide password gate — one password unlocks the entire site for the
-   browsing session. Client-side only (not real security), matching the
-   site's lightweight prompt-based approach.
-   ========================================================================== */
-
-(function siteGate() {
-  const KEY = "site_unlocked";
-  const PASSWORD = "1995";
-
-  if (sessionStorage.getItem(KEY) === "1") return;
-
-  const isRu = document.documentElement.lang === "ru";
-  const promptText = isRu
-    ? "Введите пароль для просмотра сайта:"
-    : "Enter password to view this site:";
-  const wrongText = isRu
-    ? "Неверный пароль. Введите пароль для просмотра сайта:"
-    : "Incorrect password. Enter password to view this site:";
-
-  // Keep the page hidden until the correct password is entered.
-  const root = document.documentElement;
-  root.style.visibility = "hidden";
-
-  let entry = window.prompt(promptText);
-  while (entry !== PASSWORD) {
-    if (entry === null) return; // Cancelled — the page stays hidden.
-    entry = window.prompt(wrongText);
-  }
-
-  sessionStorage.setItem(KEY, "1");
-  root.style.visibility = "";
-})();
-
-/* ==========================================================================
    Scroll-driven header state + reveal-on-scroll animations
    ========================================================================== */
 
