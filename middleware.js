@@ -30,7 +30,7 @@ const CASE_COOKIE = "case_auth";
 
 // The extra password for the NDA case pages. Deliberately simple and kept in
 // code rather than an env var — change it here.
-const CASE_PASSWORD = "1995";
+const CASE_PASSWORD = "2027";
 
 // Opaque session token derived from the password, so the cookie never carries
 // the raw password. Middleware and the login handler compute it the same way.
