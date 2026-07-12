@@ -76,60 +76,43 @@
           </div>
         </div>
 
-        <!-- ── 01 · The problem ── -->
-        <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>01</b> · The problem</p>
-          <h2 class="n-title n-up">International transfers were a black box</h2>
-          <p class="n-up">Customers weren't calling because something had gone wrong. They were calling because they <em>couldn't tell</em> whether something had gone wrong.</p>
-          <p class="n-up">Once a customer hit “send,” their money disappeared into the SWIFT network for hours or days, and the only answer our app gave them was a single word: <em>pending</em>. “Where is my transfer?” was a recurring, measurable share of support contact volume.</p>
-          <p class="n-up">Two things converged to let us fix it:</p>
-          <ul class="n-dot-list n-up">
-            <li><strong>The SWIFT MT→MX migration.</strong> The industry move to ISO 20022 meant payment messages now carried rich, structured status data end to end. A compliance mandate for the bank was also, quietly, the raw material for a real tracking experience.</li>
-            <li><strong>A design system refresh.</strong> The old transaction screens sat on an outdated DLS that couldn't support the patterns we needed. Rebuilding gave us license to rethink the experience rather than patch it.</li>
-          </ul>
-          <p class="n-up">The opportunity: turn mandatory back-end plumbing into a customer-facing trust feature.</p>
-        </div>
+        <!-- ── Where it all started · What I was solving for ── -->
+        <div class="n-grid-2">
 
-        <!-- ══ Chapter 1 ══ -->
-        <div class="n-card n-divider n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Chapter 1</b></p>
-          <h2 class="n-divider-title n-up">The core design decision</h2>
-          <p class="n-divider-sub n-up">One screen was trying to answer two different questions. We split them.</p>
-        </div>
-
-        <!-- ── Details / Tracker ── -->
-        <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Details and Tracker, on two tabs</h2>
-          <p class="n-up">The old transaction screen tried to answer two questions on one surface: <em>what is this transaction?</em> and <em>where is it right now?</em> Every transaction detail screen now has two tabs:</p>
-          <div class="n-meta n-up">
-            <div class="n-meta-item">
-              <h4>Details</h4>
-              <p>The static facts: reference number, accounts, payee, amounts, dates. What you need for records and disputes.</p>
-            </div>
-            <div class="n-meta-item">
-              <h4>Tracker</h4>
-              <p>The living timeline: every step the transfer has passed through, is in, or failed at, each with a timestamp, a plain-language description, and a status badge.</p>
-            </div>
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">Where it all started</h2>
+            <p class="n-up">Send money out of the country and it vanished. For hours or days it moved through the SWIFT network with no signal to the person who sent it, and the app answered with a single word: <em>pending</em>.</p>
+            <p class="n-up">“Where is my transfer?” became a recurring, measurable share of support contacts. People weren't calling because something had gone wrong. They were calling because they <em>couldn't tell</em> whether it had.</p>
           </div>
-          <p class="n-up">This mirrors a mental model people already trust from parcel delivery. Nobody needs to be taught how to read a shipment tracker, so we didn't make them learn anything new for their money.</p>
-          <div class="n-ph n-up">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-            <span class="n-ph-name">assets/mtmx-details-tracker.png</span>
-            <p class="n-ph-note">Side-by-side of the Details tab and the Tracker tab on the same transaction.</p>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I was solving for</h2>
+            <p class="n-up">Put a clear, living answer to “where is my money right now?” inside the app — honest even when a transfer fails — so people don't have to phone in to feel safe.</p>
+            <p class="n-up"><strong>Two signals would tell us it's working</strong></p>
+            <ul class="n-dot-list">
+              <li class="n-up">Tracker engagement: how often customers open the Tracker instead of calling</li>
+              <li class="n-up">Support deflection: fewer “where is my transfer?” contacts after launch</li>
+            </ul>
           </div>
+
         </div>
 
-        <!-- ══ Chapter 2 ══ -->
-        <div class="n-card n-divider n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Chapter 2</b></p>
-          <h2 class="n-divider-title n-up">Mapping the full state space</h2>
-          <p class="n-divider-sub n-up">The hard part of a tracker isn't the happy path. It's everything else.</p>
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">“The MT→MX migration was a compliance mandate. It was also, quietly, the raw material for a trust feature no one had thought to build.”</p>
+          <p class="n-moment-cite n-up">The reframe behind the project</p>
         </div>
 
-        <!-- ── The state space ── -->
+        <!-- ── How I approached it ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Every state a transfer can occupy</h2>
-          <p class="n-up">Before designing screens, I catalogued every state a SWIFT transfer can be in, including the branches banks usually hide. This catalog became a single reference frame in Figma, the source of truth for design, engineering, and QA. Every status has a name, a description, a badge, and a defined next step.</p>
+          <h2 class="n-title n-up">How I approached it</h2>
+          <p class="n-lead n-up">Two shifts made it possible: the move to ISO 20022 meant payment messages now carried rich, structured status end to end, and a design-system refresh gave license to rebuild rather than patch. I started by cataloguing every state a transfer can occupy — including the failure and reversal branches banks usually hide — and made that map the single source of truth for design, engineering, and QA.</p>
+        </div>
+
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">The journey</h2>
+          <p class="n-up">A transfer isn't one event — it's a journey through many states, and the hard part of a tracker isn't the happy path, it's everything else. Every status earned a name, a plain-language description, a badge, and a defined next step.</p>
           <ul class="n-timeline n-up">
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Transfer started</h4><p>The request is in, the journey begins.</p></div></li>
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Checking your transfer</h4><p>Screening and validation in progress.</p></div></li>
@@ -142,7 +125,7 @@
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Cancelling your transfer → Transfer cancelled</h4><p>A deliberate stop, confirmed cleanly.</p></div></li>
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>We couldn't start your transfer</h4><p>The earliest failure: it never left the gate.</p></div></li>
           </ul>
-          <p class="n-up">When a transfer fails after money has left the account, the scariest moment is the gap between “Transfer not completed” and the money reappearing. So the tracker doesn't stop at failure: it shows <strong>Returning your money</strong> as an active in-progress step, then <strong>Money returned</strong> with confirmation. The system stays accountable even when it fails.</p>
+          <p class="n-up">When a transfer fails after money has left the account, the scariest moment is the gap between “Transfer not completed” and the money reappearing. So the tracker doesn't stop at failure: it shows <strong>Returning your money</strong> as an active step, then <strong>Money returned</strong> with confirmation.</p>
           <div class="n-ph n-up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
             <span class="n-ph-name">assets/mtmx-all-statuses.png</span>
@@ -150,16 +133,32 @@
           </div>
         </div>
 
-        <!-- ══ Chapter 3 ══ -->
-        <div class="n-card n-divider n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Chapter 3</b></p>
-          <h2 class="n-divider-title n-up">Copy as a design material</h2>
-          <p class="n-divider-sub n-up">Status names were designed, not defaulted.</p>
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">“Nobody needs to be taught how to read a parcel tracker — so we didn't make anyone learn something new for their money.”</p>
+          <p class="n-moment-cite n-up">The mental model we borrowed</p>
         </div>
 
-        <!-- ── Copy decisions ── -->
+        <!-- ── Deep-dive: Details and Tracker ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">What we wrote, and why</h2>
+          <h3 class="n-row-h n-up">Details and Tracker, on two tabs</h3>
+          <p class="n-up">The old transaction screen tried to answer two questions on one surface: <em>what is this transaction?</em> and <em>where is it right now?</em> We split them, so each has room to do its job.</p>
+          <div class="n-meta n-up">
+            <div class="n-meta-item">
+              <h4>Details</h4>
+              <p>The static facts: reference number, accounts, payee, amounts, dates. What you need for records and disputes.</p>
+            </div>
+            <div class="n-meta-item">
+              <h4>Tracker</h4>
+              <p>The living timeline: every step the transfer has passed through, is in, or failed at — each with a timestamp and a status badge.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Deep-dive: Copy as a design material ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h3 class="n-row-h n-up">Copy as a design material</h3>
+          <p class="n-up">Status names were designed, not defaulted. Each one answers the customer's real question in the bank's own voice.</p>
           <ul class="n-dot-list n-up">
             <li><strong>Processing → “Checking your transfer.”</strong> Says what's actually happening, in the bank's voice.</li>
             <li><strong>In progress → “Cash ready for collection.”</strong> The user has an action to take. Generic labels hide that.</li>
@@ -178,17 +177,10 @@
           </div>
         </div>
 
-        <!-- ══ Chapter 4 ══ -->
-        <div class="n-card n-divider n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Chapter 4</b></p>
-          <h2 class="n-divider-title n-up">Interrogating the business logic</h2>
-          <p class="n-divider-sub n-up">One clarification with engineering reshaped a whole branch of the design.</p>
-        </div>
-
-        <!-- ── Cancellation ── -->
+        <!-- ── Deep-dive: Cancellation ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Cancellation can only happen before the debit</h2>
-          <p class="n-up">Midway through, a single fact from engineering rewrote a branch of the design: <strong>cancellation can only happen before the debit is taken.</strong> That one constraint:</p>
+          <h3 class="n-row-h n-up">Cancellation, settled by one fact</h3>
+          <p class="n-up">Midway through, a single fact from engineering rewrote a whole branch of the design: <strong>cancellation can only happen before the debit is taken.</strong> That one constraint:</p>
           <ul class="n-dot-list n-up">
             <li>Eliminated an entire class of states we'd been designing for: cancellation-after-debit, partial refunds.</li>
             <li>Rewrote the cancellation copy: no refund language needed, just clear confirmation that <em>the account was never charged.</em></li>
@@ -200,36 +192,40 @@
             <div class="n-flow-step"><b>03</b><p>PIN authentication</p></div>
             <div class="n-flow-step"><b>04</b><p>“Payment cancelled”</p></div>
           </div>
-          <p class="n-up">Copy and flow decisions are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
+          <p class="n-up">Copy and flow are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
           <div class="n-img-block n-up">
             <img src="assets/mtmx-cancellation-flow.png" alt="Cancellation flow — pending transaction, confirm sheet, PIN, cancelled screen" />
           </div>
         </div>
 
-        <!-- ══ Chapter 5 ══ -->
-        <div class="n-card n-divider n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Chapter 5</b></p>
-          <h2 class="n-divider-title n-up">Outcome, and what's next</h2>
+        <!-- ── What happened next · What I'd do next ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What happened next</h2>
+            <ul class="n-dot-list">
+              <li class="n-up">Shipped in production as part of RAKBANK's international payments experience</li>
+              <li class="n-up">Customers now see live, step-level status for SWIFT transfers — including failures and reversals — instead of a single “pending”</li>
+              <li class="n-up"><em>Add when available: the change in “where is my transfer” support contacts post-launch</em></li>
+            </ul>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">What I'd do next</h2>
+            <ul class="n-dot-list">
+              <li class="n-up">Validate comprehension of the rarer states; “Reversal pending” is accurate but untested with real users</li>
+              <li class="n-up">Push status proactively via notifications, so the tracker answers before it's asked</li>
+              <li class="n-up">Measure Tracker engagement against support contact rates to quantify the trust effect</li>
+            </ul>
+          </div>
+
         </div>
 
-        <!-- ── Outcome ── -->
+        <!-- ── Looking back ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Live, and accountable through failure</h2>
-          <ul class="n-dot-list n-up">
-            <li>Shipped in production as part of RAKBANK's international payments experience.</li>
-            <li>Customers now see live, step-level status for SWIFT transfers, including failures and reversals, instead of a single “pending” label.</li>
-            <li><em>Placeholder — add if available: directional change in “where is my transfer” support contact volume post-launch.</em></li>
-          </ul>
-        </div>
-
-        <!-- ── What I'd do next ── -->
-        <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">What I'd do next</h2>
-          <ul class="n-dot-list n-up">
-            <li>Validate comprehension of the rarer states. “Reversal pending” is accurate but untested with real users.</li>
-            <li>Push status updates proactively via notifications, so the tracker answers the question before it's asked.</li>
-            <li>Measure tracker-tab engagement against support contact rates to quantify the trust effect.</li>
-          </ul>
+          <h2 class="n-title n-up">Looking back</h2>
+          <p class="n-up">What started as a mandatory back-end migration became a question of trust: how do you make someone feel safe about money they can't see?</p>
+          <p class="n-up">The answer wasn't a fancier progress bar. It was telling the truth at every step, especially the ones that <span class="n-draw">go wrong<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>.</p>
         </div>
 
         <!-- ── Closing CTA ── -->
