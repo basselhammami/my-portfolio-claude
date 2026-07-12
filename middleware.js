@@ -1,10 +1,10 @@
 // Site-wide auth for the static site on Vercel, using a custom branded login
 // page instead of the native Basic Auth dialog.
 //
-// Two tiers of protection, both driven by Vercel environment variables:
-//   SITE_PASSWORD — gates the whole site.
-//   CASE_PASSWORD — an extra gate on NDA case pages (CASE_PREFIXES below),
-//                   asked for after the site password.
+// Two tiers of protection:
+//   SITE_PASSWORD (env var) — gates the whole site.
+//   CASE_PASSWORD (hardcoded below) — an extra gate on NDA case pages
+//                   (CASE_PREFIXES), asked for after the site password.
 // An unauthenticated request is redirected to /login.html; that page POSTs the
 // password (with a `scope` of "site" or "case") back here, and on a match we
 // set the matching HttpOnly session cookie. Passwords live only in the
@@ -27,6 +27,10 @@ const CASE_PREFIXES = ["/case-mtmx", "/assets/mtmx-"];
 
 const SITE_COOKIE = "site_auth";
 const CASE_COOKIE = "case_auth";
+
+// The extra password for the NDA case pages. Deliberately simple and kept in
+// code rather than an env var — change it here.
+const CASE_PASSWORD = "1995";
 
 // Opaque session token derived from the password, so the cookie never carries
 // the raw password. Middleware and the login handler compute it the same way.
@@ -55,11 +59,7 @@ function redirectToLogin(request, path, search, scope) {
 
 export default async function middleware(request) {
   const sitePassword = process.env.SITE_PASSWORD;
-  const casePassword = process.env.CASE_PASSWORD;
-
-  // Fail open until a password is configured, so a missing env var never
-  // locks everyone out. Set the env vars in Vercel to activate each gate.
-  if (!sitePassword && !casePassword) return;
+  const casePassword = CASE_PASSWORD;
 
   const url = new URL(request.url);
   const path = url.pathname;
