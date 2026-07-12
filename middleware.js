@@ -1,35 +1,77 @@
-// Site-wide HTTP Basic Auth, enforced at Vercel's edge before any file is
-// served. The shared password is read from the SITE_PASSWORD environment
-// variable — set it in the Vercel dashboard (Project → Settings → Environment
-// Variables); never commit the password. Any username is accepted; only the
-// password is checked, so visitors just enter the shared password.
+// Site-wide auth for the static site on Vercel, using a custom branded login
+// page instead of the native Basic Auth dialog.
+//
+// Flow: an unauthenticated request is redirected to /login.html (styled like
+// the site). That page POSTs the shared password back here; on a correct
+// password we set a signed, HttpOnly session cookie and let the visitor in.
+// The password lives only in the SITE_PASSWORD environment variable — never in
+// the page source or the repo.
 
 export const config = {
-  // Protect every route except Vercel's own internal asset requests.
+  // Run on every route except Vercel's internal asset requests.
   matcher: ["/((?!_vercel).*)"],
 };
 
-export default function middleware(request) {
+// Files that must load without auth so the login page can render.
+const PUBLIC_PATHS = new Set(["/login.html", "/styles.css"]);
+
+const COOKIE = "site_auth";
+
+// Opaque session token derived from the password, so the cookie never carries
+// the raw password. Middleware and the login handler compute it the same way.
+async function tokenFor(password) {
+  const data = new TextEncoder().encode("portfolio:v1:" + password);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+function cookieValue(header, name) {
+  for (const part of header.split(";")) {
+    const [key, ...rest] = part.trim().split("=");
+    if (key === name) return rest.join("=");
+  }
+  return null;
+}
+
+export default async function middleware(request) {
   const expected = process.env.SITE_PASSWORD;
 
-  // Fail open if the password hasn't been configured yet, so a missing env var
-  // never locks everyone out silently. Once SITE_PASSWORD is set in Vercel,
-  // this guard is effectively a no-op.
+  // Fail open until the password is configured, so a missing env var never
+  // locks everyone out. Set SITE_PASSWORD in Vercel to activate the gate.
   if (!expected) return;
 
-  const header = request.headers.get("authorization") || "";
-  const [scheme, encoded] = header.split(" ");
+  const url = new URL(request.url);
+  const path = url.pathname;
 
-  if (scheme === "Basic" && encoded) {
-    const decoded = atob(encoded);
-    const password = decoded.slice(decoded.indexOf(":") + 1);
-    if (password === expected) return; // authorized — serve the request
+  // Login submission from the custom page.
+  if (path === "/login.html" && request.method === "POST") {
+    const form = await request.formData();
+    const entered = form.get("password");
+    if (typeof entered === "string" && entered === expected) {
+      const token = await tokenFor(expected);
+      return new Response(null, {
+        status: 204,
+        headers: {
+          "Set-Cookie": `${COOKIE}=${token}; HttpOnly; Secure; SameSite=Lax; Path=/`,
+        },
+      });
+    }
+    return new Response("Incorrect password.", { status: 401 });
   }
 
-  return new Response("Authentication required.", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate": 'Basic realm="Basel Hammami — Portfolio"',
-    },
-  });
+  // Assets the login page itself needs.
+  if (PUBLIC_PATHS.has(path)) return;
+
+  // Everyone else needs a valid session cookie.
+  const cookies = request.headers.get("cookie") || "";
+  const token = cookieValue(cookies, COOKIE);
+  if (token && token === (await tokenFor(expected))) return;
+
+  // Not authenticated — send them to the branded login page, remembering
+  // where they were headed.
+  const login = new URL("/login.html", request.url);
+  if (path && path !== "/") login.searchParams.set("next", path + url.search);
+  return Response.redirect(login, 302);
 }
