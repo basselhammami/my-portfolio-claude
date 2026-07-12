@@ -1,11 +1,14 @@
 // Site-wide auth for the static site on Vercel, using a custom branded login
 // page instead of the native Basic Auth dialog.
 //
-// Flow: an unauthenticated request is redirected to /login.html (styled like
-// the site). That page POSTs the shared password back here; on a correct
-// password we set a signed, HttpOnly session cookie and let the visitor in.
-// The password lives only in the SITE_PASSWORD environment variable — never in
-// the page source or the repo.
+// Two tiers of protection, both driven by Vercel environment variables:
+//   SITE_PASSWORD — gates the whole site.
+//   CASE_PASSWORD — an extra gate on NDA case pages (CASE_PREFIXES below),
+//                   asked for after the site password.
+// An unauthenticated request is redirected to /login.html; that page POSTs the
+// password (with a `scope` of "site" or "case") back here, and on a match we
+// set the matching HttpOnly session cookie. Passwords live only in the
+// environment variables — never in the page source or the repo.
 
 export const config = {
   // Run on every route except Vercel's internal asset requests.
@@ -19,12 +22,16 @@ const PUBLIC_PATHS = new Set([
   "/assets/basel.jpg",
 ]);
 
-const COOKIE = "site_auth";
+// Paths behind the second, case-level password (pages and their images).
+const CASE_PREFIXES = ["/case-mtmx", "/assets/mtmx-"];
+
+const SITE_COOKIE = "site_auth";
+const CASE_COOKIE = "case_auth";
 
 // Opaque session token derived from the password, so the cookie never carries
 // the raw password. Middleware and the login handler compute it the same way.
-async function tokenFor(password) {
-  const data = new TextEncoder().encode("portfolio:v1:" + password);
+async function tokenFor(seed) {
+  const data = new TextEncoder().encode("portfolio:v1:" + seed);
   const digest = await crypto.subtle.digest("SHA-256", data);
   return Array.from(new Uint8Array(digest))
     .map((b) => b.toString(16).padStart(2, "0"))
@@ -39,12 +46,20 @@ function cookieValue(header, name) {
   return null;
 }
 
-export default async function middleware(request) {
-  const expected = process.env.SITE_PASSWORD;
+function redirectToLogin(request, path, search, scope) {
+  const login = new URL("/login.html", request.url);
+  if (scope === "case") login.searchParams.set("scope", "case");
+  if (path && path !== "/") login.searchParams.set("next", path + search);
+  return Response.redirect(login, 302);
+}
 
-  // Fail open until the password is configured, so a missing env var never
-  // locks everyone out. Set SITE_PASSWORD in Vercel to activate the gate.
-  if (!expected) return;
+export default async function middleware(request) {
+  const sitePassword = process.env.SITE_PASSWORD;
+  const casePassword = process.env.CASE_PASSWORD;
+
+  // Fail open until a password is configured, so a missing env var never
+  // locks everyone out. Set the env vars in Vercel to activate each gate.
+  if (!sitePassword && !casePassword) return;
 
   const url = new URL(request.url);
   const path = url.pathname;
@@ -53,12 +68,15 @@ export default async function middleware(request) {
   if (path === "/login.html" && request.method === "POST") {
     const form = await request.formData();
     const entered = form.get("password");
-    if (typeof entered === "string" && entered === expected) {
-      const token = await tokenFor(expected);
+    const scope = form.get("scope") === "case" ? "case" : "site";
+    const expected = scope === "case" ? casePassword : sitePassword;
+    if (expected && typeof entered === "string" && entered === expected) {
+      const cookie = scope === "case" ? CASE_COOKIE : SITE_COOKIE;
+      const token = await tokenFor(scope + ":" + expected);
       return new Response(null, {
         status: 204,
         headers: {
-          "Set-Cookie": `${COOKIE}=${token}; HttpOnly; Secure; SameSite=Lax; Path=/`,
+          "Set-Cookie": `${cookie}=${token}; HttpOnly; Secure; SameSite=Lax; Path=/`,
         },
       });
     }
@@ -68,14 +86,21 @@ export default async function middleware(request) {
   // Assets the login page itself needs.
   if (PUBLIC_PATHS.has(path)) return;
 
-  // Everyone else needs a valid session cookie.
   const cookies = request.headers.get("cookie") || "";
-  const token = cookieValue(cookies, COOKIE);
-  if (token && token === (await tokenFor(expected))) return;
 
-  // Not authenticated — send them to the branded login page, remembering
-  // where they were headed.
-  const login = new URL("/login.html", request.url);
-  if (path && path !== "/") login.searchParams.set("next", path + url.search);
-  return Response.redirect(login, 302);
+  // Tier 1 — the whole site.
+  if (sitePassword) {
+    const token = cookieValue(cookies, SITE_COOKIE);
+    if (!token || token !== (await tokenFor("site:" + sitePassword))) {
+      return redirectToLogin(request, path, url.search, "site");
+    }
+  }
+
+  // Tier 2 — NDA case pages need the case password on top.
+  if (casePassword && CASE_PREFIXES.some((p) => path.startsWith(p))) {
+    const token = cookieValue(cookies, CASE_COOKIE);
+    if (!token || token !== (await tokenFor("case:" + casePassword))) {
+      return redirectToLogin(request, path, url.search, "case");
+    }
+  }
 }
