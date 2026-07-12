@@ -2480,10 +2480,12 @@ body.n-bg .site-header.is-scrolled {
   text-align: center;
   min-height: 230px;
   padding: 2.5rem 1.5rem;
-  background: repeating-linear-gradient(45deg, #fff 0 13px, #f6f6f8 13px 26px);
-  border: 2px dashed #c7c7d0;
-  border-radius: 0.5rem;
-  color: #6b6b6b;
+  /* Grey mat matching the real image blocks, so placeholders read as the
+     same surface the finished screenshots will sit on. */
+  background: rgb(222, 222, 226);
+  border: 2px dashed #b7b7c0;
+  border-radius: 0.875rem;
+  color: #5f5f66;
 }
 .n-ph svg {
   width: 32px;
