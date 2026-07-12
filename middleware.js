@@ -13,7 +13,11 @@ export const config = {
 };
 
 // Files that must load without auth so the login page can render.
-const PUBLIC_PATHS = new Set(["/login.html", "/styles.css"]);
+const PUBLIC_PATHS = new Set([
+  "/login.html",
+  "/styles.css",
+  "/assets/basel.jpg",
+]);
 
 const COOKIE = "site_auth";
 
