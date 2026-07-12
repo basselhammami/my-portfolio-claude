@@ -1,72 +1,35 @@
-// Per-case passwords. Fallback: the "default" key.
-const CASE_PASSWORDS = {
-  cram: "1995",
-  default: "1995",
-};
-const UNLOCK_TTL_MS = 1000 * 60 * 60 * 4;
+/* ==========================================================================
+   Site-wide password gate — one password unlocks the entire site for the
+   browsing session. Client-side only (not real security), matching the
+   site's lightweight prompt-based approach.
+   ========================================================================== */
 
-function storageKey(caseId) {
-  return `case_unlocked_${caseId}`;
-}
+(function siteGate() {
+  const KEY = "site_unlocked";
+  const PASSWORD = "1995";
 
-function isUnlocked(caseId) {
-  const ts = Number(sessionStorage.getItem(storageKey(caseId)) || 0);
-  return ts && Date.now() - ts < UNLOCK_TTL_MS;
-}
+  if (sessionStorage.getItem(KEY) === "1") return;
 
-function unlock(caseId) {
-  sessionStorage.setItem(storageKey(caseId), String(Date.now()));
-}
-
-function passwordFor(caseId) {
-  return CASE_PASSWORDS[caseId] || CASE_PASSWORDS.default;
-}
-
-// Map pathname → caseId (used for direct-URL gate on case pages)
-function caseIdForPath(pathname) {
-  const m = pathname.match(/\/case-([a-z0-9-]+?)(?:-ru)?\.html$/);
-  return m ? m[1] : null;
-}
-
-document.addEventListener("click", (event) => {
-  const link = event.target.closest("a[data-case]");
-  if (!link) return;
-  const href = link.getAttribute("href");
-  if (!href || href === "#") return;
-
-  const caseId = link.dataset.case;
-  if (isUnlocked(caseId)) return;
-
-  event.preventDefault();
   const isRu = document.documentElement.lang === "ru";
   const promptText = isRu
-    ? "Введите пароль для просмотра кейса:"
-    : "Enter password to view this case study:";
-  const wrongText = isRu ? "Неверный пароль." : "Incorrect password.";
-  const entry = window.prompt(promptText);
-  if (entry === null) return;
-  if (entry === passwordFor(caseId)) {
-    unlock(caseId);
-    window.location.href = href;
-  } else {
-    alert(wrongText);
-  }
-});
+    ? "Введите пароль для просмотра сайта:"
+    : "Enter password to view this site:";
+  const wrongText = isRu
+    ? "Неверный пароль. Введите пароль для просмотра сайта:"
+    : "Incorrect password. Enter password to view this site:";
 
-(function gateCasePage() {
-  const caseId = caseIdForPath(location.pathname);
-  if (!caseId) return;
-  if (isUnlocked(caseId)) return;
-  const isRu = document.documentElement.lang === "ru";
-  const promptText = isRu
-    ? "Введите пароль для просмотра кейса:"
-    : "Enter password to view this case study:";
-  const entry = window.prompt(promptText);
-  if (entry === passwordFor(caseId)) {
-    unlock(caseId);
-  } else {
-    window.location.href = isRu ? "index-ru.html" : "index.html";
+  // Keep the page hidden until the correct password is entered.
+  const root = document.documentElement;
+  root.style.visibility = "hidden";
+
+  let entry = window.prompt(promptText);
+  while (entry !== PASSWORD) {
+    if (entry === null) return; // Cancelled — the page stays hidden.
+    entry = window.prompt(wrongText);
   }
+
+  sessionStorage.setItem(KEY, "1");
+  root.style.visibility = "";
 })();
 
 /* ==========================================================================
