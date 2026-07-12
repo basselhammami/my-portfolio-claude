@@ -1767,7 +1767,7 @@ body.n-bg .site-header.is-scrolled {
    Padding here is the single source of breathing room around every
    screenshot, so the images themselves stay trimmed tight to content. */
 .n-img-block {
-  margin-top: 2rem;
+  margin-top: 2.75rem;
   border-radius: 0.875rem;
   overflow: hidden;
   border: 1px solid #e6e6e6;
