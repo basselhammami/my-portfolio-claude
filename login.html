@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=3" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=3" />
+    <title>Enter password · Basel Hammami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=35" />
+    <style>
+      .login-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 6rem;
+      }
+      .login-hero {
+        padding-bottom: 0;
+      }
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        width: 100%;
+        max-width: 20rem;
+        margin: 1.75rem auto 0;
+      }
+      .login-input {
+        width: 100%;
+        padding: 0.75rem 1.1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-pill);
+        font: inherit;
+        font-size: 0.95rem;
+        text-align: center;
+        background: #fff;
+        color: var(--fg);
+        outline: none;
+        transition: border-color 0.2s var(--ease-out),
+          box-shadow 0.2s var(--ease-out);
+      }
+      .login-input:focus {
+        border-color: #000;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+      }
+      .login-form .btn {
+        width: 100%;
+      }
+      .login-error {
+        min-height: 1.25em;
+        margin: 0.15rem 0 0;
+        font-size: 0.85rem;
+        color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page login-page">
+      <section class="hero login-hero">
+        <p class="eyebrow">BASEL HAMMAMI</p>
+        <h1 class="hero-title">This portfolio is private</h1>
+        <form id="login-form" class="login-form" autocomplete="off">
+          <input
+            id="password"
+            class="login-input"
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            aria-label="Password"
+            autofocus
+            required
+          />
+          <button type="submit" class="btn btn-primary">Enter</button>
+          <p id="login-error" class="login-error" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        const form = document.getElementById("login-form");
+        const input = document.getElementById("password");
+        const error = document.getElementById("login-error");
+
+        // Only allow same-origin path redirects back after login.
+        const params = new URLSearchParams(location.search);
+        let next = params.get("next") || "/";
+        if (!next.startsWith("/") || next.startsWith("//")) next = "/";
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          try {
+            const res = await fetch("/login.html", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: new URLSearchParams({ password: input.value }),
+            });
+            if (res.ok) {
+              location.replace(next);
+            } else {
+              error.textContent = "Incorrect password. Try again.";
+              input.value = "";
+              input.focus();
+            }
+          } catch (e) {
+            error.textContent = "Something went wrong. Try again.";
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
