@@ -142,9 +142,7 @@
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Cancelling your transfer → Transfer cancelled</h4><p>A deliberate stop, confirmed cleanly.</p></div></li>
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>We couldn't start your transfer</h4><p>The earliest failure: it never left the gate.</p></div></li>
           </ul>
-          <div class="n-callout n-up">
-            <p>When a transfer fails after money has left the account, the scariest moment is the gap between “Transfer not completed” and the money reappearing. So the tracker doesn't stop at failure: it shows <strong>Returning your money</strong> as an active in-progress step, then <strong>Money returned</strong> with confirmation. The system stays accountable even when it fails.</p>
-          </div>
+          <p class="n-up">When a transfer fails after money has left the account, the scariest moment is the gap between “Transfer not completed” and the money reappearing. So the tracker doesn't stop at failure: it shows <strong>Returning your money</strong> as an active in-progress step, then <strong>Money returned</strong> with confirmation. The system stays accountable even when it fails.</p>
           <div class="n-ph n-up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
             <span class="n-ph-name">assets/mtmx-all-statuses.png</span>
@@ -162,11 +160,11 @@
         <!-- ── Copy decisions ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">What we wrote, and why</h2>
-          <ul class="n-options n-up">
-            <li class="n-up"><span><strong>Processing → “Checking your transfer.”</strong> Says what's actually happening, in the bank's voice.</span></li>
-            <li class="n-up"><span><strong>In progress → “Cash ready for collection.”</strong> The user has an action to take. Generic labels hide that.</span></li>
-            <li class="n-up"><span><strong>Failed → “Money not sent.”</strong> Answers the customer's real question: did money leave?</span></li>
-            <li class="n-up"><span><strong>Refund initiated → “Returning your money.”</strong> Active voice, ownership. The bank is doing something for you.</span></li>
+          <ul class="n-dot-list n-up">
+            <li><strong>Processing → “Checking your transfer.”</strong> Says what's actually happening, in the bank's voice.</li>
+            <li><strong>In progress → “Cash ready for collection.”</strong> The user has an action to take. Generic labels hide that.</li>
+            <li><strong>Failed → “Money not sent.”</strong> Answers the customer's real question: did money leave?</li>
+            <li><strong>Refund initiated → “Returning your money.”</strong> Active voice, ownership. The bank is doing something for you.</li>
           </ul>
           <div class="n-meta n-up">
             <div class="n-meta-item">
@@ -202,9 +200,7 @@
             <div class="n-flow-step"><b>03</b><p>PIN authentication</p></div>
             <div class="n-flow-step"><b>04</b><p>“Payment cancelled”</p></div>
           </div>
-          <div class="n-callout n-up">
-            <p>Copy and flow decisions are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
-          </div>
+          <p class="n-up">Copy and flow decisions are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
           <div class="n-img-block n-up">
             <img src="assets/mtmx-cancellation-flow.png" alt="Cancellation flow — pending transaction, confirm sheet, PIN, cancelled screen" />
           </div>
