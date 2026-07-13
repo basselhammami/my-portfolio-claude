@@ -111,14 +111,6 @@
         let next = params.get("next") || "/";
         if (!next.startsWith("/") || next.startsWith("//")) next = "/";
 
-        // Second-tier gate: NDA case pages ask for their own password.
-        const scope = params.get("scope") === "case" ? "case" : "site";
-        if (scope === "case") {
-          document.getElementById("login-title").textContent =
-            "This case study is under NDA";
-          input.placeholder = "Enter case password";
-        }
-
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
           error.textContent = "";
@@ -126,7 +118,7 @@
             const res = await fetch("/login.html", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: new URLSearchParams({ password: input.value, scope }),
+              body: new URLSearchParams({ password: input.value }),
             });
             if (res.ok) {
               location.replace(next);
