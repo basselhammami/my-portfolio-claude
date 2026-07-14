@@ -2032,13 +2032,6 @@ body.n-bg .site-header.is-scrolled {
 .n-row--rev .n-row-text {
   order: 2;
 }
-.n-row-h {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #171717;
-  letter-spacing: -0.01em;
-  margin: 0 0 0.875rem;
-}
 .n-row-text .n-dot-list {
   margin-top: 0;
 }
