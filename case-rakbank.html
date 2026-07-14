@@ -73,12 +73,12 @@
           </div>
         </div>
 
-        <!-- ── 01 · What is the CLM Platform? ── -->
+        <!-- ── Overview · What is the CLM Platform? ── -->
         <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>01</b> · What is the CLM Platform?</p>
+          <p class="n-eyebrow n-up">Overview · What is the CLM Platform?</p>
           <h2 class="n-title n-up">Less a productivity tool, more a control system</h2>
-          <p class="n-up">The CLM platform is how the bank manages a customer's compliance lifecycle end to end, from onboarding through every periodic and event-driven review, in one controlled system. It makes sure the right checks happen, by the right people, in the right order, with a complete record the bank can defend in an audit.</p>
-          <p class="n-up">CLM doesn't work alone. It pulls customer data from Finacle, the bank's core system of record, and runs its review workflows through IBPS, the bank's process engine. CLM is the layer that sits on top of both, the single place where compliance decisions are made, tracked, and defended.</p>
+          <p class="n-up">CLM is the layer where the bank's compliance decisions get made, tracked, and defended. It doesn't replace the systems underneath it — it gives them a spine.</p>
+          <p class="n-up">It pulls customer data from Finacle, the bank's core system of record, and runs its review workflows through IBPS, the bank's process engine. CLM sits on top of both: the single place a review actually happens, and the only place the full story behind a decision lives.</p>
         </div>
 
         <!-- ── 02 · Platform overview ── -->
@@ -90,6 +90,7 @@
 
         <!-- ── The problem ── -->
         <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up">The problem</p>
           <h2 class="n-title n-up">The systems were never built to talk to each other</h2>
           <p class="n-up">People weren't slow because they lacked effort. They were slow because the systems they relied on were never designed to work together.</p>
           <p class="n-up">The teams who check customers against regulation worked across Finacle, IBPS, separate inboxes, and spreadsheets: systems with no common layer between them. Every review ran against a clock. Every handover blurred who was responsible. And when an audit came, reconstructing what had happened was the hardest part of the job.</p>
@@ -107,9 +108,22 @@
 
         <!-- ── The reframe ── -->
         <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up">The insight</p>
           <h2 class="n-title n-up">The insight that changed direction</h2>
-          <p class="n-up">The assumption we walked in with: staff want to move faster. What research told us was the opposite. Every interview surfaced the same pattern: reviewers aren't optimising for speed, they're optimising for defensibility.</p>
-          <p class="n-up">The fear isn't missing a deadline. It's approving something they shouldn't have. That single reframe changed how we approached the entire design: we stopped designing for efficiency and started designing for confidence and control.</p>
+          <p class="n-up">We walked in assuming staff wanted to move faster. Research told us the opposite. Interview after interview surfaced the same pattern — and it reset the entire design.</p>
+        </div>
+
+        <!-- ── The reframe · moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">Reviewers aren't optimising for speed. They're optimising for defensibility — the fear isn't missing a deadline, it's approving something they shouldn't have.</p>
+          <p class="n-moment-cite n-up">What every reviewer interview surfaced</p>
+        </div>
+
+        <!-- ── The decisions · intro ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up">The decisions</p>
+          <h2 class="n-title n-up">Designing for confidence, not just efficiency</h2>
+          <p class="n-up">That reframe turned into concrete forks in the road. Two of them shaped how the platform would feel to use — and neither had an obvious answer.</p>
         </div>
 
         <!-- ── Decision 1 ── -->
@@ -150,6 +164,13 @@
           </div>
         </div>
 
+        <!-- ── The journeys · intro ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up">The journeys</p>
+          <h2 class="n-title n-up">One system, built around how each role actually works</h2>
+          <p class="n-up">Five-plus roles share CLM, each with its own relationship to a case. Here are two of them: the reviewer who works the queue, and the team lead who keeps it from breaking.</p>
+        </div>
+
         <!-- ── Role 1: The Reviewer ── -->
         <div class="n-card n-rise" data-reveal>
           <p class="n-role n-up">Role 01 · The Reviewer</p>
@@ -182,16 +203,23 @@
           </div>
         </div>
 
+        <!-- ── What I'd do differently · intro ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up">What I'd do differently</p>
+          <h2 class="n-title n-up">Two things I'd change next time</h2>
+          <p class="n-up">The platform is still evolving, and it's already taught me two lessons I'd carry into the next build.</p>
+        </div>
+
         <div class="n-grid-2">
           <div class="n-card n-rise" data-reveal>
-            <p class="n-eyebrow n-up"><b>01</b></p>
+            <p class="n-eyebrow n-up"><b>Lesson 01</b></p>
             <h2 class="n-title n-up">Stabilise one role before layering the next</h2>
             <p class="n-up">We started designing the reviewer and team-lead experiences at the same time. What we didn't know yet was how much the team-lead role would grow: the assignment logic, the workload visibility, the escalation controls.</p>
             <p class="n-up">Those requirements only became clear as we got deeper in. By then, decisions we'd made for the reviewer were already pulling in a different direction. If we did it again, we'd get the reviewer experience to a stable place first and let the team-lead layer emerge from it, not alongside it.</p>
           </div>
 
           <div class="n-card n-rise" data-reveal>
-            <p class="n-eyebrow n-up"><b>02</b></p>
+            <p class="n-eyebrow n-up"><b>Lesson 02</b></p>
             <h2 class="n-title n-up">Design for the worry behind the work</h2>
             <p class="n-up">We were good at watching people work. We were less good at watching people worry.</p>
             <p class="n-up">We did eventually design for it: the confirmation states, the explicit warnings, the audit trail that tells you someone else already checked this. But we got there a bit late. That thinking belonged at the start of the process, not the middle.</p>
