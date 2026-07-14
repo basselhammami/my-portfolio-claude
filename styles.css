@@ -2400,39 +2400,6 @@ body.n-bg .site-header.is-scrolled {
   font-weight: 400;
 }
 
-/* Section divider — minimal: a hairline rule with a small red label and a
-   dark title sitting on the page background (no card fill). */
-.n-divider {
-  background: transparent;
-  border-radius: 0;
-  border-top: 1px solid var(--border);
-  padding: clamp(2rem, 4vw, 2.75rem) 2.75rem clamp(0.5rem, 2vw, 1rem);
-}
-.n-divider .n-eyebrow {
-  color: #ed1c24;
-}
-.n-divider-title {
-  font-size: clamp(1.375rem, 2.6vw, 1.875rem);
-  font-weight: 500;
-  letter-spacing: -0.025em;
-  line-height: 1.12;
-  color: #171717;
-  margin: 0;
-}
-.n-divider-sub {
-  margin: 0.75rem 0 0 !important;
-  color: #555 !important;
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  max-width: 38rem;
-}
-@media (max-width: 600px) {
-  .n-divider {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
 /* Platform architecture — control layer sitting on two systems */
 .n-arch {
   display: flex;
