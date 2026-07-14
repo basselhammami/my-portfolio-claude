@@ -2387,17 +2387,18 @@ body.n-bg .site-header.is-scrolled {
 .n-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.5625rem;
-  font-weight: 400;
+  gap: 0.5rem;
+  /* font-size + color use !important to override the more-specific .n-card p */
+  font-size: 0.75rem !important;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ed1c24;
+  color: #ed1c24 !important;
   margin: 0 0 0.85rem !important;
 }
 .n-eyebrow b {
   font-variant-numeric: tabular-nums;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* Platform architecture — control layer sitting on two systems */
@@ -2537,12 +2538,12 @@ body.n-bg .site-header.is-scrolled {
 .n-role {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.5625rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  gap: 0.5rem;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ed1c24;
+  color: #ed1c24 !important;
   margin: 0 0 0.85rem !important;
 }
 .n-flow {
