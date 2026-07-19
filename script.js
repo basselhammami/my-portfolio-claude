@@ -74,6 +74,50 @@
 })();
 
 /* ==========================================================================
+   Case-study role filter — All / Product Design / Product Management pills
+   on the home page toggle which project group is shown.
+   ========================================================================== */
+
+(function projectsRoleFilter() {
+  const bar = document.querySelector(".projects-filter");
+  if (!bar) return;
+
+  const pills = Array.from(bar.querySelectorAll(".filter-pill"));
+  const groups = Array.from(document.querySelectorAll(".projects-group"));
+  if (!pills.length || !groups.length) return;
+
+  const apply = (filter) => {
+    pills.forEach((pill) => {
+      const active = pill.dataset.filter === filter;
+      pill.classList.toggle("is-active", active);
+      pill.setAttribute("aria-pressed", String(active));
+    });
+
+    bar.classList.toggle("is-filtered", filter !== "all");
+
+    groups.forEach((group) => {
+      const show = filter === "all" || group.dataset.role === filter;
+      group.classList.toggle("is-hidden", !show);
+      if (show) {
+        // Cards hidden before their scroll-reveal fired would otherwise
+        // stay invisible — force them shown.
+        group
+          .querySelectorAll(".reveal:not(.is-visible)")
+          .forEach((el) => el.classList.add("is-visible"));
+        // Restart the entrance animation.
+        group.classList.remove("filter-in");
+        void group.offsetWidth;
+        group.classList.add("filter-in");
+      }
+    });
+  };
+
+  pills.forEach((pill) => {
+    pill.addEventListener("click", () => apply(pill.dataset.filter));
+  });
+})();
+
+/* ==========================================================================
    Narrative case: choreographed scroll reveals + count-up stats
    ========================================================================== */
 

@@ -386,6 +386,58 @@ button {
   background: var(--border);
 }
 
+/* Role filter — pressable pills that switch which case group is shown.
+   Styled on the lang-pill vocabulary: outline at rest, solid black when
+   active. */
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.filter-pill {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease-out),
+    color 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out);
+}
+
+.filter-pill:hover:not(.is-active) {
+  color: #000;
+  background: #f2f2f2;
+  border-color: #d0d0d0;
+}
+
+.filter-pill.is-active {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+/* Filtered states — hide non-matching groups; when a single role is
+   selected, its hairline label is redundant with the active pill. */
+.projects-group.is-hidden {
+  display: none;
+}
+
+.projects-filter.is-filtered ~ .projects-group .projects-group-label {
+  display: none;
+}
+
+.projects-group.filter-in {
+  animation: fadeUp 0.45s var(--ease-out) both;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;

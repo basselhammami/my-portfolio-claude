@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=40" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=41" />
+    <script defer src="script.js?v=5"></script>
   </head>
   <body>
     <header class="site-header">
@@ -54,7 +54,13 @@
         <h2 class="section-title">Selected Case Studies</h2>
       </header>
 
-      <div class="projects-group">
+      <div class="projects-filter" aria-label="Filter case studies by role">
+        <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-pill" data-filter="design" aria-pressed="false">Product Design</button>
+        <button type="button" class="filter-pill" data-filter="management" aria-pressed="false">Product Management</button>
+      </div>
+
+      <div class="projects-group" data-role="design">
         <p class="projects-group-label">Product Design</p>
         <section class="projects" aria-label="Product design case studies">
           <article class="project-card">
@@ -99,7 +105,7 @@
         </section>
       </div>
 
-      <div class="projects-group">
+      <div class="projects-group" data-role="management">
         <p class="projects-group-label">Product Management</p>
         <section class="projects" aria-label="Product management case studies">
           <article class="project-card">

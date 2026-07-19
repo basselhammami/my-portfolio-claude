@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=40" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=41" />
+    <script defer src="script.js?v=5"></script>
   </head>
   <body>
     <header class="site-header">
@@ -54,7 +54,13 @@
         <h2 class="section-title">Избранные кейсы</h2>
       </header>
 
-      <div class="projects-group">
+      <div class="projects-filter" aria-label="Фильтр кейсов по роли">
+        <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">Все</button>
+        <button type="button" class="filter-pill" data-filter="design" aria-pressed="false">Продуктовый дизайн</button>
+        <button type="button" class="filter-pill" data-filter="management" aria-pressed="false">Продакт-менеджмент</button>
+      </div>
+
+      <div class="projects-group" data-role="design">
         <p class="projects-group-label">Продуктовый дизайн</p>
         <section class="projects" aria-label="Кейсы по продуктовому дизайну">
           <article class="project-card">
@@ -99,7 +105,7 @@
         </section>
       </div>
 
-      <div class="projects-group">
+      <div class="projects-group" data-role="management">
         <p class="projects-group-label">Продакт-менеджмент</p>
         <section class="projects" aria-label="Кейсы по продакт-менеджменту">
           <article class="project-card">
