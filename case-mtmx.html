@@ -39,13 +39,13 @@
           <img src="assets/rakbank-logo-full-red.png" class="n-hero-logo n-up" alt="RAKBANK" />
           <h1 class="n-hero-title n-up">Where's my money?</h1>
           <p class="n-hero-desc n-up">
-            Every bank in the world had to adopt SWIFT's new messaging standard: the MT→MX migration. Most treated it as invisible technical work. But the new messages carried rich status data, and we used it to give customers a live, step-by-step view of where their money is.
+            Every bank had to adopt SWIFT's new ISO 20022 messaging standard: the MT→MX migration, a funded, deadline-driven compliance program most treat as invisible plumbing. The same messages carried rich status data, so I made the case to spend that mandate on a customer-facing bet: a live, step-by-step answer to where your money is.
           </p>
           <p class="n-hero-kicker n-up">A mandatory migration, turned into <span class="n-draw">a feature customers can see<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
           <div class="n-hero-tags n-up">
-            <span class="n-hero-tag">Product Designer</span>
+            <span class="n-hero-tag">Product Manager</span>
             <span class="n-hero-tag">Mobile · iOS / Android</span>
-            <span class="n-hero-tag">Flows · IA · Status system · UX copy</span>
+            <span class="n-hero-tag">Discovery · Prioritization · Delivery · Metrics</span>
             <span class="n-hero-tag">Live in production</span>
           </div>
         </div>
@@ -64,11 +64,11 @@
         <div class="n-card n-stats n-rise" data-reveal>
           <div class="n-stat n-up">
             <span class="n-stat-num" data-count="10">0</span>
-            <span class="n-stat-label">Transfer states mapped, failures and reversals included</span>
+            <span class="n-stat-label">Transfer states scoped for the release, failures and reversals included</span>
           </div>
           <div class="n-stat n-up">
             <span class="n-stat-num n-stat-static">MT&nbsp;→&nbsp;MX</span>
-            <span class="n-stat-label">ISO 20022 migration, turned into a feature</span>
+            <span class="n-stat-label">Compliance mandate, reframed as a customer feature</span>
           </div>
           <div class="n-stat n-up">
             <span class="n-stat-num n-stat-static">Live</span>
@@ -80,19 +80,20 @@
         <div class="n-grid-2">
 
           <div class="n-card n-rise" data-reveal>
-            <h2 class="n-title n-up">Where it all started</h2>
+            <h2 class="n-title n-up">The opportunity</h2>
             <p class="n-up">Send money out of the country and it vanished. For hours or days it moved through the SWIFT network with no signal to the person who sent it, and the app answered with a single word: <em>pending</em>.</p>
-            <p class="n-up">“Where is my transfer?” became a recurring, measurable share of support contacts. People weren't calling because something had gone wrong. They were calling because they <em>couldn't tell</em> whether it had.</p>
+            <p class="n-up">“Where is my transfer?” was a recurring, measurable driver of support contacts: a repeating, quantifiable cost, and behind every call a customer who <em>couldn't tell</em> whether their money was safe. The pain was sizeable and the fix was fundable, because the ISO 20022 migration was already paying for the data it needed.</p>
           </div>
 
           <div class="n-card n-rise" data-reveal>
-            <h2 class="n-title n-up">What I was solving for</h2>
-            <p class="n-up">Put a clear, living answer to “where is my money right now?” inside the app, honest even when a transfer fails, so people don't have to phone in to feel safe.</p>
-            <p class="n-up"><strong>Two signals would tell us it's working</strong></p>
+            <h2 class="n-title n-up">The bet, and how we'd measure it</h2>
+            <p class="n-up">Spend a compliance-mandated migration on a trust feature: a clear, living answer to “where is my money right now?”, honest even when a transfer fails, so people don't have to phone in to feel safe.</p>
+            <p class="n-up"><strong>Success criteria, set before build</strong></p>
             <ul class="n-dot-list">
-              <li class="n-up">Tracker engagement: how often customers open the Tracker instead of calling</li>
               <li class="n-up">Support deflection: fewer “where is my transfer?” contacts after launch</li>
+              <li class="n-up">Tracker engagement: how often customers open the Tracker instead of calling</li>
             </ul>
+            <p class="n-up">Both instrumented at launch, with the readout scoped to the first post-launch window.</p>
           </div>
 
         </div>
@@ -105,14 +106,14 @@
 
         <!-- ── How I approached it ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">How I approached it</h2>
-          <p class="n-lead n-up">Two shifts made it possible: the move to ISO 20022 meant payment messages now carried rich, structured status end to end, and a design-system refresh gave license to rebuild rather than patch. I started by cataloguing every state a transfer can occupy, including the failure and reversal branches banks usually hide, and made that map the single source of truth for design, engineering, and QA.</p>
+          <h2 class="n-title n-up">How I ran it</h2>
+          <p class="n-lead n-up">Two shifts made it fundable: the move to ISO 20022 meant payment messages now carried rich, structured status end to end, and a design-system refresh gave license to rebuild rather than patch. I catalogued every state a transfer can occupy, including the failure and reversal branches banks usually hide, and made that map the single source of truth across product, engineering, QA, and compliance. It set scope, drove estimates, and became the contract every team built against, so we weren't renegotiating the state space one screen at a time.</p>
         </div>
 
         <!-- ── The journey ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">The journey</h2>
-          <p class="n-up">A transfer isn't one event: it's a journey through many states, and the hard part of a tracker isn't the happy path, it's everything else. Every status earned a name, a plain-language description, a badge, and a defined next step.</p>
+          <p class="n-up">A transfer isn't one event: it's a journey through many states, and the product bet was to show all of them, including the failures and reversals banks usually hide behind “pending”. Exposing bad news honestly is what earns trust, so failure and reversal states were in scope from day one, each with a name, a plain-language status, and a defined next step.</p>
           <ul class="n-timeline n-up">
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Transfer started</h4><p>The request is in, the journey begins.</p></div></li>
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Checking your transfer</h4><p>Screening and validation in progress.</p></div></li>
@@ -136,50 +137,26 @@
           <p class="n-moment-cite n-up">The mental model we borrowed</p>
         </div>
 
-        <!-- ── Deep-dive: Details and Tracker ── -->
+        <!-- ── Execution decisions that drove the outcome ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Details and Tracker, on two tabs</h2>
-          <p class="n-up">The old transaction screen tried to answer two questions on one surface: <em>what is this transaction?</em> and <em>where is it right now?</em> We split them, so each has room to do its job.</p>
-          <div class="n-meta n-up">
-            <div class="n-meta-item">
-              <h4>Details</h4>
-              <p>The static facts: reference number, accounts, payee, amounts, dates. What you need for records and disputes.</p>
-            </div>
-            <div class="n-meta-item">
-              <h4>Tracker</h4>
-              <p>The living timeline: every step the transfer has passed through, is in, or failed at, each with a timestamp and a status badge.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Deep-dive: Copy as a design material ── -->
-        <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Copy as a design material</h2>
-          <p class="n-up">Status names were designed, not defaulted. Each one answers the customer's real question in the bank's own voice.</p>
+          <h2 class="n-title n-up">Two decisions that made it deflect, not just display</h2>
+          <p class="n-up">The metric wasn't “did we show status”, it was “did customers stop calling”. Two calls did most of that work.</p>
           <ul class="n-dot-list n-up">
-            <li><strong>Processing → “Checking your transfer.”</strong> Says what's actually happening, in the bank's voice.</li>
-            <li><strong>In progress → “Cash ready for collection.”</strong> The user has an action to take. Generic labels hide that.</li>
-            <li><strong>Failed → “Money not sent.”</strong> Answers the customer's real question: did money leave?</li>
-            <li><strong>Refund initiated → “Returning your money.”</strong> Active voice, ownership. The bank is doing something for you.</li>
+            <li><strong>Split Details from Tracker.</strong> The old screen answered <em>what is this transaction?</em> and <em>where is it right now?</em> on one surface. Separating them let the Tracker be a clean, glanceable timeline: the thing that actually replaces a phone call, while Details held the reference facts for records and disputes.</li>
+            <li><strong>Wrote status names to answer the customer, not to mirror the back-end.</strong> “Processing” became “Checking your transfer”; “Failed” became “Money not sent”, which answers the only question that matters: did money leave? Labels this clear are what let the feature deflect contacts instead of generating them.</li>
           </ul>
-          <div class="n-meta n-up">
-            <div class="n-meta-item">
-              <h4>Functional clarity over generic labels</h4>
-              <p>If a state has a meaningful difference for the user, like cash waiting at a collection point, the label carries it.</p>
-            </div>
-          </div>
         </div>
 
         <!-- ── Deep-dive: Cancellation ── -->
         <div class="n-card n-rise" data-reveal>
-          <h2 class="n-title n-up">Cancellation, settled by one fact</h2>
-          <p class="n-up">Midway through, a single fact from engineering rewrote a whole branch of the design: <strong>cancellation can only happen before the debit is taken.</strong> That one constraint:</p>
+          <h2 class="n-title n-up">A scope cut, settled by one fact</h2>
+          <p class="n-up">Midway through, a single fact from engineering rewrote a whole branch of the plan: <strong>cancellation can only happen before the debit is taken.</strong> I used it to cut scope hard:</p>
           <ul class="n-dot-list n-up">
-            <li>Eliminated an entire class of states we'd been designing for: cancellation-after-debit, partial refunds.</li>
-            <li>Rewrote the cancellation copy: no refund language needed, just clear confirmation that <em>the account was never charged.</em></li>
-            <li>Simplified the flow to a single clean path.</li>
+            <li>Deleted an entire class of states from the build: cancellation-after-debit, partial refunds. Less to design, spec, test, and support.</li>
+            <li>Simplified the copy: no refund language needed, just clear confirmation that <em>the account was never charged.</em></li>
+            <li>Collapsed the flow to a single clean path, de-risking the release against a fixed migration deadline.</li>
           </ul>
-          <p class="n-up">Copy and flow are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
+          <p class="n-up">Business logic like this is cheapest to lock down before the screens multiply, so I drove the open questions to closure early, kept as grouped, tagged comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
           <div class="n-img-block n-img-block--flush n-up">
             <img src="assets/mtmx-cancellation-flow.png?v=2" alt="Cancellation flow: pending transaction, confirm sheet, PIN, cancelled screen" />
           </div>
@@ -189,19 +166,20 @@
         <div class="n-grid-2">
 
           <div class="n-card n-rise" data-reveal>
-            <h2 class="n-title n-up">What happened next</h2>
+            <h2 class="n-title n-up">What shipped</h2>
             <ul class="n-dot-list">
-              <li class="n-up">Shipped in production as part of RAKBANK's international payments experience</li>
+              <li class="n-up">Shipped in production as part of RAKBANK's international payments, on the migration deadline</li>
               <li class="n-up">Customers now see live, step-level status for SWIFT transfers, including failures and reversals, instead of a single “pending”</li>
+              <li class="n-up">Deflection and engagement instrumented at launch, with the first readout scoped to the post-launch window</li>
             </ul>
           </div>
 
           <div class="n-card n-rise" data-reveal>
-            <h2 class="n-title n-up">What I'd do next</h2>
+            <h2 class="n-title n-up">The roadmap from here</h2>
             <ul class="n-dot-list">
+              <li class="n-up">Proactive status via push notifications, deferred to a fast-follow so v1 could ship on the mandate deadline</li>
               <li class="n-up">Validate comprehension of the rarer states; “Reversal pending” is accurate but untested with real users</li>
-              <li class="n-up">Push status proactively via notifications, so the tracker answers before it's asked</li>
-              <li class="n-up">Measure Tracker engagement against support contact rates to quantify the trust effect</li>
+              <li class="n-up">Read Tracker engagement against support contact rates to quantify the deflection and trust effect</li>
             </ul>
           </div>
 
@@ -210,8 +188,8 @@
         <!-- ── Looking back ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">Looking back</h2>
-          <p class="n-up">What started as a mandatory back-end migration became a question of trust: how do you make someone feel safe about money they can't see?</p>
-          <p class="n-up">The answer wasn't a fancier progress bar. It was telling the truth at every step, especially the ones that <span class="n-draw">go wrong<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>.</p>
+          <p class="n-up">What started as a mandatory back-end migration became a product question: how do you make someone feel safe about money they can't see, and how do you know it worked?</p>
+          <p class="n-up">The answer wasn't a fancier progress bar. It was spotting the opportunity inside a compliance mandate, telling the truth at every step, especially the ones that <span class="n-draw">go wrong<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>, and instrumenting it so trust becomes something you can measure.</p>
         </div>
 
         <!-- ── Closing CTA ── -->
