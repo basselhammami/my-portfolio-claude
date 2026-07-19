@@ -39,7 +39,7 @@
           <img src="assets/rakbank-logo-full-red.png" class="n-hero-logo n-up" alt="RAKBANK" />
           <h1 class="n-hero-title n-up">Where's my money?</h1>
           <p class="n-hero-desc n-up">
-            Every bank in the world had to adopt SWIFT's new messaging standard — the MT→MX migration. Most treated it as invisible technical work. But the new messages carried rich status data, and we used it to give customers a live, step-by-step view of where their money is.
+            Every bank in the world had to adopt SWIFT's new messaging standard: the MT→MX migration. Most treated it as invisible technical work. But the new messages carried rich status data, and we used it to give customers a live, step-by-step view of where their money is.
           </p>
           <p class="n-hero-kicker n-up">A mandatory migration, turned into <span class="n-draw">a feature customers can see<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span></p>
           <div class="n-hero-tags n-up">
@@ -54,8 +54,8 @@
         <div class="n-card n-rise" data-reveal>
           <div class="n-img-block n-up">
             <div class="n-shots">
-              <img src="assets/mtmx-hero.png" alt="Tracker tab showing a live SWIFT transfer mid-journey — step-level status with timestamps and badges" />
-              <img src="assets/mtmx-details.png" alt="Details tab of an international payment — reference number, accounts, payee, amounts, and transaction date" />
+              <img src="assets/mtmx-hero.png" alt="Tracker tab showing a live SWIFT transfer mid-journey: step-level status with timestamps and badges" />
+              <img src="assets/mtmx-details.png" alt="Details tab of an international payment: reference number, accounts, payee, amounts, and transaction date" />
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
 
           <div class="n-card n-rise" data-reveal>
             <h2 class="n-title n-up">What I was solving for</h2>
-            <p class="n-up">Put a clear, living answer to “where is my money right now?” inside the app — honest even when a transfer fails — so people don't have to phone in to feel safe.</p>
+            <p class="n-up">Put a clear, living answer to “where is my money right now?” inside the app, honest even when a transfer fails, so people don't have to phone in to feel safe.</p>
             <p class="n-up"><strong>Two signals would tell us it's working</strong></p>
             <ul class="n-dot-list">
               <li class="n-up">Tracker engagement: how often customers open the Tracker instead of calling</li>
@@ -106,13 +106,13 @@
         <!-- ── How I approached it ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">How I approached it</h2>
-          <p class="n-lead n-up">Two shifts made it possible: the move to ISO 20022 meant payment messages now carried rich, structured status end to end, and a design-system refresh gave license to rebuild rather than patch. I started by cataloguing every state a transfer can occupy — including the failure and reversal branches banks usually hide — and made that map the single source of truth for design, engineering, and QA.</p>
+          <p class="n-lead n-up">Two shifts made it possible: the move to ISO 20022 meant payment messages now carried rich, structured status end to end, and a design-system refresh gave license to rebuild rather than patch. I started by cataloguing every state a transfer can occupy, including the failure and reversal branches banks usually hide, and made that map the single source of truth for design, engineering, and QA.</p>
         </div>
 
         <!-- ── The journey ── -->
         <div class="n-card n-rise" data-reveal>
           <h2 class="n-title n-up">The journey</h2>
-          <p class="n-up">A transfer isn't one event — it's a journey through many states, and the hard part of a tracker isn't the happy path, it's everything else. Every status earned a name, a plain-language description, a badge, and a defined next step.</p>
+          <p class="n-up">A transfer isn't one event: it's a journey through many states, and the hard part of a tracker isn't the happy path, it's everything else. Every status earned a name, a plain-language description, a badge, and a defined next step.</p>
           <ul class="n-timeline n-up">
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Transfer started</h4><p>The request is in, the journey begins.</p></div></li>
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>Checking your transfer</h4><p>Screening and validation in progress.</p></div></li>
@@ -126,13 +126,13 @@
             <li class="n-tl-item"><span class="n-tl-dot"></span><div><h4>We couldn't start your transfer</h4><p>The earliest failure: it never left the gate.</p></div></li>
           </ul>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-happy-flow.png" alt="The happy path — a transfer moving through its states from sent to completed" />
+            <img src="assets/mtmx-happy-flow.png" alt="The happy path: a transfer moving through its states from sent to completed" />
           </div>
         </div>
 
         <!-- ── Insight moment ── -->
         <div class="n-card n-moment n-rise" data-reveal>
-          <p class="n-moment-quote n-up">“Nobody needs to be taught how to read a parcel tracker — so we didn't make anyone learn something new for their money.”</p>
+          <p class="n-moment-quote n-up">“Nobody needs to be taught how to read a parcel tracker, so we didn't make anyone learn something new for their money.”</p>
           <p class="n-moment-cite n-up">The mental model we borrowed</p>
         </div>
 
@@ -147,7 +147,7 @@
             </div>
             <div class="n-meta-item">
               <h4>Tracker</h4>
-              <p>The living timeline: every step the transfer has passed through, is in, or failed at — each with a timestamp and a status badge.</p>
+              <p>The living timeline: every step the transfer has passed through, is in, or failed at, each with a timestamp and a status badge.</p>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@
           </ul>
           <p class="n-up">Copy and flow are downstream of business logic, and the cheapest time to lock that logic down is before the screens multiply. I kept open questions as grouped, tagged Figma comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-cancellation-flow.png?v=2" alt="Cancellation flow — pending transaction, confirm sheet, PIN, cancelled screen" />
+            <img src="assets/mtmx-cancellation-flow.png?v=2" alt="Cancellation flow: pending transaction, confirm sheet, PIN, cancelled screen" />
           </div>
         </div>
 
@@ -192,7 +192,7 @@
             <h2 class="n-title n-up">What happened next</h2>
             <ul class="n-dot-list">
               <li class="n-up">Shipped in production as part of RAKBANK's international payments experience</li>
-              <li class="n-up">Customers now see live, step-level status for SWIFT transfers — including failures and reversals — instead of a single “pending”</li>
+              <li class="n-up">Customers now see live, step-level status for SWIFT transfers, including failures and reversals, instead of a single “pending”</li>
             </ul>
           </div>
 
