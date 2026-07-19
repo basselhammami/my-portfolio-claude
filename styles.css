@@ -357,6 +357,35 @@ button {
   margin-top: 0.5rem;
 }
 
+/* Role groups — separate the case grid into Product Design / Product
+   Management, each introduced by a hairline-ruled label. */
+.projects-group {
+  margin-top: 2rem;
+}
+
+.projects-group + .projects-group {
+  margin-top: 3.5rem;
+}
+
+.projects-group-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.projects-group-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
