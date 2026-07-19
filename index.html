@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=41" />
-    <script defer src="script.js?v=5"></script>
+    <link rel="stylesheet" href="styles.css?v=42" />
+    <script defer src="script.js?v=6"></script>
   </head>
   <body>
     <header class="site-header">
@@ -60,73 +60,65 @@
         <button type="button" class="filter-pill" data-filter="management" aria-pressed="false">Product Management</button>
       </div>
 
-      <div class="projects-group" data-role="design">
-        <p class="projects-group-label">Product Design</p>
-        <section class="projects" aria-label="Product design case studies">
-          <article class="project-card">
-            <a href="case-rakbank.html" class="project-card-link" data-case="rakbank" aria-label="CLM Platform, RAKBANK">
-              <div class="project-card-body project-card-body--clm">
-                <span class="nda-badge" aria-label="Work shown under NDA">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="3" y="11" width="18" height="11" rx="2"/>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                  </svg>
-                  <span>NDA</span>
-                </span>
-                <img src="assets/clm-dashboard.png?v=5" alt="" class="project-card-art project-card-art--screenshot" />
-              </div>
-              <h3 class="project-card-title">CLM Platform · 2024</h3>
-              <p class="project-card-outcome">Unified 3 legacy systems into one KYC platform, ~60% faster reviews</p>
-            </a>
-            <p class="project-card-tags">RAKBANK · Compliance · KYC · Audit-ready</p>
-          </article>
+      <section class="projects" aria-label="Case studies">
+        <article class="project-card" data-role="design">
+          <a href="case-rakbank.html" class="project-card-link" data-case="rakbank" aria-label="CLM Platform, RAKBANK">
+            <div class="project-card-body project-card-body--clm">
+              <span class="nda-badge" aria-label="Work shown under NDA">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span>NDA</span>
+              </span>
+              <img src="assets/clm-dashboard.png?v=5" alt="" class="project-card-art project-card-art--screenshot" />
+            </div>
+            <h3 class="project-card-title">CLM Platform · 2024</h3>
+            <p class="project-card-outcome">Unified 3 legacy systems into one KYC platform, ~60% faster reviews</p>
+          </a>
+          <p class="project-card-tags">Product Design · RAKBANK · Compliance · KYC</p>
+        </article>
 
-          <article class="project-card">
-            <a href="case-balady.html" class="project-card-link" data-case="balady" aria-label="Balady+ Maps">
-              <div class="project-card-body project-card-body--balady">
-                <img src="assets/balady-card.png" alt="" class="project-card-art project-card-art--device" />
-              </div>
-              <h3 class="project-card-title">Balady+ Maps · 2024</h3>
-              <p class="project-card-outcome">Reimagined a government map for effortless parking and free-roam exploration</p>
-            </a>
-            <p class="project-card-tags">Mobility · Maps · iOS</p>
-          </article>
+        <article class="project-card" data-role="management">
+          <a href="case-mtmx.html" class="project-card-link" data-case="mtmx" aria-label="Transfer Tracking, RAKBANK">
+            <div class="project-card-body project-card-body--mtmx">
+              <span class="nda-badge" aria-label="Work shown under NDA">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <span>NDA</span>
+              </span>
+              <img src="assets/mtmx-card.png" alt="" class="project-card-art project-card-art--device" />
+            </div>
+            <h3 class="project-card-title">Transfer Tracking · 2025</h3>
+            <p class="project-card-outcome">Turned the SWIFT MT→MX migration into live, step-level tracking for international transfers</p>
+          </a>
+          <p class="project-card-tags">Product Management · RAKBANK · Payments · SWIFT</p>
+        </article>
 
-          <article class="project-card">
-            <a href="case-kafu.html" class="project-card-link" data-case="kafu" aria-label="Budgeting in Kafu">
-              <div class="project-card-body project-card-body--kafu">
-                <img src="assets/kafu-hero-2.png?v=2" alt="" class="project-card-art project-card-art--device" />
-              </div>
-              <h3 class="project-card-title">Budgeting in Kafu · 2025</h3>
-              <p class="project-card-outcome">A budgeting concept that flags overspending early enough to course-correct</p>
-            </a>
-            <p class="project-card-tags">Fintech · Banking · iOS</p>
-          </article>
-        </section>
-      </div>
+        <article class="project-card" data-role="design">
+          <a href="case-balady.html" class="project-card-link" data-case="balady" aria-label="Balady+ Maps">
+            <div class="project-card-body project-card-body--balady">
+              <img src="assets/balady-card.png" alt="" class="project-card-art project-card-art--device" />
+            </div>
+            <h3 class="project-card-title">Balady+ Maps · 2024</h3>
+            <p class="project-card-outcome">Reimagined a government map for effortless parking and free-roam exploration</p>
+          </a>
+          <p class="project-card-tags">Product Design · Mobility · Maps · iOS</p>
+        </article>
 
-      <div class="projects-group" data-role="management">
-        <p class="projects-group-label">Product Management</p>
-        <section class="projects" aria-label="Product management case studies">
-          <article class="project-card">
-            <a href="case-mtmx.html" class="project-card-link" data-case="mtmx" aria-label="Transfer Tracking, RAKBANK">
-              <div class="project-card-body project-card-body--mtmx">
-                <span class="nda-badge" aria-label="Work shown under NDA">
-                  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="3" y="11" width="18" height="11" rx="2"/>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                  </svg>
-                  <span>NDA</span>
-                </span>
-                <img src="assets/mtmx-card.png" alt="" class="project-card-art project-card-art--device" />
-              </div>
-              <h3 class="project-card-title">Transfer Tracking · 2025</h3>
-              <p class="project-card-outcome">Turned the SWIFT MT→MX migration into live, step-level tracking for international transfers</p>
-            </a>
-            <p class="project-card-tags">RAKBANK · Payments · SWIFT · Mobile</p>
-          </article>
-        </section>
-      </div>
+        <article class="project-card" data-role="design">
+          <a href="case-kafu.html" class="project-card-link" data-case="kafu" aria-label="Budgeting in Kafu">
+            <div class="project-card-body project-card-body--kafu">
+              <img src="assets/kafu-hero-2.png?v=2" alt="" class="project-card-art project-card-art--device" />
+            </div>
+            <h3 class="project-card-title">Budgeting in Kafu · 2025</h3>
+            <p class="project-card-outcome">A budgeting concept that flags overspending early enough to course-correct</p>
+          </a>
+          <p class="project-card-tags">Product Design · Fintech · Banking · iOS</p>
+        </article>
+      </section>
 
       <section class="expertise">
         <p class="eyebrow">EXPERTISE</p>

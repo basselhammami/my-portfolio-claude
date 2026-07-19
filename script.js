@@ -83,8 +83,10 @@
   if (!bar) return;
 
   const pills = Array.from(bar.querySelectorAll(".filter-pill"));
-  const groups = Array.from(document.querySelectorAll(".projects-group"));
-  if (!pills.length || !groups.length) return;
+  const cards = Array.from(
+    document.querySelectorAll(".projects .project-card[data-role]")
+  );
+  if (!pills.length || !cards.length) return;
 
   const apply = (filter) => {
     pills.forEach((pill) => {
@@ -93,21 +95,19 @@
       pill.setAttribute("aria-pressed", String(active));
     });
 
-    bar.classList.toggle("is-filtered", filter !== "all");
-
-    groups.forEach((group) => {
-      const show = filter === "all" || group.dataset.role === filter;
-      group.classList.toggle("is-hidden", !show);
+    cards.forEach((card) => {
+      const show = filter === "all" || card.dataset.role === filter;
+      card.classList.toggle("is-hidden", !show);
       if (show) {
-        // Cards hidden before their scroll-reveal fired would otherwise
-        // stay invisible — force them shown.
-        group
-          .querySelectorAll(".reveal:not(.is-visible)")
-          .forEach((el) => el.classList.add("is-visible"));
+        // A card hidden before its scroll-reveal fired would otherwise
+        // stay invisible — force it shown.
+        if (card.classList.contains("reveal")) {
+          card.classList.add("is-visible");
+        }
         // Restart the entrance animation.
-        group.classList.remove("filter-in");
-        void group.offsetWidth;
-        group.classList.add("filter-in");
+        card.classList.remove("filter-in");
+        void card.offsetWidth;
+        card.classList.add("filter-in");
       }
     });
   };
