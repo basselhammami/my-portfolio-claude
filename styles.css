@@ -1898,6 +1898,17 @@ body.n-bg .site-header.is-scrolled {
 .n-img-pair .n-img-block img {
   border-radius: 0.5rem;
 }
+/* RAKBANK — audit screenshots are cropped tight to the UI, so they take a
+   plain hairline stroke instead of floating on the grey mat. */
+.n-rakbank .n-img-pair .n-img-block {
+  background: transparent;
+  padding: 0;
+  border-radius: 1rem;
+}
+.n-rakbank .n-img-pair .n-img-block img {
+  border-radius: 1rem;
+  border: 1px solid #e6e6e6;
+}
 @media (max-width: 700px) {
   .n-img-pair {
     grid-template-columns: 1fr;
