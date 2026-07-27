@@ -2310,8 +2310,10 @@ body.n-bg .site-header.is-scrolled {
 .n-stat {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.4rem;
-  flex: 0 1 160px;
+  flex: 1 1 160px;
+  max-width: 280px;
 }
 .n-stat-num {
   font-size: clamp(2.25rem, 5vw, 3.25rem);
