@@ -1813,6 +1813,16 @@ body.n-bg .site-header.is-scrolled {
 /* Contained screenshot block inside a card — sits below text.
    Padding here is the single source of breathing room around every
    screenshot, so the images themselves stay trimmed tight to content. */
+/* Breathing room for text that continues after an image. */
+.n-img-block + p,
+.n-img-pair + p,
+.n-img-block + ul,
+.n-img-pair + ul,
+.n-img-block + h2,
+.n-img-pair + h2 {
+  margin-top: 2.75rem;
+}
+
 .n-img-block {
   margin-top: 2.75rem;
   border-radius: 0.875rem;
