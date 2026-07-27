@@ -39,7 +39,7 @@
           <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" />
           <h1 class="n-hero-title n-up">Designing for certainty</h1>
           <p class="n-hero-desc n-up">
-            How UX shaped the CLM Platform, RAKBANK's compliance control system.
+            The story of one feature I designed inside CLM, RAKBANK's compliance platform: the audit trail — the record that lets the bank prove why every decision was made.
           </p>
           <div class="n-hero-tags n-up">
             <span class="n-hero-tag">Senior Product Designer</span>
@@ -65,116 +65,77 @@
           </div>
         </div>
 
-        <!-- ── Context ── -->
+        <!-- ── Why ── -->
         <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up">Context</p>
-          <h2 class="n-title n-up">Less a productivity tool, more a control system</h2>
-          <p class="n-up">CLM is the layer where the bank's compliance decisions get made, tracked, and defended. It pulls customer data from Finacle, the bank's core system of record, and runs its workflows through IBPS, the process engine. CLM sits on top of both: the single place a review actually happens.</p>
-          <p class="n-up">Before it existed, the teams who check customers against regulation worked across Finacle, IBPS, separate inboxes, and spreadsheets — systems with no common layer between them. Every handover blurred who was responsible. And when an audit came, reconstructing what had happened was the hardest part of the job.</p>
+          <p class="n-eyebrow n-up">Why</p>
+          <h2 class="n-title n-up">The hardest part of an audit was remembering</h2>
+          <p class="n-up">CLM is where RAKBANK's compliance reviews happen. Before it, the work lived in four places — the core banking system, the process engine, inboxes, and spreadsheets. Reviews got done. But when auditors asked why a decision was made, someone had to piece the answer together by hand. That could take days.</p>
+          <p class="n-up">When I sat down with reviewers, I expected them to ask for speed. They didn't. Every conversation came back to the same fear.</p>
         </div>
 
-        <!-- ── The insight ── -->
-        <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up">The insight</p>
-          <h2 class="n-title n-up">What research actually told us</h2>
-          <p class="n-up">We walked in assuming staff wanted to move faster. Research told us the opposite. Interview after interview surfaced the same pattern — and it reset the entire design.</p>
-        </div>
-
-        <!-- ── The insight · moment ── -->
+        <!-- ── Why · moment ── -->
         <div class="n-card n-moment n-rise" data-reveal>
           <p class="n-moment-quote n-up">Reviewers aren't optimising for speed. They're optimising for defensibility — the fear isn't missing a deadline, it's approving something they shouldn't have.</p>
           <p class="n-moment-cite n-up">What every reviewer interview surfaced</p>
         </div>
 
-        <!-- ── The feature · intro ── -->
+        <!-- ── The feature · writing ── -->
         <div class="n-card n-rise" data-reveal>
           <p class="n-eyebrow n-up">The feature</p>
-          <h2 class="n-title n-up">One feature carries that insight: the audit trail</h2>
-          <p class="n-up">If defensibility is what reviewers are really optimising for, the most important surface in the platform isn't the queue or the dashboard. It's the record a decision leaves behind. So that's the feature this case study walks through — in the two halves it's designed around: how the record gets written, and how it gets read.</p>
-        </div>
-
-        <!-- ── Part 1 · Writing the record ── -->
-        <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Part 01 · Writing the record</b></p>
-          <h2 class="n-title n-up">How much should staff be asked to justify?</h2>
-          <p class="n-up">A trail is only as good as what goes into it. The core design decision was how much reasoning to demand from people at the moment of action:</p>
-          <ul class="n-dot-list n-up">
-            <li><strong>Silent logging.</strong> Every action recorded automatically, no user input needed.</li>
-            <li><strong>Full justification.</strong> Every action requires a typed reason before proceeding.</li>
-            <li><strong>Structured remarks.</strong> Required reasoning only at routing changes, risk overrides, and consequence triggers.</li>
-          </ul>
-          <p class="n-up">We ruled out <strong>silent logging</strong> because it produces a record but not a narrative: you can see what happened, but not why. We ruled out <strong>full justification</strong> because it creates friction at high volume and produces low-quality free text nobody reads.</p>
-          <p class="n-up">We landed on <strong>structured remarks</strong> at the moments that matter. When a reviewer routes a case, overrides a risk score, or triggers a consequence, the decision panel asks for a reason — structured, short, and attached to the action itself.</p>
+          <h2 class="n-title n-up">A record that writes itself as you work</h2>
+          <p class="n-up">That fear is what the audit trail is for. Not a log — a story the case tells about itself, built while the work happens.</p>
+          <p class="n-up">The obvious approach was to log everything silently. But a log tells you what happened, not why. The other extreme — asking people to justify every click — buries the record in noise. So I put the questions only where the decisions are: when someone routes a case, changes a risk score, or triggers a consequence, the panel asks for a short reason before it lets them through. Everything else records itself quietly in the background.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/clm-case-panel.png?v=1" alt="The case decision panel: routing history and the point where a structured remark is required before submitting" />
+            <img src="assets/clm-case-panel.png?v=1" alt="The case decision panel: routing history and the point where a short reason is required before submitting" />
           </div>
         </div>
 
-        <!-- ── Part 2 · Reading the record ── -->
+        <!-- ── The feature · reading ── -->
         <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Part 02 · Reading the record</b></p>
+          <p class="n-eyebrow n-up">The feature</p>
           <h2 class="n-title n-up">Three days, 31 events, one story</h2>
-          <p class="n-up">This is a real case's life, replayed: a periodic review triggers, the system checks eligibility and reaches out, the customer logs in, updates their details, and uploads documents; a reviewer picks it up, business controls takes over, compliance escalates the risk tier, and a senior officer signs off. Every step is an event on one timeline.</p>
-          <p class="n-up">The coloured edge tells you who acted before you read a word — system events in grey, bank staff in blue, the customer in yellow. And because the trail is filterable by date, actor, and category, "show me everything the customer did" is one click, not an investigation.</p>
+          <p class="n-up">Here's a real case, replayed. A periodic review kicks off, the system emails the customer, they log in, fix their details, upload documents. A reviewer picks it up, hands it to business controls, compliance raises the risk, and a senior officer signs off. All of it lands on one timeline.</p>
+          <p class="n-up">The colour on the edge tells you who acted before you read a word — grey for the system, blue for the bank, yellow for the customer. Need just the customer's side of the story? That's one filter.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
             <img src="assets/clm-audit-timeline.png?v=1" alt="The full audit trail timeline: 31 events across three days, from trigger identified to case closed, colour-coded by actor" />
           </div>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/clm-audit-filtered.png?v=1" alt="The same trail filtered to Actors: Customer — only the customer's portal logins, submissions, uploads, and data updates" />
+            <img src="assets/clm-audit-filtered.png?v=1" alt="The same trail filtered to the customer — only their portal logins, submissions, uploads, and data updates" />
           </div>
-        </div>
-
-        <!-- ── Part 3 · Anatomy of an event ── -->
-        <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Part 03 · Anatomy of an event</b></p>
-          <h2 class="n-title n-up">Every event answers the same four questions</h2>
-          <p class="n-up">Click any event and a detail panel opens with the same four blocks, every time:</p>
-          <ul class="n-dot-list n-up">
-            <li><strong>Triggered by.</strong> Who did it — a named person with their role, or the system itself.</li>
-            <li><strong>State at time of event.</strong> A snapshot of the case's queue, stage, and status at that exact moment — not what it is now, what it was then.</li>
-            <li><strong>Event payload.</strong> What actually changed, in full detail.</li>
-            <li><strong>Audit remarks.</strong> The reasoning — the structured remark captured at the moment of action.</li>
-          </ul>
-          <p class="n-up">The state snapshot is the part auditors care about most. It's not enough to know a case was approved — you need to know what stage it was in, and what the reviewer could see, when the approval happened.</p>
+          <p class="n-up">Open any event and you get the same four answers: who did it, what the case looked like at that exact moment, what changed, and the reason they gave. That snapshot of the moment is what auditors care about most — not what the case looks like now, but what the reviewer could see when they made the call.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-approve.png?v=1" alt="Audit trail event detail: a case approval by a named compliance officer, with the state at time of event, the decision payload, and the audit remark" />
+            <img src="assets/clm-audit-approve.png?v=1" alt="An event opened: a case approval by a named compliance officer, with the state at that moment, what changed, and the reason given" />
           </div>
         </div>
 
-        <!-- ── Part 3 · Every actor, one ledger ── -->
+        <!-- ── The feature · everything ── -->
         <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Part 04 · Every actor, one ledger</b></p>
-          <h2 class="n-title n-up">Humans, the system, and the customer — same trail</h2>
-          <p class="n-up">A compliance case isn't only shaped by reviewers. The system routes it between queues, outreach emails fail and retry, and the customer edits their own profile through the KYC portal. The trail treats all of it as first-class events — because in an audit, a failed email matters as much as an approval.</p>
-          <p class="n-up">When the system moves a case, the payload shows the previous pipeline state and the transition that completed. When an outreach email fails, the event carries the error, the scheduled retry, and an unresolved flag. And when the customer updates their details, the payload is a before-and-after diff of every field that changed — with the risk-relevant ones flagged.</p>
+          <p class="n-eyebrow n-up">The feature</p>
+          <h2 class="n-title n-up">Everything leaves a trace — even the failures</h2>
+          <p class="n-up">A case isn't shaped only by reviewers. The system moves it between queues. Outreach emails fail and get retried. The customer edits their own profile through the portal. The trail records all of it the same way — because to an auditor, a failed email matters as much as an approval.</p>
           <div class="n-img-pair n-up">
             <div class="n-img-block n-img-block--flush">
-              <img src="assets/clm-audit-queue.png?v=1" alt="A system event: automatic queue transition, with the previous pipeline state and the completed transition in the payload" />
+              <img src="assets/clm-audit-queue.png?v=1" alt="A system event: the case moved between queues automatically, with the state before and after" />
             </div>
             <div class="n-img-block n-img-block--flush">
-              <img src="assets/clm-audit-exception.png?v=1" alt="An exception event: outreach email delivery failure, with the error code, scheduled retry, and unresolved status" />
+              <img src="assets/clm-audit-exception.png?v=1" alt="A failure event: an outreach email that didn't deliver, with the error, the scheduled retry, and an unresolved flag" />
             </div>
           </div>
+          <p class="n-up">When the customer updates their details, the trail shows every field, before and after, with the ones that matter for risk flagged.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-details.png?v=1" alt="A customer event: profile details updated through the KYC portal, with a before-and-after diff of all 12 changed fields and the risk-relevant ones highlighted" />
+            <img src="assets/clm-audit-details.png?v=1" alt="A customer event: profile details updated through the portal, with a before-and-after view of all 12 changed fields" />
           </div>
-        </div>
-
-        <!-- ── Part 4 · Leaving the system ── -->
-        <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up"><b>Part 05 · Leaving the system</b></p>
-          <h2 class="n-title n-up">Because audits don't happen inside CLM</h2>
-          <p class="n-up">The last mile of defensibility is handing the record over. The trail exports as a CSV for analysis or a PDF report for the audit file — the full case history, or exactly the filtered slice you're looking at. What the auditor receives is what the reviewer saw.</p>
+          <p class="n-up">And when the audit actually comes, the whole thing leaves the building: CSV or PDF, the full history or just the slice you filtered.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/clm-audit-export.png?v=1" alt="Export audit trail dialog: CSV or PDF format, full case history or only the filtered results" />
+            <img src="assets/clm-audit-export.png?v=1" alt="The export dialog: CSV or PDF, full case history or only the filtered results" />
           </div>
         </div>
 
-        <!-- ── What it changed ── -->
+        <!-- ── What changed ── -->
         <div class="n-card n-rise" data-reveal>
-          <p class="n-eyebrow n-up">What it changed</p>
-          <h2 class="n-title n-up">From reconstructing decisions to replaying them</h2>
-          <p class="n-up">The audit trail is the difference between a system that logs decisions and one that defends them. What used to be the hardest part of an audit — piecing together what happened across four systems — is now a panel you open. And because the record is built at the moment of action, not assembled after the fact, it's the one account of a case everyone trusts: reviewers, team leads, and the auditors they answer to.</p>
+          <p class="n-eyebrow n-up">What changed</p>
+          <h2 class="n-title n-up">Audits stopped being archaeology</h2>
+          <p class="n-up">What used to take days of digging is now a panel you open. Because the record is built while the work happens — not assembled after the fact — it's the one version of events everyone trusts: reviewers, team leads, and the auditors they answer to.</p>
         </div>
 
         <!-- ── Closing CTA ── -->
