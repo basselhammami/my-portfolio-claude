@@ -113,11 +113,46 @@
         <!-- ── Part 2 · Reading the record ── -->
         <div class="n-card n-rise" data-reveal>
           <p class="n-eyebrow n-up"><b>Part 02 · Reading the record</b></p>
-          <h2 class="n-title n-up">The full story of a case, in one panel</h2>
-          <p class="n-up">The audit trail opens over the case itself — no separate report, no export, no reconstruction. Every system event and every human action sits in one timeline: who did it, when, and the remark that explains why. A risk override reads differently from a routine routing step, because the trail carries the reasoning, not just the event.</p>
-          <p class="n-up">It serves two readers at once. For an auditor, it's the evidence: a review that can be replayed end to end. For a reviewer picking up a case, it's reassurance: someone else already checked this, and here's what they saw.</p>
+          <h2 class="n-title n-up">Anatomy of an event</h2>
+          <p class="n-up">The trail is a timeline of the case — every event grouped by day, filterable by date, actor, and category. Click any event and a detail panel opens with the same four blocks, every time:</p>
+          <ul class="n-dot-list n-up">
+            <li><strong>Triggered by.</strong> Who did it — a named person with their role, or the system itself.</li>
+            <li><strong>State at time of event.</strong> A snapshot of the case's queue, stage, and status at that exact moment — not what it is now, what it was then.</li>
+            <li><strong>Event payload.</strong> What actually changed, in full detail.</li>
+            <li><strong>Audit remarks.</strong> The reasoning — the structured remark captured at the moment of action.</li>
+          </ul>
+          <p class="n-up">The state snapshot is the part auditors care about most. It's not enough to know a case was approved — you need to know what stage it was in, and what the reviewer could see, when the approval happened.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-trail-full.png?v=1" alt="Case audit trail panel opened over the case details: every system event and user action, with actor, timestamp, and the remark behind each decision" />
+            <img src="assets/clm-audit-approve.png?v=1" alt="Audit trail event detail: a case approval by a named compliance officer, with the state at time of event, the decision payload, and the audit remark" />
+          </div>
+        </div>
+
+        <!-- ── Part 3 · Every actor, one ledger ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Part 03 · Every actor, one ledger</b></p>
+          <h2 class="n-title n-up">Humans, the system, and the customer — same trail</h2>
+          <p class="n-up">A compliance case isn't only shaped by reviewers. The system routes it between queues, outreach emails fail and retry, and the customer edits their own profile through the KYC portal. The trail treats all of it as first-class events — because in an audit, a failed email matters as much as an approval.</p>
+          <p class="n-up">When the system moves a case, the payload shows the previous pipeline state and the transition that completed. When an outreach email fails, the event carries the error, the scheduled retry, and an unresolved flag. And when the customer updates their details, the payload is a before-and-after diff of every field that changed — with the risk-relevant ones flagged.</p>
+          <div class="n-img-pair n-up">
+            <div class="n-img-block n-img-block--flush">
+              <img src="assets/clm-audit-queue.png?v=1" alt="A system event: automatic queue transition, with the previous pipeline state and the completed transition in the payload" />
+            </div>
+            <div class="n-img-block n-img-block--flush">
+              <img src="assets/clm-audit-exception.png?v=1" alt="An exception event: outreach email delivery failure, with the error code, scheduled retry, and unresolved status" />
+            </div>
+          </div>
+          <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
+            <img src="assets/clm-audit-details.png?v=1" alt="A customer event: profile details updated through the KYC portal, with a before-and-after diff of all 12 changed fields and the risk-relevant ones highlighted" />
+          </div>
+        </div>
+
+        <!-- ── Part 4 · Leaving the system ── -->
+        <div class="n-card n-rise" data-reveal>
+          <p class="n-eyebrow n-up"><b>Part 04 · Leaving the system</b></p>
+          <h2 class="n-title n-up">Because audits don't happen inside CLM</h2>
+          <p class="n-up">The last mile of defensibility is handing the record over. The trail exports as a CSV for analysis or a PDF report for the audit file — the full case history, or exactly the filtered slice you're looking at. What the auditor receives is what the reviewer saw.</p>
+          <div class="n-img-block n-img-block--flush n-up">
+            <img src="assets/clm-audit-export.png?v=1" alt="Export audit trail dialog: CSV or PDF format, full case history or only the filtered results" />
           </div>
         </div>
 
