@@ -241,8 +241,8 @@ button {
 }
 
 .avatar {
-  width: 72px;
-  height: 72px;
+  width: 88px;
+  height: 88px;
   border-radius: 999px;
   object-fit: cover;
   background: #eee;
