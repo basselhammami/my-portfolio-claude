@@ -1813,13 +1813,14 @@ body.n-bg .site-header.is-scrolled {
 /* Contained screenshot block inside a card — sits below text.
    Padding here is the single source of breathing room around every
    screenshot, so the images themselves stay trimmed tight to content. */
-/* Breathing room for text that continues after an image. */
-.n-img-block + p,
-.n-img-pair + p,
-.n-img-block + ul,
-.n-img-pair + ul,
-.n-img-block + h2,
-.n-img-pair + h2 {
+/* Breathing room for text that continues after an image.
+   .n-card prefix beats the later `.n-card p` margin reset. */
+.n-card .n-img-block + p,
+.n-card .n-img-pair + p,
+.n-card .n-img-block + ul,
+.n-card .n-img-pair + ul,
+.n-card .n-img-block + h2,
+.n-card .n-img-pair + h2 {
   margin-top: 2.75rem;
 }
 
