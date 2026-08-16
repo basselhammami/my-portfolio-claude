@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
   --fg: #000000;
-  --muted: #8a8a8a;
+  --muted: #6f6f6f;
   --card: #f5f5f5;
   --border: #e7e7e7;
   --radius-card: 1rem;
@@ -77,7 +77,7 @@
 .hero .avatar { animation-delay: 0s; }
 .hero .eyebrow { animation-delay: 0.08s; }
 .hero .hero-title { animation-delay: 0.16s; }
-.hero .languages { animation-delay: 0.26s; }
+.hero .hero-sub { animation-delay: 0.26s; }
 .hero .hero-cta { animation-delay: 0.34s; }
 
 /* Case page entrance */
@@ -260,27 +260,17 @@ button {
   margin: 0;
   font-size: clamp(1.75rem, 3.8vw, 3rem);
   line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   max-width: 50rem;
 }
 
-.languages {
-  margin: 1.25rem 0 1.5rem;
-  font-size: 0.875rem;
-  color: var(--fg);
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.languages .muted {
+.hero-sub {
+  margin: 1.25rem 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--muted);
-}
-
-.languages .dot {
-  color: var(--muted);
+  max-width: 34rem;
 }
 
 .hero-cta {
@@ -355,53 +345,6 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 2rem 1.25rem;
   margin-top: 0.5rem;
-}
-
-/* Role filter — pressable pills that switch which case cards are shown.
-   Styled on the lang-pill vocabulary: outline at rest, solid black when
-   active. */
-.projects-filter {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0 0 1.5rem;
-}
-
-.filter-pill {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  font-family: inherit;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: #6b6b6b;
-  cursor: pointer;
-  transition: background-color 0.25s var(--ease-out),
-    color 0.25s var(--ease-out),
-    border-color 0.25s var(--ease-out);
-}
-
-.filter-pill:hover:not(.is-active) {
-  color: #000;
-  background: #f2f2f2;
-  border-color: #d0d0d0;
-}
-
-.filter-pill.is-active {
-  background: #000;
-  border-color: #000;
-  color: #fff;
-}
-
-/* Filtered states — hide non-matching cards, animate the rest back in. */
-.project-card.is-hidden {
-  display: none;
-}
-
-.project-card.filter-in {
-  animation: fadeUp 0.45s var(--ease-out) both;
 }
 
 .project-card {
@@ -650,6 +593,65 @@ button {
   margin: 5rem 0 4rem;
 }
 
+/* Experience — quiet three-column rows: years / role / org */
+.experience {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.experience-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.experience-row {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.375rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-row:last-child {
+  border-bottom: 0;
+}
+
+.experience-years {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-role {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.experience-org {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .experience-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "years org"
+      "role role";
+    gap: 0.25rem 1rem;
+  }
+  .experience-years { grid-area: years; }
+  .experience-role { grid-area: role; }
+  .experience-org { grid-area: org; }
+}
+
 /* Expertise */
 .expertise {
   text-align: center;
@@ -729,7 +731,20 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.625rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-langs {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 .footer-link {
@@ -1769,7 +1784,7 @@ body.n-bg .site-header.is-scrolled {
 
 .n-hero-title {
   font-size: 2.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.04em;
   color: #171717;
   margin: 0 0 1rem;
@@ -2220,35 +2235,38 @@ body.n-bg .site-header.is-scrolled {
    Narrative motion system — choreographed scroll reveals
    ========================================================================== */
 
+/* Hidden-until-reveal states are scoped to html.js (set by an inline head
+   script) so content stays visible for no-JS visitors and crawlers. */
+
 /* Section container rises as a unit when it enters the viewport */
-.n-rise {
+.js .n-rise {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
   will-change: opacity, transform;
 }
-.n-rise.in {
+.js .n-rise.in {
   opacity: 1;
   transform: none;
 }
 
 /* Individual elements stagger in (transition-delay assigned inline by JS) */
-.n-up {
+.js .n-up {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
   will-change: opacity, transform;
 }
-.n-up.in {
+.js .n-up.in {
   opacity: 1;
   transform: none;
 }
 
 /* Screens get a touch more travel + scale for depth */
-.n-screen-item.n-up {
+.js .n-screen-item.n-up {
   transform: translateY(26px) scale(0.97);
 }
-.n-screen-item.n-up.in {
+.js .n-screen-item.n-up.in {
   transform: none;
 }
 
@@ -2293,6 +2311,10 @@ body.n-bg .site-header.is-scrolled {
   stroke: #ed1c24;
   stroke-width: 4;
   stroke-linecap: round;
+}
+
+/* The self-drawing effect only arms when JS is present to trigger it. */
+.js .n-draw path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
 }
@@ -2846,74 +2868,5 @@ body.n-lightbox-open {
   }
   .n-lightbox .n-lightbox-img {
     transform: none;
-  }
-}
-
-/* ==========================================================================
-   Mobile hint toast (case pages, narrow viewports only)
-   ========================================================================== */
-
-.n-toast {
-  position: fixed;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  border-radius: 0.875rem;
-  background: rgba(20, 20, 20, 0.96);
-  color: #fff;
-  box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.5);
-  /* Start hidden below the viewport edge until revealed. */
-  opacity: 0;
-  transform: translateY(140%);
-  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
-}
-
-.n-toast.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.n-toast-text {
-  margin: 0;
-  flex: 1;
-  font-size: 0.8125rem;
-  line-height: 1.4;
-}
-
-.n-toast-close {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.85);
-  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
-}
-
-.n-toast-close:hover {
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
-}
-
-.n-toast-close:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.7);
-  outline-offset: 2px;
-}
-
-.n-toast-close svg {
-  width: 16px;
-  height: 16px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .n-toast {
-    transition: none;
   }
 }

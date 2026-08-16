@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
@@ -8,14 +9,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=4" />
     <title>CLM Platform · Basel Hammami</title>
+    <meta name="description" content="How I designed the audit trail for RAKBANK's compliance platform — a record that proves why every decision was made." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CLM Platform · Basel Hammami" />
+    <meta property="og:description" content="How I designed the audit trail for RAKBANK's compliance platform — a record that proves why every decision was made." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=44" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=45" />
+    <script defer src="script.js?v=7"></script>
   </head>
   <body class="n-bg n-rakbank">
     <header class="site-header">
@@ -36,7 +43,7 @@
 
         <!-- ── Hero ── -->
         <div class="n-card n-hero n-rise" data-reveal>
-          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" />
+          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" width="2047" height="313" />
           <h1 class="n-hero-title n-up">Designing for certainty</h1>
           <p class="n-hero-desc n-up">
             A deep dive into the audit trail I designed for RAKBANK's compliance platform.
@@ -52,7 +59,7 @@
         <!-- ── Scale band ── -->
         <div class="n-card n-stats n-rise" data-reveal>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="100" data-suffix="+">0</span>
+            <span class="n-stat-num" data-count="100" data-suffix="+">100+</span>
             <span class="n-stat-label">Compliance reviewers</span>
           </div>
           <div class="n-stat n-up">
@@ -80,7 +87,7 @@
           <p class="n-up">That fear is what the audit trail is for. Not a log, but a story the case tells about itself, built while the work happens.</p>
           <p class="n-up">The obvious approach was to log everything silently. But a log tells you what happened, not why. The other extreme, asking people to justify every click, buries the record in noise. So I put the questions only where the decisions are: when someone routes a case, changes a risk score, or triggers a consequence, the panel asks for a short reason before it lets them through. Everything else records itself quietly in the background.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-case-panel.png?v=4" alt="The case decision panel: routing history and the point where a short reason is required before submitting" />
+            <img src="assets/clm-case-panel.webp" alt="The case decision panel: routing history and the point where a short reason is required before submitting" width="2880" height="1788" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -91,15 +98,15 @@
           <p class="n-up">Here's a real case, replayed. A periodic review kicks off, the system emails the customer, they log in, fix their details, upload documents. A reviewer picks it up, hands it to business controls, compliance raises the risk, and a senior officer signs off. All of it lands on one timeline.</p>
           <p class="n-up">The colour on the edge tells you who acted before you read a word: grey for the system, blue for the bank, yellow for the customer. Need just the customer's side of the story? That's one filter.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-timeline.png?v=5" alt="The full audit trail timeline: 31 events across three days, from trigger identified to case closed, colour-coded by actor" />
+            <img src="assets/clm-audit-timeline.webp" alt="The full audit trail timeline: 31 events across three days, from trigger identified to case closed, colour-coded by actor" width="2879" height="1790" loading="lazy" decoding="async" />
           </div>
           <p class="n-up">Open any event and you get the same four answers: who did it, what the case looked like at that exact moment, what changed, and the reason they gave. That snapshot of the moment is what auditors care about most, not what the case looks like now, but what the reviewer could see when they made the call.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-approve.png?v=7" alt="An event opened: a case approval by a named compliance officer, with the state at that moment, what changed, and the reason given" />
+            <img src="assets/clm-audit-approve.webp" alt="An event opened: a case approval by a named compliance officer, with the state at that moment, what changed, and the reason given" width="2879" height="2199" loading="lazy" decoding="async" />
           </div>
           <p class="n-up">The heavier the decision, the richer the record. Here the officer raises the risk score from 2.85 to 4.35. The event keeps the old score, the new one, the tier jump from low to high, and why it happened.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-risk.png?v=4" alt="A risk score update event: old score 2.85, new score 4.35, risk tier escalated from low to high, with the remark explaining the escalation" />
+            <img src="assets/clm-audit-risk.webp" alt="A risk score update event: old score 2.85, new score 4.35, risk tier escalated from low to high, with the remark explaining the escalation" width="2880" height="2200" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -110,15 +117,15 @@
           <p class="n-up">A case isn't shaped only by reviewers. The system moves it between queues. Outreach emails fail and get retried. The customer edits their own profile through the portal. The trail records all of it the same way, because to an auditor, a failed email matters as much as an approval.</p>
           <div class="n-img-pair n-up">
             <div class="n-img-block n-img-block--flush">
-              <img src="assets/clm-audit-queue.png?v=6" alt="A system event: the case moved between queues automatically, with the state before and after" />
+              <img src="assets/clm-audit-queue.webp" alt="A system event: the case moved between queues automatically, with the state before and after" width="2879" height="2199" loading="lazy" decoding="async" />
             </div>
             <div class="n-img-block n-img-block--flush">
-              <img src="assets/clm-audit-exception.png?v=6" alt="A failure event: an outreach email that didn't deliver, with the SMTP error and the automatic retry it was queued for" />
+              <img src="assets/clm-audit-exception.webp" alt="A failure event: an outreach email that didn't deliver, with the SMTP error and the automatic retry it was queued for" width="2879" height="2199" loading="lazy" decoding="async" />
             </div>
           </div>
           <p class="n-up">When the customer updates their details, the trail shows every field, before and after, with the ones that matter for risk flagged.</p>
           <div class="n-img-block n-img-block--flush n-img-block--ring n-up">
-            <img src="assets/clm-audit-details.png?v=6" alt="A customer event: profile details updated through the portal, with a before-and-after view of the changed fields" />
+            <img src="assets/clm-audit-details.webp" alt="A customer event: profile details updated through the portal, with a before-and-after view of the changed fields" width="2879" height="2199" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -126,7 +133,7 @@
         <div class="n-card n-rise" data-reveal>
           <p class="n-eyebrow n-up">What changed</p>
           <h2 class="n-title n-up">Audits stopped being archaeology</h2>
-          <p class="n-up">What used to take days of digging is now a panel you open. Because the record is built while the work happens, not assembled after the fact, it's the one version of events everyone trusts: reviewers, team leads, and the auditors they answer to.</p>
+          <p class="n-up"><strong>Audit preparation went from days of digging to opening a panel.</strong> Because the record is built while the work happens, not assembled after the fact, it's the one version of events everyone trusts: reviewers, team leads, and the auditors they answer to.</p>
         </div>
 
         <!-- ── Closing CTA ── -->
@@ -140,7 +147,11 @@
     </main>
 
     <footer class="site-footer">
-      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <nav class="footer-links" aria-label="Contact">
+        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/basel-hammami-cv.pdf" class="footer-link" target="_blank" rel="noopener">CV</a>
+      </nav>
       <p class="copy">© 2026 Basel Hammami</p>
     </footer>
     <script type="module" src="agentation.js"></script>

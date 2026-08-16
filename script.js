@@ -41,17 +41,10 @@
   ).matches;
 
   const targets = document.querySelectorAll(
-    ".projects > .project-card, .expertise, .expertise-grid, .case-section, .mockup"
+    ".projects > .project-card, .experience, .case-section, .mockup"
   );
 
-  targets.forEach((el) => {
-    if (el.matches(".expertise-grid")) {
-      el.classList.add("reveal");
-      Array.from(el.children).forEach((c) => c.classList.add("reveal-child"));
-    } else {
-      el.classList.add("reveal");
-    }
-  });
+  targets.forEach((el) => el.classList.add("reveal"));
 
   if (prefersReduced || !("IntersectionObserver" in window)) {
     targets.forEach((el) => el.classList.add("is-visible"));
@@ -74,50 +67,6 @@
 })();
 
 /* ==========================================================================
-   Case-study role filter — All / Product Design / Product Management pills
-   on the home page toggle which project group is shown.
-   ========================================================================== */
-
-(function projectsRoleFilter() {
-  const bar = document.querySelector(".projects-filter");
-  if (!bar) return;
-
-  const pills = Array.from(bar.querySelectorAll(".filter-pill"));
-  const cards = Array.from(
-    document.querySelectorAll(".projects .project-card[data-role]")
-  );
-  if (!pills.length || !cards.length) return;
-
-  const apply = (filter) => {
-    pills.forEach((pill) => {
-      const active = pill.dataset.filter === filter;
-      pill.classList.toggle("is-active", active);
-      pill.setAttribute("aria-pressed", String(active));
-    });
-
-    cards.forEach((card) => {
-      const show = filter === "all" || card.dataset.role === filter;
-      card.classList.toggle("is-hidden", !show);
-      if (show) {
-        // A card hidden before its scroll-reveal fired would otherwise
-        // stay invisible — force it shown.
-        if (card.classList.contains("reveal")) {
-          card.classList.add("is-visible");
-        }
-        // Restart the entrance animation.
-        card.classList.remove("filter-in");
-        void card.offsetWidth;
-        card.classList.add("filter-in");
-      }
-    });
-  };
-
-  pills.forEach((pill) => {
-    pill.addEventListener("click", () => apply(pill.dataset.filter));
-  });
-})();
-
-/* ==========================================================================
    Narrative case: choreographed scroll reveals + count-up stats
    ========================================================================== */
 
@@ -137,7 +86,7 @@
     el.textContent = prefix + el.dataset.count + suffix;
   };
 
-  // Reduced motion / no IO support: show everything, set final numbers.
+  // Reduced motion / no IO support: show everything, keep final numbers.
   if (prefersReduced || !("IntersectionObserver" in window)) {
     page.querySelectorAll(".n-rise, .n-up").forEach((el) =>
       el.classList.add("in")
@@ -145,6 +94,12 @@
     page.querySelectorAll("[data-count]").forEach(setCount);
     return;
   }
+
+  // The markup carries final values so no-JS visitors see real numbers;
+  // zero them out here so the count-up has somewhere to go.
+  page.querySelectorAll("[data-count]").forEach((el) => {
+    el.textContent = (el.dataset.prefix || "") + "0" + (el.dataset.suffix || "");
+  });
 
   const runCount = (el) => {
     const target = parseFloat(el.dataset.count);
@@ -284,62 +239,5 @@
         open(img);
       }
     });
-  });
-})();
-
-/* ==========================================================================
-   Mobile hint toast — on case pages, let small-screen visitors know the
-   case studies are best viewed on a larger screen. Dismissible, and once
-   closed it stays hidden for the rest of the browsing session.
-   ========================================================================== */
-
-(function mobileHintToast() {
-  // Only on case-study pages.
-  if (!document.querySelector(".n-page")) return;
-
-  // Only on narrow (mobile) viewports.
-  if (!window.matchMedia("(max-width: 640px)").matches) return;
-
-  // Respect an earlier dismissal during this session.
-  if (sessionStorage.getItem("case_mobile_hint_dismissed")) return;
-
-  const isRu = document.documentElement.lang === "ru";
-  const message = isRu
-    ? "Кейсы удобнее смотреть на ноутбуке или большом экране."
-    : "These case studies are best viewed on a laptop or larger screen.";
-  const closeLabel = isRu ? "Закрыть" : "Close";
-
-  const toast = document.createElement("div");
-  toast.className = "n-toast";
-  toast.setAttribute("role", "status");
-  toast.setAttribute("aria-live", "polite");
-
-  const text = document.createElement("p");
-  text.className = "n-toast-text";
-  text.textContent = message;
-
-  const closeBtn = document.createElement("button");
-  closeBtn.type = "button";
-  closeBtn.className = "n-toast-close";
-  closeBtn.setAttribute("aria-label", closeLabel);
-  closeBtn.innerHTML =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
-
-  toast.append(text, closeBtn);
-  document.body.appendChild(toast);
-
-  const dismiss = () => {
-    sessionStorage.setItem("case_mobile_hint_dismissed", "1");
-    toast.classList.remove("is-visible");
-    toast.addEventListener("transitionend", () => toast.remove(), {
-      once: true,
-    });
-  };
-
-  closeBtn.addEventListener("click", dismiss);
-
-  // Reveal on the next frame so the entrance transition runs.
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => toast.classList.add("is-visible"));
   });
 })();

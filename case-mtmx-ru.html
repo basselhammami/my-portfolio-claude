@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="no-js">
   <head>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
@@ -8,14 +9,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=4" />
     <title>Отслеживание переводов · Basel Hammami</title>
+    <meta name="description" content="Как миграция SWIFT MT→MX стала живым пошаговым отслеживанием международных переводов в RAKBANK." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Отслеживание переводов · Basel Hammami" />
+    <meta property="og:description" content="Как миграция SWIFT MT→MX стала живым пошаговым отслеживанием международных переводов в RAKBANK." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=44" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=45" />
+    <script defer src="script.js?v=7"></script>
   </head>
   <body class="n-bg n-rakbank">
     <header class="site-header">
@@ -36,7 +43,7 @@
 
         <!-- ── Hero ── -->
         <div class="n-card n-hero n-rise" data-reveal>
-          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" />
+          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" width="2047" height="313" />
           <h1 class="n-hero-title n-up">Где мои деньги?</h1>
           <p class="n-hero-desc n-up">
             Каждый банк был обязан перейти на новый стандарт сообщений SWIFT ISO 20022: миграцию MT→MX, финансируемую комплаенс-программу с жёстким дедлайном, которую большинство считает невидимой технической рутиной. Те же сообщения несли подробные данные о статусе, поэтому я обосновал идею потратить это обязательное требование на клиентскую ставку: живой пошаговый ответ на вопрос, где ваши деньги.
@@ -54,8 +61,8 @@
         <div class="n-card n-rise" data-reveal>
           <div class="n-img-block n-up">
             <div class="n-shots">
-              <img src="assets/mtmx-hero.png" alt="Вкладка «Трекер» с живым SWIFT-переводом в пути: статус по шагам, отметки времени и бейджи" />
-              <img src="assets/mtmx-details.png" alt="Вкладка «Детали» международного платежа: номер референса, счета, получатель, суммы и дата транзакции" />
+              <img src="assets/mtmx-hero.png" alt="Вкладка «Трекер» с живым SWIFT-переводом в пути: статус по шагам, отметки времени и бейджи" width="750" height="1716" loading="lazy" decoding="async" />
+              <img src="assets/mtmx-details.png" alt="Вкладка «Детали» международного платежа: номер референса, счета, получатель, суммы и дата транзакции" width="750" height="1716" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -63,7 +70,7 @@
         <!-- ── Scale band ── -->
         <div class="n-card n-stats n-rise" data-reveal>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="10">0</span>
+            <span class="n-stat-num" data-count="10">10</span>
             <span class="n-stat-label">Состояний перевода в объёме релиза, включая сбои и возвраты</span>
           </div>
           <div class="n-stat n-up">
@@ -115,7 +122,7 @@
           <h2 class="n-title n-up">Путь</h2>
           <p class="n-up">Перевод — это не одно событие, а путь через множество состояний, и продуктовая ставка была в том, чтобы показать их все, включая сбои и возвраты, которые банки обычно прячут за словом «в обработке». Доверие рождается, когда честно показываешь и плохие новости, поэтому состояния сбоев и возвратов были в объёме с первого дня, каждое со своим именем, понятным статусом и определённым следующим шагом.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-happy-flow.png" alt="Счастливый путь: перевод проходит свои состояния от отправки до завершения" />
+            <img src="assets/mtmx-happy-flow.webp" alt="Счастливый путь: перевод проходит свои состояния от отправки до завершения" width="8838" height="4101" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -140,7 +147,7 @@
           </ul>
           <p class="n-up">Такую бизнес-логику дешевле всего зафиксировать до того, как экраны размножатся, поэтому я заранее доводил открытые вопросы до закрытия, собирая их как сгруппированные помеченные комментарии, направленные к владельцам решений, чтобы ничто не оставалось неоднозначным по случайности.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-cancellation-flow.png?v=2" alt="Флоу отмены: транзакция в обработке, лист подтверждения, PIN, экран отмены" />
+            <img src="assets/mtmx-cancellation-flow.webp" alt="Флоу отмены: транзакция в обработке, лист подтверждения, PIN, экран отмены" width="4955" height="2104" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -185,7 +192,11 @@
     </main>
 
     <footer class="site-footer">
-      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <nav class="footer-links" aria-label="Contact">
+        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/basel-hammami-cv.pdf" class="footer-link" target="_blank" rel="noopener">CV</a>
+      </nav>
       <p class="copy">© 2026 Basel Hammami</p>
     </footer>
     <script type="module" src="agentation.js"></script>
