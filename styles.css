@@ -77,7 +77,8 @@
 .hero .avatar { animation-delay: 0s; }
 .hero .eyebrow { animation-delay: 0.08s; }
 .hero .hero-title { animation-delay: 0.16s; }
-.hero .hero-sub { animation-delay: 0.26s; }
+.hero .hero-sub,
+.hero .languages { animation-delay: 0.26s; }
 .hero .hero-cta { animation-delay: 0.34s; }
 
 /* Case page entrance */
@@ -256,6 +257,11 @@ button {
   color: var(--muted);
 }
 
+/* Extra air between the portrait and the name line */
+.hero .eyebrow {
+  margin-top: 1.5rem;
+}
+
 .hero-title {
   margin: 0;
   font-size: clamp(1.75rem, 3.8vw, 3rem);
@@ -271,6 +277,24 @@ button {
   line-height: 1.6;
   color: var(--muted);
   max-width: 34rem;
+}
+
+.languages {
+  margin: 1.25rem 0 1.5rem;
+  font-size: 0.875rem;
+  color: var(--fg);
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.languages .muted {
+  color: var(--muted);
+}
+
+.languages .dot {
+  color: var(--muted);
 }
 
 .hero-cta {
@@ -741,11 +765,6 @@ button {
   gap: 1.5rem;
 }
 
-.footer-langs {
-  margin: 0;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
 
 .footer-link {
   font-size: 0.8125rem;
