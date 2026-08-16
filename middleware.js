@@ -1,9 +1,8 @@
-// Per-case auth for the static site on Vercel, using a custom branded login
+// Site-wide auth for the static site on Vercel, using a custom branded login
 // page instead of the native Basic Auth dialog.
 //
-//   SITE_PASSWORD (env var) — gates only the NDA case studies below.
-// The rest of the site (home, Balady, Kafu) is public. An unauthenticated
-// request for a gated case is redirected to /login.html; that page POSTs the
+//   SITE_PASSWORD (env var) — one universal password gating the whole site.
+// An unauthenticated request is redirected to /login.html; that page POSTs the
 // password back here, and on a match we set an HttpOnly session cookie. The
 // password lives only in the environment variable — never in the page source
 // or the repo.
@@ -13,8 +12,18 @@ export const config = {
   matcher: ["/((?!_vercel).*)"],
 };
 
-// NDA case studies that require the password.
-const GATED_PREFIXES = ["/case-rakbank", "/case-mtmx"];
+// Files that must load without auth: what the login page itself needs, plus
+// the share image so link previews render for logged-out crawlers.
+const PUBLIC_PATHS = new Set([
+  "/login.html",
+  "/styles.css",
+  "/assets/basel.jpg",
+  "/assets/og-image.png",
+  "/assets/favicon-16.png",
+  "/assets/favicon-32.png",
+  "/assets/favicon-192.png",
+  "/assets/apple-touch-icon.png",
+]);
 
 // Case studies hidden from the site entirely (pages and their images) —
 // remove a prefix here to bring the case back.
@@ -68,13 +77,16 @@ export default async function middleware(request) {
     return new Response("Incorrect password.", { status: 401 });
   }
 
+  // Assets the login page itself needs (and the share image for crawlers).
+  if (PUBLIC_PATHS.has(path)) return;
+
   // Hidden case studies — send any request for them back to the homepage.
   if (HIDDEN_PREFIXES.some((p) => path.startsWith(p))) {
     return Response.redirect(new URL("/", request.url), 302);
   }
 
-  // Only the NDA cases are gated; everything else is public.
-  if (sitePassword && GATED_PREFIXES.some((p) => path.startsWith(p))) {
+  // One universal password gates the whole site.
+  if (sitePassword) {
     const cookies = request.headers.get("cookie") || "";
     const token = cookieValue(cookies, SITE_COOKIE);
     if (!token || token !== (await tokenFor("site:" + sitePassword))) {
