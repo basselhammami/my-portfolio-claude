@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
@@ -8,14 +9,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=4" />
     <title>Transfer Tracking · Basel Hammami</title>
+    <meta name="description" content="Turning the SWIFT MT→MX migration into live, step-level tracking for international transfers at RAKBANK." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Transfer Tracking · Basel Hammami" />
+    <meta property="og:description" content="Turning the SWIFT MT→MX migration into live, step-level tracking for international transfers at RAKBANK." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=44" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=45" />
+    <script defer src="script.js?v=7"></script>
   </head>
   <body class="n-bg n-rakbank">
     <header class="site-header">
@@ -36,7 +43,7 @@
 
         <!-- ── Hero ── -->
         <div class="n-card n-hero n-rise" data-reveal>
-          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" />
+          <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="RAKBANK" width="2047" height="313" />
           <h1 class="n-hero-title n-up">Follow the money</h1>
           <p class="n-hero-desc n-up">
             SWIFT's mandatory ISO 20022 migration carried rich status data most banks treat as invisible plumbing. I turned that mandate into a live, step-by-step tracker that shows customers exactly where their money is.
@@ -53,8 +60,8 @@
         <div class="n-card n-rise" data-reveal>
           <div class="n-img-block n-up">
             <div class="n-shots">
-              <img src="assets/mtmx-hero.png" alt="Tracker tab showing a live SWIFT transfer mid-journey: step-level status with timestamps and badges" />
-              <img src="assets/mtmx-details.png" alt="Details tab of an international payment: reference number, accounts, payee, amounts, and transaction date" />
+              <img src="assets/mtmx-hero.png" alt="Tracker tab showing a live SWIFT transfer mid-journey: step-level status with timestamps and badges" width="750" height="1716" loading="lazy" decoding="async" />
+              <img src="assets/mtmx-details.png" alt="Details tab of an international payment: reference number, accounts, payee, amounts, and transaction date" width="750" height="1716" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -62,7 +69,7 @@
         <!-- ── Scale band ── -->
         <div class="n-card n-stats n-rise" data-reveal>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="19">0</span>
+            <span class="n-stat-num" data-count="19">19</span>
             <span class="n-stat-label">Transfer states scoped, failures and reversals included</span>
           </div>
           <div class="n-stat n-up">
@@ -114,7 +121,7 @@
           <h2 class="n-title n-up">The journey</h2>
           <p class="n-up">A transfer isn't one event: it's a journey through many states, and the product bet was to show all of them, including the failures and reversals banks usually hide behind “pending”. Exposing bad news honestly is what earns trust, so failure and reversal states were in scope from day one, each with a name, a plain-language status, and a defined next step.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-happy-flow.png" alt="The happy path: a transfer moving through its states from sent to completed" />
+            <img src="assets/mtmx-happy-flow.webp" alt="The happy path: a transfer moving through its states from sent to completed" width="8838" height="4101" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -139,7 +146,7 @@
           </ul>
           <p class="n-up">Business logic like this is cheapest to lock down before the screens multiply, so I drove the open questions to closure early, kept as grouped, tagged comments routed to their decision owners, so nothing stayed ambiguous by accident.</p>
           <div class="n-img-block n-img-block--flush n-up">
-            <img src="assets/mtmx-cancellation-flow.png?v=2" alt="Cancellation flow: pending transaction, confirm sheet, PIN, cancelled screen" />
+            <img src="assets/mtmx-cancellation-flow.webp" alt="Cancellation flow: pending transaction, confirm sheet, PIN, cancelled screen" width="4955" height="2104" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -184,7 +191,11 @@
     </main>
 
     <footer class="site-footer">
-      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <nav class="footer-links" aria-label="Contact">
+        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/basel-hammami-cv.pdf" class="footer-link" target="_blank" rel="noopener">CV</a>
+      </nav>
       <p class="copy">© 2026 Basel Hammami</p>
     </footer>
     <script type="module" src="agentation.js"></script>

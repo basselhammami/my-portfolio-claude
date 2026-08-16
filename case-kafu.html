@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
@@ -8,14 +9,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=4" />
     <title>Budgeting in Kafu · Basel Hammami</title>
+    <meta name="description" content="A budgeting concept for Kafu that flags overspending early enough to course-correct." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Budgeting in Kafu · Basel Hammami" />
+    <meta property="og:description" content="A budgeting concept for Kafu that flags overspending early enough to course-correct." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=44" />
-    <script defer src="script.js?v=4"></script>
+    <link rel="stylesheet" href="styles.css?v=45" />
+    <script defer src="script.js?v=7"></script>
   </head>
   <body class="n-bg n-kafu">
     <header class="site-header">
@@ -50,22 +57,22 @@
         <!-- ── Hero screenshot ── -->
         <div class="n-card n-rise" data-reveal>
           <div class="n-img-block n-img-block--phone n-up">
-            <img src="assets/kafu-hero-2.png?v=2" alt="Kafu homepage, budget widget, card, and recent transactions" />
+            <img src="assets/kafu-hero-2.webp" alt="Kafu homepage, budget widget, card, and recent transactions" width="812" height="1668" loading="lazy" decoding="async" />
           </div>
         </div>
 
         <!-- ── Stats ── -->
         <div class="n-card n-stats n-rise" data-reveal>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="4">0</span>
+            <span class="n-stat-num" data-count="4">4</span>
             <span class="n-stat-label">Research themes</span>
           </div>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="5">0</span>
+            <span class="n-stat-num" data-count="5">5</span>
             <span class="n-stat-label">User stories</span>
           </div>
           <div class="n-stat n-up">
-            <span class="n-stat-num" data-count="7">0</span>
+            <span class="n-stat-num" data-count="7">7</span>
             <span class="n-stat-label">Screens in the flow</span>
           </div>
           <div class="n-stat n-up">
@@ -188,13 +195,13 @@
             <li class="n-up"><strong>Monthly budget prompt</strong>: a single-screen nudge to set the budget when salary lands</li>
           </ul>
           <div class="n-flow-grid n-up">
-            <img src="assets/kafu-flow-1.png?v=2" alt="Budget flow, plan your spending, set period and amount" />
-            <img src="assets/kafu-flow-2.png?v=2" alt="Budget flow, amount entered" />
-            <img src="assets/kafu-flow-3.png?v=2" alt="Budget flow, choose a reminder threshold" />
-            <img src="assets/kafu-flow-4.png?v=2" alt="Budget flow, allocate category budgets" />
-            <img src="assets/kafu-flow-5.png?v=2" alt="Budget flow, set a category budget" />
-            <img src="assets/kafu-flow-6.png?v=2" alt="Budget flow, category budgets allocated" />
-            <img src="assets/kafu-flow-7.png?v=2" alt="Budget flow, track the live cycle on the home screen" />
+            <img src="assets/kafu-flow-1.png?v=2" alt="Budget flow, plan your spending, set period and amount" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-2.png?v=2" alt="Budget flow, amount entered" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-3.png?v=2" alt="Budget flow, choose a reminder threshold" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-4.png?v=2" alt="Budget flow, allocate category budgets" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-5.png?v=2" alt="Budget flow, set a category budget" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-6.png?v=2" alt="Budget flow, category budgets allocated" width="720" height="1624" loading="lazy" decoding="async" />
+            <img src="assets/kafu-flow-7.png?v=2" alt="Budget flow, track the live cycle on the home screen" width="720" height="1624" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -203,7 +210,7 @@
           <h2 class="n-title n-up">Built for Arabic, too</h2>
           <p class="n-up">Half the UAE reads Arabic, so RTL wasn't an afterthought. It was a test. I rebuilt the budget screens mirrored to confirm the widget, progress bar, and category list survived the flip without losing readability.</p>
           <div class="n-img-block n-img-block--phone n-up">
-            <img src="assets/kafu-hero-ar.png" alt="Kafu homepage in Arabic / RTL, budget widget, accounts, card, and recent transactions" />
+            <img src="assets/kafu-hero-ar.webp" alt="Kafu homepage in Arabic / RTL, budget widget, accounts, card, and recent transactions" width="812" height="1668" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -238,7 +245,11 @@
     </main>
 
     <footer class="site-footer">
-      <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link">LinkedIn</a>
+      <nav class="footer-links" aria-label="Contact">
+        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/basel-hammami-cv.pdf" class="footer-link" target="_blank" rel="noopener">CV</a>
+      </nav>
       <p class="copy">© 2026 Basel Hammami</p>
     </footer>
     <script type="module" src="agentation.js"></script>
