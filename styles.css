@@ -281,19 +281,7 @@ button {
 
 .languages {
   margin: 1.25rem 0 1.5rem;
-  font-size: 0.875rem;
-  color: var(--fg);
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.languages .muted {
-  color: var(--muted);
-}
-
-.languages .dot {
+  font-size: 0.9375rem;
   color: var(--muted);
 }
 
