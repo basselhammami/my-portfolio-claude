@@ -618,8 +618,8 @@ button {
   margin: 0;
   padding: 0;
   text-align: left;
-  max-width: 44rem;
-  margin-inline: auto;
+  /* No cap of its own: the rows run edge to edge with the project card grid
+     above, so both sections share one left and right boundary. */
 }
 
 .experience-row {
