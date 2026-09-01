@@ -59,6 +59,16 @@
         transition: border-color 0.2s var(--ease-out),
           box-shadow 0.2s var(--ease-out);
       }
+      .login-input::placeholder {
+        color: var(--muted, #888);
+        opacity: 1;
+        transition: opacity 0.15s var(--ease-out);
+      }
+      /* Once the caret is in the field, the hint has done its job — drop it so
+         the placeholder never sits behind what is being typed. */
+      .login-input:focus::placeholder {
+        opacity: 0;
+      }
       .login-input:focus {
         border-color: #000;
         box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
