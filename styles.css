@@ -437,13 +437,13 @@ button {
 /* Per-card pastel surfaces. Each card gets its own soft tint so the four
    read as a coordinated set rather than a single block. */
 
-/* CLM Platform — peach (RAKBANK red, dialled all the way down). */
+/* CLM Platform — peach (Rakbank red, dialled all the way down). */
 .project-card-body--clm {
   background: linear-gradient(135deg, #fbe5d8 0%, #f5cfbb 100%);
 }
 
 /* Customer Risk Assessment — warm sand (sibling tone to CLM, softer
-   yellow lean so the two RAKBANK cards aren't identical). */
+   yellow lean so the two Rakbank cards aren't identical). */
 .project-card-body--cram {
   background: linear-gradient(135deg, #f6ead4 0%, #ecd9b8 100%);
 }
@@ -458,7 +458,7 @@ button {
   background: linear-gradient(135deg, #d8f1c0 0%, #ebf2b4 100%);
 }
 
-/* Transfer Tracking — soft rose echoing RAKBANK red. The art is a lock mark,
+/* Transfer Tracking — soft rose echoing Rakbank red. The art is a lock mark,
    not a screenshot: this case sits behind its own password. */
 .project-card-body--mtmx {
   background: linear-gradient(135deg, #fbdfdf 0%, #f4c9c9 100%);
@@ -1933,7 +1933,7 @@ body.n-bg .site-header.is-scrolled {
 .n-img-pair .n-img-block img {
   border-radius: 0.5rem;
 }
-/* RAKBANK — audit screenshots are cropped tight to the UI, so they take a
+/* Rakbank — audit screenshots are cropped tight to the UI, so they take a
    plain hairline stroke instead of floating on the grey mat. */
 .n-rakbank .n-img-pair .n-img-block {
   background: transparent;
@@ -2208,7 +2208,7 @@ body.n-bg .site-header.is-scrolled {
   display: block;
 }
 
-/* ── Underline emphasis (RAKBANK red) ── */
+/* ── Underline emphasis (Rakbank red) ── */
 .n-highlight {
   text-decoration: underline;
   text-decoration-color: #ed1c24;
