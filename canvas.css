@@ -85,6 +85,32 @@ html { min-height: 100%; }
 }
 .cv-bar-nav a:hover { color: var(--fg); }
 
+/* Language switch — a segmented pair, so both languages are visible at once
+   and the current one is obvious. A lone "РУ" sat among the other nav links
+   and said nothing about the language you were already reading. */
+.cv-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  padding: 0.125rem;
+  background: var(--card);
+  border-radius: var(--radius-pill);
+}
+.cv-bar-nav .cv-lang-opt {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out);
+}
+.cv-bar-nav .cv-lang-opt:hover { color: var(--fg); background: rgba(0, 0, 0, 0.05); }
+.cv-bar-nav .cv-lang-opt.is-active { background: var(--fg); color: #fff; }
+.cv-bar-nav .cv-lang-opt.is-active:hover { background: #222; color: #fff; }
+
 /* ── Stage & world ───────────────────────────────────────────────────── */
 
 .cv-stage {
