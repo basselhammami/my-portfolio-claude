@@ -258,9 +258,28 @@
     if (hint && !hint.classList.contains("is-gone")) hint.classList.add("is-gone");
   }
 
-  // Keyboard focus inside the board pans that card into view.
+  // Tabbing through the board pans the focused card into view. Only tabbing:
+  // a pointer also focuses what it presses, and panning then slides the link
+  // out from under the pointer before it is released, so the click lands on
+  // nothing and the link never opens.
+  var focusFromKeyboard = false;
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (e.key === "Tab") focusFromKeyboard = true;
+    },
+    true
+  );
+  document.addEventListener(
+    "pointerdown",
+    function () {
+      focusFromKeyboard = false;
+    },
+    true
+  );
+
   nodes.addEventListener("focusin", function (e) {
-    if (!isCanvas()) return;
+    if (!isCanvas() || !focusFromKeyboard) return;
     var card = e.target.closest(".cv-card");
     if (!card) return;
     var cx = card.offsetLeft + card.offsetWidth / 2;
