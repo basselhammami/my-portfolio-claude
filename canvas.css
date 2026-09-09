@@ -292,15 +292,20 @@ html { min-height: 100%; }
   transition: transform 0.5s var(--ease-out);
   will-change: transform;
 }
+/* Sized by width alone. The mat's height is locked to three quarters of its
+   width by aspect-ratio, so a width percentage fixes the height too — where a
+   percentage max-height is unreliable, because not every browser resolves one
+   against an aspect-ratio box. iOS Safari does not, which cropped the phone
+   shots there while Chromium showed them whole. */
 .cv-case-shot--wide img {
-  max-width: 94%;
-  max-height: 84%;
+  width: 94%;
+  height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 .cv-case-shot--device img {
-  max-width: 58%;
-  max-height: 92%;
+  width: 33%;
+  height: auto;
   filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.18));
 }
 .cv-card--case:hover .cv-case-shot img { transform: scale(1.03); }
