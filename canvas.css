@@ -169,7 +169,6 @@ html, body { height: 100%; }
   border-radius: 0.75rem;
   object-fit: cover;
   flex-shrink: 0;
-  filter: grayscale(1);
 }
 .cv-persona-name {
   margin: 0 0 0.15rem;
@@ -177,8 +176,6 @@ html, body { height: 100%; }
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-.cv-persona-role { margin: 0; font-size: 0.875rem; font-weight: 500; }
-.cv-persona-years { margin: 0.2rem 0 0; font-size: 0.8125rem; color: var(--muted); }
 .cv-persona-bio {
   margin: 0.9rem 0 0;
   font-size: 0.875rem;
