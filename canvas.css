@@ -1,0 +1,538 @@
+/* ==========================================================================
+   Canvas homepage — the work laid out on a pan/zoom board.
+
+   The same cards serve both views: in canvas mode they are absolutely
+   positioned in world space and the world is transformed; in list mode the
+   positioning is dropped and they stack in document order. One set of nodes,
+   so nothing is duplicated for assistive tech and nothing drifts out of sync.
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --board: #fafafa;
+  --fg: #000000;
+  --muted: #6f6f6f;
+  --faint: #9a9a9a;
+  --card: #f5f5f5;
+  --border: #e7e7e7;
+  --border-strong: #d8d8d8;
+  --wire: #d0d0d0;
+  --radius-card: 1rem;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --font-sans: "Schibsted Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --dock-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+.cv-body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--board);
+  /* The board grain. Two dot layers so the texture holds at any zoom. */
+  background-image: radial-gradient(circle, #dcdcdc 1px, transparent 1px);
+  background-size: 24px 24px;
+  overflow: hidden;
+}
+
+.cv-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--fg);
+  color: #fff;
+  border-radius: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+}
+.cv-skip:focus { left: 0; }
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+
+.cv-bar {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--dock-shadow);
+}
+
+.cv-bar-id { display: flex; align-items: baseline; gap: 0.55rem; }
+.cv-bar-name { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; }
+.cv-bar-role { font-size: 0.8125rem; color: var(--muted); }
+
+.cv-bar-nav { display: flex; align-items: center; gap: 1rem; }
+.cv-bar-nav a {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s var(--ease-out);
+}
+.cv-bar-nav a:hover { color: var(--fg); }
+
+/* ── Stage & world ───────────────────────────────────────────────────── */
+
+.cv-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+.cv-stage.is-panning { cursor: grabbing; }
+
+.cv-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+.cv-world.is-animating { transition: transform 0.45s var(--ease-out); }
+
+.cv-nodes { position: relative; }
+
+.cv-wires {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.cv-wire {
+  fill: none;
+  stroke: var(--wire);
+  stroke-width: 1.5;
+}
+.cv-wire-dot { fill: var(--wire); }
+
+/* ── Cards ───────────────────────────────────────────────────────────── */
+
+.cv-card {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 28px -18px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+.cv-card:hover,
+.cv-card:focus-within {
+  border-color: var(--border-strong);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 20px 44px -20px rgba(0, 0, 0, 0.3);
+}
+
+.cv-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+.cv-card-kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--faint);
+}
+.cv-card-kind svg { flex-shrink: 0; }
+.cv-card-meta { font-size: 0.75rem; color: var(--faint); }
+
+.cv-card-body { display: block; padding: 1rem; }
+
+/* ── Persona ─────────────────────────────────────────────────────────── */
+
+.cv-persona-top { display: flex; gap: 0.9rem; align-items: flex-start; }
+.cv-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: grayscale(1);
+}
+.cv-persona-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.cv-persona-role { margin: 0; font-size: 0.875rem; font-weight: 500; }
+.cv-persona-years { margin: 0.2rem 0 0; font-size: 0.8125rem; color: var(--muted); }
+.cv-persona-bio {
+  margin: 0.9rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.cv-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-pills li,
+.cv-pills--static span {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  background: var(--card);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.cv-pills--static {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.cv-persona-cta { display: flex; gap: 0.5rem; margin-top: 1.1rem; }
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: none;
+  background: var(--bg);
+  transition: background 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+.cv-btn:hover { background: var(--card); }
+.cv-btn--primary {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: #fff;
+}
+.cv-btn--primary:hover { background: #222; }
+
+/* ── Link / row lists ────────────────────────────────────────────────── */
+
+.cv-links, .cv-rows { margin: 0; padding: 0; list-style: none; }
+.cv-links li + li, .cv-rows li + li { margin-top: 0.1rem; }
+.cv-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fg);
+  text-decoration: none;
+  transition: background 0.16s var(--ease-out);
+}
+.cv-links a:hover { background: var(--card); }
+.cv-ext { color: var(--faint); font-size: 0.75rem; }
+.cv-rows li { padding: 0.35rem 0; font-size: 0.875rem; }
+
+.cv-exp { margin: 0; padding: 0; list-style: none; }
+.cv-exp li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+  padding: 0.55rem 0;
+}
+.cv-exp li + li { border-top: 1px solid var(--border); }
+.cv-exp-years { font-size: 0.75rem; color: var(--faint); }
+.cv-exp-role { font-size: 0.875rem; font-weight: 500; }
+.cv-exp-org { font-size: 0.8125rem; color: var(--muted); }
+
+/* ── Case cards ──────────────────────────────────────────────────────── */
+
+.cv-card--case { overflow: hidden; }
+.cv-case-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.cv-case-shot {
+  display: block;
+  overflow: hidden;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.cv-case-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+.cv-case-shot--wide { height: 170px; }
+.cv-case-shot--device { height: 170px; }
+.cv-case-shot--device img { object-position: 50% 12%; }
+.cv-card--case:hover .cv-case-shot img { transform: scale(1.03); }
+
+.cv-case-title {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.cv-case-outcome {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.cv-case-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: background 0.18s var(--ease-out);
+}
+.cv-card--case:hover .cv-case-open { background: var(--card); }
+
+/* ── Docks ───────────────────────────────────────────────────────────── */
+
+.cv-dock {
+  position: fixed;
+  bottom: 1rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--dock-shadow);
+}
+.cv-dock--zoom { left: 1rem; }
+.cv-dock--view { right: 1rem; }
+
+.cv-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background 0.16s var(--ease-out);
+}
+.cv-icon-btn:hover { background: var(--card); }
+.cv-zoom-level {
+  min-width: 48px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.cv-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out);
+}
+.cv-view-btn[aria-pressed="true"] { background: var(--fg); color: #fff; }
+
+.cv-hint {
+  position: fixed;
+  bottom: 1.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  font-size: 0.75rem;
+  color: var(--faint);
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-out);
+}
+.cv-hint.is-gone { opacity: 0; }
+
+.cv-credit {
+  position: fixed;
+  top: 1.55rem;
+  right: 1.25rem;
+  z-index: 20;
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+
+/* ── Case window (modal) ─────────────────────────────────────────────── */
+
+.cv-window-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 3vw, 2.5rem);
+  background: rgba(20, 20, 20, 0.35);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  /* Closed, it must stop existing for the pointer — it covers the viewport,
+     so opacity alone would leave it swallowing every click on the board. */
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease-out), visibility 0s linear 0.25s;
+}
+.cv-window-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.25s var(--ease-out), visibility 0s;
+}
+
+.cv-window {
+  display: flex;
+  flex-direction: column;
+  width: min(1180px, 100%);
+  height: min(92vh, 100%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform: translateY(10px) scale(0.99);
+  opacity: 0;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+.cv-window-backdrop.is-open .cv-window { transform: none; opacity: 1; }
+
+.cv-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.cv-window-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+.cv-window-title b {
+  font-weight: 600;
+  color: var(--fg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cv-window-actions { display: flex; align-items: center; gap: 0.35rem; flex-shrink: 0; }
+.cv-window-full {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out);
+}
+.cv-window-full:hover { background: var(--card); color: var(--fg); }
+
+.cv-window-frame { flex: 1; border: 0; width: 100%; background: var(--bg); }
+
+.cv-window-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+.cv-window-body { position: relative; flex: 1; display: flex; min-height: 0; }
+
+body.cv-locked { overflow: hidden; }
+
+/* ── List view ───────────────────────────────────────────────────────── */
+
+.cv-body.is-list { overflow: auto; background-image: none; background: var(--bg); }
+.cv-body.is-list .cv-stage { position: static; overflow: visible; cursor: auto; }
+.cv-body.is-list .cv-world { position: static; transform: none !important; }
+.cv-body.is-list .cv-wires { display: none; }
+.cv-body.is-list .cv-hint { display: none; }
+.cv-body.is-list .cv-dock--zoom { display: none; }
+.cv-body.is-list .cv-credit { position: static; display: block; text-align: center; padding: 2rem 0 6rem; }
+
+.cv-body.is-list .cv-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 6rem 1rem 0;
+}
+.cv-body.is-list .cv-card {
+  position: static;
+  width: auto;
+  left: auto;
+  top: auto;
+}
+.cv-body.is-list .cv-case-shot--wide,
+.cv-body.is-list .cv-case-shot--device { height: 200px; }
+
+/* Phones get the list, always — a pan/zoom board on a 375px screen is a
+   worse version of a scroll. */
+@media (max-width: 720px) {
+  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; justify-content: space-between; gap: 0.75rem; }
+  .cv-bar-role { display: none; }
+  .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
+  .cv-credit { display: none; }
+  .cv-body.is-list .cv-credit { display: block; }
+  .cv-body.is-list .cv-nodes { padding-top: 5.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-world.is-animating { transition: none; }
+  .cv-case-shot img { transition: none; }
+  .cv-window, .cv-window-backdrop { transition: none; }
+}
