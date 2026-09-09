@@ -21,117 +21,265 @@
       href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=48" />
-    <script defer src="script.js?v=7"></script>
+    <link rel="stylesheet" href="canvas.css?v=1" />
   </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav-left">
-        <a href="index-ru.html" class="brand">Basel</a>
-        <a href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener" class="nav-link">CV <span class="arrow">↗</span></a>
-      </nav>
-      <div class="nav-right">
-        <a href="index.html" class="lang-pill">EN</a>
-        <a href="index-ru.html" class="lang-pill is-active">РУ</a>
+  <body class="cv-body">
+    <a class="cv-skip" href="#cv-content">Перейти к содержимому</a>
+
+    <header class="cv-bar">
+      <div class="cv-bar-id">
+        <span class="cv-bar-name">Basel Hammami</span>
+        <span class="cv-bar-role">Ведущий продуктовый дизайнер</span>
       </div>
+      <nav class="cv-bar-nav" aria-label="Основная навигация">
+        <a href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener">CV</a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=basselhammami@gmail.com&amp;su=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE" target="_blank" rel="noopener">Написать мне</a>
+        <a href="index.html">EN</a>
+      </nav>
     </header>
 
-    <main class="page">
-      <section class="hero">
-        <img class="avatar" src="assets/basel.jpg?v=3" alt="Basel Hammami" width="1200" height="1200" />
-        <p class="eyebrow">BASEL HAMMAMI</p>
-        <h1 class="hero-title">
-          Ведущий продуктовый дизайнер с опытом 5+ лет работы в разных культурах,
-          дисциплинах и сложностях.
-        </h1>
-        <p class="languages">Говорю на английском, арабском и русском.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=basselhammami@gmail.com&amp;su=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE" target="_blank" rel="noopener">Написать мне</a>
-          <a class="btn btn-outline" href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener">Скачать CV</a>
+    <main class="cv-stage" id="stage">
+      <div class="cv-world" id="world">
+        <svg class="cv-wires" id="wires" aria-hidden="true" focusable="false"></svg>
+
+        <div class="cv-nodes" id="cv-content">
+
+          <!-- ── Persona (hub) ── -->
+          <article class="cv-card cv-card--persona" id="node-persona" data-node="persona" style="--x: 560px; --y: 360px; --w: 400px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Персона
+              </span>
+              <span class="cv-card-meta">Дубай, ОАЭ</span>
+            </header>
+            <div class="cv-card-body">
+              <div class="cv-persona-top">
+                <img class="cv-avatar" src="assets/basel.jpg?v=3" alt="Basel Hammami" width="1200" height="1200" />
+                <div>
+                  <h1 class="cv-persona-name">Basel Hammami</h1>
+                </div>
+              </div>
+              <p class="cv-persona-bio">
+                Ведущий продуктовый дизайнер с опытом 5+ лет работы в разных
+                культурах, дисциплинах и сложностях.
+              </p>
+              <ul class="cv-pills" aria-label="Направления">
+                <li>Продуктовый дизайн</li>
+                <li>Финтех</li>
+                <li>Compliance</li>
+                <li>Карты</li>
+                <li>B2B</li>
+              </ul>
+              <div class="cv-persona-cta">
+                <a class="cv-btn cv-btn--primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=basselhammami@gmail.com&amp;su=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE" target="_blank" rel="noopener">Написать мне</a>
+                <a class="cv-btn" href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener">
+                  Скачать CV
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ── Contacts ── -->
+          <article class="cv-card" id="node-contacts" data-node="contacts" data-link-to="persona" style="--x: 120px; --y: 300px; --w: 320px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
+                Контакты
+              </span>
+            </header>
+            <div class="cv-card-body">
+              <ul class="cv-links">
+                <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=basselhammami@gmail.com&amp;su=%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE" target="_blank" rel="noopener">Почта<span class="cv-ext" aria-hidden="true">↗</span></a></li>
+                <li><a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener">LinkedIn<span class="cv-ext" aria-hidden="true">↗</span></a></li>
+                <li><a href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener">CV (PDF)<span class="cv-ext" aria-hidden="true">↗</span></a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── Languages ── -->
+          <article class="cv-card" id="node-languages" data-node="languages" data-link-to="persona" style="--x: 120px; --y: 560px; --w: 320px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+                Языки
+              </span>
+            </header>
+            <div class="cv-card-body">
+              <ul class="cv-rows">
+                <li><span>Английский</span></li>
+                <li><span>Арабский</span></li>
+                <li><span>Русский</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ── Experience ── -->
+          <article class="cv-card" id="node-experience" data-node="experience" data-link-to="persona" style="--x: 120px; --y: 800px; --w: 340px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                Опыт
+              </span>
+            </header>
+            <div class="cv-card-body">
+              <ol class="cv-exp">
+                <li>
+                  <span class="cv-exp-years">2024 — сейчас</span>
+                  <span class="cv-exp-role">Senior Product Designer</span>
+                  <span class="cv-exp-org">Rakbank</span>
+                </li>
+                <li>
+                  <span class="cv-exp-years">2023 — 2024</span>
+                  <span class="cv-exp-role">Продуктовый дизайнер</span>
+                  <span class="cv-exp-org">Balady App</span>
+                </li>
+                <li>
+                  <span class="cv-exp-years">2021 — 2023</span>
+                  <span class="cv-exp-role">Продуктовый дизайнер</span>
+                  <span class="cv-exp-org">Maids.cc</span>
+                </li>
+              </ol>
+            </div>
+          </article>
+
+          <!-- ── Case · Rakbank CLM ── -->
+          <article class="cv-card cv-card--case" id="node-rakbank" data-node="rakbank" data-link-to="persona" style="--x: 1090px; --y: 60px; --w: 410px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Кейс
+              </span>
+              <span class="cv-card-meta">2024</span>
+            </header>
+            <a class="cv-case-link" href="case-rakbank-ru.html">
+              <span class="cv-case-shot cv-case-shot--wide cv-shot--clm">
+                <img src="assets/clm-audit-timeline.webp" alt="" width="2879" height="1790" loading="lazy" decoding="async" />
+              </span>
+              <span class="cv-card-body">
+                <span class="cv-case-title">Проектирование ради уверенности</span>
+                <span class="cv-case-outcome">Аудиторский след, который позволяет Rakbank доказать, почему принято каждое комплаенс-решение</span>
+                <span class="cv-pills cv-pills--static">
+                  <span>Продуктовый дизайн</span><span>Rakbank</span><span>Compliance</span><span>KYC</span>
+                </span>
+                <span class="cv-case-open">Открыть<span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </article>
+
+          <!-- ── Case · Transfer Tracking ── -->
+          <article class="cv-card cv-card--case" id="node-mtmx" data-node="mtmx" data-link-to="persona" style="--x: 1090px; --y: 700px; --w: 410px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Кейс
+              </span>
+              <span class="cv-card-meta">2025</span>
+            </header>
+            <a class="cv-case-link" href="case-mtmx-ru.html">
+              <span class="cv-case-shot cv-case-shot--device cv-shot--mtmx">
+                <img src="assets/mtmx-card.webp" alt="" width="863" height="1771" loading="lazy" decoding="async" />
+              </span>
+              <span class="cv-card-body">
+                <span class="cv-case-title">Отслеживание переводов</span>
+                <span class="cv-case-outcome">Превратил миграцию SWIFT MT→MX в живое пошаговое отслеживание международных переводов</span>
+                <span class="cv-pills cv-pills--static">
+                  <span>Продакт-менеджмент</span><span>Rakbank</span><span>Платежи</span><span>SWIFT</span>
+                </span>
+                <span class="cv-case-open">Открыть<span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </article>
+
+          <!-- ── Case · Balady+ Maps ── -->
+          <article class="cv-card cv-card--case" id="node-balady" data-node="balady" data-link-to="persona" style="--x: 1580px; --y: 330px; --w: 410px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Кейс
+              </span>
+              <span class="cv-card-meta">2024</span>
+            </header>
+            <a class="cv-case-link" href="case-balady-ru.html">
+              <span class="cv-case-shot cv-case-shot--device cv-shot--balady">
+                <img src="assets/balady-card.webp" alt="" width="863" height="1771" loading="lazy" decoding="async" />
+              </span>
+              <span class="cv-card-body">
+                <span class="cv-case-title">Balady+ Maps</span>
+                <span class="cv-case-outcome">Переосмыслил государственную карту для лёгкой парковки и свободного перемещения</span>
+                <span class="cv-pills cv-pills--static">
+                  <span>Продуктовый дизайн</span><span>Мобильность</span><span>Карты</span><span>iOS</span>
+                </span>
+                <span class="cv-case-open">Открыть<span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </article>
+
+          <!-- ── Case · Kafu ── -->
+          <article class="cv-card cv-card--case" id="node-kafu" data-node="kafu" data-link-to="persona" style="--x: 1580px; --y: 970px; --w: 410px">
+            <header class="cv-card-head">
+              <span class="cv-card-kind">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Кейс
+              </span>
+              <span class="cv-card-meta">2025</span>
+            </header>
+            <a class="cv-case-link" href="case-kafu-ru.html">
+              <span class="cv-case-shot cv-case-shot--device cv-shot--kafu">
+                <img src="assets/kafu-hero-2.webp" alt="" width="812" height="1668" loading="lazy" decoding="async" />
+              </span>
+              <span class="cv-card-body">
+                <span class="cv-case-title">Бюджет в Kafu</span>
+                <span class="cv-case-outcome">Концепт бюджета, который предупреждает до перерасхода, а не после</span>
+                <span class="cv-pills cv-pills--static">
+                  <span>Продуктовый дизайн</span><span>Финтех</span><span>Банкинг</span><span>iOS</span>
+                </span>
+                <span class="cv-case-open">Открыть<span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </article>
+
         </div>
-      </section>
-
-      <header class="projects-intro">
-        <h2 class="section-title">Избранные кейсы</h2>
-      </header>
-
-      <section class="projects" aria-label="Кейсы">
-        <article class="project-card" data-role="design">
-          <a href="case-rakbank-ru.html" class="project-card-link" data-case="rakbank" aria-label="Платформа CLM — Rakbank">
-            <div class="project-card-body project-card-body--clm">
-              <img src="assets/clm-audit-timeline.webp" alt="" class="project-card-art project-card-art--screenshot" width="2879" height="1790" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="project-card-title">Проектирование ради уверенности · 2024</h3>
-            <p class="project-card-outcome">Аудиторский след, который позволяет Rakbank доказать, почему принято каждое комплаенс-решение</p>
-          </a>
-          <p class="project-card-tags">Продуктовый дизайн · Rakbank · Compliance · KYC</p>
-        </article>
-
-        <article class="project-card" data-role="management">
-          <a href="case-mtmx-ru.html" class="project-card-link" data-case="mtmx" aria-label="Отслеживание переводов — Rakbank">
-            <div class="project-card-body project-card-body--mtmx">
-              <img src="assets/mtmx-card.webp" alt="" class="project-card-art project-card-art--device" width="863" height="1771" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="project-card-title">Отслеживание переводов · 2025</h3>
-            <p class="project-card-outcome">Превратил миграцию SWIFT MT→MX в живое пошаговое отслеживание международных переводов</p>
-          </a>
-          <p class="project-card-tags">Продакт-менеджмент · Rakbank · Платежи · SWIFT</p>
-        </article>
-
-        <article class="project-card" data-role="design">
-          <a href="case-balady-ru.html" class="project-card-link" data-case="balady" aria-label="Balady+ Maps">
-            <div class="project-card-body project-card-body--balady">
-              <img src="assets/balady-card.webp" alt="" class="project-card-art project-card-art--device" width="863" height="1771" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="project-card-title">Balady+ Maps · 2024</h3>
-            <p class="project-card-outcome">Переосмыслил государственную карту для лёгкой парковки и свободного перемещения</p>
-          </a>
-          <p class="project-card-tags">Продуктовый дизайн · Мобильность · Карты · iOS</p>
-        </article>
-
-        <article class="project-card" data-role="design">
-          <a href="case-kafu-ru.html" class="project-card-link" data-case="kafu" aria-label="Бюджет в Kafu">
-            <div class="project-card-body project-card-body--kafu">
-              <img src="assets/kafu-hero-2.webp" alt="" class="project-card-art project-card-art--device" width="812" height="1668" loading="lazy" decoding="async" />
-            </div>
-            <h3 class="project-card-title">Бюджет в Kafu · 2025</h3>
-            <p class="project-card-outcome">Концепт бюджета, который предупреждает до перерасхода, а не после</p>
-          </a>
-          <p class="project-card-tags">Продуктовый дизайн · Финтех · Банкинг · iOS</p>
-        </article>
-      </section>
-
-      <section class="experience">
-        <p class="eyebrow">ОПЫТ</p>
-        <h2 class="section-title">Где я работал</h2>
-        <ol class="experience-list" aria-label="Опыт работы">
-          <li class="experience-row">
-            <span class="experience-years">2024 — сейчас</span>
-            <span class="experience-role">Senior Product Designer</span>
-            <span class="experience-org">Rakbank</span>
-          </li>
-          <li class="experience-row">
-            <span class="experience-years">2023 — 2024</span>
-            <span class="experience-role">Продуктовый дизайнер</span>
-            <span class="experience-org">Balady App</span>
-          </li>
-          <li class="experience-row">
-            <span class="experience-years">2021 — 2023</span>
-            <span class="experience-role">Продуктовый дизайнер</span>
-            <span class="experience-org">Maids.cc</span>
-          </li>
-        </ol>
-      </section>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <nav class="footer-links" aria-label="Контакты">
-        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
-        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">Linkedin</a>
-        <a href="assets/basel-hammami-cv.pdf?v=2" class="footer-link" target="_blank" rel="noopener">CV</a>
-      </nav>
-      <p class="copy">© 2026 Basel Hammami</p>
-    </footer>
-    <script type="module" src="agentation.js"></script>
+    <div class="cv-hint" id="hint" aria-hidden="true">Перетащите или прокрутите · Сведите пальцы для масштаба</div>
+
+    <div class="cv-dock cv-dock--zoom">
+      <button type="button" id="zoom-out" class="cv-icon-btn" aria-label="Уменьшить">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <span class="cv-zoom-level" id="zoom-level" aria-live="polite">100%</span>
+      <button type="button" id="zoom-in" class="cv-icon-btn" aria-label="Увеличить">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="12" y2="19"/></svg>
+      </button>
+      <button type="button" id="zoom-fit" class="cv-icon-btn" aria-label="Вместить всё на экране">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4"/></svg>
+      </button>
+    </div>
+
+    <div class="cv-dock cv-dock--view" role="group" aria-label="Вид">
+      <button type="button" id="view-canvas" class="cv-view-btn" aria-pressed="true">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="15" width="7" height="5" rx="1"/><rect x="14" y="15" width="7" height="5" rx="1"/></svg>
+        Холст
+      </button>
+      <button type="button" id="view-list" class="cv-view-btn" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        Список
+      </button>
+    </div>
+
+    <footer class="cv-credit">© <span id="cv-year">2026</span> Basel Hammami</footer>
+
+    <script>
+      window.CV_STRINGS = {
+        dialogLabel: "Кейс",
+        loading: "Загрузка…",
+        openFull: "Открыть полностью",
+        close: "Закрыть кейс",
+      };
+    </script>
+    <script src="canvas.js?v=1"></script>
   </body>
 </html>

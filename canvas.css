@@ -162,7 +162,7 @@ html, body { height: 100%; }
 
 /* ── Persona ─────────────────────────────────────────────────────────── */
 
-.cv-persona-top { display: flex; gap: 0.9rem; align-items: flex-start; }
+.cv-persona-top { display: flex; gap: 0.9rem; align-items: center; }
 .cv-avatar {
   width: 84px;
   height: 84px;

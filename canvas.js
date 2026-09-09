@@ -21,6 +21,18 @@
 
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  // UI strings the script writes itself. Each page sets window.CV_STRINGS
+  // before loading this file; these are the fallbacks.
+  var T = Object.assign(
+    {
+      dialogLabel: "Case study",
+      loading: "Loading\u2026",
+      openFull: "Open full page",
+      close: "Close case study",
+    },
+    window.CV_STRINGS || {}
+  );
+
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var MIN_SCALE = 0.25;
   var MAX_SCALE = 2;
@@ -315,7 +327,7 @@
     backdrop.className = "cv-window-backdrop";
     backdrop.setAttribute("role", "dialog");
     backdrop.setAttribute("aria-modal", "true");
-    backdrop.setAttribute("aria-label", "Case study");
+    backdrop.setAttribute("aria-label", T.dialogLabel);
     backdrop.innerHTML =
       '<div class="cv-window">' +
         '<div class="cv-window-bar">' +
@@ -324,14 +336,14 @@
             '<b></b>' +
           '</span>' +
           '<span class="cv-window-actions">' +
-            '<a class="cv-window-full" target="_blank" rel="noopener">Open full page <span aria-hidden="true">↗</span></a>' +
-            '<button type="button" class="cv-icon-btn" data-close aria-label="Close case study">' +
+            '<a class="cv-window-full" target="_blank" rel="noopener">' + T.openFull + ' <span aria-hidden="true">↗</span></a>' +
+            '<button type="button" class="cv-icon-btn" data-close aria-label="' + T.close + '">' +
               '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>' +
             '</button>' +
           '</span>' +
         '</div>' +
         '<div class="cv-window-body">' +
-          '<span class="cv-window-loading">Loading…</span>' +
+          '<span class="cv-window-loading">' + T.loading + '</span>' +
           '<iframe class="cv-window-frame" title="Case study"></iframe>' +
         '</div>' +
       '</div>';
@@ -435,7 +447,7 @@
       e.preventDefault();
       var link = e.currentTarget;
       var titleNode = link.querySelector(".cv-case-title");
-      openWindow(link.getAttribute("href"), titleNode ? titleNode.textContent : "Case study");
+      openWindow(link.getAttribute("href"), titleNode ? titleNode.textContent : T.dialogLabel);
     });
   }
 
