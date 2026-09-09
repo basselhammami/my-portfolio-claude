@@ -72,9 +72,7 @@ html { min-height: 100%; }
   box-shadow: var(--dock-shadow);
 }
 
-.cv-bar-id { display: flex; align-items: baseline; gap: 0.55rem; }
 .cv-bar-name { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; }
-.cv-bar-role { font-size: 0.8125rem; color: var(--muted); }
 
 .cv-bar-nav { display: flex; align-items: center; gap: 1rem; }
 .cv-bar-nav a {
@@ -584,7 +582,6 @@ body.cv-locked { overflow: hidden; }
    worse version of a scroll. */
 @media (max-width: 720px) {
   .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; justify-content: space-between; gap: 0.75rem; }
-  .cv-bar-role { display: none; }
   .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
