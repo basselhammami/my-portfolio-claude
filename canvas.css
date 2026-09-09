@@ -273,23 +273,45 @@ html, body { height: 100%; }
   color: inherit;
   text-decoration: none;
 }
+/* The art sits on a tinted mat and is constrained rather than cropped, so a
+   wide screenshot and a tall phone shot both arrive whole. Same treatment as
+   the project cards on the main homepage. */
 .cv-case-shot {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  padding: 1.1rem;
   overflow: hidden;
-  background: var(--card);
   border-bottom: 1px solid var(--border);
+  background: var(--card);
 }
 .cv-case-shot img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
   transition: transform 0.5s var(--ease-out);
+  will-change: transform;
 }
-.cv-case-shot--wide { height: 170px; }
-.cv-case-shot--device { height: 170px; }
-.cv-case-shot--device img { object-position: 50% 12%; }
+.cv-case-shot--wide img {
+  max-width: 94%;
+  max-height: 84%;
+  border-radius: 0.5rem;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+.cv-case-shot--device img {
+  max-width: 58%;
+  max-height: 92%;
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.18));
+}
 .cv-card--case:hover .cv-case-shot img { transform: scale(1.03); }
+
+/* Per-case mats, matching the homepage cards. */
+.cv-shot--clm { background: linear-gradient(135deg, #fbe5d8 0%, #f5cfbb 100%); }
+.cv-shot--mtmx { background: linear-gradient(135deg, #fbdfdf 0%, #f4c9c9 100%); }
+.cv-shot--balady { background: linear-gradient(135deg, #c8efe9 0%, #a6e3db 100%); }
+.cv-shot--kafu { background: linear-gradient(135deg, #d8f1c0 0%, #ebf2b4 100%); }
 
 .cv-case-title {
   display: block;
@@ -517,8 +539,6 @@ body.cv-locked { overflow: hidden; }
   left: auto;
   top: auto;
 }
-.cv-body.is-list .cv-case-shot--wide,
-.cv-body.is-list .cv-case-shot--device { height: 200px; }
 
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
