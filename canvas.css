@@ -27,10 +27,11 @@
 
 * { box-sizing: border-box; }
 
-html, body { height: 100%; }
+html { min-height: 100%; }
 
 .cv-body {
   margin: 0;
+  height: 100%;
   font-family: var(--font-sans);
   color: var(--fg);
   background: var(--board);
@@ -514,8 +515,19 @@ body.cv-locked { overflow: hidden; }
 
 /* ── List view ───────────────────────────────────────────────────────── */
 
-.cv-body.is-list { overflow: auto; background-image: none; background: var(--bg); }
-.cv-body.is-list .cv-stage { position: static; overflow: visible; cursor: auto; }
+.cv-body.is-list {
+  height: auto;
+  overflow: visible;
+  background-image: none;
+  background: var(--bg);
+}
+.cv-body.is-list .cv-stage {
+  position: static;
+  overflow: visible;
+  cursor: auto;
+  /* Without this the board's pan gesture handling blocks scrolling on touch. */
+  touch-action: auto;
+}
 .cv-body.is-list .cv-world { position: static; transform: none !important; }
 .cv-body.is-list .cv-wires { display: none; }
 .cv-body.is-list .cv-hint { display: none; }
