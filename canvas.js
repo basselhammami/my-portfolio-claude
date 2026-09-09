@@ -286,13 +286,20 @@
   var btnList = document.getElementById("view-list");
   var STORE = "cv:view";
 
+  // The chosen view is remembered for the visit, not forever. Persisting it
+  // across visits meant one tap on List pinned a browser to the plain view
+  // permanently, so a returning visitor never saw the board again. Session
+  // storage keeps the choice while browsing — the language switch reloads the
+  // page — and lets every fresh visit open on the default for the screen.
+  try { localStorage.removeItem(STORE); } catch (err) { /* private mode */ }
+
   function setView(mode, remember) {
     var list = mode === "list";
     body.classList.toggle("is-list", list);
     btnCanvas.setAttribute("aria-pressed", String(!list));
     btnList.setAttribute("aria-pressed", String(list));
     if (remember) {
-      try { localStorage.setItem(STORE, mode); } catch (err) { /* private mode */ }
+      try { sessionStorage.setItem(STORE, mode); } catch (err) { /* private mode */ }
     }
     if (!list) {
       requestAnimationFrame(function () {
@@ -307,9 +314,10 @@
 
   function initialView() {
     var stored = null;
-    try { stored = localStorage.getItem(STORE); } catch (err) { /* private mode */ }
+    try { stored = sessionStorage.getItem(STORE); } catch (err) { /* private mode */ }
     if (stored === "canvas" || stored === "list") return stored;
-    // Small screens and coarse pointers get the list by default.
+    // The board on the web, the list on phones, where panning a board is a
+    // worse version of a scroll.
     if (window.matchMedia("(max-width: 720px)").matches) return "list";
     return "canvas";
   }
