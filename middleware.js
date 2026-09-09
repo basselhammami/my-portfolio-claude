@@ -1,28 +1,45 @@
-// Site-wide auth for the static site on Vercel, using a custom branded login
-// page instead of the native Basic Auth dialog.
+// Auth for the static site on Vercel, using a custom branded login page
+// instead of the native Basic Auth dialog.
 //
-//   SITE_PASSWORD (env var) — one universal password gating the whole site.
-// An unauthenticated request is redirected to /login.html; that page POSTs the
-// password back here, and on a match we set an HttpOnly session cookie. The
-// password lives only in the environment variable — never in the page source
-// or the repo.
+//   SITE_PASSWORD (env var) — the password gating the case studies.
+//
+// The landing page is public so the work can be linked and shared. Everything
+// else — the case studies and the screenshots inside them — is private, so a
+// request for one is redirected to /login.html. That page POSTs the password
+// back here, and on a match we set an HttpOnly session cookie. The password
+// lives only in the environment variable, never in the page source or the repo.
 
 export const config = {
   // Run on every route except Vercel's internal asset requests.
   matcher: ["/((?!_vercel).*)"],
 };
 
-// Files that must load without auth: what the login page itself needs, plus
-// the share image so link previews render for logged-out crawlers.
+// The public site: the landing page, what it and the login page load, and the
+// four card thumbnails the landing page shows. Anything absent from this list
+// needs the password, so a new case study or screenshot is private the moment
+// it is added — add a path here only to deliberately make it public.
 const PUBLIC_PATHS = new Set([
+  "/",
+  "/index.html",
+  "/index-ru.html",
   "/login.html",
   "/styles.css",
+  "/script.js",
+  "/agentation.js",
   "/assets/basel.jpg",
+  "/assets/basel-hammami-cv.pdf",
+  // Share image, so link previews render for logged-out crawlers.
   "/assets/og-image.png",
   "/assets/favicon-16.png",
   "/assets/favicon-32.png",
   "/assets/favicon-192.png",
   "/assets/apple-touch-icon.png",
+  // Case study card art on the landing page. These four are the only case
+  // images that stay public; the rest of each case is behind the password.
+  "/assets/clm-audit-timeline.webp",
+  "/assets/mtmx-card.webp",
+  "/assets/balady-card.webp",
+  "/assets/kafu-hero-2.webp",
 ]);
 
 // Case studies hidden from the site entirely (pages and their images) —
@@ -77,15 +94,15 @@ export default async function middleware(request) {
     return new Response("Incorrect password.", { status: 401 });
   }
 
-  // Assets the login page itself needs (and the share image for crawlers).
-  if (PUBLIC_PATHS.has(path)) return;
-
   // Hidden case studies — send any request for them back to the homepage.
   if (HIDDEN_PREFIXES.some((p) => path.startsWith(p))) {
     return Response.redirect(new URL("/", request.url), 302);
   }
 
-  // One universal password gates the whole site.
+  // The public site.
+  if (PUBLIC_PATHS.has(path)) return;
+
+  // Everything else — the case studies and their images — needs the password.
   if (sitePassword) {
     const cookies = request.headers.get("cookie") || "";
     const token = cookieValue(cookies, SITE_COOKIE);
