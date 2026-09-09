@@ -36,6 +36,14 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var MIN_SCALE = 0.25;
   var MAX_SCALE = 2;
+  // The board opens at a fixed zoom rather than scaled to fit, so it looks
+  // the same to everyone instead of shrinking on a smaller window.
+  var INITIAL_SCALE = 0.5;
+
+  // Set once the visitor pans or zooms. After that the board is theirs, so a
+  // late relayout — images landing, fonts settling, a window resize — redraws
+  // the wires but leaves the view where they put it.
+  var userMoved = false;
 
   var view = { x: 0, y: 0, k: 1 };
 
@@ -69,20 +77,30 @@
     return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
   }
 
-  function fit(animate) {
+  // Centre the cards in the viewport at a given scale.
+  function centreAt(k, animate) {
     var box = contentBox();
     if (!box.w || !box.h) return;
+    view.k = Math.max(MIN_SCALE, Math.min(MAX_SCALE, k));
+    view.x = (stage.clientWidth - box.w * view.k) / 2 - box.x * view.k;
+    view.y = (stage.clientHeight - box.h * view.k) / 2 - box.y * view.k;
+    apply(animate);
+  }
+
+  // The scale that brings everything on screen at once.
+  function fitScale() {
+    var box = contentBox();
+    if (!box.w || !box.h) return view.k;
     var padX = 80;
     var padY = 110; // room for the fixed bar and docks
-    var k = Math.min(
+    return Math.min(
       (stage.clientWidth - padX * 2) / box.w,
       (stage.clientHeight - padY * 2) / box.h
     );
-    k = Math.max(MIN_SCALE, Math.min(MAX_SCALE, k));
-    view.k = k;
-    view.x = (stage.clientWidth - box.w * k) / 2 - box.x * k;
-    view.y = (stage.clientHeight - box.h * k) / 2 - box.y * k;
-    apply(animate);
+  }
+
+  function fit(animate) {
+    centreAt(fitScale(), animate);
   }
 
   // Zoom about a fixed point in screen space, so the thing under the
@@ -98,6 +116,7 @@
   }
 
   function zoomByStep(factor) {
+    userMoved = true;
     zoomAt(stage.clientWidth / 2, stage.clientHeight / 2, view.k * factor, true);
   }
 
@@ -199,6 +218,7 @@
     if (pinch && pointers.size === 2) {
       var pts = Array.from(pointers.values());
       var d = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+      userMoved = true;
       if (pinch.d > 0) zoomAt(pinch.cx, pinch.cy, pinch.k * (d / pinch.d), false);
       return;
     }
@@ -207,6 +227,7 @@
     var dx = e.clientX - start.x;
     var dy = e.clientY - start.y;
     if (!moved && Math.hypot(dx, dy) > 4) moved = true;
+    userMoved = true;
     view.x = start.vx + dx;
     view.y = start.vy + dy;
     apply(false);
@@ -242,6 +263,7 @@
       if (!isCanvas()) return;
       e.preventDefault();
       hideHint();
+      userMoved = true;
       // Trackpad pinch and ⌘/ctrl-scroll arrive with ctrlKey set.
       if (e.ctrlKey || e.metaKey) {
         zoomAt(e.clientX, e.clientY, view.k * Math.pow(0.995, e.deltaY), false);
@@ -296,6 +318,7 @@
     zoomByStep(0.8);
   });
   document.getElementById("zoom-fit").addEventListener("click", function () {
+    userMoved = true;
     fit(true);
   });
 
@@ -323,7 +346,7 @@
     if (!list) {
       requestAnimationFrame(function () {
         drawWires();
-        fit(false);
+        centreAt(INITIAL_SCALE, false);
       });
     }
   }
@@ -363,7 +386,10 @@
             '<b></b>' +
           '</span>' +
           '<span class="cv-window-actions">' +
-            '<a class="cv-window-full" target="_blank" rel="noopener">' + T.openFull + ' <span aria-hidden="true">↗</span></a>' +
+            // Navigates in place: the case is already open, so this is a
+            // change of view, not a second copy of it in another tab. The
+            // arrow points forward rather than out, to match.
+            '<a class="cv-window-full">' + T.openFull + ' <span aria-hidden="true">→</span></a>' +
             '<button type="button" class="cv-icon-btn" data-close aria-label="' + T.close + '">' +
               '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>' +
             '</button>' +
@@ -484,12 +510,12 @@
 
   function relayout() {
     drawWires();
-    if (isCanvas()) fit(false);
+    if (isCanvas() && !userMoved) centreAt(INITIAL_SCALE, false);
   }
 
   setView(initialView(), false);
   drawWires();
-  if (isCanvas()) fit(false);
+  if (isCanvas()) centreAt(INITIAL_SCALE, false);
 
   // Card heights settle once images and webfonts land.
   window.addEventListener("load", relayout);
