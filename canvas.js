@@ -29,7 +29,7 @@
       loading: "Loading\u2026",
       openFull: "Open full page",
       close: "Close case study",
-      listNudge: "Prefer a simple list? Switch here",
+      canvasNudge: "Want to explore? Try the canvas",
     },
     window.CV_STRINGS || {}
   );
@@ -355,8 +355,8 @@
   btnCanvas.addEventListener("click", function () { setView("canvas", true); hideNudge(); });
   btnList.addEventListener("click", function () { setView("list", true); hideNudge(); });
 
-  // On every load of the board, point at the List button for anyone who
-  // would rather scroll than pan.
+  // On every load of the list, point at the Canvas button for anyone who
+  // would like to explore the board instead.
   var nudge = null;
 
   function hideNudge() {
@@ -364,17 +364,24 @@
   }
 
   function maybeNudge() {
-    if (!isCanvas()) return;
+    if (isCanvas()) return;
 
     nudge = document.createElement("button");
     nudge.type = "button";
     nudge.className = "cv-nudge";
-    nudge.textContent = T.listNudge;
+    nudge.textContent = T.canvasNudge;
     nudge.addEventListener("click", function () {
-      setView("list", true);
+      setView("canvas", true);
       hideNudge();
     });
     body.appendChild(nudge);
+
+    // Put the tail over the middle of the Canvas button.
+    var b = btnCanvas.getBoundingClientRect();
+    var n = nudge.getBoundingClientRect();
+    if (b.width && n.width) {
+      nudge.style.setProperty("--tail", Math.round(n.right - (b.left + b.width / 2) - 5) + "px");
+    }
 
     window.setTimeout(function () { nudge.classList.add("is-shown"); }, 1200);
     window.setTimeout(hideNudge, 9000);
@@ -384,10 +391,8 @@
     var stored = null;
     try { stored = sessionStorage.getItem(STORE); } catch (err) { /* private mode */ }
     if (stored === "canvas" || stored === "list") return stored;
-    // The board on the web, the list on phones, where panning a board is a
-    // worse version of a scroll.
-    if (window.matchMedia("(max-width: 720px)").matches) return "list";
-    return "canvas";
+    // Everyone starts on the list; the board is one click away.
+    return "list";
   }
 
   /* ── Case window ───────────────────────────────────────────────────── */
