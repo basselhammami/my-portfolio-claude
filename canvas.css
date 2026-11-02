@@ -449,8 +449,9 @@ html { min-height: 100%; }
 }
 .cv-view-btn[aria-pressed="true"] { background: var(--fg); color: #fff; }
 
-/* One-time pointer to the list view, for visitors who would rather scroll
-   than pan. Sits above the view dock with its tail on the List button. */
+/* Pointer to the canvas view, for visitors who would like to explore the
+   board. Sits above the view dock; JS lines its tail up with the Canvas
+   button. */
 .cv-nudge {
   position: fixed;
   right: 1rem;
@@ -474,7 +475,7 @@ html { min-height: 100%; }
 .cv-nudge::after {
   content: "";
   position: absolute;
-  right: 2.6rem;
+  right: var(--tail, 2.6rem);
   bottom: -5px;
   width: 10px;
   height: 10px;
@@ -483,7 +484,7 @@ html { min-height: 100%; }
   border-radius: 2px;
 }
 .cv-nudge.is-shown { opacity: 1; transform: none; pointer-events: auto; }
-.cv-body.is-list .cv-nudge { display: none; }
+.cv-body:not(.is-list) .cv-nudge { display: none; }
 
 .cv-hint {
   position: fixed;
