@@ -386,6 +386,11 @@ html { min-height: 100%; }
 }
 .cv-card--case:hover .cv-case-open { background: var(--card); }
 
+/* A smaller card that hangs off a case rather than the persona, e.g. the
+   pitch beside the CLM case. Wider mat, full-bleed slide, no outcome line. */
+.cv-card--mini .cv-case-shot { aspect-ratio: 16 / 10; padding: 0.8rem; }
+.cv-card--mini .cv-case-shot--wide img { width: 100%; }
+
 /* ── Docks ───────────────────────────────────────────────────────────── */
 
 .cv-dock {
@@ -443,6 +448,42 @@ html { min-height: 100%; }
   transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out);
 }
 .cv-view-btn[aria-pressed="true"] { background: var(--fg); color: #fff; }
+
+/* One-time pointer to the list view, for visitors who would rather scroll
+   than pan. Sits above the view dock with its tail on the List button. */
+.cv-nudge {
+  position: fixed;
+  right: 1rem;
+  bottom: 4.25rem;
+  z-index: 31;
+  padding: 0.6rem 0.9rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: var(--fg);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--dock-shadow);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.cv-nudge::after {
+  content: "";
+  position: absolute;
+  right: 2.6rem;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  background: inherit;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.cv-nudge.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+.cv-body.is-list .cv-nudge { display: none; }
 
 .cv-hint {
   position: fixed;
@@ -605,6 +646,7 @@ body.cv-locked { overflow: hidden; }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
   .cv-body.is-list .cv-nodes { padding-top: 5.5rem; }
+  .cv-nudge { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
