@@ -29,6 +29,7 @@
       loading: "Loading\u2026",
       openFull: "Open full page",
       close: "Close case study",
+      listNudge: "Prefer a simple list? Switch here",
     },
     window.CV_STRINGS || {}
   );
@@ -351,8 +352,38 @@
     }
   }
 
-  btnCanvas.addEventListener("click", function () { setView("canvas", true); });
-  btnList.addEventListener("click", function () { setView("list", true); });
+  btnCanvas.addEventListener("click", function () { setView("canvas", true); hideNudge(); });
+  btnList.addEventListener("click", function () { setView("list", true); hideNudge(); });
+
+  // First visit only: point at the List button for anyone who would rather
+  // scroll than pan. Remembered in localStorage so it never nags twice.
+  var NUDGE_STORE = "cv:list-nudge";
+  var nudge = null;
+
+  function hideNudge() {
+    if (nudge) nudge.classList.remove("is-shown");
+  }
+
+  function maybeNudge() {
+    if (!isCanvas()) return;
+    try {
+      if (localStorage.getItem(NUDGE_STORE)) return;
+      localStorage.setItem(NUDGE_STORE, "1");
+    } catch (err) { return; /* private mode: skip rather than repeat it */ }
+
+    nudge = document.createElement("button");
+    nudge.type = "button";
+    nudge.className = "cv-nudge";
+    nudge.textContent = T.listNudge;
+    nudge.addEventListener("click", function () {
+      setView("list", true);
+      hideNudge();
+    });
+    body.appendChild(nudge);
+
+    window.setTimeout(function () { nudge.classList.add("is-shown"); }, 1200);
+    window.setTimeout(hideNudge, 9000);
+  }
 
   function initialView() {
     var stored = null;
@@ -516,6 +547,7 @@
   setView(initialView(), false);
   drawWires();
   if (isCanvas()) centreAt(INITIAL_SCALE, false);
+  maybeNudge();
 
   // Card heights settle once images and webfonts land.
   window.addEventListener("load", relayout);
