@@ -39,7 +39,7 @@
   var MAX_SCALE = 2;
   // The board opens at a fixed zoom rather than scaled to fit, so it looks
   // the same to everyone instead of shrinking on a smaller window.
-  var INITIAL_SCALE = 0.5;
+  var INITIAL_SCALE = 0.44;
 
   // Set once the visitor pans or zooms. After that the board is theirs, so a
   // late relayout — images landing, fonts settling, a window resize — redraws
@@ -355,9 +355,8 @@
   btnCanvas.addEventListener("click", function () { setView("canvas", true); hideNudge(); });
   btnList.addEventListener("click", function () { setView("list", true); hideNudge(); });
 
-  // First visit only: point at the List button for anyone who would rather
-  // scroll than pan. Remembered in localStorage so it never nags twice.
-  var NUDGE_STORE = "cv:list-nudge";
+  // On every load of the board, point at the List button for anyone who
+  // would rather scroll than pan.
   var nudge = null;
 
   function hideNudge() {
@@ -366,10 +365,6 @@
 
   function maybeNudge() {
     if (!isCanvas()) return;
-    try {
-      if (localStorage.getItem(NUDGE_STORE)) return;
-      localStorage.setItem(NUDGE_STORE, "1");
-    } catch (err) { return; /* private mode: skip rather than repeat it */ }
 
     nudge = document.createElement("button");
     nudge.type = "button";
