@@ -2827,3 +2827,35 @@ body.n-lightbox-open {
     transform: none;
   }
 }
+
+/* ── Hero with a photo ─────────────────────────────────────────────
+   Rakbank cases: copy on the left, a brand photo filling the right half.
+   On narrow screens the photo drops under the copy at full width. Two
+   classes so the responsive .n-hero / .n-card padding can't put the photo
+   back on a mat. */
+.n-card.n-hero--photo {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+}
+.n-hero--photo .n-hero-copy {
+  align-self: center;
+  padding: 3rem 2.75rem;
+}
+.n-hero--photo .n-hero-logo { margin: 0 0 1.75rem; }
+.n-hero--photo .n-hero-tags { justify-content: flex-start; }
+.n-hero--photo .n-hero-photo { margin: 0; }
+.n-hero--photo .n-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+@media (max-width: 720px) {
+  .n-card.n-hero--photo { grid-template-columns: 1fr; padding: 0; }
+  .n-hero--photo .n-hero-copy { padding: 2.25rem 1.5rem 2rem; }
+}
