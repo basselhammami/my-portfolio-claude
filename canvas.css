@@ -56,25 +56,23 @@ html { min-height: 100%; }
 
 /* ── Top bar ─────────────────────────────────────────────────────────── */
 
+/* A plain header across the top edge. The side padding lines its contents
+   up with the overview's content grid (1176px wide), name on the left,
+   links on the right. */
 .cv-bar {
   position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  /* As wide as the overview's content grid (1240px less its 2rem gutters),
-     name on the left, links on the right. */
-  width: min(1176px, calc(100% - 2rem));
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 30;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 0.6rem 1rem;
+  padding: 0.9rem max(1.5rem, calc((100% - 1176px) / 2));
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--dock-shadow);
+  border-bottom: 1px solid var(--border);
 }
 
 .cv-bar-name { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; }
@@ -719,7 +717,7 @@ body.cv-locked { overflow: hidden; }
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
 @media (max-width: 720px) {
-  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; width: auto; transform: none; justify-content: space-between; gap: 0.75rem; }
+  .cv-bar { padding: 0.75rem 1rem; gap: 0.75rem; }
   .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
