@@ -2855,6 +2855,9 @@ body.n-lightbox-open {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
+/* For art whose subject sits on the bottom edge (the Rakbank wordmark):
+   crop from the top instead of both ends. */
+.n-hero--photo .n-hero-photo--bottom img { object-position: center bottom; }
 @media (max-width: 720px) {
   .n-card.n-hero--photo { grid-template-columns: 1fr; padding: 0; }
   .n-hero--photo .n-hero-copy { padding: 2.25rem 1.5rem 2rem; }
