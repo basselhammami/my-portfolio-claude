@@ -659,6 +659,56 @@ body.cv-locked { overflow: hidden; }
   top: auto;
 }
 
+/* The profile cards and the case cards are grouped for the wide list below.
+   Everywhere else the groups dissolve, so the board positions each card on
+   its own and the narrow list is one plain column. */
+.cv-side,
+.cv-cases { display: contents; }
+
+/* Wide list: the profile column stays pinned on the left while the cases
+   scroll past in a two-column grid, CLM as a wide featured tile. canvas.js
+   sets --side-top so a profile column taller than the window scrolls until
+   its last card is in view, then holds. */
+@media (min-width: 1100px) {
+  .cv-body.is-list .cv-nodes {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    max-width: 1240px;
+    padding: 6rem 2rem 0;
+  }
+  .cv-body.is-list .cv-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: var(--side-top, 6rem);
+  }
+  .cv-body.is-list .cv-cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .cv-body.is-list .cv-cases .cv-card { display: flex; flex-direction: column; }
+  .cv-body.is-list .cv-cases .cv-case-link { flex: 1; display: flex; flex-direction: column; }
+
+  /* Featured: screenshot and copy side by side across both columns. */
+  .cv-body.is-list .cv-cases [data-node="rakbank"] { grid-column: 1 / -1; }
+  .cv-body.is-list .cv-cases [data-node="rakbank"] .cv-case-link {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+  }
+  .cv-body.is-list .cv-cases [data-node="rakbank"] .cv-case-shot {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+  .cv-body.is-list .cv-cases [data-node="rakbank"] .cv-card-body { align-self: center; }
+
+  /* The pitch sits beside a full case card; its mat grows to match. */
+  .cv-body.is-list .cv-cases .cv-card--mini .cv-case-shot { flex: 1; aspect-ratio: auto; }
+}
+
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
 @media (max-width: 720px) {

@@ -350,6 +350,7 @@
         centreAt(INITIAL_SCALE, false);
       });
     }
+    else requestAnimationFrame(pinSide);
   }
 
   btnCanvas.addEventListener("click", function () { setView("canvas", true); hideNudge(); });
@@ -414,6 +415,16 @@
         }, 4000);
       }, i * 2000);
     });
+  }
+
+  // Pin the wide list's profile column. If it is taller than the window,
+  // a negative top lets it scroll until its last card shows, then hold.
+  var side = nodes.querySelector(".cv-side");
+  function pinSide() {
+    if (!side) return;
+    var top = 96;
+    var fit = window.innerHeight - side.offsetHeight - 16;
+    side.style.setProperty("--side-top", Math.min(top, fit) + "px");
   }
 
   function initialView() {
@@ -569,6 +580,7 @@
   /* ── Boot ──────────────────────────────────────────────────────────── */
 
   function relayout() {
+    pinSide();
     drawWires();
     if (isCanvas() && !userMoved) centreAt(INITIAL_SCALE, false);
   }
@@ -578,6 +590,7 @@
   if (isCanvas()) centreAt(INITIAL_SCALE, false);
   maybeNudge();
   rotateBrandArt();
+  pinSide();
 
   // Card heights settle once images and webfonts land.
   window.addEventListener("load", relayout);
