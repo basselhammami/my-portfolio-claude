@@ -387,6 +387,35 @@
     window.setTimeout(hideNudge, 9000);
   }
 
+  // Touch screens have no hover, so cards with brand art alternate it with
+  // the screenshot every few seconds instead, only while on screen. Cards
+  // start half a beat apart so they never flip together.
+  function rotateBrandArt() {
+    if (reduced || !window.matchMedia("(hover: none)").matches) return;
+    if (!("IntersectionObserver" in window)) return;
+
+    var shots = Array.prototype.map.call(
+      nodes.querySelectorAll(".cv-case-alt"),
+      function (img) { return img.parentNode; }
+    );
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visible.add(e.target);
+        else visible.delete(e.target);
+      });
+    }, { threshold: 0.5 });
+
+    shots.forEach(function (shot, i) {
+      io.observe(shot);
+      window.setTimeout(function () {
+        window.setInterval(function () {
+          if (visible.has(shot)) shot.classList.toggle("is-alt");
+        }, 4000);
+      }, i * 2000);
+    });
+  }
+
   function initialView() {
     var stored = null;
     try { stored = sessionStorage.getItem(STORE); } catch (err) { /* private mode */ }
@@ -548,6 +577,7 @@
   drawWires();
   if (isCanvas()) centreAt(INITIAL_SCALE, false);
   maybeNudge();
+  rotateBrandArt();
 
   // Card heights settle once images and webfonts land.
   window.addEventListener("load", relayout);
