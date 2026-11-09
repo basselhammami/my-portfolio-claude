@@ -15,7 +15,7 @@ export const config = {
 };
 
 // The public site: the landing page, what it and the login page load, and the
-// four card thumbnails the landing page shows. Anything absent from this list
+// card art the landing page shows. Anything absent from this list
 // needs the password, so a new case study or screenshot is private the moment
 // it is added — add a path here only to deliberately make it public.
 const PUBLIC_PATHS = new Set([
@@ -36,10 +36,14 @@ const PUBLIC_PATHS = new Set([
   "/assets/favicon-32.png",
   "/assets/favicon-192.png",
   "/assets/apple-touch-icon.png",
-  // Case study card art on the landing page. These four are the only case
-  // images that stay public; the rest of each case is behind the password.
+  // Case study card art on the landing page. These are the only case images
+  // that stay public; the rest of each case is behind the password.
   "/assets/clm-audit-timeline.webp",
-  "/assets/mtmx-card.webp",
+  "/assets/mtmx-card-v2.webp",
+  // Pitch card thumbnail and the Rakbank brand art the cards swap to.
+  "/assets/clm-pitch-01.webp",
+  "/assets/rakbank-wordmark.webp",
+  "/assets/rakbank-cards.webp",
   "/assets/balady-card.webp",
   "/assets/kafu-hero-2.webp",
 ]);
