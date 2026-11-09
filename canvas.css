@@ -59,7 +59,8 @@ html { min-height: 100%; }
 .cv-bar {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 30;
   display: flex;
   align-items: center;
@@ -712,7 +713,7 @@ body.cv-locked { overflow: hidden; }
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
 @media (max-width: 720px) {
-  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; justify-content: space-between; gap: 0.75rem; }
+  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; transform: none; justify-content: space-between; gap: 0.75rem; }
   .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
