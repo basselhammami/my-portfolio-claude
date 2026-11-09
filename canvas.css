@@ -61,9 +61,13 @@ html { min-height: 100%; }
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
+  /* As wide as the overview's content grid (1240px less its 2rem gutters),
+     name on the left, links on the right. */
+  width: min(1176px, calc(100% - 2rem));
   z-index: 30;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.25rem;
   padding: 0.6rem 1rem;
   background: rgba(255, 255, 255, 0.92);
@@ -509,7 +513,7 @@ html { min-height: 100%; }
 
 .cv-hint {
   position: fixed;
-  bottom: 1.35rem;
+  bottom: 2.1rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 25;
@@ -520,10 +524,12 @@ html { min-height: 100%; }
 }
 .cv-hint.is-gone { opacity: 0; }
 
+/* Bottom centre, under the hint: the top bar spans the top now. */
 .cv-credit {
   position: fixed;
-  top: 1.55rem;
-  right: 1.25rem;
+  bottom: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 20;
   font-size: 0.75rem;
   color: var(--faint);
@@ -643,7 +649,7 @@ body.cv-locked { overflow: hidden; }
 .cv-body.is-list .cv-wires { display: none; }
 .cv-body.is-list .cv-hint { display: none; }
 .cv-body.is-list .cv-dock--zoom { display: none; }
-.cv-body.is-list .cv-credit { position: static; display: block; text-align: center; padding: 2rem 0 6rem; }
+.cv-body.is-list .cv-credit { position: static; transform: none; display: block; text-align: center; padding: 2rem 0 6rem; }
 
 .cv-body.is-list .cv-nodes {
   display: flex;
@@ -713,7 +719,7 @@ body.cv-locked { overflow: hidden; }
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
 @media (max-width: 720px) {
-  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; transform: none; justify-content: space-between; gap: 0.75rem; }
+  .cv-bar { left: 0.75rem; right: 0.75rem; top: 0.75rem; width: auto; transform: none; justify-content: space-between; gap: 0.75rem; }
   .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
