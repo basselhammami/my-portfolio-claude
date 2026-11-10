@@ -389,8 +389,8 @@
   }
 
   // Touch screens have no hover, so cards with brand art alternate it with
-  // the screenshot every few seconds instead, only while on screen. Cards
-  // start half a beat apart so they never flip together.
+  // the screenshot every few seconds instead (brand art first), only while
+  // on screen. Cards start half a beat apart so they never flip together.
   function rotateBrandArt() {
     if (reduced || !window.matchMedia("(hover: none)").matches) return;
     if (!("IntersectionObserver" in window)) return;
