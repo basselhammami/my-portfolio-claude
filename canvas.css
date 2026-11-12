@@ -410,6 +410,14 @@ html { min-height: 100%; }
 }
 .cv-card--case:hover .cv-case-open { background: var(--card); }
 
+/* A second action beside "Open", e.g. the CLM pitch slides. It sits inside
+   the card's link, so canvas.js routes its clicks to its own data-href. */
+.cv-case-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.cv-case-actions .cv-case-open { margin-top: 0; }
+.cv-card--case:hover .cv-case-open--alt { background: none; }
+.cv-card--case .cv-case-open--alt:hover,
+.cv-case-open--alt:focus-visible { background: var(--card); }
+
 /* A smaller card that hangs off a case rather than the persona, e.g. the
    pitch beside the CLM case. Wider mat, full-bleed slide, no outcome line. */
 .cv-card--mini .cv-case-shot { aspect-ratio: 16 / 10; padding: 0.8rem; }

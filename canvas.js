@@ -566,12 +566,33 @@
   var caseLinks = nodes.querySelectorAll(".cv-case-link");
   for (var i = 0; i < caseLinks.length; i++) {
     caseLinks[i].addEventListener("click", function (e) {
+      // A secondary action inside the card opens its own page instead.
+      var alt = e.target.closest("[data-href]");
+      if (alt) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.metaKey || e.ctrlKey || e.shiftKey) { window.open(alt.dataset.href, "_blank", "noopener"); return; }
+        openWindow(alt.dataset.href, alt.dataset.title || T.dialogLabel);
+        return;
+      }
       // Leave modified clicks alone so "open in new tab" still works.
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
       var link = e.currentTarget;
       var titleNode = link.querySelector(".cv-case-title");
       openWindow(link.getAttribute("href"), titleNode ? titleNode.textContent : T.dialogLabel);
+    });
+  }
+
+  // Keyboard: Enter on a secondary action opens it, not the parent card.
+  var altLinks = nodes.querySelectorAll(".cv-case-link [data-href]");
+  for (var k = 0; k < altLinks.length; k++) {
+    altLinks[k].addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      e.stopPropagation();
+      var el = e.currentTarget;
+      openWindow(el.dataset.href, el.dataset.title || T.dialogLabel);
     });
   }
 
