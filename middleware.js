@@ -22,6 +22,7 @@ const PUBLIC_PATHS = new Set([
   "/",
   "/index.html",
   "/index-ru.html",
+  "/index-ar.html",
   "/login.html",
   "/canvas.css",
   "/canvas.js",
