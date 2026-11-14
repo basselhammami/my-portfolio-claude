@@ -41,18 +41,20 @@ html { min-height: 100%; }
   overflow: hidden;
 }
 
+/* Parked off the inline-start edge: in a right-to-left page a far-left
+   offset would make the whole document scroll sideways. */
 .cv-skip {
   position: absolute;
-  left: -9999px;
+  inset-inline-start: -9999px;
   top: 0;
   z-index: 100;
   padding: 0.6rem 1rem;
   background: var(--fg);
   color: #fff;
-  border-radius: 0 0 0.5rem 0;
+  border-end-end-radius: 0.5rem;
   font-size: 0.875rem;
 }
-.cv-skip:focus { left: 0; }
+.cv-skip:focus { inset-inline-start: 0; }
 
 /* ── Top bar ─────────────────────────────────────────────────────────── */
 
@@ -75,13 +77,14 @@ html { min-height: 100%; }
   border-bottom: 1px solid var(--border);
 }
 
-.cv-bar-name { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; }
+.cv-bar-name { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; white-space: nowrap; }
 
 .cv-bar-nav { display: flex; align-items: center; gap: 1rem; }
 .cv-bar-nav a {
   font-size: 0.8125rem;
   color: var(--muted);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.18s var(--ease-out);
 }
 .cv-bar-nav a:hover { color: var(--fg); }
@@ -293,7 +296,7 @@ html { min-height: 100%; }
 /* A dot between neighbours, never leading a wrapped line. */
 .cv-rows li + li::before {
   content: "·";
-  margin-right: 0.45rem;
+  margin-inline-end: 0.45rem;
   color: var(--faint);
 }
 
@@ -439,8 +442,8 @@ html { min-height: 100%; }
   border-radius: var(--radius-pill);
   box-shadow: var(--dock-shadow);
 }
-.cv-dock--zoom { left: 1rem; }
-.cv-dock--view { right: 1rem; }
+.cv-dock--zoom { inset-inline-start: 1rem; }
+.cv-dock--view { inset-inline-end: 1rem; }
 
 .cv-icon-btn {
   display: inline-flex;
@@ -476,6 +479,7 @@ html { min-height: 100%; }
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--muted);
+  white-space: nowrap;
   cursor: pointer;
   transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out);
 }
@@ -486,7 +490,7 @@ html { min-height: 100%; }
    button. */
 .cv-nudge {
   position: fixed;
-  right: 1rem;
+  inset-inline-end: 1rem;
   bottom: 4.25rem;
   z-index: 31;
   padding: 0.6rem 0.9rem;
@@ -507,7 +511,7 @@ html { min-height: 100%; }
 .cv-nudge::after {
   content: "";
   position: absolute;
-  right: var(--tail, 2.6rem);
+  inset-inline-end: var(--tail, 2.6rem);
   bottom: -5px;
   width: 10px;
   height: 10px;
@@ -589,7 +593,8 @@ html { min-height: 100%; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.6rem 0.75rem 0.6rem 1rem;
+  padding: 0.6rem 1rem;
+  padding-inline-end: 0.75rem;
   border-bottom: 1px solid var(--border);
   background: var(--bg);
   flex-shrink: 0;
@@ -715,7 +720,7 @@ body.cv-locked { overflow: hidden; }
   }
   .cv-body.is-list .cv-cases [data-node="rakbank"] .cv-case-shot {
     border-bottom: none;
-    border-right: 1px solid var(--border);
+    border-inline-end: 1px solid var(--border);
   }
   .cv-body.is-list .cv-cases [data-node="rakbank"] .cv-card-body { align-self: center; }
 
@@ -723,15 +728,50 @@ body.cv-locked { overflow: hidden; }
   .cv-body.is-list .cv-cases .cv-card--mini .cv-case-shot { flex: 1; aspect-ratio: auto; }
 }
 
+/* ── Arabic ──────────────────────────────────────────────────────────────
+   index-ar.html sets dir="rtl", which mirrors the flex rows, the overview
+   grid and everything positioned with inline-start/end above. The board is
+   mirrored in the page itself (each card's --x). What is left is type:
+   Latin words (brand and product names) stay in the site's grotesk and the
+   Arabic falls through to Tajawal. Arabic letters join, so tracking is off,
+   and they sit small on the Latin size scale, so the scale goes up a step. */
+html[lang="ar"] {
+  --font-sans: "Schibsted Grotesk", "Tajawal", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html[lang="ar"] * { letter-spacing: 0; }
+html[lang="ar"] .cv-persona-bio,
+html[lang="ar"] .cv-case-outcome { font-size: 0.9375rem; line-height: 1.7; }
+html[lang="ar"] .cv-card-kind,
+html[lang="ar"] .cv-pills li,
+html[lang="ar"] .cv-pills--static span,
+html[lang="ar"] .cv-exp-years { font-size: 0.8125rem; }
+html[lang="ar"] .cv-case-title { font-size: 1.125rem; }
+html[lang="ar"] .cv-exp-role,
+html[lang="ar"] .cv-rows li,
+html[lang="ar"] .cv-links a { font-size: 0.9375rem; }
+html[lang="ar"] .cv-btn,
+html[lang="ar"] .cv-case-open,
+html[lang="ar"] .cv-view-btn,
+html[lang="ar"] .cv-nudge,
+html[lang="ar"] .cv-bar-nav a:not(.cv-lang-opt) { font-size: 0.875rem; }
+
 /* Phones get the list, always — a pan/zoom board on a 375px screen is a
    worse version of a scroll. */
 @media (max-width: 720px) {
   .cv-bar { padding: 0.75rem 1rem; gap: 0.75rem; }
-  .cv-dock--view { left: 50%; transform: translateX(-50%); right: auto; }
+  .cv-bar-nav { gap: 0.75rem; }
+  .cv-dock--view { inset-inline: auto; left: 50%; transform: translateX(-50%); }
   .cv-credit { display: none; }
   .cv-body.is-list .cv-credit { display: block; }
   .cv-body.is-list .cv-nodes { padding-top: 5.5rem; }
   .cv-nudge { display: none; }
+}
+
+/* Narrow phones: three languages leave no room for the bar's contact link.
+   The same button opens the profile card right below. */
+@media (max-width: 380px) {
+  .cv-bar-contact { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

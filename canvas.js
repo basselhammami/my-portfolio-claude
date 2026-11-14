@@ -35,6 +35,9 @@
   );
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Right-to-left pages (Arabic): forward arrows point left, and the docks
+  // sit on the opposite sides.
+  var RTL = document.documentElement.dir === "rtl";
   var MIN_SCALE = 0.25;
   var MAX_SCALE = 2;
   // The board opens at a fixed zoom rather than scaled to fit, so it looks
@@ -381,7 +384,8 @@
     var b = btnCanvas.getBoundingClientRect();
     var n = nudge.getBoundingClientRect();
     if (b.width && n.width) {
-      nudge.style.setProperty("--tail", Math.round(n.right - (b.left + b.width / 2) - 5) + "px");
+      var mid = b.left + b.width / 2;
+      nudge.style.setProperty("--tail", Math.round((RTL ? mid - n.left : n.right - mid) - 5) + "px");
     }
 
     window.setTimeout(function () { nudge.classList.add("is-shown"); }, 1200);
@@ -460,7 +464,7 @@
             // Navigates in place: the case is already open, so this is a
             // change of view, not a second copy of it in another tab. The
             // arrow points forward rather than out, to match.
-            '<a class="cv-window-full">' + T.openFull + ' <span aria-hidden="true">→</span></a>' +
+            '<a class="cv-window-full">' + T.openFull + ' <span aria-hidden="true">' + (RTL ? "←" : "→") + '</span></a>' +
             '<button type="button" class="cv-icon-btn" data-close aria-label="' + T.close + '">' +
               '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>' +
             '</button>' +
