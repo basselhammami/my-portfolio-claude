@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="no-js">
+  <head>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=4" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=4" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=4" />
+    <title>تتبع الحوالات · باسل حمامي</title>
+    <meta name="description" content="كيف حولت تحديث نظام SWIFT إلى تتبع مباشر للحوالات الدولية في Rakbank، خطوة بخطوة." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="تتبع الحوالات · باسل حمامي" />
+    <meta property="og:description" content="كيف حولت تحديث نظام SWIFT إلى تتبع مباشر للحوالات الدولية في Rakbank، خطوة بخطوة." />
+    <meta property="og:image" content="/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=51" />
+    <script defer src="script.js?v=8"></script>
+  </head>
+  <body class="n-bg n-rakbank">
+    <header class="site-header">
+      <nav class="nav-left">
+        <a href="index-ar.html" class="brand">باسل</a>
+        <a href="assets/basel-hammami-cv.pdf?v=2" target="_blank" rel="noopener" class="nav-link">السيرة الذاتية <span class="arrow">↖</span></a>
+      </nav>
+      <div class="nav-right" dir="ltr">
+        <a href="case-mtmx.html" class="lang-pill" lang="en">EN</a>
+        <a href="case-mtmx-ru.html" class="lang-pill" lang="ru">РУ</a>
+        <a href="case-mtmx-ar.html" class="lang-pill is-active" aria-label="العربية">ع</a>
+      </div>
+    </header>
+
+    <main class="n-page">
+      <a href="index-ar.html" class="back-link">رجوع</a>
+
+      <div class="n-stack">
+
+        <!-- ── Hero ── -->
+        <div class="n-card n-hero n-hero--photo n-rise" data-reveal>
+          <div class="n-hero-copy">
+            <img src="assets/rakbank-logo-full-new.png" class="n-hero-logo n-up" alt="Rakbank" width="2047" height="313" />
+            <h1 class="n-hero-title n-up">تتبع أموالك</h1>
+            <p class="n-hero-desc n-up">
+              الانتقال الإلزامي في شبكة SWIFT إلى معيار ISO&nbsp;20022 يحمل بيانات غنية عن حالة كل حوالة، لكن معظم البنوك تتركها خلف الكواليس. حولت هذا الإلزام إلى متتبع مباشر يعرض للعميل مكان أمواله خطوة بخطوة.
+            </p>
+            <div class="n-hero-tags n-up">
+              <span class="n-hero-tag">مدير منتج</span>
+              <span class="n-hero-tag">تطبيق الهاتف · iOS / Android</span>
+              <span class="n-hero-tag">الاستكشاف · تحديد الأولويات · التنفيذ · المقاييس</span>
+              <span class="n-hero-tag">متاح للعملاء الآن</span>
+            </div>
+          </div>
+          <figure class="n-hero-photo n-up">
+            <img src="assets/rakbank-cards.webp" alt="بطاقات Rakbank: بطاقة Mastercard حمراء، وبطاقة Rakbank Islamic Elite خضراء داكنة، وبطاقة أعمال بيضاء" width="1080" height="1440" decoding="async" />
+          </figure>
+        </div>
+
+        <!-- ── Hero screenshots ── -->
+        <div class="n-card n-rise" data-reveal>
+          <div class="n-img-block n-up">
+            <div class="n-shots">
+              <img src="assets/mtmx-tracker.png" alt="تبويب التتبع أثناء الحوالة: بدأت الحوالة واكتملت معالجتها، وهي الآن في طريقها إلى بنك المستفيد، ولكل خطوة وقت وملاحظة بلغة بسيطة" width="750" height="1624" loading="lazy" decoding="async" />
+              <img src="assets/mtmx-details.png" alt="تبويب التفاصيل لحوالة دولية: الرقم المرجعي، والحسابات، والمستفيد، والمبالغ، وتاريخ العملية" width="750" height="1716" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Scale band ── -->
+        <div class="n-card n-stats n-rise" data-reveal>
+          <div class="n-stat n-up">
+            <span class="n-stat-num" data-count="19">19</span>
+            <span class="n-stat-label">حالة للحوالة ضمن النطاق، ومنها الفشل والاسترجاع</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">MT&nbsp;→&nbsp;MX</span>
+            <span class="n-stat-label">إلزام تنظيمي تحول إلى ميزة للعميل</span>
+          </div>
+          <div class="n-stat n-up">
+            <span class="n-stat-num n-stat-static">متاح الآن</span>
+            <span class="n-stat-label">ضمن المدفوعات الدولية في Rakbank</span>
+          </div>
+        </div>
+
+        <!-- ── Where it all started · What I was solving for ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">الفرصة</h2>
+            <p class="n-up">كنت ترسل المال إلى خارج الدولة فيختفي. يتنقل ساعات أو أياماً عبر شبكة SWIFT دون أي إشارة لمن أرسله، والتطبيق يرد بكلمة واحدة: <em>قيد الانتظار</em>.</p>
+            <p class="n-up">سؤال "أين حوالتي؟" كان سبباً متكرراً للاتصال بخدمة العملاء، ويمكن قياسه: تكلفة تتكرر، وخلف كل اتصال عميل <em>لا يعرف</em> إن كانت أمواله بأمان. المشكلة كبيرة والحل قابل للتمويل، لأن الانتقال إلى ISO&nbsp;20022 كان يوفر البيانات المطلوبة أصلاً.</p>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">الرهان وطريقة قياسه</h2>
+            <p class="n-up">أن نستثمر تحديثاً يفرضه الامتثال في ميزة تبني الثقة: إجابة واضحة ومحدثة عن سؤال "أين أموالي الآن؟"، وصادقة حتى عند فشل الحوالة، كي لا يضطر العميل إلى الاتصال ليطمئن.</p>
+            <p class="n-up"><strong>معايير النجاح، حددناها قبل البناء</strong></p>
+            <ul class="n-dot-list">
+              <li class="n-up">تقليل الاتصالات: عدد أقل من اتصالات "أين حوالتي؟" بعد الإطلاق</li>
+              <li class="n-up">استخدام المتتبع: كم مرة يفتح العملاء المتتبع بدلاً من الاتصال</li>
+            </ul>
+            <p class="n-up">جهزنا قياس المعيارين عند الإطلاق، على أن تصدر أول قراءة بعد الفترة الأولى من الإطلاق.</p>
+          </div>
+
+        </div>
+
+        <!-- ── Insight moment ── -->
+        <div class="n-card n-moment n-rise" data-reveal>
+          <p class="n-moment-quote n-up">"كان الانتقال من MT إلى MX إلزاماً تنظيمياً. وكان أيضاً، بهدوء، المادة الخام لميزة ثقة لم يفكر أحد في بنائها."</p>
+          <p class="n-moment-cite n-up">الفكرة التي غيرت نظرتنا إلى المشروع</p>
+        </div>
+
+        <!-- ── How I approached it ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">كيف أدرت المشروع</h2>
+          <p class="n-lead n-up">تغيران جعلا المشروع قابلاً للتمويل: الانتقال إلى ISO&nbsp;20022 جعل رسائل الدفع تحمل حالة غنية ومنظمة من البداية إلى النهاية، وتحديث نظام التصميم سمح لنا بإعادة البناء بدلاً من الترقيع. وثقت كل حالة يمكن أن تمر بها الحوالة، ومنها مسارات الفشل والاسترجاع التي تخفيها البنوك عادة، وجعلت هذه الخريطة المرجع الوحيد لفرق المنتج والهندسة وضمان الجودة والامتثال. حددت الخريطة النطاق، وبنينا عليها التقديرات، وصارت الاتفاق الذي يعمل عليه كل فريق، فلم نعد نناقش الحالات من جديد مع كل شاشة.</p>
+        </div>
+
+        <!-- ── The journey ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">الرحلة</h2>
+          <p class="n-up">الحوالة ليست حدثاً واحداً، بل رحلة تمر بحالات كثيرة. ورهان المنتج كان عرضها كلها، ومنها حالات الفشل والاسترجاع التي تخفيها البنوك عادة خلف عبارة "قيد الانتظار". الصدق في الأخبار السيئة هو ما يكسب الثقة، لذلك دخلت حالات الفشل والاسترجاع في النطاق من اليوم الأول، ولكل حالة اسم ووصف بلغة بسيطة وخطوة تالية واضحة.</p>
+          <div class="n-img-block n-img-block--flush n-up">
+            <img src="assets/mtmx-happy-flow.webp" alt="المسار الناجح: حوالة تنتقل بين حالاتها من الإرسال إلى الاكتمال" width="8838" height="4101" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- ── Execution decisions that drove the outcome ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">قراران جعلا الميزة تقلل الاتصالات، لا تعرض الحالة فقط</h2>
+          <p class="n-up">المقياس لم يكن "هل عرضنا الحالة؟"، بل "هل توقف العملاء عن الاتصال؟". وقراران صنعا معظم الفرق.</p>
+          <ul class="n-dot-list n-up">
+            <li><strong>فصلت التفاصيل عن التتبع.</strong> الشاشة القديمة كانت تجيب عن سؤالين في مكان واحد: <em>ما هذه العملية؟</em> و<em>أين هي الآن؟</em> فصلهما جعل التتبع خطاً زمنياً واضحاً تفهمه بنظرة واحدة، وهو ما يغني فعلاً عن الاتصال، وبقيت في التفاصيل البيانات المرجعية للسجلات والاعتراضات.</li>
+            <li><strong>كتبت أسماء الحالات لتجيب العميل، لا لتنسخ لغة الأنظمة.</strong> "قيد المعالجة" صارت "نراجع حوالتك"، و"فشلت" صارت "لم نرسل المال"، وهي تجيب عن السؤال الوحيد المهم: هل خرج المال من الحساب؟ وضوح كهذا هو ما يجعل الميزة تقلل الاتصالات بدلاً من أن تزيدها.</li>
+          </ul>
+        </div>
+
+        <!-- ── Deep-dive: Cancellation ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">معلومة واحدة اختصرت النطاق</h2>
+          <p class="n-up">في منتصف المشروع، غيرت معلومة واحدة من فريق الهندسة جزءاً كاملاً من الخطة: <strong>لا يمكن إلغاء الحوالة إلا قبل خصم المبلغ.</strong> استفدت منها لاختصار النطاق كثيراً:</p>
+          <ul class="n-dot-list n-up">
+            <li>حذفت فئة كاملة من الحالات: الإلغاء بعد الخصم والاسترداد الجزئي. فقل ما يجب تصميمه وتوثيقه واختباره ودعمه.</li>
+            <li>بسطت النصوص: لا حاجة إلى الحديث عن الاسترداد، ويكفي تأكيد واضح أن <em>المبلغ لم يخصم من الحساب.</em></li>
+            <li>اختصرت الرحلة إلى مسار واحد واضح، فقلت مخاطر الإصدار مع موعد نهائي ثابت للترحيل.</li>
+          </ul>
+          <p class="n-up">حسم قواعد العمل من هذا النوع أقل تكلفة قبل أن تكثر الشاشات. لذلك أغلقت الأسئلة المفتوحة مبكراً، ونظمتها في تعليقات مصنفة تصل إلى صاحب كل قرار، كي لا يبقى شيء غامضاً بالصدفة.</p>
+          <div class="n-img-block n-img-block--flush n-up">
+            <img src="assets/mtmx-cancellation-flow.webp" alt="رحلة الإلغاء: عملية قيد الانتظار، ثم نافذة التأكيد، ثم رمز PIN، ثم شاشة الإلغاء" width="4955" height="2104" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- ── What happened next · What I'd do next ── -->
+        <div class="n-grid-2">
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">ما أطلقناه</h2>
+            <ul class="n-dot-list">
+              <li class="n-up">أطلقنا الميزة ضمن المدفوعات الدولية في Rakbank في موعد الترحيل المحدد</li>
+              <li class="n-up">يرى العملاء الآن حالة حوالات SWIFT مباشرة وخطوة بخطوة، ومنها الفشل والاسترجاع، بدلاً من عبارة "قيد الانتظار" وحدها</li>
+              <li class="n-up">جهزنا قياس تقليل الاتصالات واستخدام المتتبع عند الإطلاق، وأول قراءة تصدر بعد فترة الإطلاق الأولى</li>
+            </ul>
+          </div>
+
+          <div class="n-card n-rise" data-reveal>
+            <h2 class="n-title n-up">الخطوات القادمة</h2>
+            <ul class="n-dot-list">
+              <li class="n-up">إشعارات فورية بحالة الحوالة، أجلناها إلى التحديث التالي كي يصدر الإصدار الأول في الموعد الإلزامي</li>
+              <li class="n-up">التحقق من فهم الحالات النادرة: عبارة "الاسترجاع قيد الانتظار" دقيقة لكننا لم نختبرها مع عملاء حقيقيين</li>
+              <li class="n-up">مقارنة استخدام المتتبع بمعدلات الاتصال بخدمة العملاء لقياس أثره في تقليل الاتصالات وبناء الثقة</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- ── Looking back ── -->
+        <div class="n-card n-rise" data-reveal>
+          <h2 class="n-title n-up">نظرة إلى الوراء</h2>
+          <p class="n-up">ما بدأ تحديثاً إلزامياً في الأنظمة الخلفية صار سؤالاً عن المنتج: كيف تجعل العميل مطمئناً على مال لا يراه، وكيف تعرف أنك نجحت؟</p>
+          <p class="n-up">الإجابة لم تكن شريط تقدم أجمل. كانت في رؤية الفرصة داخل إلزام تنظيمي، وقول الحقيقة في كل خطوة، خاصة تلك التي <span class="n-draw">لا تسير كما يجب<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path pathLength="1" d="M1,7 C20,2 45,2 60,5 S90,9 99,4"/></svg></span>، وفي قياس النتيجة حتى تصبح الثقة شيئاً يمكن قياسه.</p>
+        </div>
+
+        <!-- ── Closing CTA ── -->
+        <div class="n-card n-cta n-rise" data-reveal>
+          <h2 class="n-title n-up">تريد مناقشة التفاصيل؟</h2>
+          <p class="n-up">يسعدني أن أشرح لك القرارات وحالات الحوالة وما لم يصل إلى النسخة النهائية.</p>
+          <a href="https://www.linkedin.com/in/basel-hammami-706521155/" target="_blank" rel="noopener" class="n-pill n-up">تواصل معي <span aria-hidden="true">↖</span></a>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <nav class="footer-links" aria-label="التواصل">
+        <a href="mailto:basselhammami@gmail.com" class="footer-link">basselhammami@gmail.com</a>
+        <a href="https://www.linkedin.com/in/basel-hammami-706521155/" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/basel-hammami-cv.pdf?v=2" class="footer-link" target="_blank" rel="noopener">السيرة الذاتية</a>
+      </nav>
+      <p class="copy">© 2026 باسل حمامي</p>
+    </footer>
+    <script type="module" src="agentation.js"></script>
+  </body>
+</html>

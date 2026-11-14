@@ -155,9 +155,12 @@
   const imgs = Array.from(document.querySelectorAll(".n-img-block img"));
   if (!imgs.length) return;
 
-  const isRu = document.documentElement.lang === "ru";
-  const viewLabel = isRu ? "Открыть изображение крупнее" : "View larger image";
-  const closeLabel = isRu ? "Закрыть" : "Close";
+  const labels = {
+    ru: ["Открыть изображение крупнее", "Закрыть"],
+    ar: ["عرض الصورة بحجم أكبر", "إغلاق"],
+  }[document.documentElement.lang] || ["View larger image", "Close"];
+  const viewLabel = labels[0];
+  const closeLabel = labels[1];
 
   // Build the overlay once and reuse it for every image.
   const overlay = document.createElement("div");

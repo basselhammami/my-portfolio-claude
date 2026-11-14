@@ -2362,7 +2362,7 @@ body.n-bg .site-header.is-scrolled {
 .n-timeline::before {
   content: "";
   position: absolute;
-  left: 7px;
+  inset-inline-start: 7px;
   top: 8px;
   bottom: 12px;
   width: 2px;
@@ -2788,7 +2788,7 @@ body.n-bg .site-header.is-scrolled {
 .n-lightbox-close {
   position: absolute;
   top: clamp(0.75rem, 2.5vw, 1.5rem);
-  right: clamp(0.75rem, 2.5vw, 1.5rem);
+  inset-inline-end: clamp(0.75rem, 2.5vw, 1.5rem);
   width: 44px;
   height: 44px;
   display: flex;
@@ -2839,7 +2839,7 @@ body.n-lightbox-open {
   align-items: stretch;
   padding: 0;
   overflow: hidden;
-  text-align: left;
+  text-align: start;
 }
 .n-hero--photo .n-hero-copy {
   align-self: center;
@@ -2862,3 +2862,31 @@ body.n-lightbox-open {
   .n-card.n-hero--photo { grid-template-columns: 1fr; padding: 0; }
   .n-hero--photo .n-hero-copy { padding: 2.25rem 1.5rem 2rem; }
 }
+
+/* ── Arabic (right-to-left) case studies ────────────────────────────
+   The -ar pages set dir="rtl", which mirrors the header, the grids and the
+   timeline on its own. What is left: type, the arrows, and the filmstrip.
+   Latin words (brand and product names) stay in the site's grotesk and the
+   Arabic falls through to Tajawal. Arabic letters join, so tracking is off,
+   and the lines need more room than Latin text does. */
+html[lang="ar"] body {
+  font-family: "Schibsted Grotesk", "Tajawal", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html[lang="ar"] * { letter-spacing: 0 !important; }
+html[lang="ar"] .n-card p,
+html[lang="ar"] .n-dot-list li { line-height: 1.85; }
+html[lang="ar"] .n-hero-title,
+html[lang="ar"] .n-title,
+html[lang="ar"] .n-moment-quote { line-height: 1.4 !important; }
+/* Arabic words in the big stat slot need room for their descenders. */
+html[lang="ar"] .n-stat-num { line-height: 1.35; }
+
+/* "Back" points the way you came: to the right. */
+html[dir="rtl"] .back-link::before { content: "\2192"; }
+html[dir="rtl"] .back-link:hover::before { transform: translateX(3px); }
+html[dir="rtl"] .nav-link:hover .arrow { transform: translate(-2px, -2px); }
+
+/* The filmstrip is a sequence of screens scrolling one way; it keeps its
+   left-to-right track rather than running backwards. */
+html[dir="rtl"] .n-film { direction: ltr; }
