@@ -22,7 +22,6 @@ const PUBLIC_PATHS = new Set([
   "/",
   "/index.html",
   "/index-ru.html",
-  "/index-ar.html",
   "/login.html",
   "/canvas.css",
   "/canvas.js",
@@ -52,6 +51,12 @@ const PUBLIC_PATHS = new Set([
 // Case studies hidden from the site entirely (pages and their images) —
 // remove a prefix here to bring the case back.
 const HIDDEN_PREFIXES = ["/case-cram", "/assets/cram-"];
+
+// The Arabic version (index-ar, case-*-ar) is built but switched off: no page
+// links to it and a direct request goes back to the homepage. Delete this
+// pattern, re-add "/index-ar.html" to PUBLIC_PATHS, and restore the language
+// option on the EN and RU pages to bring it back.
+const HIDDEN_PATTERN = /-ar(\.html)?$/;
 
 const SITE_COOKIE = "site_auth";
 
@@ -102,7 +107,7 @@ export default async function middleware(request) {
   }
 
   // Hidden case studies — send any request for them back to the homepage.
-  if (HIDDEN_PREFIXES.some((p) => path.startsWith(p))) {
+  if (HIDDEN_PREFIXES.some((p) => path.startsWith(p)) || HIDDEN_PATTERN.test(path)) {
     return Response.redirect(new URL("/", request.url), 302);
   }
 
